@@ -10,6 +10,8 @@
 		7D9CD6CB269882BE000450E0 /* ApexNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD6C1269882BE000450E0 /* ApexNetwork.framework */; };
 		7D9CD6D0269882BE000450E0 /* ApexNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD6CF269882BE000450E0 /* ApexNetworkTests.swift */; };
 		7D9CD6D2269882BE000450E0 /* ApexNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D9CD6C4269882BE000450E0 /* ApexNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D9CD76D26988AF7000450E0 /* ApexCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD76C26988AF7000450E0 /* ApexCore.framework */; };
+		7D9CD76E26988AF7000450E0 /* ApexCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD76C26988AF7000450E0 /* ApexCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,6 +24,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7D9CD76F26988AF7000450E0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7D9CD76E26988AF7000450E0 /* ApexCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7D9CD6C1269882BE000450E0 /* ApexNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApexNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD6C4269882BE000450E0 /* ApexNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApexNetwork.h; sourceTree = "<group>"; };
@@ -29,6 +45,7 @@
 		7D9CD6CA269882BE000450E0 /* ApexNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApexNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD6CF269882BE000450E0 /* ApexNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexNetworkTests.swift; sourceTree = "<group>"; };
 		7D9CD6D1269882BE000450E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D9CD76C26988AF7000450E0 /* ApexCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D9CD76D26988AF7000450E0 /* ApexCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +74,7 @@
 				7D9CD6C3269882BE000450E0 /* ApexNetwork */,
 				7D9CD6CE269882BE000450E0 /* ApexNetworkTests */,
 				7D9CD6C2269882BE000450E0 /* Products */,
+				7D9CD76B26988AF7000450E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +105,14 @@
 			path = ApexNetworkTests;
 			sourceTree = "<group>";
 		};
+		7D9CD76B26988AF7000450E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D9CD76C26988AF7000450E0 /* ApexCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -108,6 +135,7 @@
 				7D9CD6BD269882BE000450E0 /* Sources */,
 				7D9CD6BE269882BE000450E0 /* Frameworks */,
 				7D9CD6BF269882BE000450E0 /* Resources */,
+				7D9CD76F26988AF7000450E0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -13,6 +13,12 @@
 		7D9CD73726988479000450E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D9CD73626988479000450E0 /* Preview Assets.xcassets */; };
 		7D9CD7422698847A000450E0 /* ApexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7412698847A000450E0 /* ApexTests.swift */; };
 		7D9CD74D2698847A000450E0 /* ApexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD74C2698847A000450E0 /* ApexUITests.swift */; };
+		7D9CD79126988C47000450E0 /* ApexConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD79026988C47000450E0 /* ApexConfiguration.framework */; };
+		7D9CD79226988C47000450E0 /* ApexConfiguration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD79026988C47000450E0 /* ApexConfiguration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D9CD79626988C50000450E0 /* ApexReviewsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD79426988C50000450E0 /* ApexReviewsModule.framework */; };
+		7D9CD79726988C50000450E0 /* ApexReviewsModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD79426988C50000450E0 /* ApexReviewsModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D9CD79826988C50000450E0 /* ApexSearchModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD79526988C50000450E0 /* ApexSearchModule.framework */; };
+		7D9CD79926988C50000450E0 /* ApexSearchModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD79526988C50000450E0 /* ApexSearchModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +38,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7D9CD79326988C47000450E0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7D9CD79726988C50000450E0 /* ApexReviewsModule.framework in Embed Frameworks */,
+				7D9CD79226988C47000450E0 /* ApexConfiguration.framework in Embed Frameworks */,
+				7D9CD79926988C50000450E0 /* ApexSearchModule.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7D9CD72C26988477000450E0 /* Apex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD72F26988477000450E0 /* ApexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexApp.swift; sourceTree = "<group>"; };
@@ -45,6 +67,9 @@
 		7D9CD7482698847A000450E0 /* ApexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD74C2698847A000450E0 /* ApexUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexUITests.swift; sourceTree = "<group>"; };
 		7D9CD74E2698847A000450E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D9CD79026988C47000450E0 /* ApexConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexConfiguration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D9CD79426988C50000450E0 /* ApexReviewsModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexReviewsModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D9CD79526988C50000450E0 /* ApexSearchModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexSearchModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D9CD79626988C50000450E0 /* ApexReviewsModule.framework in Frameworks */,
+				7D9CD79126988C47000450E0 /* ApexConfiguration.framework in Frameworks */,
+				7D9CD79826988C50000450E0 /* ApexSearchModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +107,7 @@
 				7D9CD7402698847A000450E0 /* ApexTests */,
 				7D9CD74B2698847A000450E0 /* ApexUITests */,
 				7D9CD72D26988477000450E0 /* Products */,
+				7D9CD78F26988C47000450E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +159,16 @@
 			path = ApexUITests;
 			sourceTree = "<group>";
 		};
+		7D9CD78F26988C47000450E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D9CD79426988C50000450E0 /* ApexReviewsModule.framework */,
+				7D9CD79526988C50000450E0 /* ApexSearchModule.framework */,
+				7D9CD79026988C47000450E0 /* ApexConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +179,7 @@
 				7D9CD72826988477000450E0 /* Sources */,
 				7D9CD72926988477000450E0 /* Frameworks */,
 				7D9CD72A26988477000450E0 /* Resources */,
+				7D9CD79326988C47000450E0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

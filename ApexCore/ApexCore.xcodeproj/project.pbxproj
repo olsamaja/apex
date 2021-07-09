@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7D9CD65F26988249000450E0 /* ApexCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD65526988249000450E0 /* ApexCore.framework */; };
 		7D9CD66426988249000450E0 /* ApexCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD66326988249000450E0 /* ApexCoreTests.swift */; };
 		7D9CD66626988249000450E0 /* ApexCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D9CD65826988249000450E0 /* ApexCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D9CD762269889C4000450E0 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 7D9CD761269889C4000450E0 /* Logging */; };
+		7D9CD76526988ABB000450E0 /* Resolver-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 7D9CD76426988ABB000450E0 /* Resolver-Static */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D9CD76526988ABB000450E0 /* Resolver-Static in Frameworks */,
+				7D9CD762269889C4000450E0 /* Logging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +118,10 @@
 			dependencies = (
 			);
 			name = ApexCore;
+			packageProductDependencies = (
+				7D9CD761269889C4000450E0 /* Logging */,
+				7D9CD76426988ABB000450E0 /* Resolver-Static */,
+			);
 			productName = ApexCore;
 			productReference = 7D9CD65526988249000450E0 /* ApexCore.framework */;
 			productType = "com.apple.product-type.framework";
@@ -162,6 +170,10 @@
 				Base,
 			);
 			mainGroup = 7D9CD64B26988249000450E0;
+			packageReferences = (
+				7D9CD760269889C4000450E0 /* XCRemoteSwiftPackageReference "swift-log" */,
+				7D9CD76326988ABB000450E0 /* XCRemoteSwiftPackageReference "Resolver" */,
+			);
 			productRefGroup = 7D9CD65626988249000450E0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -453,6 +465,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7D9CD760269889C4000450E0 /* XCRemoteSwiftPackageReference "swift-log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-log.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.2;
+			};
+		};
+		7D9CD76326988ABB000450E0 /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7D9CD761269889C4000450E0 /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D9CD760269889C4000450E0 /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
+		};
+		7D9CD76426988ABB000450E0 /* Resolver-Static */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D9CD76326988ABB000450E0 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = "Resolver-Static";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7D9CD64C26988249000450E0 /* Project object */;
 }
