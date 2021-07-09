@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Apex/Apex.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ApexReviewsModule/ApexReviewsModule.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ApexSearchModule/ApexSearchModule.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ApexNetwork/ApexNetwork.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ApexConfiguration/ApexConfiguration.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ApexCoreUI/ApexCoreUI.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ApexCore/ApexCore.xcodeproj">
+   </FileRef>
+</Workspace>
