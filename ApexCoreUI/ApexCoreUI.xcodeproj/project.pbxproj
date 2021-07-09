@@ -12,6 +12,10 @@
 		7D9CD68A26988267000450E0 /* ApexCoreUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D9CD67C26988267000450E0 /* ApexCoreUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D9CD76826988AEA000450E0 /* ApexCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD76726988AEA000450E0 /* ApexCore.framework */; };
 		7D9CD76926988AEA000450E0 /* ApexCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD76726988AEA000450E0 /* ApexCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D9CD7AE2698979E000450E0 /* SizeThatFitPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7AD2698979E000450E0 /* SizeThatFitPreview.swift */; };
+		7D9CD7B0269897F2000450E0 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7AF269897F2000450E0 /* Spinner.swift */; };
+		7D9CD7B226989885000450E0 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7B126989885000450E0 /* MessageView.swift */; };
+		7D9CD7B4269898BD000450E0 /* SearchNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7B3269898BD000450E0 /* SearchNavigationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		7D9CD68726988267000450E0 /* ApexCoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexCoreUITests.swift; sourceTree = "<group>"; };
 		7D9CD68926988267000450E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D9CD76726988AEA000450E0 /* ApexCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D9CD7AD2698979E000450E0 /* SizeThatFitPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeThatFitPreview.swift; sourceTree = "<group>"; };
+		7D9CD7AF269897F2000450E0 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		7D9CD7B126989885000450E0 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		7D9CD7B3269898BD000450E0 /* SearchNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +100,10 @@
 			children = (
 				7D9CD67C26988267000450E0 /* ApexCoreUI.h */,
 				7D9CD67D26988267000450E0 /* Info.plist */,
+				7D9CD7AD2698979E000450E0 /* SizeThatFitPreview.swift */,
+				7D9CD7AF269897F2000450E0 /* Spinner.swift */,
+				7D9CD7B126989885000450E0 /* MessageView.swift */,
+				7D9CD7B3269898BD000450E0 /* SearchNavigationView.swift */,
 			);
 			path = ApexCoreUI;
 			sourceTree = "<group>";
@@ -175,6 +187,7 @@
 				TargetAttributes = {
 					7D9CD67826988267000450E0 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 					7D9CD68126988267000450E0 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -222,6 +235,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D9CD7B226989885000450E0 /* MessageView.swift in Sources */,
+				7D9CD7AE2698979E000450E0 /* SizeThatFitPreview.swift in Sources */,
+				7D9CD7B4269898BD000450E0 /* SearchNavigationView.swift in Sources */,
+				7D9CD7B0269897F2000450E0 /* Spinner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +386,7 @@
 		7D9CD68E26988267000450E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SZCLCNB53G;
@@ -385,6 +403,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.olsamaja.ApexCoreUI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -393,6 +412,7 @@
 		7D9CD68F26988267000450E0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SZCLCNB53G;
@@ -417,6 +437,7 @@
 		7D9CD69126988267000450E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SZCLCNB53G;
 				INFOPLIST_FILE = ApexCoreUITests/Info.plist;
@@ -435,6 +456,7 @@
 		7D9CD69226988267000450E0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SZCLCNB53G;
 				INFOPLIST_FILE = ApexCoreUITests/Info.plist;
