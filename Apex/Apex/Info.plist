@@ -46,5 +46,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>APEX_API_HOST</key>
+	<string>$(APEX_API_HOST)</string>
+	<key>APEX_API_SCHEME</key>
+	<string>$(APEX_API_SCHEME)</string>
 </dict>
 </plist>

@@ -1,0 +1,12 @@
+//
+//  Config.xcconfig
+//  Apex
+//
+//  Created by Olivier Rigault on 10/07/2021.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+APEX_API_SCHEME = https
+APEX_API_HOST = itunes.apple.com

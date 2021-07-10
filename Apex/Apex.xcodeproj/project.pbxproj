@@ -19,6 +19,11 @@
 		7D9CD79726988C50000450E0 /* ApexReviewsModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD79426988C50000450E0 /* ApexReviewsModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D9CD79826988C50000450E0 /* ApexSearchModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD79526988C50000450E0 /* ApexSearchModule.framework */; };
 		7D9CD79926988C50000450E0 /* ApexSearchModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD79526988C50000450E0 /* ApexSearchModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D9CD7E9269A161E000450E0 /* ApexCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD7E8269A161E000450E0 /* ApexCore.framework */; };
+		7D9CD7EA269A161E000450E0 /* ApexCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD7E8269A161E000450E0 /* ApexCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D9CD7EC269A1626000450E0 /* ApexCoreUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD7EB269A1626000450E0 /* ApexCoreUI.framework */; };
+		7D9CD7ED269A1626000450E0 /* ApexCoreUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD7EB269A1626000450E0 /* ApexCoreUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DA999A9269A4C1C008DDBA9 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999A8269A4C1C008DDBA9 /* AppConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +50,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7D9CD7ED269A1626000450E0 /* ApexCoreUI.framework in Embed Frameworks */,
 				7D9CD79726988C50000450E0 /* ApexReviewsModule.framework in Embed Frameworks */,
+				7D9CD7EA269A161E000450E0 /* ApexCore.framework in Embed Frameworks */,
 				7D9CD79226988C47000450E0 /* ApexConfiguration.framework in Embed Frameworks */,
 				7D9CD79926988C50000450E0 /* ApexSearchModule.framework in Embed Frameworks */,
 			);
@@ -70,6 +77,10 @@
 		7D9CD79026988C47000450E0 /* ApexConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexConfiguration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD79426988C50000450E0 /* ApexReviewsModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexReviewsModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD79526988C50000450E0 /* ApexSearchModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexSearchModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D9CD7E8269A161E000450E0 /* ApexCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D9CD7EB269A1626000450E0 /* ApexCoreUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCoreUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DA999A8269A4C1C008DDBA9 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		7DA999AC269A4CB3008DDBA9 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +88,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D9CD7EC269A1626000450E0 /* ApexCoreUI.framework in Frameworks */,
 				7D9CD79626988C50000450E0 /* ApexReviewsModule.framework in Frameworks */,
+				7D9CD7E9269A161E000450E0 /* ApexCore.framework in Frameworks */,
 				7D9CD79126988C47000450E0 /* ApexConfiguration.framework in Frameworks */,
 				7D9CD79826988C50000450E0 /* ApexSearchModule.framework in Frameworks */,
 			);
@@ -126,6 +139,8 @@
 			children = (
 				7D9CD72F26988477000450E0 /* ApexApp.swift */,
 				7D9CD73126988477000450E0 /* ContentView.swift */,
+				7DA999A8269A4C1C008DDBA9 /* AppConfiguration.swift */,
+				7DA999AC269A4CB3008DDBA9 /* Config.xcconfig */,
 				7D9CD73326988479000450E0 /* Assets.xcassets */,
 				7D9CD73826988479000450E0 /* Info.plist */,
 				7D9CD73526988479000450E0 /* Preview Content */,
@@ -162,6 +177,8 @@
 		7D9CD78F26988C47000450E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D9CD7EB269A1626000450E0 /* ApexCoreUI.framework */,
+				7D9CD7E8269A161E000450E0 /* ApexCore.framework */,
 				7D9CD79426988C50000450E0 /* ApexReviewsModule.framework */,
 				7D9CD79526988C50000450E0 /* ApexSearchModule.framework */,
 				7D9CD79026988C47000450E0 /* ApexConfiguration.framework */,
@@ -299,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DA999A9269A4C1C008DDBA9 /* AppConfiguration.swift in Sources */,
 				7D9CD73226988477000450E0 /* ContentView.swift in Sources */,
 				7D9CD73026988477000450E0 /* ApexApp.swift in Sources */,
 			);
@@ -387,7 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -442,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -454,6 +472,7 @@
 		};
 		7D9CD7522698847A000450E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DA999AC269A4CB3008DDBA9 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -476,6 +495,7 @@
 		};
 		7D9CD7532698847A000450E0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DA999AC269A4CB3008DDBA9 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

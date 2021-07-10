@@ -17,6 +17,10 @@
 		7D9CD7C82698A0E3000450E0 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7C72698A0E3000450E0 /* URLSession+Extensions.swift */; };
 		7D9CD7CB2698A192000450E0 /* ApexApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7CA2698A192000450E0 /* ApexApi.swift */; };
 		7D9CD7CD2698A1D1000450E0 /* URLComponentsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7CC2698A1D1000450E0 /* URLComponentsBuilder.swift */; };
+		7D9CD7CF26990534000450E0 /* DataRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7CE26990534000450E0 /* DataRequester.swift */; };
+		7DA999A6269A47E8008DDBA9 /* ApexConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA999A5269A47E8008DDBA9 /* ApexConfiguration.framework */; };
+		7DA999A7269A47E8008DDBA9 /* ApexConfiguration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA999A5269A47E8008DDBA9 /* ApexConfiguration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DA999AB269A4C75008DDBA9 /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999AA269A4C75008DDBA9 /* NetworkConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				7D9CD76E26988AF7000450E0 /* ApexCore.framework in Embed Frameworks */,
+				7DA999A7269A47E8008DDBA9 /* ApexConfiguration.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +61,9 @@
 		7D9CD7C72698A0E3000450E0 /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
 		7D9CD7CA2698A192000450E0 /* ApexApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexApi.swift; sourceTree = "<group>"; };
 		7D9CD7CC2698A1D1000450E0 /* URLComponentsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponentsBuilder.swift; sourceTree = "<group>"; };
+		7D9CD7CE26990534000450E0 /* DataRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequester.swift; sourceTree = "<group>"; };
+		7DA999A5269A47E8008DDBA9 /* ApexConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexConfiguration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DA999AA269A4C75008DDBA9 /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D9CD76D26988AF7000450E0 /* ApexCore.framework in Frameworks */,
+				7DA999A6269A47E8008DDBA9 /* ApexConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +111,9 @@
 			children = (
 				7D9CD6C4269882BE000450E0 /* ApexNetwork.h */,
 				7D9CD6C5269882BE000450E0 /* Info.plist */,
+				7DA999AA269A4C75008DDBA9 /* NetworkConfiguration.swift */,
 				7D9CD7CA2698A192000450E0 /* ApexApi.swift */,
+				7D9CD7CE26990534000450E0 /* DataRequester.swift */,
 				7D9CD7CC2698A1D1000450E0 /* URLComponentsBuilder.swift */,
 				7D9CD7C92698A157000450E0 /* Helpers */,
 			);
@@ -121,6 +132,7 @@
 		7D9CD76B26988AF7000450E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DA999A5269A47E8008DDBA9 /* ApexConfiguration.framework */,
 				7D9CD76C26988AF7000450E0 /* ApexCore.framework */,
 			);
 			name = Frameworks;
@@ -248,7 +260,9 @@
 			files = (
 				7D9CD7CB2698A192000450E0 /* ApexApi.swift in Sources */,
 				7D9CD7CD2698A1D1000450E0 /* URLComponentsBuilder.swift in Sources */,
+				7D9CD7CF26990534000450E0 /* DataRequester.swift in Sources */,
 				7D9CD7C62698A0C4000450E0 /* MockURLSession.swift in Sources */,
+				7DA999AB269A4C75008DDBA9 /* NetworkConfiguration.swift in Sources */,
 				7D9CD7C42698A094000450E0 /* MockURLProtocol.swift in Sources */,
 				7D9CD7C82698A0E3000450E0 /* URLSession+Extensions.swift in Sources */,
 			);
@@ -325,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -383,7 +397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

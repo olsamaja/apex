@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
+import ApexReviewsModule
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ReviewsView(viewModel: ReviewsViewModel(appId: "436115342"))
     }
 }
 

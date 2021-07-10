@@ -19,6 +19,16 @@
 		7D9CD78826988B39000450E0 /* ApexNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD78626988B39000450E0 /* ApexNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D9CD78A26988B60000450E0 /* ApexConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD78926988B60000450E0 /* ApexConfiguration.framework */; };
 		7D9CD78B26988B60000450E0 /* ApexConfiguration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD78926988B60000450E0 /* ApexConfiguration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7D9CD7D1269905E8000450E0 /* ReviewsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7D0269905E8000450E0 /* ReviewsDTO.swift */; };
+		7D9CD7D326990614000450E0 /* DataRequester+Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7D226990614000450E0 /* DataRequester+Reviews.swift */; };
+		7D9CD7D5269909E1000450E0 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7D4269909E1000450E0 /* Review.swift */; };
+		7D9CD7D7269909FB000450E0 /* ReviewsDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7D6269909FB000450E0 /* ReviewsDTOMapper.swift */; };
+		7D9CD7DB2699B307000450E0 /* ReviewRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7DA2699B307000450E0 /* ReviewRowItem.swift */; };
+		7D9CD7DD2699B335000450E0 /* ReviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7DC2699B335000450E0 /* ReviewRow.swift */; };
+		7D9CD7E12699B389000450E0 /* ReviewsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7E02699B389000450E0 /* ReviewsList.swift */; };
+		7D9CD7E32699B3C2000450E0 /* ReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7E22699B3C2000450E0 /* ReviewsView.swift */; };
+		7D9CD7E5269A00BF000450E0 /* ReviewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7E4269A00BF000450E0 /* ReviewsViewModel.swift */; };
+		7D9CD7E7269A0125000450E0 /* ReviewsViewModel+Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7E6269A0125000450E0 /* ReviewsViewModel+Reduce.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +70,16 @@
 		7D9CD78026988B31000450E0 /* ApexCoreUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCoreUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD78626988B39000450E0 /* ApexNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD78926988B60000450E0 /* ApexConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexConfiguration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D9CD7D0269905E8000450E0 /* ReviewsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsDTO.swift; sourceTree = "<group>"; };
+		7D9CD7D226990614000450E0 /* DataRequester+Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataRequester+Reviews.swift"; sourceTree = "<group>"; };
+		7D9CD7D4269909E1000450E0 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		7D9CD7D6269909FB000450E0 /* ReviewsDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsDTOMapper.swift; sourceTree = "<group>"; };
+		7D9CD7DA2699B307000450E0 /* ReviewRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRowItem.swift; sourceTree = "<group>"; };
+		7D9CD7DC2699B335000450E0 /* ReviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRow.swift; sourceTree = "<group>"; };
+		7D9CD7E02699B389000450E0 /* ReviewsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsList.swift; sourceTree = "<group>"; };
+		7D9CD7E22699B3C2000450E0 /* ReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsView.swift; sourceTree = "<group>"; };
+		7D9CD7E4269A00BF000450E0 /* ReviewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewModel.swift; sourceTree = "<group>"; };
+		7D9CD7E6269A0125000450E0 /* ReviewsViewModel+Reduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReviewsViewModel+Reduce.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +129,9 @@
 			children = (
 				7D9CD70C2698841C000450E0 /* ApexReviewsModule.h */,
 				7D9CD70D2698841C000450E0 /* Info.plist */,
+				7D9CD7DE2699B354000450E0 /* Presentation Layer */,
+				7D9CD7D826990DAD000450E0 /* Domain Models */,
+				7D9CD7D926990DBF000450E0 /* Data Services Layer */,
 				7D9CD75C26988761000450E0 /* Configuration */,
 			);
 			path = ApexReviewsModule;
@@ -140,6 +163,45 @@
 				7D9CD78026988B31000450E0 /* ApexCoreUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D9CD7D826990DAD000450E0 /* Domain Models */ = {
+			isa = PBXGroup;
+			children = (
+				7D9CD7D4269909E1000450E0 /* Review.swift */,
+				7D9CD7DA2699B307000450E0 /* ReviewRowItem.swift */,
+				7D9CD7D6269909FB000450E0 /* ReviewsDTOMapper.swift */,
+			);
+			path = "Domain Models";
+			sourceTree = "<group>";
+		};
+		7D9CD7D926990DBF000450E0 /* Data Services Layer */ = {
+			isa = PBXGroup;
+			children = (
+				7D9CD7D0269905E8000450E0 /* ReviewsDTO.swift */,
+				7D9CD7D226990614000450E0 /* DataRequester+Reviews.swift */,
+			);
+			path = "Data Services Layer";
+			sourceTree = "<group>";
+		};
+		7D9CD7DE2699B354000450E0 /* Presentation Layer */ = {
+			isa = PBXGroup;
+			children = (
+				7D9CD7DF2699B36C000450E0 /* Views */,
+			);
+			path = "Presentation Layer";
+			sourceTree = "<group>";
+		};
+		7D9CD7DF2699B36C000450E0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7D9CD7E22699B3C2000450E0 /* ReviewsView.swift */,
+				7D9CD7E02699B389000450E0 /* ReviewsList.swift */,
+				7D9CD7DC2699B335000450E0 /* ReviewRow.swift */,
+				7D9CD7E4269A00BF000450E0 /* ReviewsViewModel.swift */,
+				7D9CD7E6269A0125000450E0 /* ReviewsViewModel+Reduce.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,7 +314,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D9CD7E32699B3C2000450E0 /* ReviewsView.swift in Sources */,
 				7D9CD75B2698875B000450E0 /* ReviewsConfiguration.swift in Sources */,
+				7D9CD7E5269A00BF000450E0 /* ReviewsViewModel.swift in Sources */,
+				7D9CD7DB2699B307000450E0 /* ReviewRowItem.swift in Sources */,
+				7D9CD7E7269A0125000450E0 /* ReviewsViewModel+Reduce.swift in Sources */,
+				7D9CD7D5269909E1000450E0 /* Review.swift in Sources */,
+				7D9CD7D326990614000450E0 /* DataRequester+Reviews.swift in Sources */,
+				7D9CD7D7269909FB000450E0 /* ReviewsDTOMapper.swift in Sources */,
+				7D9CD7E12699B389000450E0 /* ReviewsList.swift in Sources */,
+				7D9CD7DD2699B335000450E0 /* ReviewRow.swift in Sources */,
+				7D9CD7D1269905E8000450E0 /* ReviewsDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -385,7 +457,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
