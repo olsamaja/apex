@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import Resolver
+import ApexCore
+
+public extension Resolver {
+    
+    static func registerSearchService() {
+        register { SearchViewModel() as SearchViewModel }
+    }
+}

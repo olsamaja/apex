@@ -21,6 +21,10 @@
 		7D9CD77D26988B21000450E0 /* ApexConfiguration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD77B26988B21000450E0 /* ApexConfiguration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D9CD78D26988B7D000450E0 /* ApexReviewsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD78C26988B7D000450E0 /* ApexReviewsModule.framework */; };
 		7D9CD78E26988B7D000450E0 /* ApexReviewsModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD78C26988B7D000450E0 /* ApexReviewsModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DA999AE269A54F3008DDBA9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999AD269A54F3008DDBA9 /* SearchViewModel.swift */; };
+		7DA999B0269BA42C008DDBA9 /* SearchViewModel+Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999AF269BA42C008DDBA9 /* SearchViewModel+Reduce.swift */; };
+		7DA999B2269BA5AD008DDBA9 /* SearchResultRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999B1269BA5AD008DDBA9 /* SearchResultRowItem.swift */; };
+		7DA999B4269BA5ED008DDBA9 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999B3269BA5ED008DDBA9 /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,10 @@
 		7D9CD77826988B19000450E0 /* ApexCoreUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCoreUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD77B26988B21000450E0 /* ApexConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexConfiguration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD78C26988B7D000450E0 /* ApexReviewsModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexReviewsModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DA999AD269A54F3008DDBA9 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		7DA999AF269BA42C008DDBA9 /* SearchViewModel+Reduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewModel+Reduce.swift"; sourceTree = "<group>"; };
+		7DA999B1269BA5AD008DDBA9 /* SearchResultRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultRowItem.swift; sourceTree = "<group>"; };
+		7DA999B3269BA5ED008DDBA9 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +122,10 @@
 			children = (
 				7D9CD6E8269883F1000450E0 /* ApexSearchModule.h */,
 				7D9CD6E9269883F1000450E0 /* Info.plist */,
+				7DA999AD269A54F3008DDBA9 /* SearchViewModel.swift */,
+				7DA999AF269BA42C008DDBA9 /* SearchViewModel+Reduce.swift */,
+				7DA999B1269BA5AD008DDBA9 /* SearchResultRowItem.swift */,
+				7DA999B3269BA5ED008DDBA9 /* SearchResult.swift */,
 				7D9CD75F2698887A000450E0 /* Configuration */,
 			);
 			path = ApexSearchModule;
@@ -258,7 +270,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DA999B2269BA5AD008DDBA9 /* SearchResultRowItem.swift in Sources */,
+				7DA999AE269A54F3008DDBA9 /* SearchViewModel.swift in Sources */,
+				7DA999B4269BA5ED008DDBA9 /* SearchResult.swift in Sources */,
 				7D9CD75E26988876000450E0 /* SearchConfiguration.swift in Sources */,
+				7DA999B0269BA42C008DDBA9 /* SearchViewModel+Reduce.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
