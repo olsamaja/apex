@@ -12,6 +12,6 @@ import ApexCore
 public extension Resolver {
     
     static func registerSearchService() {
-        register { SearchViewModel() as SearchViewModel }
+        register { SearchViewModel(term: "") as SearchViewModel }
     }
 }
