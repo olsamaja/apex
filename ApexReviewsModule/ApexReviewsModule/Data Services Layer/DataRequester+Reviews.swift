@@ -6,9 +6,20 @@
 //
 
 import Combine
-import ApexConfiguration
 import ApexNetwork
 import ApexCore
+
+extension DataManager {
+    
+    func getReviews(appId: String) -> AnyPublisher<[Review], DataError> {
+        return dataRequester.getReviews(with: appId)
+            .mapError { $0 }
+            .map {
+                ReviewsDTOMapper.map($0)
+            }
+            .eraseToAnyPublisher()
+    }
+}
 
 extension DataRequester {
     
@@ -23,17 +34,5 @@ struct ReviewsApi: ApiProtocol {
     
     func path() -> String {
         return "/gb/rss/customerreviews/id=\(appId)/mostrecent/json"
-    }
-}
-
-extension DataManager {
-    
-    func getReviews(appId: String) -> AnyPublisher<[Review], DataError> {
-        return dataRequester.getReviews(with: appId)
-            .mapError { $0 }
-            .map {
-                ReviewsDTOMapper.map($0)
-            }
-            .eraseToAnyPublisher()
     }
 }

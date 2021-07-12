@@ -6,13 +6,24 @@
 //
 
 import Combine
-import ApexConfiguration
 import ApexNetwork
 import ApexCore
 
+extension DataManager {
+    
+    func search(with term: String) -> AnyPublisher<[SearchResult], DataError> {
+        return dataRequester.search(with: term)
+            .mapError { $0 }
+            .map {
+                SearchResultsDTOMapper.map($0)
+            }
+            .eraseToAnyPublisher()
+    }
+}
+
 extension DataRequester {
     
-    public func search(with term: String) -> AnyPublisher<SearchResultsDTO, DataError> {
+    func search(with term: String) -> AnyPublisher<SearchResultsDTO, DataError> {
         loadData(with: SearchApi(term: term).urlComponents())
     }
 }
@@ -31,17 +42,5 @@ struct SearchApi: ApiProtocol {
             URLQueryItem(name: "country", value: "gb"),
             URLQueryItem(name: "media", value: "software")
         ]
-    }
-}
-
-extension DataManager {
-    
-    func search(with term: String) -> AnyPublisher<[SearchResult], DataError> {
-        return dataRequester.search(with: term)
-            .mapError { $0 }
-            .map {
-                SearchResultsDTOMapper.map($0)
-            }
-            .eraseToAnyPublisher()
     }
 }
