@@ -28,6 +28,9 @@
 		7DA999B6269BA74C008DDBA9 /* DataRequester+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999B5269BA74C008DDBA9 /* DataRequester+Search.swift */; };
 		7DA999B8269CE1A9008DDBA9 /* SearchResultsDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999B7269CE1A9008DDBA9 /* SearchResultsDTOMapper.swift */; };
 		7DA999BA269CE1F5008DDBA9 /* SearchResultsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999B9269CE1F5008DDBA9 /* SearchResultsDTO.swift */; };
+		7DA999BF269CE85C008DDBA9 /* SearchResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999BE269CE85C008DDBA9 /* SearchResultRow.swift */; };
+		7DA999C1269CE8A3008DDBA9 /* SearchResultsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999C0269CE8A3008DDBA9 /* SearchResultsList.swift */; };
+		7DA999C5269CE915008DDBA9 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999C4269CE915008DDBA9 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,9 @@
 		7DA999B5269BA74C008DDBA9 /* DataRequester+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataRequester+Search.swift"; sourceTree = "<group>"; };
 		7DA999B7269CE1A9008DDBA9 /* SearchResultsDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsDTOMapper.swift; sourceTree = "<group>"; };
 		7DA999B9269CE1F5008DDBA9 /* SearchResultsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsDTO.swift; sourceTree = "<group>"; };
+		7DA999BE269CE85C008DDBA9 /* SearchResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultRow.swift; sourceTree = "<group>"; };
+		7DA999C0269CE8A3008DDBA9 /* SearchResultsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsList.swift; sourceTree = "<group>"; };
+		7DA999C4269CE915008DDBA9 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,11 +192,30 @@
 		7DA999BD269CE44C008DDBA9 /* Presemtation Layer */ = {
 			isa = PBXGroup;
 			children = (
+				7DA999C2269CE8DB008DDBA9 /* Views */,
+				7DA999C3269CE8E2008DDBA9 /* View Models */,
+			);
+			path = "Presemtation Layer";
+			sourceTree = "<group>";
+		};
+		7DA999C2269CE8DB008DDBA9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7DA999C4269CE915008DDBA9 /* SearchView.swift */,
+				7DA999C0269CE8A3008DDBA9 /* SearchResultsList.swift */,
+				7DA999BE269CE85C008DDBA9 /* SearchResultRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7DA999C3269CE8E2008DDBA9 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
 				7DA999AD269A54F3008DDBA9 /* SearchViewModel.swift */,
 				7DA999AF269BA42C008DDBA9 /* SearchViewModel+Reduce.swift */,
 				7DA999B1269BA5AD008DDBA9 /* SearchResultRowItem.swift */,
 			);
-			path = "Presemtation Layer";
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,14 +328,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DA999C1269CE8A3008DDBA9 /* SearchResultsList.swift in Sources */,
 				7DA999BA269CE1F5008DDBA9 /* SearchResultsDTO.swift in Sources */,
 				7DA999B8269CE1A9008DDBA9 /* SearchResultsDTOMapper.swift in Sources */,
 				7DA999B2269BA5AD008DDBA9 /* SearchResultRowItem.swift in Sources */,
 				7DA999AE269A54F3008DDBA9 /* SearchViewModel.swift in Sources */,
 				7DA999B4269BA5ED008DDBA9 /* SearchResult.swift in Sources */,
+				7DA999BF269CE85C008DDBA9 /* SearchResultRow.swift in Sources */,
 				7D9CD75E26988876000450E0 /* SearchConfiguration.swift in Sources */,
 				7DA999B6269BA74C008DDBA9 /* DataRequester+Search.swift in Sources */,
 				7DA999B0269BA42C008DDBA9 /* SearchViewModel+Reduce.swift in Sources */,
+				7DA999C5269CE915008DDBA9 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

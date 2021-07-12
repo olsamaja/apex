@@ -7,10 +7,12 @@
 
 import SwiftUI
 import ApexReviewsModule
+import ApexSearchModule
 
 struct ContentView: View {
     var body: some View {
-        ReviewsView(viewModel: ReviewsViewModel(appId: "436115342"))
+        SearchView(viewModel: SearchViewModel(term: "Quidco"))
+//        ReviewsView(viewModel: ReviewsViewModel(appId: "436115342"))
     }
 }
 

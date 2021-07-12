@@ -130,7 +130,7 @@
 				7D9CD70C2698841C000450E0 /* ApexReviewsModule.h */,
 				7D9CD70D2698841C000450E0 /* Info.plist */,
 				7D9CD7DE2699B354000450E0 /* Presentation Layer */,
-				7D9CD7D826990DAD000450E0 /* Domain Models */,
+				7D9CD7D826990DAD000450E0 /* Domain Layer */,
 				7D9CD7D926990DBF000450E0 /* Data Services Layer */,
 				7D9CD75C26988761000450E0 /* Configuration */,
 			);
@@ -165,14 +165,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7D9CD7D826990DAD000450E0 /* Domain Models */ = {
+		7D9CD7D826990DAD000450E0 /* Domain Layer */ = {
 			isa = PBXGroup;
 			children = (
 				7D9CD7D4269909E1000450E0 /* Review.swift */,
 				7D9CD7DA2699B307000450E0 /* ReviewRowItem.swift */,
 				7D9CD7D6269909FB000450E0 /* ReviewsDTOMapper.swift */,
 			);
-			path = "Domain Models";
+			path = "Domain Layer";
 			sourceTree = "<group>";
 		};
 		7D9CD7D926990DBF000450E0 /* Data Services Layer */ = {

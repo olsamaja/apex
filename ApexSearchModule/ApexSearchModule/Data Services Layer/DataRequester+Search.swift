@@ -22,7 +22,15 @@ struct SearchApi: ApiProtocol {
     let term: String
     
     func path() -> String {
-        return "/gb/rss/customerreviews/id=\(term)/mostrecent/json"
+        return "/search"
+    }
+    
+    func queryItems() -> [URLQueryItem] {
+        [
+            URLQueryItem(name: "term", value: term),
+            URLQueryItem(name: "country", value: "gb"),
+            URLQueryItem(name: "media", value: "software")
+        ]
     }
 }
 
