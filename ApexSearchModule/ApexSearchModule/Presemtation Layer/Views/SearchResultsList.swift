@@ -7,6 +7,8 @@
 
 import SwiftUI
 import ApexCore
+import ApexCoreUI
+import ApexReviewsModule
 
 struct SearchResultsList: View {
     
@@ -16,9 +18,16 @@ struct SearchResultsList: View {
         ScrollView {
             LazyVStack(spacing: 0) {
                 ForEach(items) { item in
-                    SearchResultRowBuilder()
-                        .withItem(item)
-                        .build()
+                    NavigationLink(
+                        destination: ReviewsViewBuilder()
+                            .withViewModel(ReviewsViewModel(appId: item.trackId))
+                            .build(),
+                        label: {
+                            SearchResultRowBuilder()
+                                .withItem(item)
+                                .build()
+                        }
+                    )
                 }
             }
         }

@@ -45,6 +45,27 @@ public struct ReviewsView: View {
     }
 }
 
+public class ReviewsViewBuilder: BuilderProtocol {
+    
+    private var viewModel: ReviewsViewModel?
+
+    public init() {}
+    
+    public func withViewModel(_ viewModel: ReviewsViewModel) -> ReviewsViewBuilder {
+        self.viewModel = viewModel
+        return self
+    }
+    
+    @ViewBuilder
+    public func build() -> some View {
+        if let viewModel = viewModel {
+            ReviewsView(viewModel: viewModel)
+        } else {
+            EmptyView()
+        }
+    }
+}
+
 //struct ReviewsView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        ReviewsView()

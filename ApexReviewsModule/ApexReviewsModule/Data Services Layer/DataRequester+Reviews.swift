@@ -11,7 +11,7 @@ import ApexCore
 
 extension DataManager {
     
-    func getReviews(appId: String) -> AnyPublisher<[Review], DataError> {
+    func getReviews(appId: Int) -> AnyPublisher<[Review], DataError> {
         return dataRequester.getReviews(with: appId)
             .mapError { $0 }
             .map {
@@ -23,14 +23,14 @@ extension DataManager {
 
 extension DataRequester {
     
-    public func getReviews(with appId: String) -> AnyPublisher<ReviewsDTO, DataError> {
+    public func getReviews(with appId: Int) -> AnyPublisher<ReviewsDTO, DataError> {
         loadData(with: ReviewsApi(appId: appId).urlComponents())
     }
 }
 
 struct ReviewsApi: ApiProtocol {
     
-    let appId: String
+    let appId: Int
     
     func path() -> String {
         return "/gb/rss/customerreviews/id=\(appId)/mostrecent/json"

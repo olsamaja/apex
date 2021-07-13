@@ -11,13 +11,13 @@ import ApexNetwork
 
 public final class ReviewsViewModel: ObservableObject {
 
-    public let appId: String
+    public let appId: Int
     @Published var state = State.idle
     
     private var cancellables = Set<AnyCancellable>()
     private let action = PassthroughSubject<Event, Never>()
 
-    public init(appId: String, state: State = .idle) {
+    public init(appId: Int, state: State = .idle) {
         self.appId = appId
         self.state = state
         setupFeedbacks()
@@ -49,7 +49,7 @@ public final class ReviewsViewModel: ObservableObject {
         action.send(event)
     }
     
-    static func whenLoading(appId: String) -> Feedback<State, Event> {
+    static func whenLoading(appId: Int) -> Feedback<State, Event> {
 
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
             guard case .loading = state else { return Empty().eraseToAnyPublisher() }
@@ -61,5 +61,4 @@ public final class ReviewsViewModel: ObservableObject {
                 .eraseToAnyPublisher()
         }
     }
-
 }
