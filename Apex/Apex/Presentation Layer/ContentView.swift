@@ -11,8 +11,7 @@ import ApexSearchModule
 
 struct ContentView: View {
     var body: some View {
-        SearchView(viewModel: SearchViewModel(term: "Quidco"))
-//        ReviewsView(viewModel: ReviewsViewModel(appId: "436115342"))
+        SearchView()
     }
 }
 

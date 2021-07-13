@@ -9,11 +9,13 @@ import Foundation
 import Resolver
 import ApexConfiguration
 import ApexNetwork
+import ApexSearchModule
 
 extension Resolver: ResolverRegistering {
     
     public static func registerAllServices() {
         registerConfigurationServices(with: Bundle.main)
         registerNetworkServices()
+        registerSearchService()
     }
 }

@@ -138,8 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				7D9CD72F26988477000450E0 /* ApexApp.swift */,
-				7D9CD73126988477000450E0 /* ContentView.swift */,
-				7DA999A8269A4C1C008DDBA9 /* AppConfiguration.swift */,
+				7DA999C7269DA004008DDBA9 /* Presentation Layer */,
+				7DA999C6269D9FFA008DDBA9 /* Configuration Layer */,
 				7DA999AC269A4CB3008DDBA9 /* Config.xcconfig */,
 				7D9CD73326988479000450E0 /* Assets.xcassets */,
 				7D9CD73826988479000450E0 /* Info.plist */,
@@ -184,6 +184,22 @@
 				7D9CD79026988C47000450E0 /* ApexConfiguration.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DA999C6269D9FFA008DDBA9 /* Configuration Layer */ = {
+			isa = PBXGroup;
+			children = (
+				7DA999A8269A4C1C008DDBA9 /* AppConfiguration.swift */,
+			);
+			path = "Configuration Layer";
+			sourceTree = "<group>";
+		};
+		7DA999C7269DA004008DDBA9 /* Presentation Layer */ = {
+			isa = PBXGroup;
+			children = (
+				7D9CD73126988477000450E0 /* ContentView.swift */,
+			);
+			path = "Presentation Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

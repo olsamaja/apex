@@ -8,12 +8,13 @@
 import Combine
 import ApexNetwork
 import ApexCore
+import ApexReviewsModule
 
 public extension SearchViewModel {
     
     enum State {
         case idle
-        case loading
+        case searching(String)
         case loaded([SearchResultRowItem])
         case error(DataError)
     }
@@ -22,6 +23,13 @@ public extension SearchViewModel {
         case onAppear
         case onDataLoaded([SearchResultRowItem])
         case onFailedToLoadData(DataError)
+        case onPerform(UserAction)
+    }
+    
+    enum UserAction {
+        case search(String)
+        case select(Review)
+        case clear
     }
 }
 
@@ -29,10 +37,11 @@ extension SearchViewModel.State: Equatable {
     public static func == (lhs: SearchViewModel.State, rhs: SearchViewModel.State) -> Bool {
         switch (lhs, rhs) {
         case (.idle, .idle),
-             (.loading, .loading),
              (.loaded, .loaded),
              (.error, .error):
             return true
+        case (let .searching(string1), let .searching(string2)):
+            return string1 == string2
         default:
             return false
         }
@@ -45,8 +54,8 @@ extension SearchViewModel {
         switch state {
         case .idle:
             return reduceIdle(state, event)
-        case .loading:
-            return reduceLoading(state, event)
+        case .searching:
+            return reduceSearching(state, event)
         case .loaded:
             return reduceLoaded(state, event)
         case .error:
@@ -56,26 +65,33 @@ extension SearchViewModel {
     
     static func reduceIdle(_ state: State, _ event: Event) -> State {
         switch event {
-        case .onAppear:
-            return .loading
+        case .onPerform(.search(let term)):
+            return .searching(term)
         default:
             return state
         }
     }
     
-    static func reduceLoading(_ state: State, _ event: Event) -> State {
+    static func reduceSearching(_ state: State, _ event: Event) -> State {
         switch event {
         case .onFailedToLoadData(let error):
             return .error(error)
-        case .onDataLoaded(let results):
-            return .loaded(results)
+        case .onDataLoaded(let artists):
+            return .loaded(artists)
         default:
             return state
         }
     }
 
     static func reduceLoaded(_ state: State, _ event: Event) -> State {
-        return state
+        switch event {
+        case .onPerform(.search(let term)):
+            return .searching(term)
+        case .onPerform(.clear):
+            return .idle
+        default:
+            return state
+        }
     }
     
     static func reduceError(_ state: State, _ event: Event) -> State {

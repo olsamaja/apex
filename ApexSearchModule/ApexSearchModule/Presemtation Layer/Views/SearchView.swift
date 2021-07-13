@@ -2,50 +2,62 @@
 //  SearchView.swift
 //  ApexSearchModule
 //
-//  Created by Olivier Rigault on 12/07/2021.
+//  Created by Olivier Rigault on 13/07/2021.
 //
 
 import SwiftUI
 import ApexCoreUI
+import ApexCore
+import Resolver
 
 public struct SearchView: View {
     
-    @ObservedObject var viewModel: SearchViewModel
+    @Injected var viewModel: SearchViewModel
     
-    public init(viewModel: SearchViewModel) {
-        self.viewModel = viewModel
-    }
+    public init() {}
     
     public var body: some View {
-        switch viewModel.state {
-        case .idle:
-            MessageViewBuilder()
-                .withMessage("Search apps")
-                .withAlignment(.top)
-                .build()
-                .onAppear {
-                    viewModel.send(event: .onAppear)
-                }
-        case .error(let error):
-            MessageViewBuilder()
-                .withSymbol("xmark.octagon")
-                .withMessage(error.localizedDescription)
-                .build()
-        case .loaded(let items):
-            SearchResultsListBuilder()
-                .withItems(items)
-                .build()
-        case .loading:
-            SpinnerBuilder()
-                .withStyle(.large)
-                .isAnimating(true)
-                .build()
-        }
+        SearchNavigationViewBuilder()
+            .withContentView(AnyView(content))
+            .withTitle("Search")
+            .withPlaceholder("Search apps")
+            .onSearch { (searchTerm) in
+                viewModel.search(with: searchTerm)
+            }
+            .build()
+            .ignoresSafeArea()
+    }
+    
+    private var content: some View {
+        SearchContentViewBuilder()
+            .withViewModel(viewModel)
+            .build()
     }
 }
 
-//struct SearchView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchView()
-//    }
-//}
+struct SearchView_Previews: PreviewProvider {
+    
+    enum Dependencies {
+        static var registerIdleState = { () -> Bool in
+            Resolver.register { SearchViewModel() as SearchViewModel }
+            return true
+        }
+        static var registerErrorState = { () -> Bool in
+            Resolver.register { SearchViewModel(state: .error(DataError.invalidRequest)) as SearchViewModel }
+            return true
+        }
+    }
+    
+    static var previews: some View {
+        Group {
+            if Dependencies.registerIdleState() {
+                SearchView()
+                    .previewDisplayName("default state = .idle")
+            }
+            if Dependencies.registerErrorState() {
+                SearchView()
+                    .previewDisplayName("state = .error")
+            }
+        }
+    }
+}

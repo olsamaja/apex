@@ -11,14 +11,13 @@ import ApexCore
 
 public final class SearchViewModel: ObservableObject {
 
-    public let term: String
     @Published var state = State.idle
-    
+    @Published var term = ""
+
     private var cancellables = Set<AnyCancellable>()
     private let action = PassthroughSubject<Event, Never>()
 
-    public init(term: String, state: State = .idle) {
-        self.term = term
+    public init(state: State = .idle) {
         self.state = state
         setupFeedbacks()
         setupBindings()
@@ -34,7 +33,7 @@ public final class SearchViewModel: ObservableObject {
             reduce: Self.reduce,
             scheduler: RunLoop.main,
             feedbacks: [
-                Self.whenLoading(term: term),
+                Self.whenSearching(),
                 Self.userAction(action: action.eraseToAnyPublisher())
             ]
         )
@@ -43,16 +42,41 @@ public final class SearchViewModel: ObservableObject {
     }
     
     private func setupBindings() {
+        
+        let searchPublisher = $term
+                .dropFirst(1)
+                .debounce(for: 1, scheduler: RunLoop.main)
+                .removeDuplicates()
+        
+        searchPublisher
+            .filter { $0.count > 2 }
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { [weak self] (term) in
+                self?.send(event: .onPerform(.search(term)))
+            })
+        .store(in: &cancellables)
+        
+        searchPublisher
+            .filter { $0.count == 0 }
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { [weak self] (_) in
+                self?.send(event: .onPerform(.clear))
+            })
+        .store(in: &cancellables)
     }
     
     func send(event: Event) {
         action.send(event)
     }
     
-    static func whenLoading(term: String) -> Feedback<State, Event> {
+    func search(with term: String) {
+        self.term = term
+    }
+    
+    static func whenSearching() -> Feedback<State, Event> {
 
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
-            guard case .loading = state else { return Empty().eraseToAnyPublisher() }
+            guard case .searching(let term) = state else { return Empty().eraseToAnyPublisher() }
             
             return DataManager().search(with: term)
                 .map { $0.map(SearchResultRowItem.init) }

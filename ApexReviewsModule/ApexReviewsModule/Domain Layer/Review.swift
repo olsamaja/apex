@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Review {
+public struct Review {
     let title: String
     let author: String
     let rating: String
