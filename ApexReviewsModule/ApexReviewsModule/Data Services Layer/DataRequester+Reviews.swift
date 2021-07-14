@@ -9,18 +9,6 @@ import Combine
 import ApexNetwork
 import ApexCore
 
-extension DataManager {
-    
-    func getReviews(appId: Int) -> AnyPublisher<[Review], DataError> {
-        return dataRequester.getReviews(with: appId)
-            .mapError { $0 }
-            .map {
-                ReviewsDTOMapper.map($0)
-            }
-            .eraseToAnyPublisher()
-    }
-}
-
 extension DataRequester {
     
     public func getReviews(with appId: Int) -> AnyPublisher<ReviewsDTO, DataError> {

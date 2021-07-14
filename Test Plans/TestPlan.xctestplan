@@ -1,0 +1,66 @@
+{
+  "configurations" : [
+    {
+      "id" : "03566399-DB08-4C17-B40A-282AD3E1FC1A",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Apex.xcodeproj",
+        "identifier" : "7D9CD73C2698847A000450E0",
+        "name" : "ApexTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/ApexConfiguration\/ApexConfiguration.xcodeproj",
+        "identifier" : "7D9CD6A526988288000450E0",
+        "name" : "ApexConfigurationTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/ApexCore\/ApexCore.xcodeproj",
+        "identifier" : "7D9CD65D26988249000450E0",
+        "name" : "ApexCoreTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/ApexCoreUI\/ApexCoreUI.xcodeproj",
+        "identifier" : "7D9CD68126988267000450E0",
+        "name" : "ApexCoreUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/ApexNetwork\/ApexNetwork.xcodeproj",
+        "identifier" : "7D9CD6C9269882BE000450E0",
+        "name" : "ApexNetworkTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/ApexReviewsModule\/ApexReviewsModule.xcodeproj",
+        "identifier" : "7D9CD7112698841C000450E0",
+        "name" : "ApexReviewsModuleTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/ApexSearchModule\/ApexSearchModule.xcodeproj",
+        "identifier" : "7D9CD6ED269883F1000450E0",
+        "name" : "ApexSearchModuleTests"
+      }
+    }
+  ],
+  "version" : 1
+}

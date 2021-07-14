@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D38FBBD269ECD4800D9E80A /* DataManager+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D38FBBC269ECD4800D9E80A /* DataManager+Search.swift */; };
 		7D9CD6EF269883F1000450E0 /* ApexSearchModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD6E5269883F1000450E0 /* ApexSearchModule.framework */; };
 		7D9CD6F4269883F1000450E0 /* ApexSearchModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD6F3269883F1000450E0 /* ApexSearchModuleTests.swift */; };
 		7D9CD6F6269883F1000450E0 /* ApexSearchModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D9CD6E8269883F1000450E0 /* ApexSearchModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -63,6 +64,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7D38FBBC269ECD4800D9E80A /* DataManager+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+Search.swift"; sourceTree = "<group>"; };
 		7D9CD6E5269883F1000450E0 /* ApexSearchModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApexSearchModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD6E8269883F1000450E0 /* ApexSearchModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApexSearchModule.h; sourceTree = "<group>"; };
 		7D9CD6E9269883F1000450E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				7DA999B3269BA5ED008DDBA9 /* SearchResult.swift */,
 				7DA999B7269CE1A9008DDBA9 /* SearchResultsDTOMapper.swift */,
+				7D38FBBC269ECD4800D9E80A /* DataManager+Search.swift */,
 			);
 			path = "Domain Layer";
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DA999C1269CE8A3008DDBA9 /* SearchResultsList.swift in Sources */,
+				7D38FBBD269ECD4800D9E80A /* DataManager+Search.swift in Sources */,
 				7DA999BA269CE1F5008DDBA9 /* SearchResultsDTO.swift in Sources */,
 				7DA999B8269CE1A9008DDBA9 /* SearchResultsDTOMapper.swift in Sources */,
 				7DA999B2269BA5AD008DDBA9 /* SearchResultRowItem.swift in Sources */,

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D38FBBB269ECCD600D9E80A /* DataManager+Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D38FBBA269ECCD600D9E80A /* DataManager+Reviews.swift */; };
 		7D9CD7132698841C000450E0 /* ApexReviewsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD7092698841C000450E0 /* ApexReviewsModule.framework */; };
 		7D9CD7182698841C000450E0 /* ApexReviewsModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7172698841C000450E0 /* ApexReviewsModuleTests.swift */; };
 		7D9CD71A2698841C000450E0 /* ApexReviewsModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D9CD70C2698841C000450E0 /* ApexReviewsModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,6 +60,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7D38FBBA269ECCD600D9E80A /* DataManager+Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+Reviews.swift"; sourceTree = "<group>"; };
 		7D9CD7092698841C000450E0 /* ApexReviewsModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApexReviewsModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD70C2698841C000450E0 /* ApexReviewsModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApexReviewsModule.h; sourceTree = "<group>"; };
 		7D9CD70D2698841C000450E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -169,8 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				7D9CD7D4269909E1000450E0 /* Review.swift */,
-				7D9CD7DA2699B307000450E0 /* ReviewRowItem.swift */,
 				7D9CD7D6269909FB000450E0 /* ReviewsDTOMapper.swift */,
+				7D38FBBA269ECCD600D9E80A /* DataManager+Reviews.swift */,
 			);
 			path = "Domain Layer";
 			sourceTree = "<group>";
@@ -198,6 +200,7 @@
 				7D9CD7E22699B3C2000450E0 /* ReviewsView.swift */,
 				7D9CD7E02699B389000450E0 /* ReviewsList.swift */,
 				7D9CD7DC2699B335000450E0 /* ReviewRow.swift */,
+				7D9CD7DA2699B307000450E0 /* ReviewRowItem.swift */,
 				7D9CD7E4269A00BF000450E0 /* ReviewsViewModel.swift */,
 				7D9CD7E6269A0125000450E0 /* ReviewsViewModel+Reduce.swift */,
 			);
@@ -315,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D9CD7E32699B3C2000450E0 /* ReviewsView.swift in Sources */,
+				7D38FBBB269ECCD600D9E80A /* DataManager+Reviews.swift in Sources */,
 				7D9CD75B2698875B000450E0 /* ReviewsConfiguration.swift in Sources */,
 				7D9CD7E5269A00BF000450E0 /* ReviewsViewModel.swift in Sources */,
 				7D9CD7DB2699B307000450E0 /* ReviewRowItem.swift in Sources */,
