@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D45E482269F940F00D2C796 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D45E481269F940F00D2C796 /* DataManager.swift */; };
 		7D9CD6CB269882BE000450E0 /* ApexNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD6C1269882BE000450E0 /* ApexNetwork.framework */; };
 		7D9CD6D0269882BE000450E0 /* ApexNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD6CF269882BE000450E0 /* ApexNetworkTests.swift */; };
 		7D9CD6D2269882BE000450E0 /* ApexNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D9CD6C4269882BE000450E0 /* ApexNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -16,7 +17,6 @@
 		7D9CD7C62698A0C4000450E0 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7C52698A0C4000450E0 /* MockURLSession.swift */; };
 		7D9CD7C82698A0E3000450E0 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7C72698A0E3000450E0 /* URLSession+Extensions.swift */; };
 		7D9CD7CB2698A192000450E0 /* ApexApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7CA2698A192000450E0 /* ApexApi.swift */; };
-		7D9CD7CD2698A1D1000450E0 /* URLComponentsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7CC2698A1D1000450E0 /* URLComponentsBuilder.swift */; };
 		7D9CD7CF26990534000450E0 /* DataRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7CE26990534000450E0 /* DataRequester.swift */; };
 		7DA999A6269A47E8008DDBA9 /* ApexConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA999A5269A47E8008DDBA9 /* ApexConfiguration.framework */; };
 		7DA999A7269A47E8008DDBA9 /* ApexConfiguration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA999A5269A47E8008DDBA9 /* ApexConfiguration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -49,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7D45E481269F940F00D2C796 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		7D9CD6C1269882BE000450E0 /* ApexNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApexNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD6C4269882BE000450E0 /* ApexNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApexNetwork.h; sourceTree = "<group>"; };
 		7D9CD6C5269882BE000450E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		7D9CD7C52698A0C4000450E0 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		7D9CD7C72698A0E3000450E0 /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
 		7D9CD7CA2698A192000450E0 /* ApexApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexApi.swift; sourceTree = "<group>"; };
-		7D9CD7CC2698A1D1000450E0 /* URLComponentsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponentsBuilder.swift; sourceTree = "<group>"; };
 		7D9CD7CE26990534000450E0 /* DataRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequester.swift; sourceTree = "<group>"; };
 		7DA999A5269A47E8008DDBA9 /* ApexConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexConfiguration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA999AA269A4C75008DDBA9 /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
@@ -87,6 +87,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D45E47F269F935500D2C796 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				7DA999AA269A4C75008DDBA9 /* NetworkConfiguration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		7D45E480269F938C00D2C796 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7D9CD7CA2698A192000450E0 /* ApexApi.swift */,
+				7D9CD7CE26990534000450E0 /* DataRequester.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		7D45E483269F946700D2C796 /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7D45E481269F940F00D2C796 /* DataManager.swift */,
+			);
+			path = "Data Manager";
+			sourceTree = "<group>";
+		};
 		7D9CD6B7269882BE000450E0 = {
 			isa = PBXGroup;
 			children = (
@@ -111,10 +136,9 @@
 			children = (
 				7D9CD6C4269882BE000450E0 /* ApexNetwork.h */,
 				7D9CD6C5269882BE000450E0 /* Info.plist */,
-				7DA999AA269A4C75008DDBA9 /* NetworkConfiguration.swift */,
-				7D9CD7CA2698A192000450E0 /* ApexApi.swift */,
-				7D9CD7CE26990534000450E0 /* DataRequester.swift */,
-				7D9CD7CC2698A1D1000450E0 /* URLComponentsBuilder.swift */,
+				7D45E47F269F935500D2C796 /* Configuration */,
+				7D45E483269F946700D2C796 /* Data Manager */,
+				7D45E480269F938C00D2C796 /* API */,
 				7D9CD7C92698A157000450E0 /* Helpers */,
 			);
 			path = ApexNetwork;
@@ -259,9 +283,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D9CD7CB2698A192000450E0 /* ApexApi.swift in Sources */,
-				7D9CD7CD2698A1D1000450E0 /* URLComponentsBuilder.swift in Sources */,
 				7D9CD7CF26990534000450E0 /* DataRequester.swift in Sources */,
 				7D9CD7C62698A0C4000450E0 /* MockURLSession.swift in Sources */,
+				7D45E482269F940F00D2C796 /* DataManager.swift in Sources */,
 				7DA999AB269A4C75008DDBA9 /* NetworkConfiguration.swift in Sources */,
 				7D9CD7C42698A094000450E0 /* MockURLProtocol.swift in Sources */,
 				7D9CD7C82698A0E3000450E0 /* URLSession+Extensions.swift in Sources */,

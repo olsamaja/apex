@@ -76,6 +76,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D45E47C269F931300D2C796 /* View Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				7D9CD7AD2698979E000450E0 /* SizeThatFitPreview.swift */,
+			);
+			path = "View Modifiers";
+			sourceTree = "<group>";
+		};
+		7D45E47D269F932000D2C796 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				7D9CD7AF269897F2000450E0 /* Spinner.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		7D45E47E269F932A00D2C796 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7D9CD7B126989885000450E0 /* MessageView.swift */,
+				7D9CD7B3269898BD000450E0 /* SearchNavigationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7D9CD66F26988267000450E0 = {
 			isa = PBXGroup;
 			children = (
@@ -100,10 +125,9 @@
 			children = (
 				7D9CD67C26988267000450E0 /* ApexCoreUI.h */,
 				7D9CD67D26988267000450E0 /* Info.plist */,
-				7D9CD7AD2698979E000450E0 /* SizeThatFitPreview.swift */,
-				7D9CD7AF269897F2000450E0 /* Spinner.swift */,
-				7D9CD7B126989885000450E0 /* MessageView.swift */,
-				7D9CD7B3269898BD000450E0 /* SearchNavigationView.swift */,
+				7D45E47C269F931300D2C796 /* View Modifiers */,
+				7D45E47D269F932000D2C796 /* Controls */,
+				7D45E47E269F932A00D2C796 /* Views */,
 			);
 			path = ApexCoreUI;
 			sourceTree = "<group>";

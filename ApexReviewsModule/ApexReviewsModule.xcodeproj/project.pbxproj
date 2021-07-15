@@ -107,6 +107,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D45E48426A034F200D2C796 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				7D9CD7DA2699B307000450E0 /* ReviewRowItem.swift */,
+				7D9CD7E4269A00BF000450E0 /* ReviewsViewModel.swift */,
+				7D9CD7E6269A0125000450E0 /* ReviewsViewModel+Reduce.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		7D9CD6FF2698841C000450E0 = {
 			isa = PBXGroup;
 			children = (
@@ -131,10 +141,10 @@
 			children = (
 				7D9CD70C2698841C000450E0 /* ApexReviewsModule.h */,
 				7D9CD70D2698841C000450E0 /* Info.plist */,
+				7D9CD75C26988761000450E0 /* Configuration */,
 				7D9CD7DE2699B354000450E0 /* Presentation Layer */,
 				7D9CD7D826990DAD000450E0 /* Domain Layer */,
 				7D9CD7D926990DBF000450E0 /* Data Services Layer */,
-				7D9CD75C26988761000450E0 /* Configuration */,
 			);
 			path = ApexReviewsModule;
 			sourceTree = "<group>";
@@ -190,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				7D9CD7DF2699B36C000450E0 /* Views */,
+				7D45E48426A034F200D2C796 /* View Models */,
 			);
 			path = "Presentation Layer";
 			sourceTree = "<group>";
@@ -200,9 +211,6 @@
 				7D9CD7E22699B3C2000450E0 /* ReviewsView.swift */,
 				7D9CD7E02699B389000450E0 /* ReviewsList.swift */,
 				7D9CD7DC2699B335000450E0 /* ReviewRow.swift */,
-				7D9CD7DA2699B307000450E0 /* ReviewRowItem.swift */,
-				7D9CD7E4269A00BF000450E0 /* ReviewsViewModel.swift */,
-				7D9CD7E6269A0125000450E0 /* ReviewsViewModel+Reduce.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
