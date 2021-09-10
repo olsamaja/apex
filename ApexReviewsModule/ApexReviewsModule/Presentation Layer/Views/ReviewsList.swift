@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ApexCore
+import ApexCoreUI
 
 struct ReviewsList: View {
     
@@ -39,17 +40,35 @@ public class ReviewsListBuilder: BuilderProtocol {
         if let items = items {
             ReviewsList(items: items)
         } else {
-            EmptyView()
+            MessageViewBuilder()
+                .withMessage("No reviews")
+                .withAlignment(.top)
+                .build()
         }
     }
 }
 
-//struct ReviewsList_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ReviewsListBuilder()
-//            .withItems([
-//                ReviewRowItem(author: "", rating: "", content: "")
-//            ])
-//            .build()
-//    }
-//}
+struct ReviewsList_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            ReviewsListBuilder()
+                .withItems([
+                    ReviewRowItem(review: Review(title: "Almost Perfect",
+                                                 author: "Author",
+                                                 rating: "4",
+                                                 content: "This is an awesome app, but I am really hesitating to give it 5 stars.",
+                                                 version: "1.2.3",
+                                                 updated: "Updated")),
+                    ReviewRowItem(review: Review(title: "Fantastic",
+                                                 author: "Another author",
+                                                 rating: "5",
+                                                 content: "Super useful",
+                                                 version: "3.2.1",
+                                                 updated: "Updated"))
+                ])
+                .build()
+            ReviewsListBuilder()
+                .build()
+        }
+    }
+}
