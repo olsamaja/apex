@@ -30,9 +30,8 @@ struct SearchResultRow: View {
                     }
                 }
             }
-            .padding(.horizontal)
-            Divider()
         }
+        .padding()
     }
 }
 
@@ -65,5 +64,6 @@ struct SearchResultRow_Previews: PreviewProvider {
                                                 currentVersionReleaseDate: "date",
                                                 minimumOsVersion: "iOS 13.0",
                                                 averageUserRating: 123456))
+            .sizeThatFitPreview(with: "Default")
     }
 }
