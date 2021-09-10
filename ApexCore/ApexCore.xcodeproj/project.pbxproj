@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D45E49126A34BE100D2C796 /* OLLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D45E49026A34BE100D2C796 /* OLLoggerTests.swift */; };
 		7D9CD65F26988249000450E0 /* ApexCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD65526988249000450E0 /* ApexCore.framework */; };
-		7D9CD66426988249000450E0 /* ApexCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD66326988249000450E0 /* ApexCoreTests.swift */; };
 		7D9CD66626988249000450E0 /* ApexCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D9CD65826988249000450E0 /* ApexCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D9CD762269889C4000450E0 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 7D9CD761269889C4000450E0 /* Logging */; };
 		7D9CD76526988ABB000450E0 /* Resolver-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 7D9CD76426988ABB000450E0 /* Resolver-Static */; };
@@ -33,11 +33,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D45E49026A34BE100D2C796 /* OLLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLLoggerTests.swift; sourceTree = "<group>"; };
 		7D9CD65526988249000450E0 /* ApexCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApexCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD65826988249000450E0 /* ApexCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApexCore.h; sourceTree = "<group>"; };
 		7D9CD65926988249000450E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D9CD65E26988249000450E0 /* ApexCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApexCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D9CD66326988249000450E0 /* ApexCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexCoreTests.swift; sourceTree = "<group>"; };
 		7D9CD66526988249000450E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D9CD79A269891A9000450E0 /* DataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
 		7D9CD79C269891F8000450E0 /* OLLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLLogger.swift; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 		7D9CD66226988249000450E0 /* ApexCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				7D9CD66326988249000450E0 /* ApexCoreTests.swift */,
 				7D9CD66526988249000450E0 /* Info.plist */,
+				7D45E49026A34BE100D2C796 /* OLLoggerTests.swift */,
 			);
 			path = ApexCoreTests;
 			sourceTree = "<group>";
@@ -207,6 +207,7 @@
 					};
 					7D9CD65D26988249000450E0 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -270,7 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D9CD66426988249000450E0 /* ApexCoreTests.swift in Sources */,
+				7D45E49126A34BE100D2C796 /* OLLoggerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +463,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SZCLCNB53G;
 				INFOPLIST_FILE = ApexCoreTests/Info.plist;
@@ -472,6 +474,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.olsamaja.ApexCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -481,6 +484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SZCLCNB53G;
 				INFOPLIST_FILE = ApexCoreTests/Info.plist;
