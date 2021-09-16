@@ -68,14 +68,20 @@ public class ReviewRowBuilder: BuilderProtocol {
 }
 
 struct ReviewRow_Previews: PreviewProvider {
+    
+    enum Constants {
+        static let review = Review(
+            title: "Title",
+            author: "author",
+            rating: "4",
+            content:
+                "Some pretty good things about this awesome app. I really love this service. Hope you are going to keep up with the good stuff.",
+            version: "1.2.3",
+            updated: "2021-06-29T09:16:12-07:00")
+    }
+    
     static var previews: some View {
-        ReviewRow(item: ReviewRowItem(
-                    title: "Title",
-                    author: "author",
-                    rating: "4",
-                    content:
-                        "Some pretty good things about this awesome app. I really love this service. Hope you are going to keep up with the good stuff.",
-                    version: "1.2.3",
-                    updated: "2021-06-29T09:16:12-07:00"))
+        ReviewRow(item: ReviewRowItem(review: Constants.review))
+            .sizeThatFitPreview(with: "Default")
     }
 }

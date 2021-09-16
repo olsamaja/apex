@@ -65,16 +65,20 @@ public class SearchResultRowBuilder: BuilderProtocol {
 }
 
 struct SearchResultRow_Previews: PreviewProvider {
+    
+    enum Constants {
+        static let result = SearchResult(trackName: "Track name",
+                                         trackId: 12456,
+                                         sellerName: "Seller's name",
+                                         version: "1.2.3",
+                                         currentVersionReleaseDate: "date",
+                                         minimumOsVersion: "iOS 13.0",
+                                         averageUserRating: 4.7655,
+                                         userRatingCountForCurrentVersion: 123456)
+    }
+    
     static var previews: some View {
-        SearchResultRow(item:
-                            SearchResultRowItem(trackId: 12456,
-                                                trackName: "Track name",
-                                                sellerName: "Seller's name",
-                                                version: "1.2.3",
-                                                currentVersionReleaseDate: "date",
-                                                minimumOsVersion: "iOS 13.0",
-                                                averageUserRating: 4.7655,
-                                                userRatingCountForCurrentVersion: 123456))
+        SearchResultRow(item: SearchResultRowItem(search: Constants.result))
             .sizeThatFitPreview(with: "Default")
     }
 }

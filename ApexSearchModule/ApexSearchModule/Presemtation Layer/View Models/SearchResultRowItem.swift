@@ -30,25 +30,6 @@ public struct SearchResultRowItem: Identifiable {
         self.averageUserRating = search.averageUserRating
         self.userRatingCountForCurrentVersion = search.userRatingCountForCurrentVersion
     }
-    
-    init(trackId: Int,
-         trackName: String,
-         sellerName: String,
-         version: String,
-         currentVersionReleaseDate: String,
-         minimumOsVersion: String,
-         averageUserRating: Double,
-         userRatingCountForCurrentVersion: Int) {
-        self.id = UUID().uuidString
-        self.trackId = trackId
-        self.trackName = trackName
-        self.sellerName = sellerName
-        self.version = version
-        self.currentVersionReleaseDate = currentVersionReleaseDate
-        self.minimumOsVersion = minimumOsVersion
-        self.averageUserRating = averageUserRating
-        self.userRatingCountForCurrentVersion = userRatingCountForCurrentVersion
-    }
 }
 
 extension SearchResultRowItem: Equatable {}

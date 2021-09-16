@@ -26,16 +26,6 @@ public struct ReviewRowItem: Identifiable {
         self.version = review.version
         self.updated = review.updated
     }
-    
-    init(title: String, author: String, rating: String, content: String, version: String, updated: String) {
-        self.id = UUID().uuidString
-        self.title = title
-        self.author = author
-        self.rating = rating
-        self.content = content
-        self.version = version
-        self.updated = updated
-    }
 }
 
 extension ReviewRowItem: Equatable {}
