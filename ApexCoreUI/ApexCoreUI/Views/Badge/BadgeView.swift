@@ -60,7 +60,9 @@ public class BadgeViewBuilder: BuilderProtocol {
     public init() {}
     
     public func withInt(_ int: Int) -> BadgeViewBuilder {
-        self.text = String(int)
+        if int > 0 {
+            self.text = String(int)
+        }
         return self
     }
 
@@ -114,7 +116,7 @@ public class BadgeView_Previews: PreviewProvider {
             BadgeViewBuilder()
                 .withText("Hello, world!")
                 .build()
-                .sizeThatFitPreview(with: "Default")
+                .sizeThatFitPreview(with: "Default with text")
             BadgeViewBuilder()
                 .withInt(123456)
                 .withFont(.title)
@@ -123,7 +125,11 @@ public class BadgeView_Previews: PreviewProvider {
                 .withHorizontalInset(30)
                 .withVerticalInset(20)
                 .build()
-                .sizeThatFitPreview(with: "Big badge")
+                .sizeThatFitPreview(with: "Big badge with integer")
+            BadgeViewBuilder()
+                .withInt(0)
+                .build()
+                .sizeThatFitPreview(with: "zero integer should not be visible")
         }
     }
 }

@@ -24,18 +24,21 @@ struct SearchResultRow: View {
                             Text(item.trackName)
                                 .font(.title3)
                             Spacer()
+                            RatingViewBuilder()
+                                .withRating(item.averageUserRating)
+                                .build()
                         }
                         HStack {
                             Text(item.sellerName)
                                 .font(.callout)
                             Spacer()
+                            BadgeViewBuilder()
+                                .withInt(item.userRatingCountForCurrentVersion)
+                                .build()
                         }
                     }
                     Spacer()
                 }
-                RatingViewBuilder()
-                    .withRating(item.averageUserRating)
-                    .build()
             }
         }
         .padding()

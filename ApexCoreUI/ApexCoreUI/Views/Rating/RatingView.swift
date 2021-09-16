@@ -30,7 +30,7 @@ public class RatingViewBuilder: BuilderProtocol {
     
     @ViewBuilder
     public func build() -> some View {
-        if let rating = rating {
+        if let rating = rating, rating > 0 {
             RatingView(viewModel: RatingViewModel(rating: rating))
         } else {
             Text("N/A")
