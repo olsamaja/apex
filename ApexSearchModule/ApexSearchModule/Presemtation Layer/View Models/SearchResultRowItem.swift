@@ -17,6 +17,7 @@ public struct SearchResultRowItem: Identifiable {
     let currentVersionReleaseDate: String
     let minimumOsVersion: String
     let averageUserRating: Double
+    let userRatingCountForCurrentVersion: Int
 
     init(search: SearchResult) {
         self.id = UUID().uuidString
@@ -27,6 +28,7 @@ public struct SearchResultRowItem: Identifiable {
         self.currentVersionReleaseDate = search.currentVersionReleaseDate
         self.minimumOsVersion = search.minimumOsVersion
         self.averageUserRating = search.averageUserRating
+        self.userRatingCountForCurrentVersion = search.userRatingCountForCurrentVersion
     }
     
     init(trackId: Int,
@@ -35,7 +37,8 @@ public struct SearchResultRowItem: Identifiable {
          version: String,
          currentVersionReleaseDate: String,
          minimumOsVersion: String,
-         averageUserRating: Double) {
+         averageUserRating: Double,
+         userRatingCountForCurrentVersion: Int) {
         self.id = UUID().uuidString
         self.trackId = trackId
         self.trackName = trackName
@@ -44,6 +47,7 @@ public struct SearchResultRowItem: Identifiable {
         self.currentVersionReleaseDate = currentVersionReleaseDate
         self.minimumOsVersion = minimumOsVersion
         self.averageUserRating = averageUserRating
+        self.userRatingCountForCurrentVersion = userRatingCountForCurrentVersion
     }
 }
 

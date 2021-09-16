@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ApexCore
+import ApexCoreUI
 
 struct SearchResultRow: View {
 
@@ -17,18 +18,24 @@ struct SearchResultRow: View {
             HStack {
                 Image(systemName: "person")
                     .font(.callout)
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text(item.trackName)
-                            .font(.title3)
-                        Spacer()
+                HStack {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text(item.trackName)
+                                .font(.title3)
+                            Spacer()
+                        }
+                        HStack {
+                            Text(item.sellerName)
+                                .font(.callout)
+                            Spacer()
+                        }
                     }
-                    HStack {
-                        Text(item.sellerName)
-                            .font(.callout)
-                        Spacer()
-                    }
+                    Spacer()
                 }
+                RatingViewBuilder()
+                    .withRating(item.averageUserRating)
+                    .build()
             }
         }
         .padding()
@@ -63,7 +70,8 @@ struct SearchResultRow_Previews: PreviewProvider {
                                                 version: "1.2.3",
                                                 currentVersionReleaseDate: "date",
                                                 minimumOsVersion: "iOS 13.0",
-                                                averageUserRating: 123456))
+                                                averageUserRating: 4.7655,
+                                                userRatingCountForCurrentVersion: 123456))
             .sizeThatFitPreview(with: "Default")
     }
 }

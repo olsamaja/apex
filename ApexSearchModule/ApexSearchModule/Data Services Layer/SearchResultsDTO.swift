@@ -19,4 +19,5 @@ struct SearchResultDTO: Decodable {
     let currentVersionReleaseDate: String
     let minimumOsVersion: String
     let averageUserRating: Double
+    let userRatingCountForCurrentVersion: Int
 }

@@ -25,6 +25,7 @@ struct SearchResultDTOMapper {
                      version: dto.version,
                      currentVersionReleaseDate: dto.currentVersionReleaseDate,
                      minimumOsVersion: dto.minimumOsVersion,
-                     averageUserRating: dto.averageUserRating)
+                     averageUserRating: dto.averageUserRating,
+                     userRatingCountForCurrentVersion: dto.userRatingCountForCurrentVersion)
     }
 }
