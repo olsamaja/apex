@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ApexCore
 
 public struct ReviewsDTOMapper {
     
@@ -18,12 +19,12 @@ public struct ReviewsDTOMapper {
 
 struct EntryDTOMapper {
     
-    static func map(_ dto: EntryDTO) -> Review {
-        Review(title: dto.title.label,
-               author: dto.author.name.label,
-               rating: dto.rating.label,
-               content: dto.content.label,
-               version: dto.version.label,
-               updated: dto.updated.label)
+    static func map(_ dto: UserEntryDTO) -> Review {
+        Review(title: dto.title,
+               author: dto.author,
+               rating: dto.rating,
+               content: dto.content,
+               version: dto.version,
+               updated: dto.updated.toString())
     }
 }

@@ -8,23 +8,24 @@
 import Foundation
 
 public struct ReviewsDTO: Decodable {
-    let feed: FeedDTO
+    let feed: UserFeedDTO
 }
 
-struct FeedDTO: Decodable {
-    let entry: [EntryDTO]
+struct UserFeedDTO: Decodable {
+    let entry: [UserEntryDTO]
 }
 
-struct EntryDTO {
-    let title: TitleDTO
-    let author: AuthorDTO
-    let rating: RatingDTO
-    let version: VersionDTO
-    let content: ContentDTO
-    let updated: DateDTO
+public struct UserEntryDTO {
+    let title: String
+    let author: String
+    let rating: String
+    let version: String
+    let content: String
+    let updated: Date
 }
 
-extension EntryDTO: Decodable {
+extension UserEntryDTO: Decodable {
+    
     private enum CodingKeys : String, CodingKey {
         case title = "title"
         case author = "author"
@@ -33,32 +34,38 @@ extension EntryDTO: Decodable {
         case content = "content"
         case updated = "updated"
     }
-}
+    
+    private enum AuthorCodingKeys : String, CodingKey {
+        case name
+    }
 
-struct TitleDTO: Decodable {
-    let label: String
-}
+    private enum LabelCodingKeys : String, CodingKey {
+        case label
+    }
 
-struct RatingDTO: Decodable {
-    let label: String
-}
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        let titleContainer = try container.nestedContainer(keyedBy: LabelCodingKeys.self, forKey: .title)
+        title = try titleContainer.decode(String.self, forKey: LabelCodingKeys.label)
+        
+        let authorContainer = try container.nestedContainer(keyedBy: AuthorCodingKeys.self, forKey: .author)
+        let nameContainer = try authorContainer.nestedContainer(keyedBy: LabelCodingKeys.self, forKey: .name)
+        author = try nameContainer.decode(String.self, forKey: LabelCodingKeys.label)
 
-struct VersionDTO: Decodable {
-    let label: String
-}
+        let ratingContainer = try container.nestedContainer(keyedBy: LabelCodingKeys.self, forKey: .rating)
+        rating = try ratingContainer.decode(String.self, forKey: LabelCodingKeys.label)
+        
+        let versionContainer = try container.nestedContainer(keyedBy: LabelCodingKeys.self, forKey: .version)
+        version = try versionContainer.decode(String.self, forKey: LabelCodingKeys.label)
 
-struct AuthorDTO: Decodable {
-    let name: NameDTO
-}
+        let contentContainer = try container.nestedContainer(keyedBy: LabelCodingKeys.self, forKey: .content)
+        content = try contentContainer.decode(String.self, forKey: LabelCodingKeys.label)
 
-struct NameDTO: Decodable {
-    let label: String
-}
-
-struct ContentDTO: Decodable {
-    let label: String
-}
-
-struct DateDTO: Decodable {
-    let label: String
+        let updatedContainer = try container.nestedContainer(keyedBy: LabelCodingKeys.self, forKey: .updated)
+        let dateString = try updatedContainer.decode(String.self, forKey: LabelCodingKeys.label)
+        
+        let dateFormatter = ISO8601DateFormatter()
+        updated = dateFormatter.date(from: dateString) ?? Date()
+    }
 }

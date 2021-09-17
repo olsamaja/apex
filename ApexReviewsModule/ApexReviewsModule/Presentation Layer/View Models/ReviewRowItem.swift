@@ -24,7 +24,7 @@ public struct ReviewRowItem: Identifiable {
         self.rating = review.rating
         self.content = review.content
         self.version = review.version
-        self.updated = review.updated
+        self.updated = review.updated.description
     }
 }
 

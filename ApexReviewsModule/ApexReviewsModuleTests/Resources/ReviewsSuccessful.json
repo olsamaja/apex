@@ -1,0 +1,366 @@
+{
+    "feed": {
+        "author": {
+            "name": {
+                "label": "iTunes Store"
+            },
+            "uri": {
+                "label": "http:\/\/www.apple.com\/uk\/itunes\/"
+            }
+        },
+        "updated": {
+            "label": "2021-09-17T02:34:53-07:00"
+        },
+        "rights": {
+            "label": "Copyright 2008 Apple Inc."
+        },
+        "id": {
+            "label": "https:\/\/mzstoreservices-int-st.itunes.apple.com\/gb\/rss\/customerreviews\/id=436115342\/mostrecent\/json"
+        },
+        "title": {
+            "label": "iTunes Store: Customer Reviews"
+        },
+        "entry": [{
+                "author": {
+                    "uri": {
+                        "label": "https:\/\/itunes.apple.com\/gb\/reviews\/id309909880"
+                    },
+                    "name": {
+                        "label": "Katiebugk8"
+                    },
+                    "label": ""
+                },
+                "updated": {
+                    "label": "2021-09-09T13:47:01-07:00"
+                },
+                "content": {
+                    "label": "Have received cash back from Quidco but annoyingly not all cash back tracks, regardless of using a pc instead of the app",
+                    "attributes": {
+                        "type": "text"
+                    }
+                },
+                "id": {
+                    "label": "7788861997"
+                },
+                "im:contentType": {
+                    "attributes": {
+                        "label": "Application",
+                        "term": "Application"
+                    }
+                },
+                "title": {
+                    "label": "Good, but not all cash back tracks!!"
+                },
+                "im:voteCount": {
+                    "label": "0"
+                },
+                "link": {
+                    "attributes": {
+                        "rel": "related",
+                        "href": "https:\/\/itunes.apple.com\/gb\/review?id=436115342&type=Purple%20Software"
+                    }
+                },
+                "im:version": {
+                    "label": "6.4.1"
+                },
+                "im:rating": {
+                    "label": "4"
+                },
+                "im:voteSum": {
+                    "label": "0"
+                }
+            },
+            {
+                "author": {
+                    "uri": {
+                        "label": "https:\/\/itunes.apple.com\/gb\/reviews\/id268798801"
+                    },
+                    "name": {
+                        "label": "burniede"
+                    },
+                    "label": ""
+                },
+                "updated": {
+                    "label": "2021-09-03T02:30:41-07:00"
+                },
+                "content": {
+                    "label": "The best guaranteed cash back site is Quidco , never let me down unlike other cash back sites that don’t payout",
+                    "attributes": {
+                        "type": "text"
+                    }
+                },
+                "id": {
+                    "label": "7765512695"
+                },
+                "im:contentType": {
+                    "attributes": {
+                        "label": "Application",
+                        "term": "Application"
+                    }
+                },
+                "title": {
+                    "label": "Quidco"
+                },
+                "im:voteCount": {
+                    "label": "0"
+                },
+                "link": {
+                    "attributes": {
+                        "rel": "related",
+                        "href": "https:\/\/itunes.apple.com\/gb\/review?id=436115342&type=Purple%20Software"
+                    }
+                },
+                "im:version": {
+                    "label": "6.4.1"
+                },
+                "im:rating": {
+                    "label": "5"
+                },
+                "im:voteSum": {
+                    "label": "0"
+                }
+            },
+            {
+                "author": {
+                    "uri": {
+                        "label": "https:\/\/itunes.apple.com\/gb\/reviews\/id19449128"
+                    },
+                    "name": {
+                        "label": "Menotyousothere"
+                    },
+                    "label": ""
+                },
+                "updated": {
+                    "label": "2021-08-31T03:00:20-07:00"
+                },
+                "content": {
+                    "label": "What is the point of this app when you have to go via the website to actually make a purchase….which is the whole point of Quidco….",
+                    "attributes": {
+                        "type": "text"
+                    }
+                },
+                "id": {
+                    "label": "7754668636"
+                },
+                "im:contentType": {
+                    "attributes": {
+                        "label": "Application",
+                        "term": "Application"
+                    }
+                },
+                "title": {
+                    "label": "Pointless app"
+                },
+                "im:voteCount": {
+                    "label": "0"
+                },
+                "link": {
+                    "attributes": {
+                        "rel": "related",
+                        "href": "https:\/\/itunes.apple.com\/gb\/review?id=436115342&type=Purple%20Software"
+                    }
+                },
+                "im:version": {
+                    "label": "6.4.1"
+                },
+                "im:rating": {
+                    "label": "1"
+                },
+                "im:voteSum": {
+                    "label": "0"
+                }
+            },
+            {
+                "author": {
+                    "uri": {
+                        "label": "https:\/\/itunes.apple.com\/gb\/reviews\/id40630655"
+                    },
+                    "name": {
+                        "label": "Wilchad9"
+                    },
+                    "label": ""
+                },
+                "updated": {
+                    "label": "2021-08-29T08:21:13-07:00"
+                },
+                "content": {
+                    "label": "This app is great and lots of choice and ways to earn cash back but it’s taking so long to get anything and I’ve had it for months. One is due to be paid out on the 01\/08 and I’m still waiting nearly a month later. I understand the returns policies however most of these seem to have gone beyond that and I’m still waiting!!!",
+                    "attributes": {
+                        "type": "text"
+                    }
+                },
+                "id": {
+                    "label": "7748359871"
+                },
+                "im:contentType": {
+                    "attributes": {
+                        "label": "Application",
+                        "term": "Application"
+                    }
+                },
+                "title": {
+                    "label": "Be good if I could actually see the money"
+                },
+                "im:voteCount": {
+                    "label": "0"
+                },
+                "link": {
+                    "attributes": {
+                        "rel": "related",
+                        "href": "https:\/\/itunes.apple.com\/gb\/review?id=436115342&type=Purple%20Software"
+                    }
+                },
+                "im:version": {
+                    "label": "6.4.1"
+                },
+                "im:rating": {
+                    "label": "3"
+                },
+                "im:voteSum": {
+                    "label": "0"
+                }
+            },
+            {
+                "author": {
+                    "uri": {
+                        "label": "https:\/\/itunes.apple.com\/gb\/reviews\/id471632334"
+                    },
+                    "name": {
+                        "label": "RigersT"
+                    },
+                    "label": ""
+                },
+                "updated": {
+                    "label": "2021-07-11T02:13:15-07:00"
+                },
+                "content": {
+                    "label": "Well known company who I have used for years and claimed loads of cash back. Thank you Quidco",
+                    "attributes": {
+                        "type": "text"
+                    }
+                },
+                "id": {
+                    "label": "7563669662"
+                },
+                "im:contentType": {
+                    "attributes": {
+                        "label": "Application",
+                        "term": "Application"
+                    }
+                },
+                "title": {
+                    "label": "Fantastic"
+                },
+                "im:voteCount": {
+                    "label": "0"
+                },
+                "link": {
+                    "attributes": {
+                        "rel": "related",
+                        "href": "https:\/\/itunes.apple.com\/gb\/review?id=436115342&type=Purple%20Software"
+                    }
+                },
+                "im:version": {
+                    "label": "6.3.0"
+                },
+                "im:rating": {
+                    "label": "5"
+                },
+                "im:voteSum": {
+                    "label": "0"
+                }
+            },
+            {
+                "author": {
+                    "uri": {
+                        "label": "https:\/\/itunes.apple.com\/gb\/reviews\/id114451300"
+                    },
+                    "name": {
+                        "label": "Jcermann"
+                    },
+                    "label": ""
+                },
+                "updated": {
+                    "label": "2021-03-17T11:28:50-07:00"
+                },
+                "content": {
+                    "label": "Made some purchases from various companies payout no issues. Then used their own gas supply switch service and payment delayed by two months, customer service keep saying they are chasing the payment - from their own company? Trust broken.",
+                    "attributes": {
+                        "type": "text"
+                    }
+                },
+                "id": {
+                    "label": "7113977936"
+                },
+                "im:contentType": {
+                    "attributes": {
+                        "label": "Application",
+                        "term": "Application"
+                    }
+                },
+                "title": {
+                    "label": "Two months wait no payment"
+                },
+                "im:voteCount": {
+                    "label": "0"
+                },
+                "link": {
+                    "attributes": {
+                        "rel": "related",
+                        "href": "https:\/\/itunes.apple.com\/gb\/review?id=436115342&type=Purple%20Software"
+                    }
+                },
+                "im:version": {
+                    "label": "6.0.1"
+                },
+                "im:rating": {
+                    "label": "1"
+                },
+                "im:voteSum": {
+                    "label": "0"
+                }
+            }
+        ],
+        "link": [{
+                "attributes": {
+                    "rel": "alternate",
+                    "type": "text\/html",
+                    "href": "https:\/\/music.apple.com\/WebObjects\/MZStore.woa\/wa\/viewGrouping?cc=gb&id=130"
+                }
+            },
+            {
+                "attributes": {
+                    "rel": "self",
+                    "href": "https:\/\/mzstoreservices-int-st.itunes.apple.com\/gb\/rss\/customerreviews\/id=436115342\/mostrecent\/json"
+                }
+            },
+            {
+                "attributes": {
+                    "rel": "first",
+                    "href": "https:\/\/itunes.apple.com\/gb\/rss\/customerreviews\/page=1\/id=436115342\/sortby=mostrecent\/xml?urlDesc=\/customerreviews\/id=436115342\/mostrecent\/json"
+                }
+            },
+            {
+                "attributes": {
+                    "rel": "last",
+                    "href": "https:\/\/itunes.apple.com\/gb\/rss\/customerreviews\/page=10\/id=436115342\/sortby=mostrecent\/xml?urlDesc=\/customerreviews\/id=436115342\/mostrecent\/json"
+                }
+            },
+            {
+                "attributes": {
+                    "rel": "previous",
+                    "href": "https:\/\/itunes.apple.com\/gb\/rss\/customerreviews\/page=1\/id=436115342\/sortby=mostrecent\/xml?urlDesc=\/customerreviews\/id=436115342\/mostrecent\/json"
+                }
+            },
+            {
+                "attributes": {
+                    "rel": "next",
+                    "href": "https:\/\/itunes.apple.com\/gb\/rss\/customerreviews\/page=2\/id=436115342\/sortby=mostrecent\/xml?urlDesc=\/customerreviews\/id=436115342\/mostrecent\/json"
+                }
+            }
+        ],
+        "icon": {
+            "label": "http:\/\/itunes.apple.com\/favicon.ico"
+        }
+    }
+}
