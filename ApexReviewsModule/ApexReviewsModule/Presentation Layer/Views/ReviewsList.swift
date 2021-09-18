@@ -58,13 +58,13 @@ struct ReviewsList_Previews: PreviewProvider {
                                                  rating: "4",
                                                  content: "This is an awesome app, but I am really hesitating to give it 5 stars.",
                                                  version: "1.2.3",
-                                                 updated: "Updated")),
+                                                 updated: Date())),
                     ReviewRowItem(review: Review(title: "Fantastic",
                                                  author: "Another author",
                                                  rating: "5",
                                                  content: "Super useful",
                                                  version: "3.2.1",
-                                                 updated: "Updated"))
+                                                 updated: Date()))
                 ])
                 .build()
             ReviewsListBuilder()

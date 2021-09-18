@@ -77,7 +77,7 @@ struct ReviewRow_Previews: PreviewProvider {
             content:
                 "Some pretty good things about this awesome app. I really love this service. Hope you are going to keep up with the good stuff.",
             version: "1.2.3",
-            updated: "2021-06-29T09:16:12-07:00")
+            updated: Date())
     }
     
     static var previews: some View {

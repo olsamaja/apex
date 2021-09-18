@@ -25,6 +25,6 @@ struct EntryDTOMapper {
                rating: dto.rating,
                content: dto.content,
                version: dto.version,
-               updated: dto.updated.toString())
+               updated: dto.updated)
     }
 }

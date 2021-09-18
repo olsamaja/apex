@@ -13,5 +13,5 @@ public struct Review {
     let rating: String
     let content: String
     let version: String
-    let updated: String
+    let updated: Date
 }

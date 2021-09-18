@@ -16,15 +16,15 @@ public struct ReviewRowItem: Identifiable {
     let content: String
     let version: String
     let updated: String
-
+    
     init(review: Review) {
         self.id = UUID().uuidString
         self.title = review.title
         self.author = review.author
         self.rating = review.rating
         self.content = review.content
-        self.version = review.version
-        self.updated = review.updated.description
+        self.version = "v" + review.version
+        self.updated = review.updated.toString()
     }
 }
 
