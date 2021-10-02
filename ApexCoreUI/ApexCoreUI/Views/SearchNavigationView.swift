@@ -8,6 +8,13 @@
 import SwiftUI
 import ApexCore
 
+//extension Coordinator: NSObject, UISearchBarDelegate {
+//    
+//    @objc func addTapped(_ sender : UIButton) {
+//        print("Button tapped")
+//    }
+//}
+
 public struct SearchNavigationView: UIViewControllerRepresentable {
     
     public func makeCoordinator() -> Coordinator {
@@ -54,6 +61,10 @@ public struct SearchNavigationView: UIViewControllerRepresentable {
         controller.navigationBar.topItem?.hidesSearchBarWhenScrolling = false
         controller.navigationBar.topItem?.searchController = searchController
         
+        let addButton = UIBarButtonItem(title: "Add", style: .plain, target: context.coordinator, action: nil)
+//        let addButton = UIBarButtonItem(title: "Add", style: .plain, target: context.coordinator, action: #selector(context.coordinator.addTapped(_:)))
+        childView.navigationItem.rightBarButtonItem = addButton
+
         return controller
     }
     

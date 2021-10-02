@@ -25,6 +25,21 @@ public struct SearchView: View {
                 viewModel.search(with: searchTerm)
             }
             .build()
+//            .navigationBarItems(leading:
+//                                    HStack {
+//                                        Button(action: {
+//                                            print("SF Symbol button pressed...")
+//                                        }) {
+//                                            Image(systemName: "calendar.circle")
+//                                                .imageScale(.large)
+//                                        }
+//                                        Button(action: {
+//                                            print("Edit button pressed...")
+//                                        }) {
+//                                            Text("Edit")
+//                                        }
+//                                    }
+//            )
             .ignoresSafeArea()
     }
     
