@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import Resolver
 import ApexCore
+import Resolver
 
 public extension Resolver {
     
