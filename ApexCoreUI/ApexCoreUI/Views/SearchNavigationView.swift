@@ -8,42 +8,37 @@
 import SwiftUI
 import ApexCore
 
-//extension Coordinator: NSObject, UISearchBarDelegate {
-//    
-//    @objc func addTapped(_ sender : UIButton) {
-//        print("Button tapped")
-//    }
-//}
-
 public struct SearchNavigationView: UIViewControllerRepresentable {
-    
-    public func makeCoordinator() -> Coordinator {
-        return SearchNavigationView.Coordinator(parent: self)
-    }
-    
+
     var view: AnyView
     let useLargeTitle: Bool
     let title: String?
     let placeholder: String?
     
-    // onSearch and onCancel closures
     var onSearch: ((String) -> ())?
     var onCancel: (() -> ())?
     
+    let barButtonItemTitle: String?
+    var onBarButtonItem: (() -> ())?
+
     public init(view: AnyView,
          useLargeTitle: Bool,
          title: String?,
          placeholder: String?,
          onSearch: ((String) -> ())?,
-         onCancel: (() -> ())?) {
+         onCancel: (() -> ())?,
+         barButtonItemTitle: String? = nil,
+         onBarButtonItem: (() -> ())? = nil) {
         self.view = view
         self.title = title
         self.placeholder = placeholder
         self.useLargeTitle = useLargeTitle
         self.onSearch = onSearch
         self.onCancel = onCancel
+        self.barButtonItemTitle = barButtonItemTitle
+        self.onBarButtonItem = onBarButtonItem
     }
-    
+
     // Integrating UIKot navigation controllerwith SwiftUI View...
     public func makeUIViewController(context: Context) -> UINavigationController {
         
@@ -61,9 +56,10 @@ public struct SearchNavigationView: UIViewControllerRepresentable {
         controller.navigationBar.topItem?.hidesSearchBarWhenScrolling = false
         controller.navigationBar.topItem?.searchController = searchController
         
-        let addButton = UIBarButtonItem(title: "Add", style: .plain, target: context.coordinator, action: nil)
-//        let addButton = UIBarButtonItem(title: "Add", style: .plain, target: context.coordinator, action: #selector(context.coordinator.addTapped(_:)))
-        childView.navigationItem.rightBarButtonItem = addButton
+        if let barButtonItemTitle = barButtonItemTitle {
+            let button = UIBarButtonItem(title: barButtonItemTitle, style: .plain, target: context.coordinator, action: #selector(context.coordinator.onBarButtonItemTapped(_:)))
+            childView.navigationItem.rightBarButtonItem = button
+        }
 
         return controller
     }
@@ -72,6 +68,10 @@ public struct SearchNavigationView: UIViewControllerRepresentable {
         uiViewController.navigationBar.topItem?.title = title
         uiViewController.navigationBar.prefersLargeTitles = useLargeTitle
         uiViewController.navigationBar.topItem?.searchController?.searchBar.placeholder = placeholder
+    }
+    
+    public func makeCoordinator() -> Coordinator {
+        return SearchNavigationView.Coordinator(parent: self)
     }
     
     public class Coordinator: NSObject, UISearchBarDelegate {
@@ -91,6 +91,11 @@ public struct SearchNavigationView: UIViewControllerRepresentable {
             guard let onCancel = parent.onCancel else { return }
             onCancel()
         }
+        
+        @objc func onBarButtonItemTapped(_ sender : UIButton) {
+            guard let onBarButtonItem = parent.onBarButtonItem else { return }
+            onBarButtonItem()
+        }
     }
 }
 
@@ -102,7 +107,9 @@ public class SearchNavigationViewBuilder: BuilderProtocol {
     private var placeholder: String?
     private var onSearch: ((String) -> ())?
     private var onCancel: (() -> ())?
-    
+    private var barButtonItemTitle: String?
+    private var onBarButtonItem: (() -> ())?
+
     public init() {}
     
     public func withContentView(_ view: AnyView) -> SearchNavigationViewBuilder {
@@ -135,6 +142,16 @@ public class SearchNavigationViewBuilder: BuilderProtocol {
         return self
     }
     
+    public func withBarButtonItemTitle(_ title: String) -> SearchNavigationViewBuilder {
+        self.barButtonItemTitle = title
+        return self
+    }
+    
+    public func onBarButtonItem(_ onBarButtonItem: @escaping () -> ()) -> SearchNavigationViewBuilder {
+        self.onBarButtonItem = onBarButtonItem
+        return self
+    }
+
     @ViewBuilder
     public func build() -> some View {
         if let view = contentView {
@@ -144,7 +161,9 @@ public class SearchNavigationViewBuilder: BuilderProtocol {
                 title: title,
                 placeholder: placeholder,
                 onSearch: onSearch,
-                onCancel: onCancel)
+                onCancel: onCancel,
+                barButtonItemTitle: barButtonItemTitle,
+                onBarButtonItem: onBarButtonItem)
         } else {
             MessageViewBuilder()
                 .withSymbol("xmark.octagon.fill")
