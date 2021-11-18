@@ -14,6 +14,9 @@
       location = "group:ApexCountryModule/ApexCountryModule.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:ApexSettingsModule/ApexSettingsModule.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ApexNetwork/ApexNetwork.xcodeproj">
    </FileRef>
    <FileRef

@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D596102727467E9100E256F8 /* ApexSettingsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D596101D27467E9100E256F8 /* ApexSettingsModule.framework */; };
+		D596102C27467E9100E256F8 /* ApexSettingsModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D596102B27467E9100E256F8 /* ApexSettingsModuleTests.swift */; };
+		D596102E27467E9100E256F8 /* ApexSettingsModule.h in Headers */ = {isa = PBXBuildFile; fileRef = D596102027467E9100E256F8 /* ApexSettingsModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D596103A27467EA900E256F8 /* ApexCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D596103827467EA900E256F8 /* ApexCore.framework */; };
+		D596103B27467EA900E256F8 /* ApexCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D596103827467EA900E256F8 /* ApexCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D596103C27467EA900E256F8 /* ApexCoreUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D596103927467EA900E256F8 /* ApexCoreUI.framework */; };
+		D596103D27467EA900E256F8 /* ApexCoreUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D596103927467EA900E256F8 /* ApexCoreUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D596102827467E9100E256F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D596101427467E9100E256F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D596101C27467E9100E256F8;
+			remoteInfo = ApexSettingsModule;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D596103E27467EA900E256F8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D596103B27467EA900E256F8 /* ApexCore.framework in Embed Frameworks */,
+				D596103D27467EA900E256F8 /* ApexCoreUI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D596101D27467E9100E256F8 /* ApexSettingsModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApexSettingsModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D596102027467E9100E256F8 /* ApexSettingsModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApexSettingsModule.h; sourceTree = "<group>"; };
+		D596102127467E9100E256F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D596102627467E9100E256F8 /* ApexSettingsModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApexSettingsModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D596102B27467E9100E256F8 /* ApexSettingsModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexSettingsModuleTests.swift; sourceTree = "<group>"; };
+		D596102D27467E9100E256F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D596103827467EA900E256F8 /* ApexCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D596103927467EA900E256F8 /* ApexCoreUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCoreUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D596101A27467E9100E256F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D596103A27467EA900E256F8 /* ApexCore.framework in Frameworks */,
+				D596103C27467EA900E256F8 /* ApexCoreUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D596102327467E9100E256F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D596102727467E9100E256F8 /* ApexSettingsModule.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D596101327467E9100E256F8 = {
+			isa = PBXGroup;
+			children = (
+				D596101F27467E9100E256F8 /* ApexSettingsModule */,
+				D596102A27467E9100E256F8 /* ApexSettingsModuleTests */,
+				D596101E27467E9100E256F8 /* Products */,
+				D596103727467EA900E256F8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D596101E27467E9100E256F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D596101D27467E9100E256F8 /* ApexSettingsModule.framework */,
+				D596102627467E9100E256F8 /* ApexSettingsModuleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D596101F27467E9100E256F8 /* ApexSettingsModule */ = {
+			isa = PBXGroup;
+			children = (
+				D596102027467E9100E256F8 /* ApexSettingsModule.h */,
+				D596102127467E9100E256F8 /* Info.plist */,
+			);
+			path = ApexSettingsModule;
+			sourceTree = "<group>";
+		};
+		D596102A27467E9100E256F8 /* ApexSettingsModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				D596102B27467E9100E256F8 /* ApexSettingsModuleTests.swift */,
+				D596102D27467E9100E256F8 /* Info.plist */,
+			);
+			path = ApexSettingsModuleTests;
+			sourceTree = "<group>";
+		};
+		D596103727467EA900E256F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D596103827467EA900E256F8 /* ApexCore.framework */,
+				D596103927467EA900E256F8 /* ApexCoreUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D596101827467E9100E256F8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D596102E27467E9100E256F8 /* ApexSettingsModule.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D596101C27467E9100E256F8 /* ApexSettingsModule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D596103127467E9100E256F8 /* Build configuration list for PBXNativeTarget "ApexSettingsModule" */;
+			buildPhases = (
+				D596101827467E9100E256F8 /* Headers */,
+				D596101927467E9100E256F8 /* Sources */,
+				D596101A27467E9100E256F8 /* Frameworks */,
+				D596101B27467E9100E256F8 /* Resources */,
+				D596103E27467EA900E256F8 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ApexSettingsModule;
+			productName = ApexSettingsModule;
+			productReference = D596101D27467E9100E256F8 /* ApexSettingsModule.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D596102527467E9100E256F8 /* ApexSettingsModuleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D596103427467E9100E256F8 /* Build configuration list for PBXNativeTarget "ApexSettingsModuleTests" */;
+			buildPhases = (
+				D596102227467E9100E256F8 /* Sources */,
+				D596102327467E9100E256F8 /* Frameworks */,
+				D596102427467E9100E256F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D596102927467E9100E256F8 /* PBXTargetDependency */,
+			);
+			name = ApexSettingsModuleTests;
+			productName = ApexSettingsModuleTests;
+			productReference = D596102627467E9100E256F8 /* ApexSettingsModuleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D596101427467E9100E256F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					D596101C27467E9100E256F8 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					D596102527467E9100E256F8 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = D596101727467E9100E256F8 /* Build configuration list for PBXProject "ApexSettingsModule" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D596101327467E9100E256F8;
+			productRefGroup = D596101E27467E9100E256F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D596101C27467E9100E256F8 /* ApexSettingsModule */,
+				D596102527467E9100E256F8 /* ApexSettingsModuleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D596101B27467E9100E256F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D596102427467E9100E256F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D596101927467E9100E256F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D596102227467E9100E256F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D596102C27467E9100E256F8 /* ApexSettingsModuleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D596102927467E9100E256F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D596101C27467E9100E256F8 /* ApexSettingsModule */;
+			targetProxy = D596102827467E9100E256F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D596102F27467E9100E256F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D596103027467E9100E256F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D596103227467E9100E256F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 88T9QDTVD4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ApexSettingsModule/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.olsamaja.ApexSettingsModule;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D596103327467E9100E256F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 88T9QDTVD4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ApexSettingsModule/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.olsamaja.ApexSettingsModule;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D596103527467E9100E256F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 88T9QDTVD4;
+				INFOPLIST_FILE = ApexSettingsModuleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.olsamaja.ApexSettingsModuleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D596103627467E9100E256F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 88T9QDTVD4;
+				INFOPLIST_FILE = ApexSettingsModuleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.olsamaja.ApexSettingsModuleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D596101727467E9100E256F8 /* Build configuration list for PBXProject "ApexSettingsModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D596102F27467E9100E256F8 /* Debug */,
+				D596103027467E9100E256F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D596103127467E9100E256F8 /* Build configuration list for PBXNativeTarget "ApexSettingsModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D596103227467E9100E256F8 /* Debug */,
+				D596103327467E9100E256F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D596103427467E9100E256F8 /* Build configuration list for PBXNativeTarget "ApexSettingsModuleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D596103527467E9100E256F8 /* Debug */,
+				D596103627467E9100E256F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D596101427467E9100E256F8 /* Project object */;
+}
