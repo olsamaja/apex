@@ -141,7 +141,7 @@
 				7D9CD6E8269883F1000450E0 /* ApexSearchModule.h */,
 				7D9CD6E9269883F1000450E0 /* Info.plist */,
 				7D9CD75F2698887A000450E0 /* Configuration */,
-				7DA999BD269CE44C008DDBA9 /* Presemtation Layer */,
+				7DA999BD269CE44C008DDBA9 /* Presentation Layer */,
 				7DA999BB269CE431008DDBA9 /* Domain Layer */,
 				7DA999BC269CE440008DDBA9 /* Data Services Layer */,
 			);
@@ -197,13 +197,13 @@
 			path = "Data Services Layer";
 			sourceTree = "<group>";
 		};
-		7DA999BD269CE44C008DDBA9 /* Presemtation Layer */ = {
+		7DA999BD269CE44C008DDBA9 /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
 				7DA999C2269CE8DB008DDBA9 /* Views */,
 				7DA999C3269CE8E2008DDBA9 /* View Models */,
 			);
-			path = "Presemtation Layer";
+			path = "Presentation Layer";
 			sourceTree = "<group>";
 		};
 		7DA999C2269CE8DB008DDBA9 /* Views */ = {

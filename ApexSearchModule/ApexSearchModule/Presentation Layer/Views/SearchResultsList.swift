@@ -52,9 +52,3 @@ public class SearchResultsListBuilder: BuilderProtocol {
         }
     }
 }
-
-//struct SearchResultsList_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchResultsList()
-//    }
-//}
