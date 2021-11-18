@@ -14,6 +14,9 @@
 		D596103B27467EA900E256F8 /* ApexCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D596103827467EA900E256F8 /* ApexCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D596103C27467EA900E256F8 /* ApexCoreUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D596103927467EA900E256F8 /* ApexCoreUI.framework */; };
 		D596103D27467EA900E256F8 /* ApexCoreUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D596103927467EA900E256F8 /* ApexCoreUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5961040274686E400E256F8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D596103F274686E400E256F8 /* SettingsView.swift */; };
+		D59610442746895E00E256F8 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59610432746895E00E256F8 /* SettingsViewModel.swift */; };
+		D596104A2746B27900E256F8 /* SettingsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59610492746B27900E256F8 /* SettingsConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		D596102D27467E9100E256F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D596103827467EA900E256F8 /* ApexCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D596103927467EA900E256F8 /* ApexCoreUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCoreUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D596103F274686E400E256F8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D59610432746895E00E256F8 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		D59610492746B27900E256F8 /* SettingsConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,8 @@
 			children = (
 				D596102027467E9100E256F8 /* ApexSettingsModule.h */,
 				D596102127467E9100E256F8 /* Info.plist */,
+				D596104B2746B27E00E256F8 /* Configuration */,
+				D59610422746893300E256F8 /* Presentation Layer */,
 			);
 			path = ApexSettingsModule;
 			sourceTree = "<group>";
@@ -117,6 +125,39 @@
 				D596103927467EA900E256F8 /* ApexCoreUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D59610412746892800E256F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D596103F274686E400E256F8 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D59610422746893300E256F8 /* Presentation Layer */ = {
+			isa = PBXGroup;
+			children = (
+				D59610412746892800E256F8 /* Views */,
+				D59610452746896600E256F8 /* View Models */,
+			);
+			path = "Presentation Layer";
+			sourceTree = "<group>";
+		};
+		D59610452746896600E256F8 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				D59610432746895E00E256F8 /* SettingsViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		D596104B2746B27E00E256F8 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D59610492746B27900E256F8 /* SettingsConfiguration.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +222,7 @@
 				TargetAttributes = {
 					D596101C27467E9100E256F8 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 					D596102527467E9100E256F8 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -228,6 +270,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5961040274686E400E256F8 /* SettingsView.swift in Sources */,
+				D596104A2746B27900E256F8 /* SettingsConfiguration.swift in Sources */,
+				D59610442746895E00E256F8 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -360,7 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -375,6 +420,7 @@
 		D596103227467E9100E256F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 88T9QDTVD4;
@@ -391,6 +437,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.olsamaja.ApexSettingsModule;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -399,6 +446,7 @@
 		D596103327467E9100E256F8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 88T9QDTVD4;
@@ -423,6 +471,7 @@
 		D596103527467E9100E256F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 88T9QDTVD4;
 				INFOPLIST_FILE = ApexSettingsModuleTests/Info.plist;
@@ -441,6 +490,7 @@
 		D596103627467E9100E256F8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 88T9QDTVD4;
 				INFOPLIST_FILE = ApexSettingsModuleTests/Info.plist;

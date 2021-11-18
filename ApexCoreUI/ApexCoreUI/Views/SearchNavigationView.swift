@@ -19,6 +19,7 @@ public struct SearchNavigationView: UIViewControllerRepresentable {
     var onCancel: (() -> ())?
     
     let barButtonItemTitle: String?
+    let barButtonItemImage: String?
     var onBarButtonItem: (() -> ())?
 
     public init(view: AnyView,
@@ -28,6 +29,7 @@ public struct SearchNavigationView: UIViewControllerRepresentable {
          onSearch: ((String) -> ())?,
          onCancel: (() -> ())?,
          barButtonItemTitle: String? = nil,
+         barButtonItemImage: String? = nil,
          onBarButtonItem: (() -> ())? = nil) {
         self.view = view
         self.title = title
@@ -36,6 +38,7 @@ public struct SearchNavigationView: UIViewControllerRepresentable {
         self.onSearch = onSearch
         self.onCancel = onCancel
         self.barButtonItemTitle = barButtonItemTitle
+        self.barButtonItemImage = barButtonItemImage
         self.onBarButtonItem = onBarButtonItem
     }
 
@@ -56,12 +59,32 @@ public struct SearchNavigationView: UIViewControllerRepresentable {
         controller.navigationBar.topItem?.hidesSearchBarWhenScrolling = false
         controller.navigationBar.topItem?.searchController = searchController
         
-        if let barButtonItemTitle = barButtonItemTitle {
-            let button = UIBarButtonItem(title: barButtonItemTitle, style: .plain, target: context.coordinator, action: #selector(context.coordinator.onBarButtonItemTapped(_:)))
+        let target = context.coordinator
+        let action = #selector(context.coordinator.onBarButtonItemTapped(_:))
+        
+        if let button = barButtonItem(image: barButtonItemImage, title: barButtonItemTitle, target: target, action: action) {
             childView.navigationItem.rightBarButtonItem = button
         }
 
         return controller
+    }
+    
+    private func barButtonItem(image: String?,
+                               title: String?,
+                               target: SearchNavigationView.Coordinator,
+                               action: Selector) -> UIBarButtonItem? {
+        
+        let style = UIBarButtonItem.Style.plain
+        
+        if let image = image {
+            return UIBarButtonItem(image: UIImage(systemName: image), style: style, target: target, action: action)
+        }
+        
+        if let title = title {
+            return UIBarButtonItem(title: title, style: style, target: target, action: action)
+        }
+        
+        return nil
     }
     
     public func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {
@@ -108,6 +131,7 @@ public class SearchNavigationViewBuilder: BuilderProtocol {
     private var onSearch: ((String) -> ())?
     private var onCancel: (() -> ())?
     private var barButtonItemTitle: String?
+    private var barButtonItemImage: String?
     private var onBarButtonItem: (() -> ())?
 
     public init() {}
@@ -147,6 +171,11 @@ public class SearchNavigationViewBuilder: BuilderProtocol {
         return self
     }
     
+    public func withBarButtonItemImage(_ name: String) -> SearchNavigationViewBuilder {
+        self.barButtonItemImage = name
+        return self
+    }
+
     public func onBarButtonItem(_ onBarButtonItem: @escaping () -> ()) -> SearchNavigationViewBuilder {
         self.onBarButtonItem = onBarButtonItem
         return self
@@ -163,6 +192,7 @@ public class SearchNavigationViewBuilder: BuilderProtocol {
                 onSearch: onSearch,
                 onCancel: onCancel,
                 barButtonItemTitle: barButtonItemTitle,
+                barButtonItemImage: barButtonItemImage,
                 onBarButtonItem: onBarButtonItem)
         } else {
             MessageViewBuilder()

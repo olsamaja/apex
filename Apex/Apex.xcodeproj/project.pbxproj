@@ -24,6 +24,8 @@
 		7D9CD7EC269A1626000450E0 /* ApexCoreUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD7EB269A1626000450E0 /* ApexCoreUI.framework */; };
 		7D9CD7ED269A1626000450E0 /* ApexCoreUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD7EB269A1626000450E0 /* ApexCoreUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DA999A9269A4C1C008DDBA9 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999A8269A4C1C008DDBA9 /* AppConfiguration.swift */; };
+		D596104D2746B2C900E256F8 /* ApexSettingsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D596104C2746B2C900E256F8 /* ApexSettingsModule.framework */; };
+		D596104E2746B2C900E256F8 /* ApexSettingsModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D596104C2746B2C900E256F8 /* ApexSettingsModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,7 @@
 				7D9CD7EA269A161E000450E0 /* ApexCore.framework in Embed Frameworks */,
 				7D9CD79226988C47000450E0 /* ApexConfiguration.framework in Embed Frameworks */,
 				7D9CD79926988C50000450E0 /* ApexSearchModule.framework in Embed Frameworks */,
+				D596104E2746B2C900E256F8 /* ApexSettingsModule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,6 +84,7 @@
 		7D9CD7EB269A1626000450E0 /* ApexCoreUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCoreUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA999A8269A4C1C008DDBA9 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		7DA999AC269A4CB3008DDBA9 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		D596104C2746B2C900E256F8 /* ApexSettingsModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexSettingsModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 				7D9CD7E9269A161E000450E0 /* ApexCore.framework in Frameworks */,
 				7D9CD79126988C47000450E0 /* ApexConfiguration.framework in Frameworks */,
 				7D9CD79826988C50000450E0 /* ApexSearchModule.framework in Frameworks */,
+				D596104D2746B2C900E256F8 /* ApexSettingsModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +182,7 @@
 		7D9CD78F26988C47000450E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D596104C2746B2C900E256F8 /* ApexSettingsModule.framework */,
 				7D9CD7EB269A1626000450E0 /* ApexCoreUI.framework */,
 				7D9CD7E8269A161E000450E0 /* ApexCore.framework */,
 				7D9CD79426988C50000450E0 /* ApexReviewsModule.framework */,

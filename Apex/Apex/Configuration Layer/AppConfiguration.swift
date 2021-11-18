@@ -10,6 +10,7 @@ import Resolver
 import ApexConfiguration
 import ApexNetwork
 import ApexSearchModule
+import ApexSettingsModule
 
 extension Resolver: ResolverRegistering {
     
@@ -17,5 +18,6 @@ extension Resolver: ResolverRegistering {
         registerConfigurationServices(with: Bundle.main)
         registerNetworkServices()
         registerSearchService()
+        registerSettingsService()
     }
 }

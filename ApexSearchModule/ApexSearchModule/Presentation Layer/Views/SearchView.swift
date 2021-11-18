@@ -9,10 +9,12 @@ import SwiftUI
 import ApexCoreUI
 import ApexCore
 import Resolver
+import ApexSettingsModule
 
 public struct SearchView: View {
     
     @Injected var viewModel: SearchViewModel
+    @State var showSettings = false
     
     public init() {}
     
@@ -24,11 +26,14 @@ public struct SearchView: View {
             .onSearch { (searchTerm) in
                 viewModel.search(with: searchTerm)
             }
-            .withBarButtonItemTitle("Store")
+            .withBarButtonItemImage("gear")
             .onBarButtonItem {
-                print("TAP TAP TAP")
+                self.showSettings = true
             }
             .build()
+            .sheet(isPresented: $showSettings, content: {
+                SettingsView()
+            })
             .ignoresSafeArea()
     }
     
