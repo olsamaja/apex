@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import ApexCountryModule
+import ApexStoreModule
 
 public struct SettingsView: View {
     
@@ -23,10 +23,10 @@ public struct SettingsView: View {
                 Section(header: Text("Store")) {
                     NavigationLink(
                         destination:
-                            CountriesView()
+                            StoresView()
                                 .navigationTitle("Select a Store"),
                         label: {
-                            CurrentCountryView()
+                            CurrentStoreView()
                         }
                     )
                 }

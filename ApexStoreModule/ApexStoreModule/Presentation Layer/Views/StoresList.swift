@@ -1,6 +1,6 @@
 //
 //  CountriesList.swift
-//  ApexCountryModule
+//  ApexStoreModule
 //
 //  Created by Olivier Rigault on 17/11/2021.
 //
@@ -9,14 +9,14 @@ import SwiftUI
 import ApexCore
 import ApexCoreUI
 
-struct CountriesList: View {
+struct StoresList: View {
 
-    var items: [CountryRowItem]
+    var items: [StoreRowItem]
 
     var body: some View {
         List {
             ForEach(items) { item in
-                CountryRow(item: item)
+                StoreRow(item: item)
             }
         }
     }
@@ -24,9 +24,9 @@ struct CountriesList: View {
 
 public class CountriesListBuilder: BuilderProtocol {
     
-    var items: [CountryRowItem]?
+    var items: [StoreRowItem]?
 
-    public func withItems(_ items: [CountryRowItem]) -> CountriesListBuilder {
+    public func withItems(_ items: [StoreRowItem]) -> CountriesListBuilder {
         self.items = items
         return self
     }
@@ -34,7 +34,7 @@ public class CountriesListBuilder: BuilderProtocol {
     @ViewBuilder
     public func build() -> some View {
         if let items = items {
-            CountriesList(items: items)
+            StoresList(items: items)
         } else {
             EmptyView()
         }
@@ -44,17 +44,17 @@ public class CountriesListBuilder: BuilderProtocol {
 struct CountriesList_Previews: PreviewProvider {
     
     enum Constants {
-        static let country1 = Country(code: "GB", name: "United Kingdom")
-        static let country2 = Country(code: "FR", name: "France")
-        static let country3 = Country(code: "DE", name: "Germany")
+        static let store1 = Store(code: "GB", name: "United Kingdom")
+        static let store2 = Store(code: "FR", name: "France")
+        static let store3 = Store(code: "DE", name: "Germany")
         static let items = [
-            CountryRowItem(country: country1),
-            CountryRowItem(country: country2),
-            CountryRowItem(country: country3)
+            StoreRowItem(store: store1),
+            StoreRowItem(store: store2),
+            StoreRowItem(store: store3)
         ]
     }
     
     static var previews: some View {
-        CountriesList(items: Constants.items)
+        StoresList(items: Constants.items)
     }
 }

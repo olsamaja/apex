@@ -17,8 +17,8 @@
 		D5961040274686E400E256F8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D596103F274686E400E256F8 /* SettingsView.swift */; };
 		D59610442746895E00E256F8 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59610432746895E00E256F8 /* SettingsViewModel.swift */; };
 		D596104A2746B27900E256F8 /* SettingsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59610492746B27900E256F8 /* SettingsConfiguration.swift */; };
-		D59610502746EBE000E256F8 /* ApexCountryModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D596104F2746EBE000E256F8 /* ApexCountryModule.framework */; };
-		D59610512746EBE000E256F8 /* ApexCountryModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D596104F2746EBE000E256F8 /* ApexCountryModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D59610792746F58600E256F8 /* ApexStoreModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59610782746F58600E256F8 /* ApexStoreModule.framework */; };
+		D596107A2746F58600E256F8 /* ApexStoreModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D59610782746F58600E256F8 /* ApexStoreModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,7 @@
 			files = (
 				D596103B27467EA900E256F8 /* ApexCore.framework in Embed Frameworks */,
 				D596103D27467EA900E256F8 /* ApexCoreUI.framework in Embed Frameworks */,
-				D59610512746EBE000E256F8 /* ApexCountryModule.framework in Embed Frameworks */,
+				D596107A2746F58600E256F8 /* ApexStoreModule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +60,7 @@
 		D59610432746895E00E256F8 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		D59610492746B27900E256F8 /* SettingsConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConfiguration.swift; sourceTree = "<group>"; };
 		D596104F2746EBE000E256F8 /* ApexCountryModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCountryModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D59610782746F58600E256F8 /* ApexStoreModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexStoreModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +70,7 @@
 			files = (
 				D596103A27467EA900E256F8 /* ApexCore.framework in Frameworks */,
 				D596103C27467EA900E256F8 /* ApexCoreUI.framework in Frameworks */,
-				D59610502746EBE000E256F8 /* ApexCountryModule.framework in Frameworks */,
+				D59610792746F58600E256F8 /* ApexStoreModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +127,7 @@
 		D596103727467EA900E256F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D59610782746F58600E256F8 /* ApexStoreModule.framework */,
 				D596104F2746EBE000E256F8 /* ApexCountryModule.framework */,
 				D596103827467EA900E256F8 /* ApexCore.framework */,
 				D596103927467EA900E256F8 /* ApexCoreUI.framework */,

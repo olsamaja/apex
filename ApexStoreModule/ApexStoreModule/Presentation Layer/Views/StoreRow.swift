@@ -1,6 +1,6 @@
 //
-//  CountryRow.swift
-//  ApexCountryModule
+//  StoreRow.swift
+//  ApexStoreModule
 //
 //  Created by Olivier Rigault on 17/11/2021.
 //
@@ -9,21 +9,21 @@ import SwiftUI
 import ApexCore
 import ApexCoreUI
 
-struct CountryRow: View {
+struct StoreRow: View {
     
-    var item: CountryRowItem
+    var item: StoreRowItem
     
     var body: some View {
         HStack {
-            Text(item.country.name)
+            Text(item.store.name)
             Spacer()
         }
     }
 }
 
-struct CountryRow_Previews: PreviewProvider {
+struct StoreRow_Previews: PreviewProvider {
     static var previews: some View {
-        CountryRow(item: CountryRowItem(country: Country(code: "GB", name: "United Kingdom")))
+        StoreRow(item: StoreRowItem(store: Store(code: "GB", name: "United Kingdom")))
             .sizeThatFitPreview(with: "Default")
     }
 }
