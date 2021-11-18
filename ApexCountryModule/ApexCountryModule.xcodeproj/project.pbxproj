@@ -20,6 +20,7 @@
 		D59610092745ADE200E256F8 /* CountryRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59610082745ADE200E256F8 /* CountryRowItem.swift */; };
 		D596100C274656A000E256F8 /* CountryRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D596100B274656A000E256F8 /* CountryRepositoryTests.swift */; };
 		D59610122746693000E256F8 /* CountryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59610112746693000E256F8 /* CountryRepository.swift */; };
+		D59610532746EDA100E256F8 /* CurrentCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59610522746EDA100E256F8 /* CurrentCountryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		D59610082745ADE200E256F8 /* CountryRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRowItem.swift; sourceTree = "<group>"; };
 		D596100B274656A000E256F8 /* CountryRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRepositoryTests.swift; sourceTree = "<group>"; };
 		D59610112746693000E256F8 /* CountryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRepository.swift; sourceTree = "<group>"; };
+		D59610522746EDA100E256F8 /* CurrentCountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCountryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				D5960FF82745AA2100E256F8 /* CountriesView.swift */,
 				D5960FFE2745AAEE00E256F8 /* CountriesList.swift */,
 				D5960FFA2745AA3E00E256F8 /* CountryRow.swift */,
+				D59610522746EDA100E256F8 /* CurrentCountryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D59610092745ADE200E256F8 /* CountryRowItem.swift in Sources */,
+				D59610532746EDA100E256F8 /* CurrentCountryView.swift in Sources */,
 				D5960FFB2745AA3E00E256F8 /* CountryRow.swift in Sources */,
 				D5960FF62745A94700E256F8 /* Country.swift in Sources */,
 				D5960FFF2745AAEE00E256F8 /* CountriesList.swift in Sources */,

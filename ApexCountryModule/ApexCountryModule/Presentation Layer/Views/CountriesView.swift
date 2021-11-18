@@ -9,8 +9,11 @@ import SwiftUI
 import ApexCore
 import ApexCoreUI
 
-struct CountriesView: View {
-    var body: some View {
+public struct CountriesView: View {
+    
+    public init() {}
+    
+    public var body: some View {
         CountriesListBuilder()
             .withItems(CountryRowItem.allCountries())
             .build()

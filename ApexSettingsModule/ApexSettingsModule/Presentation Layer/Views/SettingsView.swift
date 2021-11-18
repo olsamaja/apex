@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ApexCountryModule
 
 public struct SettingsView: View {
     
@@ -20,7 +21,14 @@ public struct SettingsView: View {
         NavigationView {
             Form {
                 Section(header: Text("Store")) {
-                    Text("Select store")
+                    NavigationLink(
+                        destination:
+                            CountriesView()
+                                .navigationTitle("Select a Store"),
+                        label: {
+                            CurrentCountryView()
+                        }
+                    )
                 }
             }
             .navigationBarTitle("Settings")

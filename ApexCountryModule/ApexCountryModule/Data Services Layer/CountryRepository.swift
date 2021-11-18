@@ -9,8 +9,13 @@ import Foundation
 
 struct CountryRepository {
     
+    enum Constants {
+        static let defaultCountry = Country(code: "UK", name: "United Kingdom")
+    }
+    
     static func allCountries() -> [Country] {
         let countries = [
+            Constants.defaultCountry,
             Country(code: "CN", name: "China"),
             Country(code: "DK", name: "Denmark"),
             Country(code: "NL", name: "Netherlands"),
@@ -34,10 +39,30 @@ struct CountryRepository {
             Country(code: "TH", name: "Thailand"),
             Country(code: "TR", name: "Turkey"),
             Country(code: "VN", name: "Vietnam"),
-            Country(code: "UK", name: "United Kingdom"),
             Country(code: "FR", name: "France")
         ]
         
         return countries.sorted { $0.name < $1.name }
+    }
+    
+    static var current: Country {
+        get {
+            guard let code = currentCode,
+                  let country = allCountries().first(where: { $0.code == code }) else {
+                return Constants.defaultCountry
+            }
+            return country
+        }
+    }
+    
+    static var currentCode: String? {
+        get {
+            let defaults = UserDefaults.standard
+            return defaults.string(forKey: "Store")
+        }
+        set(newCode) {
+            let defaults = UserDefaults.standard
+            defaults.setValue(newCode, forKey: "Store")
+        }
     }
 }
