@@ -11,6 +11,7 @@ struct StoreRepository {
     
     enum Constants {
         static let defaultStore = Store(code: "UK", name: "United Kingdom")
+        static let storeDefaultsKey = "Store"
     }
     
     static func allStores() -> [Store] {
@@ -58,11 +59,11 @@ struct StoreRepository {
     static var currentCode: String? {
         get {
             let defaults = UserDefaults.standard
-            return defaults.string(forKey: "Store")
+            return defaults.string(forKey: Constants.storeDefaultsKey)
         }
         set(newCode) {
             let defaults = UserDefaults.standard
-            defaults.setValue(newCode, forKey: "Store")
+            defaults.setValue(newCode, forKey: Constants.storeDefaultsKey)
         }
     }
 }
