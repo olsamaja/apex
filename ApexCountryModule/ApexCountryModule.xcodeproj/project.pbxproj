@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D5960FE52745A91200E256F8 /* ApexCountryModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5960FDB2745A91200E256F8 /* ApexCountryModule.framework */; };
-		D5960FEA2745A91200E256F8 /* ApexCountryModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5960FE92745A91200E256F8 /* ApexCountryModuleTests.swift */; };
 		D5960FEC2745A91200E256F8 /* ApexCountryModule.h in Headers */ = {isa = PBXBuildFile; fileRef = D5960FDE2745A91200E256F8 /* ApexCountryModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5960FF62745A94700E256F8 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5960FF52745A94700E256F8 /* Country.swift */; };
 		D5960FF92745AA2100E256F8 /* CountriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5960FF82745AA2100E256F8 /* CountriesView.swift */; };
@@ -19,6 +18,8 @@
 		D59610052745AB1C00E256F8 /* ApexCoreUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59610022745AB1C00E256F8 /* ApexCoreUI.framework */; };
 		D59610062745AB1C00E256F8 /* ApexCoreUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D59610022745AB1C00E256F8 /* ApexCoreUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D59610092745ADE200E256F8 /* CountryRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59610082745ADE200E256F8 /* CountryRowItem.swift */; };
+		D596100C274656A000E256F8 /* CountryRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D596100B274656A000E256F8 /* CountryRepositoryTests.swift */; };
+		D59610122746693000E256F8 /* CountryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59610112746693000E256F8 /* CountryRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +52,6 @@
 		D5960FDE2745A91200E256F8 /* ApexCountryModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApexCountryModule.h; sourceTree = "<group>"; };
 		D5960FDF2745A91200E256F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5960FE42745A91200E256F8 /* ApexCountryModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApexCountryModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5960FE92745A91200E256F8 /* ApexCountryModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexCountryModuleTests.swift; sourceTree = "<group>"; };
 		D5960FEB2745A91200E256F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5960FF52745A94700E256F8 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		D5960FF82745AA2100E256F8 /* CountriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesView.swift; sourceTree = "<group>"; };
@@ -60,6 +60,8 @@
 		D59610012745AB1C00E256F8 /* ApexCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59610022745AB1C00E256F8 /* ApexCoreUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCoreUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59610082745ADE200E256F8 /* CountryRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRowItem.swift; sourceTree = "<group>"; };
+		D596100B274656A000E256F8 /* CountryRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRepositoryTests.swift; sourceTree = "<group>"; };
+		D59610112746693000E256F8 /* CountryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +118,9 @@
 		D5960FE82745A91200E256F8 /* ApexCountryModuleTests */ = {
 			isa = PBXGroup;
 			children = (
-				D5960FE92745A91200E256F8 /* ApexCountryModuleTests.swift */,
 				D5960FEB2745A91200E256F8 /* Info.plist */,
+				D596100D2746590600E256F8 /* View Models */,
+				D59610102746592500E256F8 /* Data Services Layer */,
 			);
 			path = ApexCountryModuleTests;
 			sourceTree = "<group>";
@@ -126,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				D5960FF52745A94700E256F8 /* Country.swift */,
+				D59610112746693000E256F8 /* CountryRepository.swift */,
 			);
 			path = "Data Services Layer";
 			sourceTree = "<group>";
@@ -164,6 +168,21 @@
 				D59610082745ADE200E256F8 /* CountryRowItem.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		D596100D2746590600E256F8 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		D59610102746592500E256F8 /* Data Services Layer */ = {
+			isa = PBXGroup;
+			children = (
+				D596100B274656A000E256F8 /* CountryRepositoryTests.swift */,
+			);
+			path = "Data Services Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +251,7 @@
 					};
 					D5960FE32745A91200E256F8 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -280,6 +300,7 @@
 				D5960FFB2745AA3E00E256F8 /* CountryRow.swift in Sources */,
 				D5960FF62745A94700E256F8 /* Country.swift in Sources */,
 				D5960FFF2745AAEE00E256F8 /* CountriesList.swift in Sources */,
+				D59610122746693000E256F8 /* CountryRepository.swift in Sources */,
 				D5960FF92745AA2100E256F8 /* CountriesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,7 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5960FEA2745A91200E256F8 /* ApexCountryModuleTests.swift in Sources */,
+				D596100C274656A000E256F8 /* CountryRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +501,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 88T9QDTVD4;
 				INFOPLIST_FILE = ApexCountryModuleTests/Info.plist;
@@ -490,6 +512,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.olsamaja.ApexCountryModuleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -499,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 88T9QDTVD4;
 				INFOPLIST_FILE = ApexCountryModuleTests/Info.plist;

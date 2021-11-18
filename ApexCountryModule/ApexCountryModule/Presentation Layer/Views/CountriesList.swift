@@ -55,6 +55,6 @@ struct CountriesList_Previews: PreviewProvider {
     }
     
     static var previews: some View {
-        CountriesList(items: Constants.items.sortedByCountryName())
+        CountriesList(items: Constants.items)
     }
 }

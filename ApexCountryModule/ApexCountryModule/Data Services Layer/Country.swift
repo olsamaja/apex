@@ -11,3 +11,5 @@ struct Country {
     let code: String
     let name: String
 }
+
+extension Country: Equatable {}
