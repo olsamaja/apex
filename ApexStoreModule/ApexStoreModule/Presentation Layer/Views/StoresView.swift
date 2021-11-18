@@ -11,12 +11,17 @@ import ApexCoreUI
 
 public struct StoresView: View {
     
+    let allItems = StoreRowItem.allStores()
+    @State var selectedItem: StoreRowItem? = nil
+    
     public init() {}
     
     public var body: some View {
-        CountriesListBuilder()
-            .withItems(StoreRowItem.allStores())
-            .build()
+        List {
+            ForEach(allItems) { item in
+                StoreRow(item: item, selectedItem: self.$selectedItem)
+            }
+        }
     }
 }
 

@@ -16,7 +16,6 @@
 		D57C76B12746F5FA0095D667 /* StoreRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76AD2746F5FA0095D667 /* StoreRow.swift */; };
 		D57C76B22746F5FA0095D667 /* StoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76AE2746F5FA0095D667 /* StoresView.swift */; };
 		D57C76B32746F5FA0095D667 /* CurrentStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76AB2746F5FA0095D667 /* CurrentStoreView.swift */; };
-		D57C76B42746F5FA0095D667 /* StoresList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76AC2746F5FA0095D667 /* StoresList.swift */; };
 		D57C76B52746F5FA0095D667 /* StoreRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76B02746F5FA0095D667 /* StoreRowItem.swift */; };
 		D57C76B82746F6140095D667 /* StoreRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76B72746F6140095D667 /* StoreRepositoryTests.swift */; };
 		D59610682746F55200E256F8 /* ApexStoreModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D596105E2746F55200E256F8 /* ApexStoreModule.framework */; };
@@ -54,7 +53,6 @@
 		D57C76A52746F5E10095D667 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		D57C76A62746F5E10095D667 /* StoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRepository.swift; sourceTree = "<group>"; };
 		D57C76AB2746F5FA0095D667 /* CurrentStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStoreView.swift; sourceTree = "<group>"; };
-		D57C76AC2746F5FA0095D667 /* StoresList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresList.swift; sourceTree = "<group>"; };
 		D57C76AD2746F5FA0095D667 /* StoreRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRow.swift; sourceTree = "<group>"; };
 		D57C76AE2746F5FA0095D667 /* StoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresView.swift; sourceTree = "<group>"; };
 		D57C76B02746F5FA0095D667 /* StoreRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRowItem.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				D57C76AE2746F5FA0095D667 /* StoresView.swift */,
-				D57C76AC2746F5FA0095D667 /* StoresList.swift */,
 				D57C76AD2746F5FA0095D667 /* StoreRow.swift */,
 				D57C76AB2746F5FA0095D667 /* CurrentStoreView.swift */,
 			);
@@ -291,7 +288,6 @@
 			files = (
 				D57C76B12746F5FA0095D667 /* StoreRow.swift in Sources */,
 				D57C76B22746F5FA0095D667 /* StoresView.swift in Sources */,
-				D57C76B42746F5FA0095D667 /* StoresList.swift in Sources */,
 				D57C76B52746F5FA0095D667 /* StoreRowItem.swift in Sources */,
 				D57C76A82746F5E10095D667 /* StoreRepository.swift in Sources */,
 				D57C76A72746F5E10095D667 /* Store.swift in Sources */,
