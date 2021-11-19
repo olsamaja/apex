@@ -38,7 +38,7 @@ class StoreRepositoryTests: XCTestCase {
             Store(code: "US", name: "United States"),
             Store(code: "VN", name: "Vietnam")
         ]
-        let allStores = StoreRepository.allStores()
+        let allStores = StoreLocalRepository.allStores()
 
         XCTAssert(allStores == expected, "Expected \(expected), but got \(allStores) instead")
     }

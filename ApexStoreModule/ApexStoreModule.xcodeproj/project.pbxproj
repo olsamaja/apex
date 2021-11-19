@@ -12,7 +12,7 @@
 		D51E2AB62746F6F7000FF75B /* ApexCoreUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51E2AB32746F6F7000FF75B /* ApexCoreUI.framework */; };
 		D51E2AB72746F6F7000FF75B /* ApexCoreUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D51E2AB32746F6F7000FF75B /* ApexCoreUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D57C76A72746F5E10095D667 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76A52746F5E10095D667 /* Store.swift */; };
-		D57C76A82746F5E10095D667 /* StoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76A62746F5E10095D667 /* StoreRepository.swift */; };
+		D57C76A82746F5E10095D667 /* StoreLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76A62746F5E10095D667 /* StoreLocalRepository.swift */; };
 		D57C76B12746F5FA0095D667 /* StoreRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76AD2746F5FA0095D667 /* StoreRow.swift */; };
 		D57C76B22746F5FA0095D667 /* StoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76AE2746F5FA0095D667 /* StoresView.swift */; };
 		D57C76B32746F5FA0095D667 /* CurrentStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76AB2746F5FA0095D667 /* CurrentStoreView.swift */; };
@@ -20,6 +20,9 @@
 		D57C76B82746F6140095D667 /* StoreRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76B72746F6140095D667 /* StoreRepositoryTests.swift */; };
 		D59610682746F55200E256F8 /* ApexStoreModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D596105E2746F55200E256F8 /* ApexStoreModule.framework */; };
 		D596106F2746F55200E256F8 /* ApexStoreModule.h in Headers */ = {isa = PBXBuildFile; fileRef = D59610612746F55200E256F8 /* ApexStoreModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5B9FB4F2747F0B600E6DE6A /* StoreDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9FB4E2747F0B600E6DE6A /* StoreDTO.swift */; };
+		D5B9FB522747F20500E6DE6A /* StoresDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9FB512747F20500E6DE6A /* StoresDTOMapper.swift */; };
+		D5B9FB542747F66900E6DE6A /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9FB532747F66900E6DE6A /* StoreManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +54,7 @@
 		D51E2AB22746F6F7000FF75B /* ApexCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D51E2AB32746F6F7000FF75B /* ApexCoreUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCoreUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D57C76A52746F5E10095D667 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		D57C76A62746F5E10095D667 /* StoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRepository.swift; sourceTree = "<group>"; };
+		D57C76A62746F5E10095D667 /* StoreLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreLocalRepository.swift; sourceTree = "<group>"; };
 		D57C76AB2746F5FA0095D667 /* CurrentStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStoreView.swift; sourceTree = "<group>"; };
 		D57C76AD2746F5FA0095D667 /* StoreRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRow.swift; sourceTree = "<group>"; };
 		D57C76AE2746F5FA0095D667 /* StoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresView.swift; sourceTree = "<group>"; };
@@ -62,6 +65,9 @@
 		D59610622746F55200E256F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D59610672746F55200E256F8 /* ApexStoreModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApexStoreModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D596106E2746F55200E256F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5B9FB4E2747F0B600E6DE6A /* StoreDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDTO.swift; sourceTree = "<group>"; };
+		D5B9FB512747F20500E6DE6A /* StoresDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresDTOMapper.swift; sourceTree = "<group>"; };
+		D5B9FB532747F66900E6DE6A /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +103,9 @@
 		D57C76A42746F5E10095D667 /* Data Services Layer */ = {
 			isa = PBXGroup;
 			children = (
-				D57C76A52746F5E10095D667 /* Store.swift */,
-				D57C76A62746F5E10095D667 /* StoreRepository.swift */,
+				D5B9FB532747F66900E6DE6A /* StoreManager.swift */,
+				D57C76A62746F5E10095D667 /* StoreLocalRepository.swift */,
+				D5B9FB4E2747F0B600E6DE6A /* StoreDTO.swift */,
 			);
 			path = "Data Services Layer";
 			sourceTree = "<group>";
@@ -108,6 +115,7 @@
 			children = (
 				D57C76AA2746F5FA0095D667 /* Views */,
 				D57C76AF2746F5FA0095D667 /* View Models */,
+				D5B9FB502747F17400E6DE6A /* Domain Layer */,
 			);
 			path = "Presentation Layer";
 			sourceTree = "<group>";
@@ -175,6 +183,15 @@
 				D57C76B62746F6140095D667 /* Data Services Layer */,
 			);
 			path = ApexStoreModuleTests;
+			sourceTree = "<group>";
+		};
+		D5B9FB502747F17400E6DE6A /* Domain Layer */ = {
+			isa = PBXGroup;
+			children = (
+				D57C76A52746F5E10095D667 /* Store.swift */,
+				D5B9FB512747F20500E6DE6A /* StoresDTOMapper.swift */,
+			);
+			path = "Domain Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,8 +305,11 @@
 			files = (
 				D57C76B12746F5FA0095D667 /* StoreRow.swift in Sources */,
 				D57C76B22746F5FA0095D667 /* StoresView.swift in Sources */,
+				D5B9FB4F2747F0B600E6DE6A /* StoreDTO.swift in Sources */,
 				D57C76B52746F5FA0095D667 /* StoreRowItem.swift in Sources */,
-				D57C76A82746F5E10095D667 /* StoreRepository.swift in Sources */,
+				D5B9FB522747F20500E6DE6A /* StoresDTOMapper.swift in Sources */,
+				D57C76A82746F5E10095D667 /* StoreLocalRepository.swift in Sources */,
+				D5B9FB542747F66900E6DE6A /* StoreManager.swift in Sources */,
 				D57C76A72746F5E10095D667 /* Store.swift in Sources */,
 				D57C76B32746F5FA0095D667 /* CurrentStoreView.swift in Sources */,
 			);

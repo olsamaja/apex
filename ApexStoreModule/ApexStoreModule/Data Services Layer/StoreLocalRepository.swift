@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StoreRepository {
+struct StoreLocalRepository {
     
     enum Constants {
         static let defaultStore = Store(code: "UK", name: "United Kingdom")
@@ -46,7 +46,7 @@ struct StoreRepository {
         return stores.sorted { $0.name < $1.name }
     }
     
-    static var current: Store {
+    static var currentStore: Store {
         get {
             guard let code = currentCode,
                   let store = allStores().first(where: { $0.code == code }) else {
@@ -54,6 +54,10 @@ struct StoreRepository {
             }
             return store
         }
+    }
+    
+    static func setCurrentStore(with code: String) {
+        
     }
     
     static var currentCode: String? {

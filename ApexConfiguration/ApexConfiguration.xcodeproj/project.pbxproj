@@ -19,6 +19,8 @@
 		7D9CD7BC26989C6A000450E0 /* ConfigurationDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7BB26989C6A000450E0 /* ConfigurationDTOMapper.swift */; };
 		7D9CD7BE26989FE7000450E0 /* ConfigurationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7BD26989FE7000450E0 /* ConfigurationDataManager.swift */; };
 		7D9CD7C02698A015000450E0 /* ConfigurationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7BF2698A015000450E0 /* ConfigurationServices.swift */; };
+		D5B9FB572747FC8E00E6DE6A /* ApexCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B9FB562747FC8E00E6DE6A /* ApexCore.framework */; };
+		D5B9FB582747FC8E00E6DE6A /* ApexCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5B9FB562747FC8E00E6DE6A /* ApexCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +32,20 @@
 			remoteInfo = ApexConfiguration;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D5B9FB592747FC8F00E6DE6A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D5B9FB582747FC8E00E6DE6A /* ApexCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7D45E48526A0D1FB00D2C796 /* ConfigTests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigTests.xcconfig; sourceTree = "<group>"; };
@@ -48,6 +64,7 @@
 		7D9CD7BB26989C6A000450E0 /* ConfigurationDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationDTOMapper.swift; sourceTree = "<group>"; };
 		7D9CD7BD26989FE7000450E0 /* ConfigurationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationDataManager.swift; sourceTree = "<group>"; };
 		7D9CD7BF2698A015000450E0 /* ConfigurationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationServices.swift; sourceTree = "<group>"; };
+		D5B9FB562747FC8E00E6DE6A /* ApexCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5B9FB572747FC8E00E6DE6A /* ApexCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +93,7 @@
 				7D9CD69F26988288000450E0 /* ApexConfiguration */,
 				7D9CD6AA26988288000450E0 /* ApexConfigurationTests */,
 				7D9CD69E26988288000450E0 /* Products */,
+				D5B9FB552747FC8E00E6DE6A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +166,14 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		D5B9FB552747FC8E00E6DE6A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9FB562747FC8E00E6DE6A /* ApexCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -169,6 +196,7 @@
 				7D9CD69926988288000450E0 /* Sources */,
 				7D9CD69A26988288000450E0 /* Frameworks */,
 				7D9CD69B26988288000450E0 /* Resources */,
+				D5B9FB592747FC8F00E6DE6A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -18,6 +18,6 @@ public struct StoreRowItem: Identifiable {
     }
 
     static func allStores() -> [StoreRowItem] {
-        StoreRepository.allStores().map { StoreRowItem(store: $0) }
+        StoreLocalRepository.allStores().map { StoreRowItem(store: $0) }
     }
 }
