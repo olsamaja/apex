@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct StoreManager {
+public struct StoreManager {
     
     static var allStores: [Store] {
         get { StoreLocalRepository.allStores }
     }
 
-    static var currentStore: Store {
+    public static var currentStore: Store {
         get { StoreLocalRepository.currentStore }
     }
     

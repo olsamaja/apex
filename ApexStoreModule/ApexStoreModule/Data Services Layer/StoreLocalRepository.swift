@@ -10,7 +10,7 @@ import Foundation
 struct StoreLocalRepository {
     
     private enum Constants {
-        static let defaultStore = Store(code: "UK", name: "United Kingdom")
+        static let defaultStore = Store(code: "GB", name: "United Kingdom")
         static let storeCodeDefaultsKey = "StoreCode"
     }
     

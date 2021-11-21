@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Store {
-    let code: String
+public struct Store {
+    public let code: String
     let name: String
 }
 

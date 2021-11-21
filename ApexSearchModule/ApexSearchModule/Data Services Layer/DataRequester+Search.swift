@@ -11,14 +11,15 @@ import ApexCore
 
 extension DataRequester {
     
-    func search(with term: String) -> AnyPublisher<SearchResultsDTO, DataError> {
-        loadData(with: SearchApi(term: term).urlComponents())
+    func search(with term: String, storeCode: String) -> AnyPublisher<SearchResultsDTO, DataError> {
+        loadData(with: SearchApi(term: term, storeCode: storeCode).urlComponents())
     }
 }
 
 struct SearchApi: ApiProtocol {
     
     let term: String
+    let storeCode: String
     
     func path() -> String {
         return "/search"
@@ -27,7 +28,7 @@ struct SearchApi: ApiProtocol {
     func queryItems() -> [URLQueryItem] {
         [
             URLQueryItem(name: "term", value: term),
-            URLQueryItem(name: "country", value: "gb"),
+            URLQueryItem(name: "country", value: storeCode),
             URLQueryItem(name: "media", value: "software")
         ]
     }
