@@ -12,7 +12,7 @@ public class SelectedStore: ObservableObject {
     private var currentStore: Store
     
     public init() {
-        self.currentStore = StoreManager.defaultStore
+        self.currentStore = StoreManager.currentStore
     }
     
     var current: Store {

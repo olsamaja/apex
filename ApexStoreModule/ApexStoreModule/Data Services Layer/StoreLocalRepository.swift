@@ -57,7 +57,7 @@ struct StoreLocalRepository {
     }
     
     static func setCurrentStore(with code: String) {
-        
+        currentCode = code
     }
     
     static var currentCode: String? {
