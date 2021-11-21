@@ -9,17 +9,12 @@ import Foundation
 
 public class SelectedStore: ObservableObject {
     
-    private var currentStore: Store
-    
-    public init() {
-        self.currentStore = StoreManager.currentStore
-    }
+    public init() {}
     
     var current: Store {
-        get { currentStore }
+        get { StoreManager.currentStore }
         set (newValue) {
             objectWillChange.send()
-            currentStore = newValue
             StoreManager.setCurrentStore(newValue)
         }
     }

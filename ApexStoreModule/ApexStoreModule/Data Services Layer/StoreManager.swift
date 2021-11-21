@@ -9,8 +9,8 @@ import Foundation
 
 struct StoreManager {
     
-    func getAllStores() -> [Store] {
-        StoreLocalRepository.allStores()
+    static var allStores: [Store] {
+        get { StoreLocalRepository.allStores }
     }
 
     static var currentStore: Store {

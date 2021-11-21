@@ -12,20 +12,18 @@ import ApexCoreUI
 struct StoreRow: View {
     
     var item: StoreRowItem
-    @Binding var selectedItem: StoreRowItem?
     @EnvironmentObject var selectedStore: SelectedStore
 
     var body: some View {
         HStack {
             Text(item.store.name)
             Spacer()
-            if item.store == selectedItem?.store {
+            if item.store == selectedStore.current {
                 Image(systemName: "checkmark")
                     .foregroundColor(.accentColor)
             }
         }
         .onTapGesture {
-            self.selectedItem = self.item
             self.selectedStore.current = self.item.store
         }
     }

@@ -12,7 +12,6 @@ import ApexCoreUI
 public struct StoresView: View {
     
     let allItems = StoreRowItem.allStores()
-    @State var selectedItem: StoreRowItem? = nil
     @EnvironmentObject var selectedStore: SelectedStore
 
     public init() {}
@@ -21,7 +20,7 @@ public struct StoresView: View {
         VStack {
             List {
                 ForEach(allItems) { item in
-                    StoreRow(item: item, selectedItem: self.$selectedItem)
+                    StoreRow(item: item)
                 }
             }
             Text(selectedStore.current.name)
