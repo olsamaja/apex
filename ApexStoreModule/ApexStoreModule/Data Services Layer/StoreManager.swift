@@ -9,6 +9,8 @@ import Foundation
 
 struct StoreManager {
     
+    static var defaultStore = Store(code: "FR", name: "France")
+    
     func getAllStores() -> [Store] {
         StoreLocalRepository.allStores()
     }
@@ -17,7 +19,7 @@ struct StoreManager {
         get { StoreLocalRepository.currentStore }
     }
     
-    static func setCurrentStore(with code: String) {
-        StoreLocalRepository.setCurrentStore(with: code)
+    static func setCurrentStore(_ store: Store) {
+        StoreLocalRepository.setCurrentStore(with: store.code)
     }
 }

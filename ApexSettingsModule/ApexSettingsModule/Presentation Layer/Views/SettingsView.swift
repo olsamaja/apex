@@ -14,7 +14,8 @@ public struct SettingsView: View {
     var presentationMode: Binding<PresentationMode>
 
     @ObservedObject var viewModel = SettingsViewModel()
-    
+    @ObservedObject var selectedStore = SelectedStore()
+
     public init() {}
     
     public var body: some View {
@@ -24,9 +25,11 @@ public struct SettingsView: View {
                     NavigationLink(
                         destination:
                             StoresView()
+                                .environmentObject(selectedStore)
                                 .navigationTitle("Select a Store"),
                         label: {
-                            CurrentStoreView()
+                            SelectedStoreView()
+                                .environmentObject(selectedStore)
                         }
                     )
                 }

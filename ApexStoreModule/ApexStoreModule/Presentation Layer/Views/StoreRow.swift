@@ -13,7 +13,8 @@ struct StoreRow: View {
     
     var item: StoreRowItem
     @Binding var selectedItem: StoreRowItem?
-    
+    @EnvironmentObject var selectedStore: SelectedStore
+
     var body: some View {
         HStack {
             Text(item.store.name)
@@ -25,6 +26,7 @@ struct StoreRow: View {
         }
         .onTapGesture {
             self.selectedItem = self.item
+            self.selectedStore.current = self.item.store
         }
     }
 }

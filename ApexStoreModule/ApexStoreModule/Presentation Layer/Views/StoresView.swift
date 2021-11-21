@@ -13,14 +13,18 @@ public struct StoresView: View {
     
     let allItems = StoreRowItem.allStores()
     @State var selectedItem: StoreRowItem? = nil
-    
+    @EnvironmentObject var selectedStore: SelectedStore
+
     public init() {}
     
     public var body: some View {
-        List {
-            ForEach(allItems) { item in
-                StoreRow(item: item, selectedItem: self.$selectedItem)
+        VStack {
+            List {
+                ForEach(allItems) { item in
+                    StoreRow(item: item, selectedItem: self.$selectedItem)
+                }
             }
+            Text(selectedStore.current.name)
         }
     }
 }
