@@ -45,10 +45,12 @@ public class SearchResultsListBuilder: BuilderProtocol {
     
     @ViewBuilder
     public func build() -> some View {
-        if let items = items {
+        if let items = items, items.count > 0 {
             SearchResultsList(items: items)
         } else {
-            EmptyView()
+            MessageViewBuilder()
+                .withMessage("No results")
+                .build()
         }
     }
 }
