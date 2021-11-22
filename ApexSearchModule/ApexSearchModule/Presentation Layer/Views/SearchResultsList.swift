@@ -17,16 +17,15 @@ struct SearchResultsList: View {
     var body: some View {
         List {
             ForEach(items) { item in
-                NavigationLink(
-                    destination: ReviewsViewBuilder()
+                NavigationRow(destination: {
+                    ReviewsViewBuilder()
                         .withViewModel(ReviewsViewModel(appDetails: item.appDetails))
-                        .build(),
-                    label: {
-                        SearchResultRowBuilder()
-                            .withItem(item)
-                            .build()
-                    }
-                )
+                        .build()
+                }, label: {
+                    SearchResultRowBuilder()
+                        .withItem(item)
+                        .build()
+                })
             }
         }
     }
