@@ -21,6 +21,7 @@ struct SearchResultsList: View {
                     ReviewsViewBuilder()
                         .withViewModel(ReviewsViewModel(appDetails: item.appDetails))
                         .build()
+                        .navigationBarTitle(item.appDetails.trackName, displayMode: .inline)
                 }, label: {
                     SearchResultRowBuilder()
                         .withItem(item)

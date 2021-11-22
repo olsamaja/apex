@@ -18,10 +18,19 @@ public struct ReviewsView: View {
     }
     
     public var body: some View {
+        VStack {
+            AppDetailsView(appDetails: viewModel.appDetails)
+            content
+            Spacer()
+        }
+    }
+    
+    @ViewBuilder
+    var content: some View {
         switch viewModel.state {
         case .idle:
             MessageViewBuilder()
-                .withMessage("Loading top tags")
+                .withMessage("Loading reviews")
                 .withAlignment(.top)
                 .build()
                 .onAppear {
