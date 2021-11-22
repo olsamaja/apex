@@ -42,8 +42,6 @@ struct ReviewRow: View {
                 }
                 Spacer()
             }
-            .padding(.horizontal)
-            Divider()
         }
     }
 }

@@ -15,20 +15,18 @@ struct SearchResultsList: View {
     var items: [SearchResultRowItem]
     
     var body: some View {
-        ScrollView {
-            LazyVStack(spacing: 0) {
-                ForEach(items) { item in
-                    NavigationLink(
-                        destination: ReviewsViewBuilder()
-                            .withViewModel(ReviewsViewModel(appDetails: item.appDetails))
-                            .build(),
-                        label: {
-                            SearchResultRowBuilder()
-                                .withItem(item)
-                                .build()
-                        }
-                    )
-                }
+        List {
+            ForEach(items) { item in
+                NavigationLink(
+                    destination: ReviewsViewBuilder()
+                        .withViewModel(ReviewsViewModel(appDetails: item.appDetails))
+                        .build(),
+                    label: {
+                        SearchResultRowBuilder()
+                            .withItem(item)
+                            .build()
+                    }
+                )
             }
         }
     }

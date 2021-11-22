@@ -14,13 +14,11 @@ struct ReviewsList: View {
     var items: [ReviewRowItem]
     
     var body: some View {
-        ScrollView {
-            LazyVStack(spacing: 0) {
-                ForEach(items) { item in
-                    ReviewRowBuilder()
-                        .withItem(item)
-                        .build()
-                }
+        List {
+            ForEach(items) { item in
+                ReviewRowBuilder()
+                    .withItem(item)
+                    .build()
             }
         }
     }

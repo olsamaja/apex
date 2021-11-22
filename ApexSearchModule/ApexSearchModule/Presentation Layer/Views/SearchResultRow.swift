@@ -41,7 +41,7 @@ struct SearchResultRow: View {
                 }
             }
         }
-        .padding()
+        .padding(.vertical)
     }
 }
 
