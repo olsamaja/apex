@@ -11,14 +11,14 @@ import ApexNetwork
 
 public final class ReviewsViewModel: ObservableObject {
 
-    public let appId: Int
+    public let appDetails: AppDetails
     @Published var state = State.idle
     
     private var cancellables = Set<AnyCancellable>()
     private let action = PassthroughSubject<Event, Never>()
 
-    public init(appId: Int, state: State = .idle) {
-        self.appId = appId
+    public init(appDetails: AppDetails, state: State = .idle) {
+        self.appDetails = appDetails
         self.state = state
         setupFeedbacks()
         setupBindings()
@@ -34,7 +34,7 @@ public final class ReviewsViewModel: ObservableObject {
             reduce: Self.reduce,
             scheduler: RunLoop.main,
             feedbacks: [
-                Self.whenLoading(appId: appId),
+                Self.whenLoading(appId: appDetails.trackId),
                 Self.userAction(action: action.eraseToAnyPublisher())
             ]
         )

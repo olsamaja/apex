@@ -12,7 +12,7 @@ import ApexStoreModule
 
 extension DataManager {
     
-    func search(with term: String) -> AnyPublisher<[SearchResult], DataError> {
+    func search(with term: String) -> AnyPublisher<[AppDetails], DataError> {
         return dataRequester.search(with: term, storeCode: StoreManager.currentStore.code)
             .mapError { $0 }
             .map {

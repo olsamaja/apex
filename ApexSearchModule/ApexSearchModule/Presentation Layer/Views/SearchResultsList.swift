@@ -20,7 +20,7 @@ struct SearchResultsList: View {
                 ForEach(items) { item in
                     NavigationLink(
                         destination: ReviewsViewBuilder()
-                            .withViewModel(ReviewsViewModel(appId: item.trackId))
+                            .withViewModel(ReviewsViewModel(appDetails: item.appDetails))
                             .build(),
                         label: {
                             SearchResultRowBuilder()

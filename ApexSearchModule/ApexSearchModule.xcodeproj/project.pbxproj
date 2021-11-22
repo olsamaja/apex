@@ -25,7 +25,6 @@
 		7DA999AE269A54F3008DDBA9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999AD269A54F3008DDBA9 /* SearchViewModel.swift */; };
 		7DA999B0269BA42C008DDBA9 /* SearchViewModel+Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999AF269BA42C008DDBA9 /* SearchViewModel+Reduce.swift */; };
 		7DA999B2269BA5AD008DDBA9 /* SearchResultRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999B1269BA5AD008DDBA9 /* SearchResultRowItem.swift */; };
-		7DA999B4269BA5ED008DDBA9 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999B3269BA5ED008DDBA9 /* SearchResult.swift */; };
 		7DA999B6269BA74C008DDBA9 /* DataRequester+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999B5269BA74C008DDBA9 /* DataRequester+Search.swift */; };
 		7DA999B8269CE1A9008DDBA9 /* SearchResultsDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999B7269CE1A9008DDBA9 /* SearchResultsDTOMapper.swift */; };
 		7DA999BA269CE1F5008DDBA9 /* SearchResultsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999B9269CE1F5008DDBA9 /* SearchResultsDTO.swift */; };
@@ -84,7 +83,6 @@
 		7DA999AD269A54F3008DDBA9 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		7DA999AF269BA42C008DDBA9 /* SearchViewModel+Reduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewModel+Reduce.swift"; sourceTree = "<group>"; };
 		7DA999B1269BA5AD008DDBA9 /* SearchResultRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultRowItem.swift; sourceTree = "<group>"; };
-		7DA999B3269BA5ED008DDBA9 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		7DA999B5269BA74C008DDBA9 /* DataRequester+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataRequester+Search.swift"; sourceTree = "<group>"; };
 		7DA999B7269CE1A9008DDBA9 /* SearchResultsDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsDTOMapper.swift; sourceTree = "<group>"; };
 		7DA999B9269CE1F5008DDBA9 /* SearchResultsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsDTO.swift; sourceTree = "<group>"; };
@@ -189,7 +187,6 @@
 		7DA999BB269CE431008DDBA9 /* Domain Layer */ = {
 			isa = PBXGroup;
 			children = (
-				7DA999B3269BA5ED008DDBA9 /* SearchResult.swift */,
 				7DA999B7269CE1A9008DDBA9 /* SearchResultsDTOMapper.swift */,
 				7D38FBBC269ECD4800D9E80A /* DataManager+Search.swift */,
 			);
@@ -361,7 +358,6 @@
 				7DA999B2269BA5AD008DDBA9 /* SearchResultRowItem.swift in Sources */,
 				7DA999C9269DAA5B008DDBA9 /* SearchView.swift in Sources */,
 				7DA999AE269A54F3008DDBA9 /* SearchViewModel.swift in Sources */,
-				7DA999B4269BA5ED008DDBA9 /* SearchResult.swift in Sources */,
 				7DA999BF269CE85C008DDBA9 /* SearchResultRow.swift in Sources */,
 				7D9CD75E26988876000450E0 /* SearchConfiguration.swift in Sources */,
 				7DA999B6269BA74C008DDBA9 /* DataRequester+Search.swift in Sources */,

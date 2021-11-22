@@ -23,6 +23,7 @@
 		D54A539726F4D7960006C7C3 /* String+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A539626F4D7960006C7C3 /* String+Parse.swift */; };
 		D54A539926F4D7CB0006C7C3 /* String+ParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A539826F4D7CB0006C7C3 /* String+ParseTests.swift */; };
 		D54A539B26F534120006C7C3 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A539A26F534120006C7C3 /* Date+String.swift */; };
+		D5B9FB60274B4CFA00E6DE6A /* AppDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9FB5F274B4CFA00E6DE6A /* AppDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		D54A539626F4D7960006C7C3 /* String+Parse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Parse.swift"; sourceTree = "<group>"; };
 		D54A539826F4D7CB0006C7C3 /* String+ParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ParseTests.swift"; sourceTree = "<group>"; };
 		D54A539A26F534120006C7C3 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		D5B9FB5F274B4CFA00E6DE6A /* AppDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				7D9CD7AA26989585000450E0 /* Helpers */,
 				7D9CD7A926989305000450E0 /* Feedback */,
 				7D9CD7A226989256000450E0 /* Extensions */,
+				D5B9FB61274B4D0000E6DE6A /* Data Models */,
 			);
 			path = ApexCore;
 			sourceTree = "<group>";
@@ -145,6 +148,14 @@
 				7D9CD7AB269895B6000450E0 /* BuilderProtocol.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D5B9FB61274B4D0000E6DE6A /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				D5B9FB5F274B4CFA00E6DE6A /* AppDetails.swift */,
+			);
+			path = "Data Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +279,7 @@
 				7D9CD79D269891F8000450E0 /* OLLogger.swift in Sources */,
 				7D9CD7AC269895B6000450E0 /* BuilderProtocol.swift in Sources */,
 				7D9CD7A6269892A0000450E0 /* Bundle+Extensions.swift in Sources */,
+				D5B9FB60274B4CFA00E6DE6A /* AppDetails.swift in Sources */,
 				7D9CD7A12698924F000450E0 /* Data+Decode.swift in Sources */,
 				7D9CD79B269891A9000450E0 /* DataError.swift in Sources */,
 				D54A539726F4D7960006C7C3 /* String+Parse.swift in Sources */,

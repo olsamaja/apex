@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import ApexCore
 
 public struct SearchResultsDTOMapper {
     
-    static func map(_ dto: SearchResultsDTO) -> [SearchResult] {
+    static func map(_ dto: SearchResultsDTO) -> [AppDetails] {
         dto.results.map {
             SearchResultDTOMapper.map($0)
         }
@@ -18,14 +19,14 @@ public struct SearchResultsDTOMapper {
 
 struct SearchResultDTOMapper {
     
-    static func map(_ dto: SearchResultDTO) -> SearchResult {
-        SearchResult(trackName: dto.trackName,
-                     trackId: dto.trackId,
-                     sellerName: dto.sellerName,
-                     version: dto.version,
-                     currentVersionReleaseDate: dto.currentVersionReleaseDate,
-                     minimumOsVersion: dto.minimumOsVersion,
-                     averageUserRating: dto.averageUserRating,
-                     userRatingCountForCurrentVersion: dto.userRatingCountForCurrentVersion)
+    static func map(_ dto: SearchResultDTO) -> AppDetails {
+        AppDetails(trackId: dto.trackId,
+                   trackName: dto.trackName,
+                   sellerName: dto.sellerName,
+                   version: dto.version,
+                   currentVersionReleaseDate: dto.currentVersionReleaseDate,
+                   minimumOsVersion: dto.minimumOsVersion,
+                   averageUserRating: dto.averageUserRating,
+                   userRatingCountForCurrentVersion: dto.userRatingCountForCurrentVersion)
     }
 }

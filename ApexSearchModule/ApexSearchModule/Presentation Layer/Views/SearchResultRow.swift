@@ -21,19 +21,19 @@ struct SearchResultRow: View {
                 HStack {
                     VStack(alignment: .leading) {
                         HStack {
-                            Text(item.trackName)
+                            Text(item.appDetails.trackName)
                                 .font(.title3)
                             Spacer()
                             RatingViewBuilder()
-                                .withRating(item.averageUserRating)
+                                .withRating(item.appDetails.averageUserRating)
                                 .build()
                         }
                         HStack {
-                            Text(item.sellerName)
+                            Text(item.appDetails.sellerName)
                                 .font(.callout)
                             Spacer()
                             BadgeViewBuilder()
-                                .withInt(item.userRatingCountForCurrentVersion)
+                                .withInt(item.appDetails.userRatingCountForCurrentVersion)
                                 .build()
                         }
                     }
@@ -67,18 +67,18 @@ public class SearchResultRowBuilder: BuilderProtocol {
 struct SearchResultRow_Previews: PreviewProvider {
     
     enum Constants {
-        static let result = SearchResult(trackName: "Track name",
-                                         trackId: 12456,
-                                         sellerName: "Seller's name",
-                                         version: "1.2.3",
-                                         currentVersionReleaseDate: "date",
-                                         minimumOsVersion: "iOS 13.0",
-                                         averageUserRating: 4.7655,
-                                         userRatingCountForCurrentVersion: 123456)
+        static let result = AppDetails(trackId: 12456,
+                                       trackName: "Track name",
+                                       sellerName: "Seller's name",
+                                       version: "1.2.3",
+                                       currentVersionReleaseDate: "date",
+                                       minimumOsVersion: "iOS 13.0",
+                                       averageUserRating: 4.7655,
+                                       userRatingCountForCurrentVersion: 123456)
     }
     
     static var previews: some View {
-        SearchResultRow(item: SearchResultRowItem(search: Constants.result))
+        SearchResultRow(item: SearchResultRowItem(appDetails: Constants.result))
             .sizeThatFitPreview(with: "Default")
     }
 }
