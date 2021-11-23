@@ -17,18 +17,37 @@ public struct AppDetailsView: View {
     }
     
     public var body: some View {
-        VStack {
-            HStack {
-                Text(viewModel.version)
-                Spacer()
-                Text(viewModel.currentVersionReleaseDate)
+        HStack {
+            VStack(alignment: .leading) {
+                ForEach(viewModel.details(), id: \.self) { detail in
+                    DetailView(title: detail.title, value: detail.value)
+                }
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 1, trailing: 0))
             }
-            Text(viewModel.averageUserRating)
-            Text(viewModel.userRatingCountForCurrentVersion)
-            Text(viewModel.minimumOsVersion)
-            Text(viewModel.sellerName)
+            Spacer()
         }
-        .padding(.vertical)
+        .padding()
+    }
+}
+
+public class AppDetailsViewBuilder: BuilderProtocol {
+    
+    private var viewModel: AppDetailsViewModel?
+
+    public init() {}
+    
+    public func withViewModel(_ viewModel: AppDetailsViewModel) -> AppDetailsViewBuilder {
+        self.viewModel = viewModel
+        return self
+    }
+    
+    @ViewBuilder
+    public func build() -> some View {
+        if let viewModel = viewModel {
+            AppDetailsView(viewModel: viewModel)
+        } else {
+            EmptyView()
+        }
     }
 }
 
@@ -47,7 +66,9 @@ struct AppDetailsView_Previews: PreviewProvider {
     }
     
     static var previews: some View {
-        AppDetailsView(viewModel: Constants.model)
+        AppDetailsViewBuilder()
+            .withViewModel(Constants.model)
+            .build()
             .sizeThatFitPreview(with: "App Details")
     }
 }

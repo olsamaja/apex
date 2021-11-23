@@ -19,7 +19,9 @@ public struct ReviewsView: View {
     
     public var body: some View {
         VStack {
-            AppDetailsView(viewModel: AppDetailsViewModel(appDetails: viewModel.appDetails))
+            AppDetailsViewBuilder()
+                .withViewModel(AppDetailsViewModel(appDetails: viewModel.appDetails))
+                .build()
             content
             Spacer()
         }
