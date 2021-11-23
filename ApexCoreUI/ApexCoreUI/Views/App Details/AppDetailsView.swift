@@ -10,20 +10,23 @@ import ApexCore
 
 public struct AppDetailsView: View {
     
-    let appDetails: AppDetails
+    let viewModel: AppDetailsViewModel
     
-    public init(appDetails: AppDetails) {
-        self.appDetails = appDetails
+    public init(viewModel: AppDetailsViewModel) {
+        self.viewModel = viewModel
     }
     
     public var body: some View {
         VStack {
-            Text(appDetails.sellerName)
-            Text(appDetails.version)
-            Text(appDetails.currentVersionReleaseDate)
-            Text(String(appDetails.averageUserRating))
-            Text(String(appDetails.userRatingCountForCurrentVersion))
-            Text(appDetails.minimumOsVersion)
+            HStack {
+                Text(viewModel.version)
+                Spacer()
+                Text(viewModel.currentVersionReleaseDate)
+            }
+            Text(viewModel.averageUserRating)
+            Text(viewModel.userRatingCountForCurrentVersion)
+            Text(viewModel.minimumOsVersion)
+            Text(viewModel.sellerName)
         }
         .padding(.vertical)
     }
@@ -36,14 +39,15 @@ struct AppDetailsView_Previews: PreviewProvider {
                                         trackName: "Amazing App",
                                         sellerName: "Amazing Publisher Ltd",
                                         version: "1.2.3",
-                                        currentVersionReleaseDate: "2021-11-15T12:30:38Z",
+                                        currentVersionReleaseDate: Date(),
                                         minimumOsVersion: "14.0",
                                         averageUserRating: 4.83338,
                                         userRatingCountForCurrentVersion: 123456)
+        static let model = AppDetailsViewModel(appDetails: Constants.details)
     }
     
     static var previews: some View {
-        AppDetailsView(appDetails: Constants.details)
+        AppDetailsView(viewModel: Constants.model)
             .sizeThatFitPreview(with: "App Details")
     }
 }

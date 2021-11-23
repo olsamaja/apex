@@ -19,7 +19,7 @@ public struct ReviewsView: View {
     
     public var body: some View {
         VStack {
-            AppDetailsView(appDetails: viewModel.appDetails)
+            AppDetailsView(viewModel: AppDetailsViewModel(appDetails: viewModel.appDetails))
             content
             Spacer()
         }

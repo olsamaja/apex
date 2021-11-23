@@ -13,7 +13,7 @@ public struct AppDetails {
     public let trackName: String
     public let sellerName: String
     public let version: String
-    public let currentVersionReleaseDate: String
+    public let currentVersionReleaseDate: Date
     public let minimumOsVersion: String
     public let averageUserRating: Double
     public let userRatingCountForCurrentVersion: Int
@@ -23,7 +23,7 @@ public struct AppDetails {
         trackName: String,
         sellerName: String,
         version: String,
-        currentVersionReleaseDate: String,
+        currentVersionReleaseDate: Date,
         minimumOsVersion: String,
         averageUserRating: Double,
         userRatingCountForCurrentVersion: Int

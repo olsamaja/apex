@@ -71,8 +71,8 @@ struct SearchResultRow_Previews: PreviewProvider {
                                        trackName: "Track name",
                                        sellerName: "Seller's name",
                                        version: "1.2.3",
-                                       currentVersionReleaseDate: "date",
-                                       minimumOsVersion: "iOS 13.0",
+                                       currentVersionReleaseDate: Date(),
+                                       minimumOsVersion: "13.0",
                                        averageUserRating: 4.7655,
                                        userRatingCountForCurrentVersion: 123456)
     }
