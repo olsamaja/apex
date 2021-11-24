@@ -61,7 +61,8 @@ struct AppDetailsView_Previews: PreviewProvider {
                                         currentVersionReleaseDate: Date(),
                                         minimumOsVersion: "14.0",
                                         averageUserRating: 4.83338,
-                                        userRatingCountForCurrentVersion: 123456)
+                                        userRatingCountForCurrentVersion: 123456,
+                                        storeCode: "GB")
         static let model = AppDetailsViewModel(appDetails: Constants.details)
     }
     

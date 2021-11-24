@@ -17,6 +17,7 @@ public struct AppDetails {
     public let minimumOsVersion: String
     public let averageUserRating: Double
     public let userRatingCountForCurrentVersion: Int
+    public let storeCode: String
     
     public init(
         trackId: Int,
@@ -26,7 +27,8 @@ public struct AppDetails {
         currentVersionReleaseDate: Date,
         minimumOsVersion: String,
         averageUserRating: Double,
-        userRatingCountForCurrentVersion: Int
+        userRatingCountForCurrentVersion: Int,
+        storeCode: String
     ) {
         self.trackId = trackId
         self.trackName = trackName
@@ -36,6 +38,7 @@ public struct AppDetails {
         self.minimumOsVersion = minimumOsVersion
         self.averageUserRating = averageUserRating
         self.userRatingCountForCurrentVersion = userRatingCountForCurrentVersion
+        self.storeCode = storeCode
     }
 }
 

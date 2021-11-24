@@ -74,7 +74,8 @@ struct SearchResultRow_Previews: PreviewProvider {
                                        currentVersionReleaseDate: Date(),
                                        minimumOsVersion: "13.0",
                                        averageUserRating: 4.7655,
-                                       userRatingCountForCurrentVersion: 123456)
+                                       userRatingCountForCurrentVersion: 123456,
+                                       storeCode: "FR")
     }
     
     static var previews: some View {

@@ -8,6 +8,7 @@
 import Combine
 import ApexNetwork
 import ApexCore
+import ApexStoreModule
 
 public final class SearchViewModel: ObservableObject {
 
@@ -78,7 +79,7 @@ public final class SearchViewModel: ObservableObject {
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
             guard case .searching(let term) = state else { return Empty().eraseToAnyPublisher() }
             
-            return DataManager().search(with: term)
+            return DataManager().search(with: term, storeCode: StoreManager.currentStore.code)
                 .map { $0.map(SearchResultRowItem.init) }
                 .map(Event.onDataLoaded)
                 .catch { Just(Event.onFailedToLoadData($0)) }

@@ -8,15 +8,14 @@
 import Combine
 import ApexNetwork
 import ApexCore
-import ApexStoreModule
 
 extension DataManager {
     
-    func search(with term: String) -> AnyPublisher<[AppDetails], DataError> {
-        return dataRequester.search(with: term, storeCode: StoreManager.currentStore.code)
+    func search(with term: String, storeCode: String) -> AnyPublisher<[AppDetails], DataError> {
+        return dataRequester.search(with: term, storeCode: storeCode)
             .mapError { $0 }
             .map {
-                SearchResultsDTOMapper.map($0)
+                SearchResultsDTOMapper.map($0, storeCode: storeCode)
             }
             .eraseToAnyPublisher()
     }
