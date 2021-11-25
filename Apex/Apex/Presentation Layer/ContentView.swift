@@ -11,7 +11,7 @@ import ApexSearchModule
 
 struct ContentView: View {
     var body: some View {
-        SearchView()
+        AppsView()
     }
 }
 

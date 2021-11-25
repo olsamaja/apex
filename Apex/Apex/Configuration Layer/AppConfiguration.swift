@@ -16,8 +16,16 @@ extension Resolver: ResolverRegistering {
     
     public static func registerAllServices() {
         registerConfigurationServices(with: Bundle.main)
+        registerHomeService()
         registerNetworkServices()
         registerSearchService()
         registerSettingsService()
+    }
+}
+
+private extension Resolver {
+    
+    static func registerHomeService() {
+        register { AppsViewModel() as AppsViewModel }
     }
 }
