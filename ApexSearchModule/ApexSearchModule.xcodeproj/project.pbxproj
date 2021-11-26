@@ -44,6 +44,7 @@
 		D5023F6D274FA20200E10942 /* SearchAppsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5023F6C274FA20200E10942 /* SearchAppsViewModel.swift */; };
 		D5023F6F274FA21200E10942 /* SearchAppsViewModel+Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5023F6E274FA21200E10942 /* SearchAppsViewModel+Reduce.swift */; };
 		D5023F71274FA34E00E10942 /* SearchAppsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5023F70274FA34E00E10942 /* SearchAppsContentView.swift */; };
+		D5A8C4022750436A00A50485 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A8C4012750436A00A50485 /* SearchBar.swift */; };
 		D5B9FB5D274AD0D500E6DE6A /* ApexStoreModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B9FB5C274AD0D500E6DE6A /* ApexStoreModule.framework */; };
 		D5B9FB5E274AD0D500E6DE6A /* ApexStoreModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5B9FB5C274AD0D500E6DE6A /* ApexStoreModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D5DD453726F3847800423465 /* SearchSuccessful.json in Resources */ = {isa = PBXBuildFile; fileRef = D5DD453626F3847800423465 /* SearchSuccessful.json */; };
@@ -115,6 +116,7 @@
 		D5023F6E274FA21200E10942 /* SearchAppsViewModel+Reduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchAppsViewModel+Reduce.swift"; sourceTree = "<group>"; };
 		D5023F70274FA34E00E10942 /* SearchAppsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppsContentView.swift; sourceTree = "<group>"; };
 		D596104627468B0C00E256F8 /* ApexSettingsModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexSettingsModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5A8C4012750436A00A50485 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		D5B9FB5C274AD0D500E6DE6A /* ApexStoreModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexStoreModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5DD453626F3847800423465 /* SearchSuccessful.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SearchSuccessful.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				D5023F6A274FA12400E10942 /* SearchAppsView.swift */,
+				D5A8C4012750436A00A50485 /* SearchBar.swift */,
 				D5023F70274FA34E00E10942 /* SearchAppsContentView.swift */,
 				7DA999C8269DAA5B008DDBA9 /* SearchView.swift */,
 				7DA999C4269CE915008DDBA9 /* SearchContentView.swift */,
@@ -450,6 +453,7 @@
 				7DA999BA269CE1F5008DDBA9 /* SearchResultsDTO.swift in Sources */,
 				D5023F54274F0A4900E10942 /* AppStoreDTO.swift in Sources */,
 				D5023F66274F0F0A00E10942 /* SelectAppStoreViewModel.swift in Sources */,
+				D5A8C4022750436A00A50485 /* SearchBar.swift in Sources */,
 				D5023F5C274F0CAD00E10942 /* AppStoreDTOMapper.swift in Sources */,
 				7DA999B8269CE1A9008DDBA9 /* SearchResultsDTOMapper.swift in Sources */,
 				7DA999B2269BA5AD008DDBA9 /* SearchResultRowItem.swift in Sources */,

@@ -16,7 +16,8 @@ import ApexSettingsModule
 public struct SearchAppsView: View {
     
     let viewModel: SearchAppsViewModel
-    
+    @State var searchTerm: String = ""
+
     public init(viewModel: SearchAppsViewModel) {
         self.viewModel = viewModel
     }
@@ -24,8 +25,7 @@ public struct SearchAppsView: View {
     public var body: some View {
         SearchNavigationViewBuilder()
             .withContentView(AnyView(content))
-            .withUseLargeTitle(false)
-            .withPlaceholder("Search apps")
+            .withPlaceholder("Search")
             .onSearch { (searchTerm) in
                 viewModel.search(with: searchTerm)
             }
@@ -40,29 +40,17 @@ public struct SearchAppsView: View {
     }
 }
 
-//struct SearchAppsView_Previews: PreviewProvider {
-//
-//    enum Dependencies {
-//        static var registerIdleState = { () -> Bool in
-//            Resolver.register { SearchAppsViewModel() as SearchAppsViewModel }
-//            return true
-//        }
-//        static var registerErrorState = { () -> Bool in
-//            Resolver.register { SearchAppsViewModel(state: .error(DataError.invalidRequest)) as SearchAppsViewModel }
-//            return true
-//        }
-//    }
-//
-//    static var previews: some View {
-//        Group {
-//            if Dependencies.registerIdleState() {
-//                SearchAppsView()
-//                    .previewDisplayName("default state = .idle")
-//            }
-//            if Dependencies.registerErrorState() {
-//                SearchAppsView()
-//                    .previewDisplayName("state = .error")
-//            }
-//        }
-//    }
-//}
+struct SearchAppsView_Previews: PreviewProvider {
+    
+    enum Constants {
+        static let store = AppStore(code: "FR", name: "France")
+        static let model = SearchAppsViewModel(state: .idle, store: Constants.store)
+    }
+    
+    static var previews: some View {
+        Group {
+            SearchAppsView(viewModel: Constants.model)
+                .previewDisplayName("default state = .idle")
+        }
+    }
+}

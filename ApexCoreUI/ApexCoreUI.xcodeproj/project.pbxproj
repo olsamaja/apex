@@ -16,6 +16,11 @@
 		7D9CD7B0269897F2000450E0 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7AF269897F2000450E0 /* Spinner.swift */; };
 		7D9CD7B226989885000450E0 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7B126989885000450E0 /* MessageView.swift */; };
 		7D9CD7B4269898BD000450E0 /* SearchNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7B3269898BD000450E0 /* SearchNavigationView.swift */; };
+		D5A8C4042751030F00A50485 /* UIColor+Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A8C4032751030F00A50485 /* UIColor+Brightness.swift */; };
+		D5A8C4062751033200A50485 /* Comparable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A8C4052751033200A50485 /* Comparable+Extensions.swift */; };
+		D5A8C40A2751037100A50485 /* UIColor+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A8C4092751037100A50485 /* UIColor+Dynamic.swift */; };
+		D5A8C40C2751039100A50485 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A8C40B2751039100A50485 /* UIColor+Hex.swift */; };
+		D5A8C40E275103AC00A50485 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A8C40D275103AC00A50485 /* Color+Extensions.swift */; };
 		D5B9FB63274B992500E6DE6A /* NavigationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9FB62274B992500E6DE6A /* NavigationRow.swift */; };
 		D5B9FB6D274BE70E00E6DE6A /* AppDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9FB6C274BE70E00E6DE6A /* AppDetailsView.swift */; };
 		D5B9FB70274C0C8300E6DE6A /* AppDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9FB6F274C0C8300E6DE6A /* AppDetailsViewModel.swift */; };
@@ -61,6 +66,11 @@
 		7D9CD7AF269897F2000450E0 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		7D9CD7B126989885000450E0 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		7D9CD7B3269898BD000450E0 /* SearchNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigationView.swift; sourceTree = "<group>"; };
+		D5A8C4032751030F00A50485 /* UIColor+Brightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Brightness.swift"; sourceTree = "<group>"; };
+		D5A8C4052751033200A50485 /* Comparable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+Extensions.swift"; sourceTree = "<group>"; };
+		D5A8C4092751037100A50485 /* UIColor+Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Dynamic.swift"; sourceTree = "<group>"; };
+		D5A8C40B2751039100A50485 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		D5A8C40D275103AC00A50485 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		D5B9FB62274B992500E6DE6A /* NavigationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRow.swift; sourceTree = "<group>"; };
 		D5B9FB6C274BE70E00E6DE6A /* AppDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsView.swift; sourceTree = "<group>"; };
 		D5B9FB6F274C0C8300E6DE6A /* AppDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -143,6 +153,8 @@
 			children = (
 				7D9CD67C26988267000450E0 /* ApexCoreUI.h */,
 				7D9CD67D26988267000450E0 /* Info.plist */,
+				D5A8C4082751035900A50485 /* Colors */,
+				D5A8C4072751034A00A50485 /* Core Extensions */,
 				7D45E47C269F931300D2C796 /* View Modifiers */,
 				7D45E47D269F932000D2C796 /* Controls */,
 				7D45E47E269F932A00D2C796 /* Views */,
@@ -165,6 +177,25 @@
 				7D9CD76726988AEA000450E0 /* ApexCore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5A8C4072751034A00A50485 /* Core Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D5A8C4052751033200A50485 /* Comparable+Extensions.swift */,
+			);
+			path = "Core Extensions";
+			sourceTree = "<group>";
+		};
+		D5A8C4082751035900A50485 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				D5A8C40D275103AC00A50485 /* Color+Extensions.swift */,
+				D5A8C4032751030F00A50485 /* UIColor+Brightness.swift */,
+				D5A8C4092751037100A50485 /* UIColor+Dynamic.swift */,
+				D5A8C40B2751039100A50485 /* UIColor+Hex.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		D5B9FB6E274C0C6F00E6DE6A /* App Details */ = {
@@ -304,13 +335,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5A8C4042751030F00A50485 /* UIColor+Brightness.swift in Sources */,
 				7D9CD7B226989885000450E0 /* MessageView.swift in Sources */,
 				D5DD453A26F3874A00423465 /* BadgeView.swift in Sources */,
 				D5B9FB6D274BE70E00E6DE6A /* AppDetailsView.swift in Sources */,
 				7D9CD7AE2698979E000450E0 /* SizeThatFitPreview.swift in Sources */,
+				D5A8C40A2751037100A50485 /* UIColor+Dynamic.swift in Sources */,
+				D5A8C4062751033200A50485 /* Comparable+Extensions.swift in Sources */,
 				7D9CD7B4269898BD000450E0 /* SearchNavigationView.swift in Sources */,
 				D5B9FB72274D415000E6DE6A /* DetailView.swift in Sources */,
+				D5A8C40C2751039100A50485 /* UIColor+Hex.swift in Sources */,
 				D5B9FB70274C0C8300E6DE6A /* AppDetailsViewModel.swift in Sources */,
+				D5A8C40E275103AC00A50485 /* Color+Extensions.swift in Sources */,
 				D5DD562B26EF945E00B4A4FF /* RatingView.swift in Sources */,
 				7D9CD7B0269897F2000450E0 /* Spinner.swift in Sources */,
 				D5B9FB63274B992500E6DE6A /* NavigationRow.swift in Sources */,

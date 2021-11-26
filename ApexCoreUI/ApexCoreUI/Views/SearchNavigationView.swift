@@ -42,7 +42,7 @@ public struct SearchNavigationView: UIViewControllerRepresentable {
         self.onBarButtonItem = onBarButtonItem
     }
 
-    // Integrating UIKot navigation controllerwith SwiftUI View...
+    // Integrating UIKit navigation controllerwith SwiftUI View...
     public func makeUIViewController(context: Context) -> UINavigationController {
         
         let childView = UIHostingController(rootView: view)
@@ -205,17 +205,31 @@ public class SearchNavigationViewBuilder: BuilderProtocol {
 
 public class SearchNavigationView_Previews: PreviewProvider {
     
+    enum Constants {
+        static let content = AnyView(MessageViewBuilder()
+                                        .withMessage("This is some test content.")
+                                        .build()
+                                        .background(Color.blue))
+    }
+    
     public static var previews: some View {
         Group {
             SearchNavigationViewBuilder()
                 .withTitle("Test")
-                .withContentView(
-                    AnyView(MessageViewBuilder()
-                                .withMessage("This is some test content.")
-                                .build()
-                                .background(Color.blue)))
+                .withContentView(Constants.content)
                 .build()
-                .previewDisplayName("Test content")
+                .previewDisplayName("Large title")
+            SearchNavigationViewBuilder()
+                .withTitle("Test")
+                .withUseLargeTitle(false)
+                .withContentView(Constants.content)
+                .build()
+                .previewDisplayName("Inline display")
+            SearchNavigationViewBuilder()
+                .withUseLargeTitle(false)
+                .withContentView(Constants.content)
+                .build()
+                .previewDisplayName("No title")
             SearchNavigationViewBuilder()
                 .build()
                 .previewDisplayName("No content")
