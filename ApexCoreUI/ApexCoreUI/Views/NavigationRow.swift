@@ -36,3 +36,15 @@ public struct NavigationRow<Destination: View, Label: View>: View {
         }
     }
 }
+
+struct NavigationRow_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        NavigationRow(destination: {
+            Text("Destination")
+        }, label: {
+            Text("Navigation link without disclosure indicator")
+        })
+        .sizeThatFitPreview(with: "Navigation link w/o indicator")
+    }
+}

@@ -1,21 +1,24 @@
 //
 //  SearchBar.swift
-//  ApexSearchModule
+//  ApexCoreUI
 //
-//  Created by Olivier Rigault on 25/11/2021.
+//  Created by Olivier Rigault on 30/11/2021.
 //
-//  References:
-//  - https://www.appcoda.com/swiftui-search-bar/
+//  Reference:
+//  - https://www.swiftcompiled.com/building-a-search-bar-with-swiftui-and-combine/
 
 import SwiftUI
-import ApexCoreUI
 
-struct SearchBar: View {
+public struct SearchBar: View {
     
     @Binding var text: String
     @State private var isEditing = false
- 
-    var body: some View {
+    
+    public init(text: Binding<String>) {
+        self._text = text
+    }
+    
+    public var body: some View {
         HStack {
  
             TextField("Search", text: $text)
@@ -51,7 +54,9 @@ struct SearchBar: View {
                     self.isEditing = false
                     self.text = ""
  
-                }) {
+                    // Dismiss the keyboard
+                    UIApplication.shared.dismissKeyboard()
+               }) {
                     Text("Cancel")
                 }
                 .padding(.trailing, 10)
@@ -61,8 +66,9 @@ struct SearchBar: View {
         }
     }
 }
+
 struct SearchBar_Previews: PreviewProvider {
-    
+
     static var previews: some View {
         SearchBar(text: .constant(""))
             .sizeThatFitPreview(with: "Light")

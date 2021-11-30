@@ -6,31 +6,26 @@
 //
 
 import SwiftUI
-
-import SwiftUI
-import ApexCoreUI
 import ApexCore
+import ApexCoreUI
 import Resolver
 import ApexSettingsModule
 
 public struct SearchAppsView: View {
     
-    let viewModel: SearchAppsViewModel
-    @State var searchTerm: String = ""
+    @ObservedObject var viewModel: SearchAppsViewModel
 
     public init(viewModel: SearchAppsViewModel) {
         self.viewModel = viewModel
     }
     
     public var body: some View {
-        SearchNavigationViewBuilder()
-            .withContentView(AnyView(content))
-            .withPlaceholder("Search")
-            .onSearch { (searchTerm) in
-                viewModel.search(with: searchTerm)
-            }
-            .build()
-            .ignoresSafeArea()
+        VStack {
+            SearchBar(text: $viewModel.term)
+                .padding(.top, 4)
+            content
+            Spacer()
+        }
     }
     
     private var content: some View {

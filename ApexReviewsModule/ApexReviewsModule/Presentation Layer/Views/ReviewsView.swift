@@ -76,9 +76,9 @@ public class ReviewsViewBuilder: BuilderProtocol {
         }
     }
 }
-
+//
 //struct ReviewsView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ReviewsView()
+//        ReviewsView(viewModel: ReviewsViewModel(appDetails: AppDetails(trackId: <#T##Int#>, trackName: <#T##String#>, sellerName: <#T##String#>, version: <#T##String#>, currentVersionReleaseDate: <#T##Date#>, minimumOsVersion: <#T##String#>, averageUserRating: <#T##Double#>, userRatingCountForCurrentVersion: <#T##Int#>, storeCode: <#T##String#>), state: <#T##ReviewsViewModel.State#>))
 //    }
 //}
