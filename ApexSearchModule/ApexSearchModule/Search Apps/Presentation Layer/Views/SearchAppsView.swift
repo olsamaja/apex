@@ -8,7 +8,6 @@
 import SwiftUI
 import ApexCore
 import ApexCoreUI
-import Resolver
 import ApexSettingsModule
 
 public struct SearchAppsView: View {

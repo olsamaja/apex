@@ -18,7 +18,6 @@ extension Resolver: ResolverRegistering {
         registerConfigurationServices(with: Bundle.main)
         registerHomeService()
         registerNetworkServices()
-        registerSearchService()
         registerSettingsService()
     }
 }

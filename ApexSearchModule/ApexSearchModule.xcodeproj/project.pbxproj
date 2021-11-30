@@ -11,7 +11,6 @@
 		7D9CD6EF269883F1000450E0 /* ApexSearchModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD6E5269883F1000450E0 /* ApexSearchModule.framework */; };
 		7D9CD6F4269883F1000450E0 /* ApexSearchModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD6F3269883F1000450E0 /* ApexSearchModuleTests.swift */; };
 		7D9CD6F6269883F1000450E0 /* ApexSearchModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D9CD6E8269883F1000450E0 /* ApexSearchModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7D9CD75E26988876000450E0 /* SearchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD75D26988876000450E0 /* SearchConfiguration.swift */; };
 		7D9CD77226988B05000450E0 /* ApexCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD77126988B05000450E0 /* ApexCore.framework */; };
 		7D9CD77326988B05000450E0 /* ApexCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD77126988B05000450E0 /* ApexCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D9CD77626988B0D000450E0 /* ApexNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD77526988B0D000450E0 /* ApexNetwork.framework */; };
@@ -22,16 +21,12 @@
 		7D9CD77D26988B21000450E0 /* ApexConfiguration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD77B26988B21000450E0 /* ApexConfiguration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D9CD78D26988B7D000450E0 /* ApexReviewsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD78C26988B7D000450E0 /* ApexReviewsModule.framework */; };
 		7D9CD78E26988B7D000450E0 /* ApexReviewsModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD78C26988B7D000450E0 /* ApexReviewsModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7DA999AE269A54F3008DDBA9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999AD269A54F3008DDBA9 /* SearchViewModel.swift */; };
-		7DA999B0269BA42C008DDBA9 /* SearchViewModel+Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999AF269BA42C008DDBA9 /* SearchViewModel+Reduce.swift */; };
 		7DA999B2269BA5AD008DDBA9 /* SearchResultRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999B1269BA5AD008DDBA9 /* SearchResultRowItem.swift */; };
 		7DA999B6269BA74C008DDBA9 /* DataRequester+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999B5269BA74C008DDBA9 /* DataRequester+Search.swift */; };
 		7DA999B8269CE1A9008DDBA9 /* SearchResultsDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999B7269CE1A9008DDBA9 /* SearchResultsDTOMapper.swift */; };
 		7DA999BA269CE1F5008DDBA9 /* SearchResultsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999B9269CE1F5008DDBA9 /* SearchResultsDTO.swift */; };
 		7DA999BF269CE85C008DDBA9 /* SearchResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999BE269CE85C008DDBA9 /* SearchResultRow.swift */; };
 		7DA999C1269CE8A3008DDBA9 /* SearchResultsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999C0269CE8A3008DDBA9 /* SearchResultsList.swift */; };
-		7DA999C5269CE915008DDBA9 /* SearchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999C4269CE915008DDBA9 /* SearchContentView.swift */; };
-		7DA999C9269DAA5B008DDBA9 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999C8269DAA5B008DDBA9 /* SearchView.swift */; };
 		D5023F50274F089200E10942 /* SelectAppStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5023F4F274F089200E10942 /* SelectAppStoreView.swift */; };
 		D5023F54274F0A4900E10942 /* AppStoreDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5023F53274F0A4900E10942 /* AppStoreDTO.swift */; };
 		D5023F56274F0AB000E10942 /* AppStoreLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5023F55274F0AB000E10942 /* AppStoreLocalRepository.swift */; };
@@ -86,22 +81,17 @@
 		7D9CD6EE269883F1000450E0 /* ApexSearchModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApexSearchModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD6F3269883F1000450E0 /* ApexSearchModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexSearchModuleTests.swift; sourceTree = "<group>"; };
 		7D9CD6F5269883F1000450E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7D9CD75D26988876000450E0 /* SearchConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConfiguration.swift; sourceTree = "<group>"; };
 		7D9CD77126988B05000450E0 /* ApexCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD77526988B0D000450E0 /* ApexNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD77826988B19000450E0 /* ApexCoreUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCoreUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD77B26988B21000450E0 /* ApexConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexConfiguration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD78C26988B7D000450E0 /* ApexReviewsModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexReviewsModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DA999AD269A54F3008DDBA9 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		7DA999AF269BA42C008DDBA9 /* SearchViewModel+Reduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewModel+Reduce.swift"; sourceTree = "<group>"; };
 		7DA999B1269BA5AD008DDBA9 /* SearchResultRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultRowItem.swift; sourceTree = "<group>"; };
 		7DA999B5269BA74C008DDBA9 /* DataRequester+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataRequester+Search.swift"; sourceTree = "<group>"; };
 		7DA999B7269CE1A9008DDBA9 /* SearchResultsDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsDTOMapper.swift; sourceTree = "<group>"; };
 		7DA999B9269CE1F5008DDBA9 /* SearchResultsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsDTO.swift; sourceTree = "<group>"; };
 		7DA999BE269CE85C008DDBA9 /* SearchResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultRow.swift; sourceTree = "<group>"; };
 		7DA999C0269CE8A3008DDBA9 /* SearchResultsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsList.swift; sourceTree = "<group>"; };
-		7DA999C4269CE915008DDBA9 /* SearchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContentView.swift; sourceTree = "<group>"; };
-		7DA999C8269DAA5B008DDBA9 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		D5023F4F274F089200E10942 /* SelectAppStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAppStoreView.swift; sourceTree = "<group>"; };
 		D5023F53274F0A4900E10942 /* AppStoreDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreDTO.swift; sourceTree = "<group>"; };
 		D5023F55274F0AB000E10942 /* AppStoreLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreLocalRepository.swift; sourceTree = "<group>"; };
@@ -168,7 +158,6 @@
 			children = (
 				7D9CD6E8269883F1000450E0 /* ApexSearchModule.h */,
 				7D9CD6E9269883F1000450E0 /* Info.plist */,
-				7D9CD75F2698887A000450E0 /* Configuration */,
 				D5023F51274F09F900E10942 /* AppStore */,
 				D5023F52274F0A1E00E10942 /* Search Apps */,
 			);
@@ -183,14 +172,6 @@
 				D5DD453826F3848500423465 /* Resources */,
 			);
 			path = ApexSearchModuleTests;
-			sourceTree = "<group>";
-		};
-		7D9CD75F2698887A000450E0 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				7D9CD75D26988876000450E0 /* SearchConfiguration.swift */,
-			);
-			path = Configuration;
 			sourceTree = "<group>";
 		};
 		7D9CD77026988B05000450E0 /* Frameworks */ = {
@@ -239,8 +220,6 @@
 			children = (
 				D5023F6A274FA12400E10942 /* SearchAppsView.swift */,
 				D5023F70274FA34E00E10942 /* SearchAppsContentView.swift */,
-				7DA999C8269DAA5B008DDBA9 /* SearchView.swift */,
-				7DA999C4269CE915008DDBA9 /* SearchContentView.swift */,
 				7DA999C0269CE8A3008DDBA9 /* SearchResultsList.swift */,
 				7DA999BE269CE85C008DDBA9 /* SearchResultRow.swift */,
 			);
@@ -250,8 +229,6 @@
 		7DA999C3269CE8E2008DDBA9 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				7DA999AD269A54F3008DDBA9 /* SearchViewModel.swift */,
-				7DA999AF269BA42C008DDBA9 /* SearchViewModel+Reduce.swift */,
 				7DA999B1269BA5AD008DDBA9 /* SearchResultRowItem.swift */,
 				D5023F6C274FA20200E10942 /* SearchAppsViewModel.swift */,
 				D5023F6E274FA21200E10942 /* SearchAppsViewModel+Reduce.swift */,
@@ -454,19 +431,14 @@
 				7DA999B8269CE1A9008DDBA9 /* SearchResultsDTOMapper.swift in Sources */,
 				7DA999B2269BA5AD008DDBA9 /* SearchResultRowItem.swift in Sources */,
 				D5023F50274F089200E10942 /* SelectAppStoreView.swift in Sources */,
-				7DA999C9269DAA5B008DDBA9 /* SearchView.swift in Sources */,
 				D5023F5A274F0BBB00E10942 /* AppStore.swift in Sources */,
-				7DA999AE269A54F3008DDBA9 /* SearchViewModel.swift in Sources */,
 				D5023F71274FA34E00E10942 /* SearchAppsContentView.swift in Sources */,
 				D5023F6B274FA12400E10942 /* SearchAppsView.swift in Sources */,
 				D5023F58274F0B6F00E10942 /* AppStoreManager.swift in Sources */,
 				7DA999BF269CE85C008DDBA9 /* SearchResultRow.swift in Sources */,
-				7D9CD75E26988876000450E0 /* SearchConfiguration.swift in Sources */,
 				D5023F61274F0E7A00E10942 /* AppStoreRow.swift in Sources */,
 				D5023F56274F0AB000E10942 /* AppStoreLocalRepository.swift in Sources */,
 				7DA999B6269BA74C008DDBA9 /* DataRequester+Search.swift in Sources */,
-				7DA999B0269BA42C008DDBA9 /* SearchViewModel+Reduce.swift in Sources */,
-				7DA999C5269CE915008DDBA9 /* SearchContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
