@@ -18,7 +18,7 @@ struct AppsView: View {
 
     public var body: some View {
         SearchNavigationViewBuilder()
-            .withContentView(AnyView(content))
+            .withContentView(content)
             .withTitle("Applications")
             .withPlaceholder("Search")
             .onSearch { (searchTerm) in

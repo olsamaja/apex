@@ -8,9 +8,9 @@
 import SwiftUI
 import ApexCore
 
-public struct SearchNavigationView: UIViewControllerRepresentable {
+public struct SearchNavigationView<ContentView: View>: UIViewControllerRepresentable {
 
-    var view: AnyView
+    var view: ContentView
     let useLargeTitle: Bool
     let title: String?
     let placeholder: String?
@@ -22,7 +22,7 @@ public struct SearchNavigationView: UIViewControllerRepresentable {
     let barButtonItemImage: String?
     var onBarButtonItem: (() -> ())?
 
-    public init(view: AnyView,
+    public init(view: ContentView,
          useLargeTitle: Bool,
          title: String?,
          placeholder: String?,
@@ -122,9 +122,9 @@ public struct SearchNavigationView: UIViewControllerRepresentable {
     }
 }
 
-public class SearchNavigationViewBuilder: BuilderProtocol {
+public class SearchNavigationViewBuilder<ContentView: View>: BuilderProtocol {
 
-    private var contentView: AnyView?
+    private var contentView: ContentView?
     private var useLargeTitle: Bool = true
     private var title: String?
     private var placeholder: String?
@@ -136,7 +136,7 @@ public class SearchNavigationViewBuilder: BuilderProtocol {
 
     public init() {}
     
-    public func withContentView(_ view: AnyView) -> SearchNavigationViewBuilder {
+    public func withContentView(_ view: ContentView) -> SearchNavigationViewBuilder {
         self.contentView = view
         return self
     }
@@ -206,10 +206,7 @@ public class SearchNavigationViewBuilder: BuilderProtocol {
 public class SearchNavigationView_Previews: PreviewProvider {
     
     enum Constants {
-        static let content = AnyView(MessageViewBuilder()
-                                        .withMessage("This is some test content.")
-                                        .build()
-                                        .background(Color.blue))
+        static let content = Text("Content")
     }
     
     public static var previews: some View {
@@ -230,9 +227,6 @@ public class SearchNavigationView_Previews: PreviewProvider {
                 .withContentView(Constants.content)
                 .build()
                 .previewDisplayName("No title")
-            SearchNavigationViewBuilder()
-                .build()
-                .previewDisplayName("No content")
         }
     }
 }
