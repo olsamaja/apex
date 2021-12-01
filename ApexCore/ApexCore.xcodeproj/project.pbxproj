@@ -23,6 +23,8 @@
 		D54A539726F4D7960006C7C3 /* String+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A539626F4D7960006C7C3 /* String+Parse.swift */; };
 		D54A539926F4D7CB0006C7C3 /* String+ParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A539826F4D7CB0006C7C3 /* String+ParseTests.swift */; };
 		D54A539B26F534120006C7C3 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A539A26F534120006C7C3 /* Date+String.swift */; };
+		D59968D827583331006ACB34 /* UserDefaults+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59968D727583331006ACB34 /* UserDefaults+Custom.swift */; };
+		D59968DA27583366006ACB34 /* UserDefaults+CustomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59968D927583366006ACB34 /* UserDefaults+CustomTests.swift */; };
 		D5B9FB60274B4CFA00E6DE6A /* AppDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9FB5F274B4CFA00E6DE6A /* AppDetails.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,8 @@
 		D54A539626F4D7960006C7C3 /* String+Parse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Parse.swift"; sourceTree = "<group>"; };
 		D54A539826F4D7CB0006C7C3 /* String+ParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ParseTests.swift"; sourceTree = "<group>"; };
 		D54A539A26F534120006C7C3 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		D59968D727583331006ACB34 /* UserDefaults+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Custom.swift"; sourceTree = "<group>"; };
+		D59968D927583366006ACB34 /* UserDefaults+CustomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+CustomTests.swift"; sourceTree = "<group>"; };
 		D5B9FB5F274B4CFA00E6DE6A /* AppDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +119,7 @@
 				7D9CD66526988249000450E0 /* Info.plist */,
 				7D45E49026A34BE100D2C796 /* OLLoggerTests.swift */,
 				D54A539826F4D7CB0006C7C3 /* String+ParseTests.swift */,
+				D59968D927583366006ACB34 /* UserDefaults+CustomTests.swift */,
 			);
 			path = ApexCoreTests;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 				7D9CD7A32698927D000450E0 /* Data+Print.swift */,
 				7D9CD7A5269892A0000450E0 /* Bundle+Extensions.swift */,
 				D54A539626F4D7960006C7C3 /* String+Parse.swift */,
+				D59968D727583331006ACB34 /* UserDefaults+Custom.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D9CD79D269891F8000450E0 /* OLLogger.swift in Sources */,
+				D59968D827583331006ACB34 /* UserDefaults+Custom.swift in Sources */,
 				7D9CD7AC269895B6000450E0 /* BuilderProtocol.swift in Sources */,
 				7D9CD7A6269892A0000450E0 /* Bundle+Extensions.swift in Sources */,
 				D5B9FB60274B4CFA00E6DE6A /* AppDetails.swift in Sources */,
@@ -294,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D59968DA27583366006ACB34 /* UserDefaults+CustomTests.swift in Sources */,
 				D54A539926F4D7CB0006C7C3 /* String+ParseTests.swift in Sources */,
 				7D45E49126A34BE100D2C796 /* OLLoggerTests.swift in Sources */,
 			);

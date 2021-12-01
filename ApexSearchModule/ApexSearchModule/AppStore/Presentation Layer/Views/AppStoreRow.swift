@@ -9,8 +9,13 @@ import SwiftUI
 
 struct AppStoreRow: View {
     
-    var store: AppStore
+    let store: AppStore
     @Binding var selectedStore: AppStore?
+    
+    public init(store: AppStore, selectedStore: Binding<AppStore?>) {
+        self.store = store
+        self._selectedStore = selectedStore
+    }
 
     var body: some View {
         HStack {
@@ -23,6 +28,7 @@ struct AppStoreRow: View {
         }
         .onTapGesture {
             self.selectedStore = self.store
+            AppStoreManager.defaultStore = store
         }
     }
 }
@@ -38,7 +44,7 @@ struct AppStoreRow_Previews: PreviewProvider {
             AppStoreRow(store: Constants.store, selectedStore: .constant(nil))
                 .sizeThatFitPreview(with: "Not selected")
             AppStoreRow(store: Constants.store, selectedStore: .constant(Constants.store))
-                .sizeThatFitPreview(with: "Not Selected")
+                .sizeThatFitPreview(with: "Selected")
         }
     }
 }

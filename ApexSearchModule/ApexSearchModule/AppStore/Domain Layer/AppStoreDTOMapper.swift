@@ -12,4 +12,8 @@ public struct AppStoreDTOMapper {
     static func map(_ dto: AppStoreDTO) -> AppStore {
         AppStore(code: dto.code, name: dto.name)
     }
+    
+    static func map(_ store: AppStore) -> AppStoreDTO {
+        AppStoreDTO(code: store.code, name: store.name)
+    }
 }

@@ -13,7 +13,3 @@ struct AppStoreDTO: Codable {
 }
 
 extension AppStoreDTO: Equatable {}
-
-struct AppStoresDTO: Decodable {
-    let stores: [AppStoreDTO]
-}

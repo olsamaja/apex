@@ -10,13 +10,13 @@ import Foundation
 struct AppStoreLocalRepository {
     
     private enum Constants {
-        static let defaultStore = AppStoreDTO(code: "GB", name: "United Kingdom")
+        static let defaultStoreKey = "DefaultStore"
     }
     
     static var allStores: [AppStoreDTO] {
         get {
             let stores = [
-                Constants.defaultStore,
+                AppStoreDTO(code: "GB", name: "United Kingdom"),
                 AppStoreDTO(code: "CN", name: "China"),
                 AppStoreDTO(code: "DK", name: "Denmark"),
                 AppStoreDTO(code: "NL", name: "Netherlands"),
@@ -44,6 +44,16 @@ struct AppStoreLocalRepository {
             ]
             
         return stores.sorted { $0.name < $1.name }
+        }
+    }
+    
+    public static var defaultStore: AppStoreDTO? {
+        get {
+            let dto: AppStoreDTO? = UserDefaults.standard.customObject(forKey: Constants.defaultStoreKey)
+            return dto
+        }
+        set(newStore) {
+            UserDefaults.standard.setCustomObject(newStore, forKey: Constants.defaultStoreKey)
         }
     }
 }

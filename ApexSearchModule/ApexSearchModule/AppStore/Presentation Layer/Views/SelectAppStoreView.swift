@@ -14,7 +14,7 @@ public struct SelectAppStoreView: View {
     var presentationMode: Binding<PresentationMode>
 
     let viewModel: SelectAppStoreViewModel
-    @State var selectedStore: AppStore? = nil
+    @State var selectedStore: AppStore? = AppStoreManager.defaultStore
 
     public init(viewModel: SelectAppStoreViewModel) {
         self.viewModel = viewModel
