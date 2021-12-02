@@ -14,7 +14,7 @@ public extension SearchAppsViewModel {
     
     enum State {
         case idle
-        case searching(String)
+        case searching(String, AppStore)
         case loaded([SearchResultRowItem])
         case error(DataError)
     }
@@ -27,7 +27,7 @@ public extension SearchAppsViewModel {
     }
     
     enum UserAction {
-        case search(String)
+        case search(String, AppStore)
         case select(Review)
         case clear
     }
@@ -40,8 +40,8 @@ extension SearchAppsViewModel.State: Equatable {
              (.loaded, .loaded),
              (.error, .error):
             return true
-        case (let .searching(string1), let .searching(string2)):
-            return string1 == string2
+        case (let .searching(term1, store1), let .searching(term2, store2)):
+            return term1 == term2 && store1 == store2
         default:
             return false
         }
@@ -65,8 +65,8 @@ extension SearchAppsViewModel {
     
     static func reduceIdle(_ state: State, _ event: Event) -> State {
         switch event {
-        case .onPerform(.search(let term)):
-            return .searching(term)
+        case .onPerform(.search(let term, let store)):
+            return .searching(term, store)
         default:
             return state
         }
@@ -85,8 +85,8 @@ extension SearchAppsViewModel {
 
     static func reduceLoaded(_ state: State, _ event: Event) -> State {
         switch event {
-        case .onPerform(.search(let term)):
-            return .searching(term)
+        case .onPerform(.search(let term, let store)):
+            return .searching(term, store)
         case .onPerform(.clear):
             return .idle
         default:

@@ -8,7 +8,6 @@
 import Combine
 import ApexNetwork
 import ApexCore
-import ApexStoreModule
 
 public final class SearchAppsViewModel: ObservableObject {
 
@@ -55,7 +54,8 @@ public final class SearchAppsViewModel: ObservableObject {
             .filter { $0.count > 2 }
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] (term) in
-                self?.send(event: .onPerform(.search(term)))
+                guard let self = self else { return }
+                self.send(event: .onPerform(.search(term, self.store)))
             })
         .store(in: &cancellables)
         
@@ -79,9 +79,9 @@ public final class SearchAppsViewModel: ObservableObject {
     static func whenSearching() -> Feedback<State, Event> {
 
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
-            guard case .searching(let term) = state else { return Empty().eraseToAnyPublisher() }
+            guard case .searching(let term, let store) = state else { return Empty().eraseToAnyPublisher() }
             
-            return DataManager().search(with: term, storeCode: StoreManager.currentStore.code)
+            return DataManager().search(with: term, storeCode: store.code)
                 .map { $0.map(SearchResultRowItem.init) }
                 .map(Event.onDataLoaded)
                 .catch { Just(Event.onFailedToLoadData($0)) }
