@@ -13,8 +13,7 @@ public struct SelectAppStoreView: View {
     @Environment(\.presentationMode)
     var presentationMode: Binding<PresentationMode>
 
-    let viewModel: SelectAppStoreViewModel
-    @State var selectedStore: AppStore? = AppStoreManager.defaultStore
+    @ObservedObject var viewModel: SelectAppStoreViewModel
 
     public init(viewModel: SelectAppStoreViewModel) {
         self.viewModel = viewModel
@@ -24,7 +23,7 @@ public struct SelectAppStoreView: View {
     public var body: some View {
         NavigationView {
             List(viewModel.stores, id: \.self) { store in
-                AppStoreRow(store: store, selectedStore: $selectedStore)
+                AppStoreRow(store: store, selectedStore: $viewModel.selectedStore)
             }
             .navigationBarTitle(Text("Select Country"), displayMode: .inline)
             .navigationBarItems(
@@ -33,14 +32,14 @@ public struct SelectAppStoreView: View {
                         self.presentationMode.wrappedValue.dismiss()
                     },
                 trailing:
-                    searchAppsView(store: selectedStore)
+                    searchAppsView(store: viewModel.selectedStore)
             )
         }
     }
     
     @ViewBuilder
     private func searchAppsView(store: AppStore?) -> some View {
-        if let selectedStore = selectedStore {
+        if let selectedStore = viewModel.selectedStore {
                 NavigationLink(
                     destination: SearchAppsView(viewModel: SearchAppsViewModel(state: .idle, store: selectedStore)),
                     label: {

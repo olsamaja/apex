@@ -7,9 +7,10 @@
 
 import Foundation
 
-public struct SelectAppStoreViewModel {
+public final class SelectAppStoreViewModel: ObservableObject {
     
     let stores = AppStoreManager.allStores
+    @Published var selectedStore: AppStore? = AppStoreManager.defaultStore
 
     public init() {}
     
