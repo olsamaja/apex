@@ -8,7 +8,6 @@
 import SwiftUI
 import ApexCore
 import ApexCoreUI
-import ApexSettingsModule
 
 public struct SearchAppsView: View {
     
@@ -25,6 +24,7 @@ public struct SearchAppsView: View {
             content
             Spacer()
         }
+        .navigationTitle(viewModel.store.name)
     }
     
     private var content: some View {
