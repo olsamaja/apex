@@ -11,6 +11,16 @@ import Foundation
 
 public extension UserDefaults {
     
+    /**
+     Store encodable object as a json string in User Defaults.
+     
+     - parameters:
+        - object: encodable object.
+        - key: User Defaults key.
+
+     This function store an encodable object as a json string in User Defaults. It is used to store the last store selected by the user.
+     */
+    
     func setCustomObject<T: Encodable>(_ object: T?, forKey key: String) {
         guard let object = object else {
             removeObject(forKey: key)
@@ -24,6 +34,18 @@ public extension UserDefaults {
         UserDefaults.standard.set(jsonString, forKey: key)
     }
 
+    /**
+     Returns decodable object stored as a json string in User Defaults.
+     
+     - returns:
+     A decodable object, stored as a json string in User Defaults, or nil if not present.
+     
+     - parameters:
+        - key: User Defaults key.
+     
+     This function decodable object stored as a json string in User Defaults. It is used to get the last store selected by the user.
+     */
+    
     func customObject<T: Decodable>(forKey key: String) -> T? {
         guard let jsonString = UserDefaults.standard.string(forKey: key) else {
             return nil
