@@ -9,11 +9,10 @@ import SwiftUI
 import ApexCoreUI
 import ApexCore
 import ApexSearchModule
-import Resolver
 
 struct AppsView: View {
 
-    @Injected var viewModel: AppsViewModel
+    let viewModel: AppsViewModel
     @State var showSelectStore = false
 
     public var body: some View {
@@ -45,19 +44,10 @@ struct AppsView: View {
 
 struct AppsView_Previews: PreviewProvider {
     
-    enum Dependencies {
-        static var registerIdleState = { () -> Bool in
-            Resolver.register { AppsViewModel() as AppsViewModel }
-            return true
-        }
-    }
-    
     static var previews: some View {
         Group {
-            if Dependencies.registerIdleState() {
-                AppsView()
-                    .previewDisplayName("default state = .idle")
-            }
+            AppsView(viewModel: AppsViewModel())
+                .previewDisplayName("default state = .idle")
         }
     }
 }
