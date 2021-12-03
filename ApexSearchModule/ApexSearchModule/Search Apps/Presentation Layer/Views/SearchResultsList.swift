@@ -17,16 +17,16 @@ struct SearchResultsList: View {
     var body: some View {
         List {
             ForEach(items) { item in
-                NavigationRow(destination: {
-                    ReviewsViewBuilder()
-                        .withViewModel(ReviewsViewModel(appDetails: item.appDetails))
-                        .build()
-                        .navigationBarTitle(item.appDetails.trackName, displayMode: .inline)
-                }, label: {
+//                NavigationRow(destination: {
+//                    ReviewsViewBuilder()
+//                        .withViewModel(ReviewsViewModel(appDetails: item.appDetails))
+//                        .build()
+//                        .navigationBarTitle(item.appDetails.trackName, displayMode: .inline)
+//                }, label: {
                     SearchResultRowBuilder()
                         .withItem(item)
                         .build()
-                })
+//                })
             }
         }
     }
