@@ -18,7 +18,8 @@ public extension UserDefaults {
         - object: encodable object.
         - key: User Defaults key.
 
-     This function store an encodable object as a json string in User Defaults. It is used to store the last store selected by the user.
+     This function store an encodable object as a json string in User Defaults. It is used to store:
+        - the last store selected by the user, when adding or searching a new application on the dashboard.
      */
     
     func setCustomObject<T: Encodable>(_ object: T?, forKey key: String) {
@@ -43,7 +44,8 @@ public extension UserDefaults {
      - parameters:
         - key: User Defaults key.
      
-     This function decodable object stored as a json string in User Defaults. It is used to get the last store selected by the user.
+     This function decodable object stored as a json string in User Defaults. It is used to get:
+        - the last store selected by the user.
      */
     
     func customObject<T: Decodable>(forKey key: String) -> T? {
