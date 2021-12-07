@@ -12,7 +12,8 @@ import ApexCoreUI
 struct SearchResultRow: View {
 
     var item: SearchResultRowItem
-    
+    @Binding var selectedItem: SearchResultRowItem?
+
     var body: some View {
         HStack {
             Image(systemName: "person")
@@ -29,28 +30,14 @@ struct SearchResultRow: View {
                     .withRating(item.appDetails.averageUserRating)
                     .build()
             }
-            Image(systemName: "checkmark")
-                .foregroundColor(.accentColor)
+            if item == selectedItem {
+                Image(systemName: "checkmark")
+                    .foregroundColor(.accentColor)
+            }
         }
         .padding(.vertical)
-    }
-}
-
-public class SearchResultRowBuilder: BuilderProtocol {
-    
-    private var item: SearchResultRowItem?
-
-    public func withItem(_ item: SearchResultRowItem) -> SearchResultRowBuilder {
-        self.item = item
-        return self
-    }
-    
-    @ViewBuilder
-    public func build() -> some View {
-        if let item = item {
-            SearchResultRow(item: item)
-        } else {
-            EmptyView()
+        .onTapGesture {
+            self.selectedItem = self.item
         }
     }
 }
@@ -85,15 +72,18 @@ struct SearchResultRow_Previews: PreviewProvider {
                                      averageUserRating: 4.7655,
                                      userRatingCountForCurrentVersion: 123456,
                                      storeCode: "FR")
+        static let item1 = SearchResultRowItem(appDetails: Constants.app1)
     }
     
     static var previews: some View {
         Group {
-            SearchResultRow(item: SearchResultRowItem(appDetails: Constants.app1))
+            SearchResultRow(item: Constants.item1, selectedItem: .constant(nil))
                 .sizeThatFitPreview(with: "Default")
-            SearchResultRow(item: SearchResultRowItem(appDetails: Constants.app2))
+            SearchResultRow(item: Constants.item1, selectedItem: .constant(Constants.item1))
+                .sizeThatFitPreview(with: "Selected")
+            SearchResultRow(item: SearchResultRowItem(appDetails: Constants.app2), selectedItem: .constant(nil))
                 .sizeThatFitPreview(with: "Long application name")
-            SearchResultRow(item: SearchResultRowItem(appDetails: Constants.app3))
+            SearchResultRow(item: SearchResultRowItem(appDetails: Constants.app3), selectedItem: .constant(nil))
                 .sizeThatFitPreview(with: "Long seller's name")
         }
     }

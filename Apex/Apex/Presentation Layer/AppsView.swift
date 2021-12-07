@@ -14,6 +14,7 @@ struct AppsView: View {
 
     let viewModel: AppsViewModel
     @State var showSelectStore = false
+    @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
 
     public var body: some View {
         SearchNavigationViewBuilder()
@@ -31,6 +32,7 @@ struct AppsView: View {
             .sheet(isPresented: $showSelectStore, content: {
                 SelectAppStoreView(viewModel: SelectAppStoreViewModel())
             })
+            .environment(\.rootPresentationMode, $showSelectStore)
             .ignoresSafeArea()
     }
     

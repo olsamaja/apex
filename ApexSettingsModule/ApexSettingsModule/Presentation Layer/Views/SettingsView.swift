@@ -10,8 +10,7 @@ import ApexStoreModule
 
 public struct SettingsView: View {
     
-    @Environment(\.presentationMode)
-    var presentationMode: Binding<PresentationMode>
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     @ObservedObject var viewModel = SettingsViewModel()
     @ObservedObject var selectedStore = SelectedStore()

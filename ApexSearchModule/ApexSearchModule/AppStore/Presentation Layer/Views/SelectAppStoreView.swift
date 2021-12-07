@@ -10,8 +10,7 @@ import ApexCore
 
 public struct SelectAppStoreView: View {
 
-    @Environment(\.presentationMode)
-    var presentationMode: Binding<PresentationMode>
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     @ObservedObject var viewModel: SelectAppStoreViewModel
 

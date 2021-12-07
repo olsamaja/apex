@@ -13,22 +13,24 @@ import ApexReviewsModule
 struct SearchResultsList: View {
     
     var items: [SearchResultRowItem]
+    @State var selectedItem: SearchResultRowItem? = nil
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
+
     var body: some View {
         List {
             ForEach(items) { item in
-//                NavigationRow(destination: {
-//                    ReviewsViewBuilder()
-//                        .withViewModel(ReviewsViewModel(appDetails: item.appDetails))
-//                        .build()
-//                        .navigationBarTitle(item.appDetails.trackName, displayMode: .inline)
-//                }, label: {
-                    SearchResultRowBuilder()
-                        .withItem(item)
-                        .build()
-//                })
+                SearchResultRow(item: item, selectedItem: $selectedItem)
             }
         }
+        .navigationBarItems(
+            trailing:
+                Button("Add") {
+                    OLLogger.info("Add \(selectedItem?.appDetails.trackName)")
+                    self.rootPresentationMode.wrappedValue.dismiss()
+                }
+                .disabled(selectedItem == nil))
     }
 }
 
