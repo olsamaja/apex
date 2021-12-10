@@ -13,6 +13,7 @@ import ApexSearchModule
 struct AppsView: View {
 
     let viewModel: AppsViewModel
+    
     @State var showSelectStore = false
     @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
 
@@ -31,6 +32,7 @@ struct AppsView: View {
             .build()
             .sheet(isPresented: $showSelectStore, content: {
                 SelectAppStoreView(viewModel: SelectAppStoreViewModel())
+                    .environmentObject(viewModel.favorites)
             })
             .environment(\.rootPresentationMode, $showSelectStore)
             .ignoresSafeArea()

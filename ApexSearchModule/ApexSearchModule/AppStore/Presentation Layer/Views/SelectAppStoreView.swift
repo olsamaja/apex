@@ -11,20 +11,18 @@ import ApexCore
 public struct SelectAppStoreView: View {
 
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
     @ObservedObject var viewModel: SelectAppStoreViewModel
 
     public init(viewModel: SelectAppStoreViewModel) {
         self.viewModel = viewModel
     }
     
-    @ViewBuilder
     public var body: some View {
         NavigationView {
             List(viewModel.stores, id: \.self) { store in
                 AppStoreRow(store: store, selectedStore: $viewModel.selectedStore)
             }
-            .navigationBarTitle(Text("Select Country"), displayMode: .inline)
+            .navigationBarTitle("Select Country", displayMode: .inline)
             .navigationBarItems(
                 leading:
                     Button("Cancel") {

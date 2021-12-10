@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import ApexReviewsModule
 import ApexSearchModule
 
 struct ContentView: View {

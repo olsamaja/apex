@@ -11,6 +11,7 @@ import ApexCore
 public final class AppsViewModel: ObservableObject {
 
     @Published var term = ""
+    @Published var favorites = AppFavorites()
 
     func search(with term: String) {
         OLLogger.info("Search term: \(term)")

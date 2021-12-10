@@ -17,6 +17,7 @@ struct SearchResultsList: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
+    @EnvironmentObject var favorites: AppFavorites
 
     var body: some View {
         List {
@@ -28,6 +29,7 @@ struct SearchResultsList: View {
             trailing:
                 Button("Add") {
                     OLLogger.info("Add \(selectedItem?.appDetails.trackName)")
+                    self.favorites.save()
                     self.rootPresentationMode.wrappedValue.dismiss()
                 }
                 .disabled(selectedItem == nil))
