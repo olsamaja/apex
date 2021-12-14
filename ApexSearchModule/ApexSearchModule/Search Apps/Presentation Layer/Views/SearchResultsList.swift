@@ -28,8 +28,13 @@ struct SearchResultsList: View {
         .navigationBarItems(
             trailing:
                 Button("Add") {
-                    OLLogger.info("Add \(selectedItem?.appDetails.trackName)")
-                    self.favorites.save()
+                    guard let item = selectedItem else { return }
+                    
+                    let app = AppSummary(trackId: item.appDetails.trackId,
+                                         trackName: item.appDetails.trackName,
+                                         sellerName: item.appDetails.sellerName,
+                                         storeCode: item.appDetails.storeCode)
+                    self.favorites.add(app)
                     self.rootPresentationMode.wrappedValue.dismiss()
                 }
                 .disabled(selectedItem == nil))

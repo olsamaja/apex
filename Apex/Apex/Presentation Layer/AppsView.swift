@@ -12,7 +12,7 @@ import ApexSearchModule
 
 struct AppsView: View {
 
-    let viewModel: AppsViewModel
+    @ObservedObject var viewModel: AppsViewModel
     
     @State var showSelectStore = false
     @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
@@ -39,9 +39,8 @@ struct AppsView: View {
     }
     
     private var content: some View {
-        MessageViewBuilder()
-            .withMessage("Add an application")
-            .withAlignment(.top)
+        AppsContentViewBuilder()
+            .withViewModel(viewModel)
             .build()
     }
 }
