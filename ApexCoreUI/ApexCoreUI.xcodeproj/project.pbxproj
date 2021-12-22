@@ -15,7 +15,6 @@
 		7D9CD7AE2698979E000450E0 /* SizeThatFitPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7AD2698979E000450E0 /* SizeThatFitPreview.swift */; };
 		7D9CD7B0269897F2000450E0 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7AF269897F2000450E0 /* Spinner.swift */; };
 		7D9CD7B226989885000450E0 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7B126989885000450E0 /* MessageView.swift */; };
-		7D9CD7B4269898BD000450E0 /* SearchNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7B3269898BD000450E0 /* SearchNavigationView.swift */; };
 		D572BE12275FAA8900CBE614 /* RootPresentationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572BE11275FAA8800CBE614 /* RootPresentationMode.swift */; };
 		D5A8C4042751030F00A50485 /* UIColor+Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A8C4032751030F00A50485 /* UIColor+Brightness.swift */; };
 		D5A8C4062751033200A50485 /* Comparable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A8C4052751033200A50485 /* Comparable+Extensions.swift */; };
@@ -68,7 +67,6 @@
 		7D9CD7AD2698979E000450E0 /* SizeThatFitPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeThatFitPreview.swift; sourceTree = "<group>"; };
 		7D9CD7AF269897F2000450E0 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		7D9CD7B126989885000450E0 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
-		7D9CD7B3269898BD000450E0 /* SearchNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigationView.swift; sourceTree = "<group>"; };
 		D572BE11275FAA8800CBE614 /* RootPresentationMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresentationMode.swift; sourceTree = "<group>"; };
 		D5A8C4032751030F00A50485 /* UIColor+Brightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Brightness.swift"; sourceTree = "<group>"; };
 		D5A8C4052751033200A50485 /* Comparable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+Extensions.swift"; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 				D5DD453C26F387BE00423465 /* Badge */,
 				7D9CD7B126989885000450E0 /* MessageView.swift */,
 				D5E3FBAE2756699E00209193 /* SearchBar.swift */,
-				7D9CD7B3269898BD000450E0 /* SearchNavigationView.swift */,
 				D5B9FB62274B992500E6DE6A /* NavigationRow.swift */,
 				D5B9FB6E274C0C6F00E6DE6A /* App Details */,
 			);
@@ -361,7 +358,6 @@
 				7D9CD7AE2698979E000450E0 /* SizeThatFitPreview.swift in Sources */,
 				D5A8C40A2751037100A50485 /* UIColor+Dynamic.swift in Sources */,
 				D5A8C4062751033200A50485 /* Comparable+Extensions.swift in Sources */,
-				7D9CD7B4269898BD000450E0 /* SearchNavigationView.swift in Sources */,
 				D5B9FB72274D415000E6DE6A /* DetailView.swift in Sources */,
 				D5A8C40C2751039100A50485 /* UIColor+Hex.swift in Sources */,
 				D5B9FB70274C0C8300E6DE6A /* AppDetailsViewModel.swift in Sources */,
