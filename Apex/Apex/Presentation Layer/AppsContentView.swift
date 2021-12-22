@@ -12,6 +12,7 @@ import ApexCore
 struct AppsContentView: View {
     
     @ObservedObject var viewModel: AppsViewModel
+    var searchApps = ""
 
     public var body: some View {
         switch viewModel.state {
@@ -29,7 +30,7 @@ struct AppsContentView: View {
                 .build()
         case .loaded(let items):
             List {
-                ForEach(items) { item in
+                ForEach(searchResults(from: items, with: searchApps)) { item in
                     AppRow(item: item)
                 }
             }
@@ -37,6 +38,14 @@ struct AppsContentView: View {
             MessageViewBuilder()
                 .withMessage("Cannot load favorites")
                 .build()
+        }
+    }
+    
+    private func searchResults(from items: [AppRowItem], with term: String) -> [AppRowItem] {
+        if term.isEmpty {
+            return items
+        } else {
+            return items.filter { $0.trackName.contains(term) || $0.storeCode.contains(term) }
         }
     }
 }

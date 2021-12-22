@@ -10,7 +10,8 @@ import ApexSearchModule
 
 struct ContentView: View {
     var body: some View {
-        AppsView(viewModel: AppsViewModel())
+        HomeView(viewModel: AppsViewModel())
+//        AppsView(viewModel: AppsViewModel())
     }
 }
 
