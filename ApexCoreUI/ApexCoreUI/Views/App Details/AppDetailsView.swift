@@ -59,7 +59,7 @@ struct AppDetailsView_Previews: PreviewProvider {
                                         sellerName: "Amazing Publisher Ltd",
                                         version: "1.2.3",
                                         currentVersionReleaseDate: Date(),
-                                        minimumOsVersion: "14.0",
+                                        minimumOsVersion: "15.0",
                                         averageUserRating: 4.83338,
                                         userRatingCountForCurrentVersion: 123456,
                                         storeCode: "GB")
