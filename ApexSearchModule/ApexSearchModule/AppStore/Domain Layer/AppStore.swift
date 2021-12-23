@@ -13,3 +13,10 @@ public struct AppStore {
 }
 
 extension AppStore: Hashable {}
+
+public struct AppStoreSection {
+    let title: String
+    let stores: [AppStore]
+}
+
+extension AppStoreSection: Hashable {}

@@ -21,10 +21,6 @@ struct AppStoreRow: View {
         HStack {
             Text(store.name)
             Spacer()
-            if store == selectedStore {
-                Image(systemName: "checkmark")
-                    .foregroundColor(.accentColor)
-            }
         }
         .onTapGesture {
             self.selectedStore = self.store

@@ -12,12 +12,9 @@ import ApexCoreUI
 struct SearchResultRow: View {
 
     var item: SearchResultRowItem
-    @Binding var selectedItem: SearchResultRowItem?
 
     var body: some View {
         HStack {
-            Image(systemName: "person")
-                .font(.callout)
             HStack {
                 VStack(alignment: .leading) {
                     Text(item.appDetails.trackName)
@@ -30,15 +27,8 @@ struct SearchResultRow: View {
                     .withRating(item.appDetails.averageUserRating)
                     .build()
             }
-            if item == selectedItem {
-                Image(systemName: "checkmark")
-                    .foregroundColor(.accentColor)
-            }
         }
         .padding(.vertical)
-        .onTapGesture {
-            self.selectedItem = self.item
-        }
     }
 }
 
@@ -77,13 +67,11 @@ struct SearchResultRow_Previews: PreviewProvider {
     
     static var previews: some View {
         Group {
-            SearchResultRow(item: Constants.item1, selectedItem: .constant(nil))
+            SearchResultRow(item: Constants.item1)
                 .sizeThatFitPreview(with: "Default")
-            SearchResultRow(item: Constants.item1, selectedItem: .constant(Constants.item1))
-                .sizeThatFitPreview(with: "Selected")
-            SearchResultRow(item: SearchResultRowItem(appDetails: Constants.app2), selectedItem: .constant(nil))
+            SearchResultRow(item: SearchResultRowItem(appDetails: Constants.app2))
                 .sizeThatFitPreview(with: "Long application name")
-            SearchResultRow(item: SearchResultRowItem(appDetails: Constants.app3), selectedItem: .constant(nil))
+            SearchResultRow(item: SearchResultRowItem(appDetails: Constants.app3))
                 .sizeThatFitPreview(with: "Long seller's name")
         }
     }

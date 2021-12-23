@@ -13,6 +13,9 @@ public struct ReviewsView: View {
     
     @ObservedObject var viewModel: ReviewsViewModel
     
+    @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
+    @EnvironmentObject var favorites: AppFavorites
+
     public init(viewModel: ReviewsViewModel) {
         self.viewModel = viewModel
     }
@@ -25,6 +28,21 @@ public struct ReviewsView: View {
             content
             Spacer()
         }
+        .navigationTitle(viewModel.appDetails.trackName)
+        .navigationBarItems(
+            trailing:
+                Button {
+                    let appDetails = viewModel.appDetails
+                    let appSummary = AppSummary(trackId: appDetails.trackId,
+                                                trackName: appDetails.trackName,
+                                                sellerName: appDetails.sellerName,
+                                                storeCode: appDetails.storeCode)
+                    self.favorites.add(appSummary)
+                    self.rootPresentationMode.wrappedValue.dismiss()
+                } label: {
+                    Image(systemName: "heart")
+                }
+            )
     }
     
     @ViewBuilder

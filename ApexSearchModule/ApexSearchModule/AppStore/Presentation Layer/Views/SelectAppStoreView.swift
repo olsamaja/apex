@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ApexCore
+import ApexStoreModule
 
 public struct SelectAppStoreView: View {
 
@@ -20,41 +21,27 @@ public struct SelectAppStoreView: View {
     
     public var body: some View {
         NavigationView {
-            List(searchResults, id: \.self) { store in
-                AppStoreRow(store: store, selectedStore: $viewModel.selectedStore)
+            List {
+                ForEach(viewModel.AppStoreSections(with: searchStore), id: \.self) { section in
+                    Section(header: Text(section.title)) {
+                        ForEach(section.stores, id: \.self) { store in
+                            NavigationLink(
+                                destination: SearchAppsView(viewModel: SearchAppsViewModel(store: store)),
+                                label: {
+                                    AppStoreRow(store: store, selectedStore: $viewModel.selectedStore)
+                                })
+                        }
+                    }
+                }
             }
             .searchable(text: $searchStore, placement: .navigationBarDrawer(displayMode: .always))
-            .navigationBarTitle("Select Country", displayMode: .inline)
+            .navigationBarTitle("Select Store", displayMode: .inline)
             .navigationBarItems(
                 leading:
                     Button("Cancel") {
                         dismiss()
-                    },
-                trailing:
-                    searchAppsView(store: viewModel.selectedStore)
+                    }
             )
-        }
-    }
-    
-    var searchResults: [AppStore] {
-        if searchStore.isEmpty {
-            return viewModel.stores
-        } else {
-            return viewModel.stores.filter { $0.name.contains(searchStore) }
-        }
-    }
-    
-    @ViewBuilder
-    private func searchAppsView(store: AppStore?) -> some View {
-        if let selectedStore = viewModel.selectedStore {
-                NavigationLink(
-                    destination: SearchAppsView(viewModel: SearchAppsViewModel(state: .idle, store: selectedStore)),
-                    label: {
-                        Text("Next")
-                    })
-                .disabled(store == nil)
-        } else {
-            EmptyView()
         }
     }
 }

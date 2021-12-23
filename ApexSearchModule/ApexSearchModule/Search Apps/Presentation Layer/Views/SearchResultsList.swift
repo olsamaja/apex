@@ -15,14 +15,16 @@ struct SearchResultsList: View {
     var items: [SearchResultRowItem]
     @State var selectedItem: SearchResultRowItem? = nil
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
     @EnvironmentObject var favorites: AppFavorites
 
     var body: some View {
         List {
             ForEach(items) { item in
-                SearchResultRow(item: item, selectedItem: $selectedItem)
+                NavigationLink(destination: ReviewsView(viewModel: ReviewsViewModel(appDetails: item.appDetails)),
+                               label: {
+                    SearchResultRow(item: item)
+                })
             }
         }
         .navigationBarItems(

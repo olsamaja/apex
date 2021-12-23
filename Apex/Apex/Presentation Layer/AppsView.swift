@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  AppsView.swift
 //  Apex
 //
 //  Created by Olivier Rigault on 22/12/2021.
@@ -10,7 +10,7 @@ import ApexCoreUI
 import ApexCore
 import ApexSearchModule
 
-struct HomeView: View {
+struct AppsView: View {
 
     @ObservedObject var viewModel: AppsViewModel
     
@@ -40,8 +40,8 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct AppsView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(viewModel: AppsViewModel())
+        AppsView(viewModel: AppsViewModel())
     }
 }
