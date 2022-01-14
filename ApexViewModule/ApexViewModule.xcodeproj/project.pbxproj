@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D55114A1279212DF0030B167 /* ApexCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55114A0279212DF0030B167 /* ApexCore.framework */; };
+		D55114A2279212DF0030B167 /* ApexCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D55114A0279212DF0030B167 /* ApexCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D55114A5279212E90030B167 /* ApexCoreUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55114A4279212E90030B167 /* ApexCoreUI.framework */; };
+		D55114A6279212E90030B167 /* ApexCoreUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D55114A4279212E90030B167 /* ApexCoreUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D55114A82792130C0030B167 /* ApexNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55114A72792130C0030B167 /* ApexNetwork.framework */; };
+		D55114A92792130C0030B167 /* ApexNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D55114A72792130C0030B167 /* ApexNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5CD22C527921219001C69EA /* ApexViewModule.docc in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22C427921219001C69EA /* ApexViewModule.docc */; };
+		D5CD22CB27921219001C69EA /* ApexViewModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CD22C027921219001C69EA /* ApexViewModule.framework */; };
+		D5CD22D027921219001C69EA /* ApexViewModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22CF27921219001C69EA /* ApexViewModuleTests.swift */; };
+		D5CD22D127921219001C69EA /* ApexViewModule.h in Headers */ = {isa = PBXBuildFile; fileRef = D5CD22C327921219001C69EA /* ApexViewModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5CD22ED2792123B001C69EA /* ReviewsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22DC2792123B001C69EA /* ReviewsDTO.swift */; };
+		D5CD22EE2792123C001C69EA /* DataRequester+Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22DD2792123B001C69EA /* DataRequester+Reviews.swift */; };
+		D5CD22EF2792123C001C69EA /* AppReviewRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22DF2792123B001C69EA /* AppReviewRowViewModel.swift */; };
+		D5CD22F02792123C001C69EA /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E02792123B001C69EA /* AppViewModel.swift */; };
+		D5CD22F12792123C001C69EA /* AppSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E12792123B001C69EA /* AppSectionModel.swift */; };
+		D5CD22F22792123C001C69EA /* AppViewModel+Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E22792123B001C69EA /* AppViewModel+Reduce.swift */; };
+		D5CD22F32792123C001C69EA /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E42792123B001C69EA /* Review.swift */; };
+		D5CD22F42792123C001C69EA /* DataManager+Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E52792123B001C69EA /* DataManager+Reviews.swift */; };
+		D5CD22F52792123C001C69EA /* ReviewsDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E62792123B001C69EA /* ReviewsDTOMapper.swift */; };
+		D5CD22F62792123C001C69EA /* AppContentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E82792123B001C69EA /* AppContentRow.swift */; };
+		D5CD22F72792123C001C69EA /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E92792123B001C69EA /* AppView.swift */; };
+		D5CD22F82792123C001C69EA /* AppReviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22EA2792123B001C69EA /* AppReviewRow.swift */; };
+		D5CD22F92792123C001C69EA /* AppDetailsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22EB2792123B001C69EA /* AppDetailsRow.swift */; };
+		D5CD22FA2792123C001C69EA /* AppSectionRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22EC2792123B001C69EA /* AppSectionRows.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D5CD22CC27921219001C69EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5CD22B727921219001C69EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5CD22BF27921219001C69EA;
+			remoteInfo = ApexViewModule;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D55114A3279212DF0030B167 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D55114A2279212DF0030B167 /* ApexCore.framework in Embed Frameworks */,
+				D55114A6279212E90030B167 /* ApexCoreUI.framework in Embed Frameworks */,
+				D55114A92792130C0030B167 /* ApexNetwork.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D55114A0279212DF0030B167 /* ApexCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D55114A4279212E90030B167 /* ApexCoreUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCoreUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D55114A72792130C0030B167 /* ApexNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5CD22C027921219001C69EA /* ApexViewModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApexViewModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5CD22C327921219001C69EA /* ApexViewModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApexViewModule.h; sourceTree = "<group>"; };
+		D5CD22C427921219001C69EA /* ApexViewModule.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ApexViewModule.docc; sourceTree = "<group>"; };
+		D5CD22CA27921219001C69EA /* ApexViewModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApexViewModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5CD22CF27921219001C69EA /* ApexViewModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexViewModuleTests.swift; sourceTree = "<group>"; };
+		D5CD22DC2792123B001C69EA /* ReviewsDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsDTO.swift; sourceTree = "<group>"; };
+		D5CD22DD2792123B001C69EA /* DataRequester+Reviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataRequester+Reviews.swift"; sourceTree = "<group>"; };
+		D5CD22DF2792123B001C69EA /* AppReviewRowViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReviewRowViewModel.swift; sourceTree = "<group>"; };
+		D5CD22E02792123B001C69EA /* AppViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		D5CD22E12792123B001C69EA /* AppSectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSectionModel.swift; sourceTree = "<group>"; };
+		D5CD22E22792123B001C69EA /* AppViewModel+Reduce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppViewModel+Reduce.swift"; sourceTree = "<group>"; };
+		D5CD22E42792123B001C69EA /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		D5CD22E52792123B001C69EA /* DataManager+Reviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManager+Reviews.swift"; sourceTree = "<group>"; };
+		D5CD22E62792123B001C69EA /* ReviewsDTOMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsDTOMapper.swift; sourceTree = "<group>"; };
+		D5CD22E82792123B001C69EA /* AppContentRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContentRow.swift; sourceTree = "<group>"; };
+		D5CD22E92792123B001C69EA /* AppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		D5CD22EA2792123B001C69EA /* AppReviewRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReviewRow.swift; sourceTree = "<group>"; };
+		D5CD22EB2792123B001C69EA /* AppDetailsRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDetailsRow.swift; sourceTree = "<group>"; };
+		D5CD22EC2792123B001C69EA /* AppSectionRows.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSectionRows.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5CD22BD27921219001C69EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D55114A1279212DF0030B167 /* ApexCore.framework in Frameworks */,
+				D55114A5279212E90030B167 /* ApexCoreUI.framework in Frameworks */,
+				D55114A82792130C0030B167 /* ApexNetwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5CD22C727921219001C69EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5CD22CB27921219001C69EA /* ApexViewModule.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D551149F279212DF0030B167 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D55114A72792130C0030B167 /* ApexNetwork.framework */,
+				D55114A4279212E90030B167 /* ApexCoreUI.framework */,
+				D55114A0279212DF0030B167 /* ApexCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5CD22B627921219001C69EA = {
+			isa = PBXGroup;
+			children = (
+				D5CD22C227921219001C69EA /* ApexViewModule */,
+				D5CD22CE27921219001C69EA /* ApexViewModuleTests */,
+				D5CD22C127921219001C69EA /* Products */,
+				D551149F279212DF0030B167 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D5CD22C127921219001C69EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5CD22C027921219001C69EA /* ApexViewModule.framework */,
+				D5CD22CA27921219001C69EA /* ApexViewModuleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5CD22C227921219001C69EA /* ApexViewModule */ = {
+			isa = PBXGroup;
+			children = (
+				D5CD22C327921219001C69EA /* ApexViewModule.h */,
+				D5CD22DA2792123B001C69EA /* Presentation Layer */,
+				D5CD22E32792123B001C69EA /* Domain Layer */,
+				D5CD22DB2792123B001C69EA /* Data Services Layer */,
+				D5CD22C427921219001C69EA /* ApexViewModule.docc */,
+			);
+			path = ApexViewModule;
+			sourceTree = "<group>";
+		};
+		D5CD22CE27921219001C69EA /* ApexViewModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5CD22CF27921219001C69EA /* ApexViewModuleTests.swift */,
+			);
+			path = ApexViewModuleTests;
+			sourceTree = "<group>";
+		};
+		D5CD22DA2792123B001C69EA /* Presentation Layer */ = {
+			isa = PBXGroup;
+			children = (
+				D5CD22E72792123B001C69EA /* Views */,
+				D5CD22DE2792123B001C69EA /* View Models */,
+			);
+			path = "Presentation Layer";
+			sourceTree = "<group>";
+		};
+		D5CD22DB2792123B001C69EA /* Data Services Layer */ = {
+			isa = PBXGroup;
+			children = (
+				D5CD22DC2792123B001C69EA /* ReviewsDTO.swift */,
+				D5CD22DD2792123B001C69EA /* DataRequester+Reviews.swift */,
+			);
+			path = "Data Services Layer";
+			sourceTree = "<group>";
+		};
+		D5CD22DE2792123B001C69EA /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				D5CD22DF2792123B001C69EA /* AppReviewRowViewModel.swift */,
+				D5CD22E02792123B001C69EA /* AppViewModel.swift */,
+				D5CD22E12792123B001C69EA /* AppSectionModel.swift */,
+				D5CD22E22792123B001C69EA /* AppViewModel+Reduce.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		D5CD22E32792123B001C69EA /* Domain Layer */ = {
+			isa = PBXGroup;
+			children = (
+				D5CD22E42792123B001C69EA /* Review.swift */,
+				D5CD22E52792123B001C69EA /* DataManager+Reviews.swift */,
+				D5CD22E62792123B001C69EA /* ReviewsDTOMapper.swift */,
+			);
+			path = "Domain Layer";
+			sourceTree = "<group>";
+		};
+		D5CD22E72792123B001C69EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D5CD22E82792123B001C69EA /* AppContentRow.swift */,
+				D5CD22E92792123B001C69EA /* AppView.swift */,
+				D5CD22EA2792123B001C69EA /* AppReviewRow.swift */,
+				D5CD22EB2792123B001C69EA /* AppDetailsRow.swift */,
+				D5CD22EC2792123B001C69EA /* AppSectionRows.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D5CD22BB27921219001C69EA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5CD22D127921219001C69EA /* ApexViewModule.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D5CD22BF27921219001C69EA /* ApexViewModule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5CD22D427921219001C69EA /* Build configuration list for PBXNativeTarget "ApexViewModule" */;
+			buildPhases = (
+				D5CD22BB27921219001C69EA /* Headers */,
+				D5CD22BC27921219001C69EA /* Sources */,
+				D5CD22BD27921219001C69EA /* Frameworks */,
+				D5CD22BE27921219001C69EA /* Resources */,
+				D55114A3279212DF0030B167 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ApexViewModule;
+			productName = ApexViewModule;
+			productReference = D5CD22C027921219001C69EA /* ApexViewModule.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D5CD22C927921219001C69EA /* ApexViewModuleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5CD22D727921219001C69EA /* Build configuration list for PBXNativeTarget "ApexViewModuleTests" */;
+			buildPhases = (
+				D5CD22C627921219001C69EA /* Sources */,
+				D5CD22C727921219001C69EA /* Frameworks */,
+				D5CD22C827921219001C69EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5CD22CD27921219001C69EA /* PBXTargetDependency */,
+			);
+			name = ApexViewModuleTests;
+			productName = ApexViewModuleTests;
+			productReference = D5CD22CA27921219001C69EA /* ApexViewModuleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D5CD22B727921219001C69EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					D5CD22BF27921219001C69EA = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					D5CD22C927921219001C69EA = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = D5CD22BA27921219001C69EA /* Build configuration list for PBXProject "ApexViewModule" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D5CD22B627921219001C69EA;
+			productRefGroup = D5CD22C127921219001C69EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D5CD22BF27921219001C69EA /* ApexViewModule */,
+				D5CD22C927921219001C69EA /* ApexViewModuleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5CD22BE27921219001C69EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5CD22C827921219001C69EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5CD22BC27921219001C69EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5CD22F02792123C001C69EA /* AppViewModel.swift in Sources */,
+				D5CD22F62792123C001C69EA /* AppContentRow.swift in Sources */,
+				D5CD22F42792123C001C69EA /* DataManager+Reviews.swift in Sources */,
+				D5CD22F32792123C001C69EA /* Review.swift in Sources */,
+				D5CD22F12792123C001C69EA /* AppSectionModel.swift in Sources */,
+				D5CD22F92792123C001C69EA /* AppDetailsRow.swift in Sources */,
+				D5CD22C527921219001C69EA /* ApexViewModule.docc in Sources */,
+				D5CD22F22792123C001C69EA /* AppViewModel+Reduce.swift in Sources */,
+				D5CD22EF2792123C001C69EA /* AppReviewRowViewModel.swift in Sources */,
+				D5CD22F82792123C001C69EA /* AppReviewRow.swift in Sources */,
+				D5CD22F72792123C001C69EA /* AppView.swift in Sources */,
+				D5CD22EE2792123C001C69EA /* DataRequester+Reviews.swift in Sources */,
+				D5CD22F52792123C001C69EA /* ReviewsDTOMapper.swift in Sources */,
+				D5CD22ED2792123B001C69EA /* ReviewsDTO.swift in Sources */,
+				D5CD22FA2792123C001C69EA /* AppSectionRows.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5CD22C627921219001C69EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5CD22D027921219001C69EA /* ApexViewModuleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D5CD22CD27921219001C69EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5CD22BF27921219001C69EA /* ApexViewModule */;
+			targetProxy = D5CD22CC27921219001C69EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D5CD22D227921219001C69EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D5CD22D327921219001C69EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D5CD22D527921219001C69EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 88T9QDTVD4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.olsamaja.ApexViewModule;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D5CD22D627921219001C69EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 88T9QDTVD4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.olsamaja.ApexViewModule;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D5CD22D827921219001C69EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88T9QDTVD4;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.olsamaja.ApexViewModuleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D5CD22D927921219001C69EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88T9QDTVD4;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.olsamaja.ApexViewModuleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5CD22BA27921219001C69EA /* Build configuration list for PBXProject "ApexViewModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5CD22D227921219001C69EA /* Debug */,
+				D5CD22D327921219001C69EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5CD22D427921219001C69EA /* Build configuration list for PBXNativeTarget "ApexViewModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5CD22D527921219001C69EA /* Debug */,
+				D5CD22D627921219001C69EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5CD22D727921219001C69EA /* Build configuration list for PBXNativeTarget "ApexViewModuleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5CD22D827921219001C69EA /* Debug */,
+				D5CD22D927921219001C69EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D5CD22B727921219001C69EA /* Project object */;
+}
