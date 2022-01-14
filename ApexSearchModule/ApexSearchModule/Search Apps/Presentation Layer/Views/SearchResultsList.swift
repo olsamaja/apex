@@ -8,7 +8,7 @@
 import SwiftUI
 import ApexCore
 import ApexCoreUI
-import ApexReviewsModule
+//import ApexReviewsModule
 
 struct SearchResultsList: View {
     
@@ -21,10 +21,11 @@ struct SearchResultsList: View {
     var body: some View {
         List {
             ForEach(items) { item in
-                NavigationLink(destination: ReviewsView(viewModel: ReviewsViewModel(appDetails: item.appDetails)),
-                               label: {
-                    SearchResultRow(item: item)
-                })
+                SearchResultRow(item: item)
+//                NavigationLink(destination: ReviewsView(viewModel: ReviewsViewModel(appSummary: item.appSummary)),
+//                               label: {
+//                    SearchResultRow(item: item)
+//                })
             }
         }
         .navigationBarItems(

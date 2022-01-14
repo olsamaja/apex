@@ -8,6 +8,7 @@
 import SwiftUI
 import ApexCoreUI
 import ApexCore
+import ApexViewModule
 
 struct AppsContentView: View {
     
@@ -31,9 +32,20 @@ struct AppsContentView: View {
         case .loaded(let items):
             List {
                 ForEach(searchResults(from: items, with: searchApps)) { item in
-                    AppRow(item: item)
+                    NavigationLink(destination: AppView(viewModel: AppViewModel(appSummary: item.appSummary)),
+                                   label: {
+                        AppRow(item: item)
+                    })
                 }
             }
+//            List {
+//                ForEach(searchResults(from: items, with: searchApps)) { item in
+//                    NavigationLink(destination: ReviewsView(viewModel: ReviewsViewModel(appSummary: item.appSummary)),
+//                                   label: {
+//                        AppRow(item: item)
+//                    })
+//                }
+//            }
         case .error:
             MessageViewBuilder()
                 .withMessage("Cannot load favorites")

@@ -11,17 +11,16 @@ import ApexNetwork
 
 public final class ReviewsViewModel: ObservableObject {
 
-    public let appDetails: AppDetails
+    public let appSummary: AppSummary
     @Published var state = State.idle
     
     private var cancellables = Set<AnyCancellable>()
     private let action = PassthroughSubject<Event, Never>()
 
-    public init(appDetails: AppDetails, state: State = .idle) {
-        self.appDetails = appDetails
+    public init(appSummary: AppSummary, state: State = .idle) {
+        self.appSummary = appSummary
         self.state = state
         setupFeedbacks()
-        setupBindings()
     }
     
     deinit {
@@ -34,15 +33,12 @@ public final class ReviewsViewModel: ObservableObject {
             reduce: Self.reduce,
             scheduler: RunLoop.main,
             feedbacks: [
-                Self.whenLoading(appId: appDetails.trackId),
+                Self.whenLoading(appId: appSummary.trackId),
                 Self.userAction(action: action.eraseToAnyPublisher())
             ]
         )
         .assign(to: \.state, on: self)
         .store(in: &cancellables)
-    }
-    
-    private func setupBindings() {
     }
     
     func send(event: Event) {
@@ -52,13 +48,7 @@ public final class ReviewsViewModel: ObservableObject {
     static func whenLoading(appId: Int) -> Feedback<State, Event> {
 
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
-            guard case .loading = state else { return Empty().eraseToAnyPublisher() }
-            
-            return DataManager().getReviews(appId: appId)
-                .map { $0.map(ReviewRowItem.init) }
-                .map(Event.onDataLoaded)
-                .catch { Just(Event.onFailedToLoadData($0)) }
-                .eraseToAnyPublisher()
+            return Empty().eraseToAnyPublisher()
         }
     }
 }

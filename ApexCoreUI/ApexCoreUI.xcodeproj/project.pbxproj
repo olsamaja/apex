@@ -30,6 +30,7 @@
 		D5DD562D26EF99A000B4A4FF /* RatingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DD562C26EF99A000B4A4FF /* RatingViewModel.swift */; };
 		D5E3FBAF2756699E00209193 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E3FBAE2756699E00209193 /* SearchBar.swift */; };
 		D5E3FBB12756CFBB00209193 /* UIApplication+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E3FBB02756CFBB00209193 /* UIApplication+Keyboard.swift */; };
+		D5EDA8742791D28D00886317 /* TextRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EDA8732791D28D00886317 /* TextRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		D5DD562C26EF99A000B4A4FF /* RatingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewModel.swift; sourceTree = "<group>"; };
 		D5E3FBAE2756699E00209193 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		D5E3FBB02756CFBB00209193 /* UIApplication+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Keyboard.swift"; sourceTree = "<group>"; };
+		D5EDA8732791D28D00886317 /* TextRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		7D45E47E269F932A00D2C796 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D5EDA8732791D28D00886317 /* TextRow.swift */,
 				D5DD453B26F387B300423465 /* Rating */,
 				D5DD453C26F387BE00423465 /* Badge */,
 				7D9CD7B126989885000450E0 /* MessageView.swift */,
@@ -350,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5A8C4042751030F00A50485 /* UIColor+Brightness.swift in Sources */,
+				D5EDA8742791D28D00886317 /* TextRow.swift in Sources */,
 				7D9CD7B226989885000450E0 /* MessageView.swift in Sources */,
 				D572BE12275FAA8900CBE614 /* RootPresentationMode.swift in Sources */,
 				D5DD453A26F3874A00423465 /* BadgeView.swift in Sources */,

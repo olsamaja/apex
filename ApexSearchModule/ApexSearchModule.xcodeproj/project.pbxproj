@@ -19,8 +19,6 @@
 		7D9CD77A26988B19000450E0 /* ApexCoreUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD77826988B19000450E0 /* ApexCoreUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D9CD77C26988B21000450E0 /* ApexConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD77B26988B21000450E0 /* ApexConfiguration.framework */; };
 		7D9CD77D26988B21000450E0 /* ApexConfiguration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD77B26988B21000450E0 /* ApexConfiguration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7D9CD78D26988B7D000450E0 /* ApexReviewsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD78C26988B7D000450E0 /* ApexReviewsModule.framework */; };
-		7D9CD78E26988B7D000450E0 /* ApexReviewsModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD78C26988B7D000450E0 /* ApexReviewsModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7DA999B2269BA5AD008DDBA9 /* SearchResultRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999B1269BA5AD008DDBA9 /* SearchResultRowItem.swift */; };
 		7DA999B6269BA74C008DDBA9 /* DataRequester+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999B5269BA74C008DDBA9 /* DataRequester+Search.swift */; };
 		7DA999B8269CE1A9008DDBA9 /* SearchResultsDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA999B7269CE1A9008DDBA9 /* SearchResultsDTOMapper.swift */; };
@@ -61,7 +59,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7D9CD78E26988B7D000450E0 /* ApexReviewsModule.framework in Embed Frameworks */,
 				7D9CD77A26988B19000450E0 /* ApexCoreUI.framework in Embed Frameworks */,
 				D5B9FB5E274AD0D500E6DE6A /* ApexStoreModule.framework in Embed Frameworks */,
 				7D9CD77D26988B21000450E0 /* ApexConfiguration.framework in Embed Frameworks */,
@@ -114,7 +111,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D9CD78D26988B7D000450E0 /* ApexReviewsModule.framework in Frameworks */,
 				7D9CD77926988B19000450E0 /* ApexCoreUI.framework in Frameworks */,
 				D5B9FB5D274AD0D500E6DE6A /* ApexStoreModule.framework in Frameworks */,
 				7D9CD77C26988B21000450E0 /* ApexConfiguration.framework in Frameworks */,

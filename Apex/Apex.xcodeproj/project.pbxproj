@@ -15,8 +15,6 @@
 		7D9CD74D2698847A000450E0 /* ApexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD74C2698847A000450E0 /* ApexUITests.swift */; };
 		7D9CD79126988C47000450E0 /* ApexConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD79026988C47000450E0 /* ApexConfiguration.framework */; };
 		7D9CD79226988C47000450E0 /* ApexConfiguration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD79026988C47000450E0 /* ApexConfiguration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7D9CD79626988C50000450E0 /* ApexReviewsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD79426988C50000450E0 /* ApexReviewsModule.framework */; };
-		7D9CD79726988C50000450E0 /* ApexReviewsModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD79426988C50000450E0 /* ApexReviewsModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D9CD79826988C50000450E0 /* ApexSearchModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD79526988C50000450E0 /* ApexSearchModule.framework */; };
 		7D9CD79926988C50000450E0 /* ApexSearchModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD79526988C50000450E0 /* ApexSearchModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D9CD7E9269A161E000450E0 /* ApexCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD7E8269A161E000450E0 /* ApexCore.framework */; };
@@ -30,6 +28,8 @@
 		D572BE1B2763CFCF00CBE614 /* AppRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572BE1A2763CFCF00CBE614 /* AppRowItem.swift */; };
 		D572BE1E2769440B00CBE614 /* AppsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572BE1D2769440B00CBE614 /* AppsContentView.swift */; };
 		D572BE20276A40D700CBE614 /* AppRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572BE1F276A40D700CBE614 /* AppRow.swift */; };
+		D5777023278F47BA006D4C81 /* ApexViewModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5777022278F47BA006D4C81 /* ApexViewModule.framework */; };
+		D5777024278F47BA006D4C81 /* ApexViewModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5777022278F47BA006D4C81 /* ApexViewModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D596104D2746B2C900E256F8 /* ApexSettingsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D596104C2746B2C900E256F8 /* ApexSettingsModule.framework */; };
 		D596104E2746B2C900E256F8 /* ApexSettingsModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D596104C2746B2C900E256F8 /* ApexSettingsModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D5B9FB67274BBBD500E6DE6A /* iTunesArtwork@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = D5B9FB64274BBBD500E6DE6A /* iTunesArtwork@1x.png */; };
@@ -61,8 +61,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D5777024278F47BA006D4C81 /* ApexViewModule.framework in Embed Frameworks */,
 				7D9CD7ED269A1626000450E0 /* ApexCoreUI.framework in Embed Frameworks */,
-				7D9CD79726988C50000450E0 /* ApexReviewsModule.framework in Embed Frameworks */,
 				7D9CD7EA269A161E000450E0 /* ApexCore.framework in Embed Frameworks */,
 				7D9CD79226988C47000450E0 /* ApexConfiguration.framework in Embed Frameworks */,
 				7D9CD79926988C50000450E0 /* ApexSearchModule.framework in Embed Frameworks */,
@@ -99,6 +99,7 @@
 		D572BE1A2763CFCF00CBE614 /* AppRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRowItem.swift; sourceTree = "<group>"; };
 		D572BE1D2769440B00CBE614 /* AppsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsContentView.swift; sourceTree = "<group>"; };
 		D572BE1F276A40D700CBE614 /* AppRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRow.swift; sourceTree = "<group>"; };
+		D5777022278F47BA006D4C81 /* ApexViewModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexViewModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D596104C2746B2C900E256F8 /* ApexSettingsModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexSettingsModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B9FB64274BBBD500E6DE6A /* iTunesArtwork@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@1x.png"; sourceTree = "<group>"; };
 		D5B9FB65274BBBD500E6DE6A /* iTunesArtwork@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@3x.png"; sourceTree = "<group>"; };
@@ -110,8 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5777023278F47BA006D4C81 /* ApexViewModule.framework in Frameworks */,
 				7D9CD7EC269A1626000450E0 /* ApexCoreUI.framework in Frameworks */,
-				7D9CD79626988C50000450E0 /* ApexReviewsModule.framework in Frameworks */,
 				7D9CD7E9269A161E000450E0 /* ApexCore.framework in Frameworks */,
 				7D9CD79126988C47000450E0 /* ApexConfiguration.framework in Frameworks */,
 				7D9CD79826988C50000450E0 /* ApexSearchModule.framework in Frameworks */,
@@ -201,6 +202,7 @@
 		7D9CD78F26988C47000450E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D5777022278F47BA006D4C81 /* ApexViewModule.framework */,
 				D596104C2746B2C900E256F8 /* ApexSettingsModule.framework */,
 				7D9CD7EB269A1626000450E0 /* ApexCoreUI.framework */,
 				7D9CD7E8269A161E000450E0 /* ApexCore.framework */,
@@ -223,12 +225,20 @@
 			isa = PBXGroup;
 			children = (
 				7D9CD73126988477000450E0 /* ContentView.swift */,
+				D56ADEEC2784AF0800E36BB3 /* Apps View */,
+			);
+			path = "Presentation Layer";
+			sourceTree = "<group>";
+		};
+		D56ADEEC2784AF0800E36BB3 /* Apps View */ = {
+			isa = PBXGroup;
+			children = (
 				D56ADEE82773979E00E36BB3 /* AppsView.swift */,
 				D572BE1D2769440B00CBE614 /* AppsContentView.swift */,
 				D572BE1F276A40D700CBE614 /* AppRow.swift */,
 				D572BE1C2763CFD700CBE614 /* View Models */,
 			);
-			path = "Presentation Layer";
+			path = "Apps View";
 			sourceTree = "<group>";
 		};
 		D572BE1C2763CFD700CBE614 /* View Models */ = {

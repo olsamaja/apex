@@ -117,7 +117,6 @@
 			children = (
 				D57C76AA2746F5FA0095D667 /* Views */,
 				D57C76AF2746F5FA0095D667 /* View Models */,
-				D5B9FB502747F17400E6DE6A /* Domain Layer */,
 			);
 			path = "Presentation Layer";
 			sourceTree = "<group>";
@@ -173,6 +172,7 @@
 				D59610612746F55200E256F8 /* ApexStoreModule.h */,
 				D59610622746F55200E256F8 /* Info.plist */,
 				D57C76A92746F5FA0095D667 /* Presentation Layer */,
+				D5B9FB502747F17400E6DE6A /* Domain Layer */,
 				D57C76A42746F5E10095D667 /* Data Services Layer */,
 			);
 			path = ApexStoreModule;

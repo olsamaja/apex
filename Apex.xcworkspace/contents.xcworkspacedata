@@ -5,7 +5,7 @@
       location = "group:Apex/Apex.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:ApexReviewsModule/ApexReviewsModule.xcodeproj">
+      location = "group:../ApexViewModule/ApexViewModule.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:ApexSearchModule/ApexSearchModule.xcodeproj">

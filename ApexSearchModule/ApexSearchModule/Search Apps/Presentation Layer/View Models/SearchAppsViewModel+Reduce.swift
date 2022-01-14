@@ -8,7 +8,6 @@
 import Combine
 import ApexNetwork
 import ApexCore
-import ApexReviewsModule
 
 public extension SearchAppsViewModel {
     
@@ -28,7 +27,6 @@ public extension SearchAppsViewModel {
     
     enum UserAction {
         case search(String, AppStore)
-        case select(Review)
         case clear
     }
 }

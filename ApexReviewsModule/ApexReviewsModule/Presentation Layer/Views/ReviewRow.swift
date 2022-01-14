@@ -14,34 +14,9 @@ struct ReviewRow: View {
     
     var body: some View {
         VStack {
-            Text(item.rating)
+            Text("item.rating")
                 .padding()
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(item.title)
-                        .multilineTextAlignment(.leading)
-                        .font(.title2)
-                    Text(item.content)
-                        .multilineTextAlignment(.leading)
-                        .padding(.vertical, 3)
-                    HStack {
-                        Image(systemName: "person")
-                            .font(.callout)
-                        Text(item.author)
-                            .font(.callout)
-                            .multilineTextAlignment(.leading)
-                        Spacer()
-                        Text(item.version)
-                            .font(.callout)
-                    }
-                    HStack {
-                        Spacer()
-                        Text(item.updated)
-                            .font(.footnote)
-                    }
-                }
-                Spacer()
-            }
+            Spacer()
         }
     }
 }
@@ -64,22 +39,22 @@ public class ReviewRowBuilder: BuilderProtocol {
         }
     }
 }
-
-struct ReviewRow_Previews: PreviewProvider {
-    
-    enum Constants {
-        static let review = Review(
-            title: "Title",
-            author: "author",
-            rating: "4",
-            content:
-                "Some pretty good things about this awesome app. I really love this service. Hope you are going to keep up with the good stuff.",
-            version: "1.2.3",
-            updated: Date())
-    }
-    
-    static var previews: some View {
-        ReviewRow(item: ReviewRowItem(review: Constants.review))
-            .sizeThatFitPreview(with: "Default")
-    }
-}
+//
+//struct ReviewRow_Previews: PreviewProvider {
+//    
+//    enum Constants {
+//        static let review = Review(
+//            title: "Title",
+//            author: "author",
+//            rating: "4",
+//            content:
+//                "Some pretty good things about this awesome app. I really love this service. Hope you are going to keep up with the good stuff.",
+//            version: "1.2.3",
+//            updated: Date())
+//    }
+//    
+//    static var previews: some View {
+//        ReviewRow(item: ReviewRowItem(review: Constants.review))
+//            .sizeThatFitPreview(with: "Default")
+//    }
+//}

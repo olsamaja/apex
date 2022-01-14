@@ -23,16 +23,16 @@ public struct ReviewsView: View {
     public var body: some View {
         VStack {
             AppDetailsViewBuilder()
-                .withViewModel(AppDetailsViewModel(appDetails: viewModel.appDetails))
+                .withViewModel(AppDetailsViewModel(appDetails: AppDetails(trackId: viewModel.appSummary.trackId, trackName: viewModel.appSummary.trackName, sellerName: viewModel.appSummary.sellerName, version: "version", currentVersionReleaseDate: Date(), minimumOsVersion: "iOS 16.0", averageUserRating: 1.23, userRatingCountForCurrentVersion: 1234, storeCode: viewModel.appSummary.storeCode)))
                 .build()
             content
             Spacer()
         }
-        .navigationTitle(viewModel.appDetails.trackName)
+        .navigationTitle(viewModel.appSummary.trackName)
         .navigationBarItems(
             trailing:
                 Button {
-                    let appDetails = viewModel.appDetails
+                    let appDetails = viewModel.appSummary
                     let appSummary = AppSummary(trackId: appDetails.trackId,
                                                 trackName: appDetails.trackName,
                                                 sellerName: appDetails.sellerName,
