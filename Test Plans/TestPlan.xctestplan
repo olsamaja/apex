@@ -49,13 +49,6 @@
     },
     {
       "target" : {
-        "containerPath" : "container:..\/ApexReviewsModule\/ApexReviewsModule.xcodeproj",
-        "identifier" : "7D9CD7112698841C000450E0",
-        "name" : "ApexReviewsModuleTests"
-      }
-    },
-    {
-      "target" : {
         "containerPath" : "container:..\/ApexSearchModule\/ApexSearchModule.xcodeproj",
         "identifier" : "7D9CD6ED269883F1000450E0",
         "name" : "ApexSearchModuleTests"
