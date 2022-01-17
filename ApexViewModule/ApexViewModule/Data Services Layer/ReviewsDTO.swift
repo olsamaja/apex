@@ -1,6 +1,6 @@
 //
 //  ReviewsDTO.swift
-//  ApexReviewsModule
+//  ApexViewModule
 //
 //  Created by Olivier Rigault on 09/07/2021.
 //

@@ -4,11 +4,18 @@
 //
 //  Created by Olivier Rigault on 12/07/2021.
 //
+//  Issue: Text().lineLimit(n) Ignored Inside ScrollView
+//  Source: https://swiftui-lab.com/bug-linelimit-ignored/
+//  Description:
+//    When we have a very long Text that needs more than one line to show its full contents,
+//    the text will get truncated with an ellipsis, if inside a ScrollView.
+//    Using .lineLimit(n) has no effect, for any value of n, including nil.
+//  Solution:
+//    Use .fixedSize(horizontal: false, vertical: true)
 
 import SwiftUI
 import ApexCore
 import ApexCoreUI
-//import ApexReviewsModule
 
 struct SearchResultsList: View {
     
@@ -21,26 +28,20 @@ struct SearchResultsList: View {
     var body: some View {
         List {
             ForEach(items) { item in
-                SearchResultRow(item: item)
-//                NavigationLink(destination: ReviewsView(viewModel: ReviewsViewModel(appSummary: item.appSummary)),
-//                               label: {
-//                    SearchResultRow(item: item)
-//                })
-            }
-        }
-        .navigationBarItems(
-            trailing:
-                Button("Add") {
-                    guard let item = selectedItem else { return }
-                    
+                Button {
                     let app = AppSummary(trackId: item.appDetails.trackId,
                                          trackName: item.appDetails.trackName,
                                          sellerName: item.appDetails.sellerName,
                                          storeCode: item.appDetails.storeCode)
                     self.favorites.add(app)
                     self.rootPresentationMode.wrappedValue.dismiss()
+                } label: {
+                    SearchResultRow(item: item)
+                        .foregroundColor(.black)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
-                .disabled(selectedItem == nil))
+            }
+        }
     }
 }
 
