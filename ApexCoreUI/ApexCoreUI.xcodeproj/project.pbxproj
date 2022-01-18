@@ -28,7 +28,6 @@
 		D5DD453A26F3874A00423465 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DD453926F3874A00423465 /* BadgeView.swift */; };
 		D5DD562B26EF945E00B4A4FF /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DD562A26EF945E00B4A4FF /* RatingView.swift */; };
 		D5DD562D26EF99A000B4A4FF /* RatingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DD562C26EF99A000B4A4FF /* RatingViewModel.swift */; };
-		D5E3FBAF2756699E00209193 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E3FBAE2756699E00209193 /* SearchBar.swift */; };
 		D5E3FBB12756CFBB00209193 /* UIApplication+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E3FBB02756CFBB00209193 /* UIApplication+Keyboard.swift */; };
 		D5EDA8742791D28D00886317 /* TextRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EDA8732791D28D00886317 /* TextRow.swift */; };
 /* End PBXBuildFile section */
@@ -81,7 +80,6 @@
 		D5DD453926F3874A00423465 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		D5DD562A26EF945E00B4A4FF /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		D5DD562C26EF99A000B4A4FF /* RatingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewModel.swift; sourceTree = "<group>"; };
-		D5E3FBAE2756699E00209193 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		D5E3FBB02756CFBB00209193 /* UIApplication+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Keyboard.swift"; sourceTree = "<group>"; };
 		D5EDA8732791D28D00886317 /* TextRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,7 +127,6 @@
 				D5DD453B26F387B300423465 /* Rating */,
 				D5DD453C26F387BE00423465 /* Badge */,
 				7D9CD7B126989885000450E0 /* MessageView.swift */,
-				D5E3FBAE2756699E00209193 /* SearchBar.swift */,
 				D5B9FB62274B992500E6DE6A /* NavigationRow.swift */,
 				D5B9FB6E274C0C6F00E6DE6A /* App Details */,
 			);
@@ -369,7 +366,6 @@
 				D5DD562B26EF945E00B4A4FF /* RatingView.swift in Sources */,
 				7D9CD7B0269897F2000450E0 /* Spinner.swift in Sources */,
 				D5B9FB63274B992500E6DE6A /* NavigationRow.swift in Sources */,
-				D5E3FBAF2756699E00209193 /* SearchBar.swift in Sources */,
 				D5DD562D26EF99A000B4A4FF /* RatingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
