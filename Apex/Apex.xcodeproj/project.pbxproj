@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7D9CD73026988477000450E0 /* ApexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD72F26988477000450E0 /* ApexApp.swift */; };
-		7D9CD73226988477000450E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD73126988477000450E0 /* ContentView.swift */; };
 		7D9CD73426988479000450E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D9CD73326988479000450E0 /* Assets.xcassets */; };
 		7D9CD73726988479000450E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D9CD73626988479000450E0 /* Preview Assets.xcassets */; };
 		7D9CD7422698847A000450E0 /* ApexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD7412698847A000450E0 /* ApexTests.swift */; };
@@ -76,7 +75,6 @@
 /* Begin PBXFileReference section */
 		7D9CD72C26988477000450E0 /* Apex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD72F26988477000450E0 /* ApexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexApp.swift; sourceTree = "<group>"; };
-		7D9CD73126988477000450E0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7D9CD73326988479000450E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D9CD73626988479000450E0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7D9CD73826988479000450E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -226,7 +224,6 @@
 		7DA999C7269DA004008DDBA9 /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
-				7D9CD73126988477000450E0 /* ContentView.swift */,
 				D56ADEEC2784AF0800E36BB3 /* Apps View */,
 			);
 			path = "Presentation Layer";
@@ -408,7 +405,6 @@
 				D572BE1B2763CFCF00CBE614 /* AppRowItem.swift in Sources */,
 				D572BE1E2769440B00CBE614 /* AppsContentView.swift in Sources */,
 				D56ADEE92773979E00E36BB3 /* AppsView.swift in Sources */,
-				7D9CD73226988477000450E0 /* ContentView.swift in Sources */,
 				D5023F4D274EB76900E10942 /* AppsViewModel.swift in Sources */,
 				D572BE20276A40D700CBE614 /* AppRow.swift in Sources */,
 				D572BE192763CF7500CBE614 /* AppsViewModel+Reduce.swift in Sources */,

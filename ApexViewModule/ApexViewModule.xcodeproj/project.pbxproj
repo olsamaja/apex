@@ -197,11 +197,11 @@
 		D5CD22E72792123B001C69EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D5CD22E82792123B001C69EA /* AppContentRow.swift */,
 				D5CD22E92792123B001C69EA /* AppView.swift */,
 				D5CD22EA2792123B001C69EA /* AppReviewRow.swift */,
 				D5CD22EB2792123B001C69EA /* AppDetailsRow.swift */,
 				D5CD22EC2792123B001C69EA /* AppSectionRows.swift */,
+				D5CD22E82792123B001C69EA /* AppContentRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
