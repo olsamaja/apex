@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ApexCore
 
 struct AppRow: View {
     
@@ -18,10 +19,10 @@ struct AppRow: View {
         }
     }
 }
-//
-//struct AppRow_Previews: PreviewProvider {
-//    
-//    static var previews: some View {
-//        AppRow()
-//    }
-//}
+
+struct AppRow_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        AppRow(item: AppRowItem(appSummary: AppSummary(trackId: 0, trackName: "MyApp", sellerName: "My Company", storeCode: "GB")))
+    }
+}

@@ -38,14 +38,6 @@ struct AppsContentView: View {
                     })
                 }
             }
-//            List {
-//                ForEach(searchResults(from: items, with: searchApps)) { item in
-//                    NavigationLink(destination: ReviewsView(viewModel: ReviewsViewModel(appSummary: item.appSummary)),
-//                                   label: {
-//                        AppRow(item: item)
-//                    })
-//                }
-//            }
         case .error:
             MessageViewBuilder()
                 .withMessage("Cannot load favorites")
