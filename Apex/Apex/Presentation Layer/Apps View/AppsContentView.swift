@@ -8,7 +8,6 @@
 import SwiftUI
 import ApexCoreUI
 import ApexCore
-import ApexViewModule
 
 struct AppsContentView: View {
     
@@ -32,10 +31,9 @@ struct AppsContentView: View {
         case .loaded(let items):
             List {
                 ForEach(searchResults(from: items, with: searchApps)) { item in
-                    NavigationLink(destination: AppView(viewModel: AppViewModel(appSummary: item.appSummary)),
-                                   label: {
+                    NavigationLink(value: item) {
                         AppRow(item: item)
-                    })
+                    }
                 }
             }
         case .error:

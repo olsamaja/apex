@@ -9,6 +9,7 @@ import SwiftUI
 import ApexCoreUI
 import ApexCore
 import ApexSearchModule
+import ApexViewModule
 
 struct AppsView: View {
 
@@ -19,7 +20,7 @@ struct AppsView: View {
     @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             AppsContentView(viewModel: viewModel, searchApps: searchApps)
                 .searchable(text: $searchApps, placement: .navigationBarDrawer(displayMode: .always))
                 .navigationTitle("Applications")
@@ -29,6 +30,9 @@ struct AppsView: View {
                     } label: {
                         Image(systemName: "plus")
                     }
+                }
+                .navigationDestination(for: AppRowItem.self) { item in
+                    AppView(viewModel: AppViewModel(appSummary: item.appSummary))
                 }
         }
         .sheet(isPresented: $showSelectStore, content: {
