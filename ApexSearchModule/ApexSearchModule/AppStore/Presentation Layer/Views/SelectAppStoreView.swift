@@ -20,19 +20,20 @@ public struct SelectAppStoreView: View {
     }
     
     public var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(viewModel.AppStoreSections(with: searchStore), id: \.self) { section in
                     Section(header: Text(section.title)) {
                         ForEach(section.stores, id: \.self) { store in
-                            NavigationLink(
-                                destination: SearchAppsView(viewModel: SearchAppsViewModel(store: store)),
-                                label: {
+                            NavigationLink(value: store) {
                                     AppStoreRow(store: store, selectedStore: $viewModel.selectedStore)
-                                })
+                                }
                         }
                     }
                 }
+            }
+            .navigationDestination(for: AppStore.self) { store in
+                SearchAppsView(viewModel: SearchAppsViewModel(store: store))
             }
             .searchable(text: $searchStore, placement: .navigationBarDrawer(displayMode: .always))
             .navigationBarTitle("Select Store", displayMode: .inline)
