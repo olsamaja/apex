@@ -28,18 +28,23 @@ struct SearchResultsList: View {
     var body: some View {
         List {
             ForEach(items) { item in
-                Button {
-                    let app = AppSummary(trackId: item.appDetails.trackId,
-                                         trackName: item.appDetails.trackName,
-                                         sellerName: item.appDetails.sellerName,
-                                         storeCode: item.appDetails.storeCode)
-                    self.favorites.add(app)
-                    self.rootPresentationMode.wrappedValue.dismiss()
-                } label: {
+                NavigationLink(value: item) {
                     SearchResultRow(item: item)
                         .foregroundColor(.black)
                         .fixedSize(horizontal: false, vertical: true)
                 }
+//                Button {
+//                    let app = AppSummary(trackId: item.appDetails.trackId,
+//                                         trackName: item.appDetails.trackName,
+//                                         sellerName: item.appDetails.sellerName,
+//                                         storeCode: item.appDetails.storeCode)
+//                    self.favorites.add(app)
+//                    self.rootPresentationMode.wrappedValue.dismiss()
+//                } label: {
+//                    SearchResultRow(item: item)
+//                        .foregroundColor(.black)
+//                        .fixedSize(horizontal: false, vertical: true)
+//                }
             }
         }
     }

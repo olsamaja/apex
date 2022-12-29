@@ -20,3 +20,10 @@ public struct SearchResultRowItem: Identifiable {
 }
 
 extension SearchResultRowItem: Equatable {}
+
+extension SearchResultRowItem: Hashable {
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}

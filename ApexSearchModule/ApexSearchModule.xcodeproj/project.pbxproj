@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64B34C8D295DBA7000334D22 /* ApexViewModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B34C8C295DBA7000334D22 /* ApexViewModule.framework */; };
+		64B34C8E295DBA7000334D22 /* ApexViewModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64B34C8C295DBA7000334D22 /* ApexViewModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7D38FBBD269ECD4800D9E80A /* DataManager+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D38FBBC269ECD4800D9E80A /* DataManager+Search.swift */; };
 		7D9CD6EF269883F1000450E0 /* ApexSearchModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD6E5269883F1000450E0 /* ApexSearchModule.framework */; };
 		7D9CD6F4269883F1000450E0 /* ApexSearchModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD6F3269883F1000450E0 /* ApexSearchModuleTests.swift */; };
@@ -62,6 +64,7 @@
 				7D9CD77A26988B19000450E0 /* ApexCoreUI.framework in Embed Frameworks */,
 				D5B9FB5E274AD0D500E6DE6A /* ApexStoreModule.framework in Embed Frameworks */,
 				7D9CD77D26988B21000450E0 /* ApexConfiguration.framework in Embed Frameworks */,
+				64B34C8E295DBA7000334D22 /* ApexViewModule.framework in Embed Frameworks */,
 				7D9CD77326988B05000450E0 /* ApexCore.framework in Embed Frameworks */,
 				7D9CD77726988B0D000450E0 /* ApexNetwork.framework in Embed Frameworks */,
 			);
@@ -71,6 +74,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		64B34C8C295DBA7000334D22 /* ApexViewModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexViewModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D38FBBC269ECD4800D9E80A /* DataManager+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+Search.swift"; sourceTree = "<group>"; };
 		7D9CD6E5269883F1000450E0 /* ApexSearchModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApexSearchModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD6E8269883F1000450E0 /* ApexSearchModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApexSearchModule.h; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 				7D9CD77926988B19000450E0 /* ApexCoreUI.framework in Frameworks */,
 				D5B9FB5D274AD0D500E6DE6A /* ApexStoreModule.framework in Frameworks */,
 				7D9CD77C26988B21000450E0 /* ApexConfiguration.framework in Frameworks */,
+				64B34C8D295DBA7000334D22 /* ApexViewModule.framework in Frameworks */,
 				7D9CD77226988B05000450E0 /* ApexCore.framework in Frameworks */,
 				7D9CD77626988B0D000450E0 /* ApexNetwork.framework in Frameworks */,
 			);
@@ -173,6 +178,7 @@
 		7D9CD77026988B05000450E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				64B34C8C295DBA7000334D22 /* ApexViewModule.framework */,
 				D5B9FB5C274AD0D500E6DE6A /* ApexStoreModule.framework */,
 				D596104627468B0C00E256F8 /* ApexSettingsModule.framework */,
 				7D9CD78C26988B7D000450E0 /* ApexReviewsModule.framework */,

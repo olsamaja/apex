@@ -8,6 +8,7 @@
 import SwiftUI
 import ApexCore
 import ApexCoreUI
+import ApexViewModule
 
 public struct SearchAppsView: View {
     
@@ -21,6 +22,11 @@ public struct SearchAppsView: View {
         content
             .searchable(text: $viewModel.term, placement: .navigationBarDrawer(displayMode: .always))
             .navigationBarTitle(viewModel.store.name, displayMode: .inline)
+            .navigationDestination(for: SearchResultRowItem.self) { item in
+                AppView(viewModel: AppViewModel(appSummary: AppSummary(trackId: item.appDetails.trackId,
+                                                                       trackName: item.appDetails.trackName,
+                                                                       sellerName: item.appDetails.sellerName, storeCode: item.appDetails.storeCode)))
+            }
     }
     
     private var content: some View {
