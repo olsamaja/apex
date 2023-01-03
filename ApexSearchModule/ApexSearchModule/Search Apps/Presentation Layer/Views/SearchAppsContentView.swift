@@ -20,9 +20,9 @@ public struct SearchAppsContentView: View {
                 .withMessage("Search apps")
                 .withAlignment(.top)
                 .build()
-                .onAppear {
-                    viewModel.send(event: .onAppear)
-                }
+//                .onAppear {
+//                    viewModel.send(event: .onAppear)
+//                }
         case .error(let error):
             MessageViewBuilder()
                 .withSymbol("xmark.octagon")
@@ -32,6 +32,7 @@ public struct SearchAppsContentView: View {
             SearchResultsListBuilder()
                 .withItems(items)
                 .build()
+                .environmentObject(viewModel)
         case .searching:
             SpinnerBuilder()
                 .withStyle(.large)
@@ -44,7 +45,7 @@ public struct SearchAppsContentView: View {
 public class SearchAppsContentViewBuilder: BuilderProtocol {
     
     private var viewModel: SearchAppsViewModel?
-    
+
     public func withViewModel(_ viewModel: SearchAppsViewModel) -> SearchAppsContentViewBuilder {
         self.viewModel = viewModel
         return self

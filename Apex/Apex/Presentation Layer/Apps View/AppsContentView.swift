@@ -14,6 +14,7 @@ struct AppsContentView: View {
     @ObservedObject var viewModel: AppsViewModel
     var searchApps = ""
 
+    @ViewBuilder
     public var body: some View {
         switch viewModel.state {
         case .idle:
@@ -29,16 +30,24 @@ struct AppsContentView: View {
                 .withMessage("Loading")
                 .build()
         case .loaded(let items):
-            List {
-                ForEach(searchResults(from: items, with: searchApps)) { item in
-                    NavigationLink(value: item) {
-                        AppRow(item: item)
+            if items.count > 0 {
+                List {
+                    ForEach(searchResults(from: items, with: searchApps)) { item in
+                        NavigationLink(value: item) {
+                            AppRow(item: item)
+                        }
                     }
                 }
+            } else {
+                MessageViewBuilder()
+                    .withMessage("Please add a new application")
+                    .withAlignment(.top)
+                    .build()
             }
         case .error:
             MessageViewBuilder()
                 .withMessage("Cannot load favorites")
+                .withSymbol("xmark.octagon")
                 .build()
         }
     }

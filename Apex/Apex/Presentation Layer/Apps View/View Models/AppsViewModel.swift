@@ -49,7 +49,6 @@ public final class AppsViewModel: ObservableObject {
     }
 
     func search(with term: String) {
-        OLLogger.info("Search term: \(term)")
         self.term = term
     }
     

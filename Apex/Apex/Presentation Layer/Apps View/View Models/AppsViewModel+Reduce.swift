@@ -46,7 +46,7 @@ extension AppsViewModel.State: Equatable {
 extension AppsViewModel {
     
     public static func reduce(_ state: State, _ event: Event) -> State {
-        OLLogger.info("State (input): \(state)")
+        OLLogger.info("AppsViewModel: \(state)")
         switch state {
         case .idle:
             return reduceIdle(state, event)

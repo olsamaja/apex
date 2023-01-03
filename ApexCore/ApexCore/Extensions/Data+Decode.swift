@@ -15,7 +15,8 @@ public extension Data {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970
 
-        self.debugPrintJSONString()
+        // - Note: Enable this to print JSON payload
+        //self.debugPrintJSONString()
         
         return Just(self)
             .decode(type: T.self, decoder: decoder)

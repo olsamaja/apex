@@ -12,6 +12,7 @@ import ApexCoreUI
 public struct AppView: View {
     
     @ObservedObject var viewModel: AppViewModel
+    @EnvironmentObject var favorites: AppFavorites
 
     public init(viewModel: AppViewModel) {
         self.viewModel = viewModel

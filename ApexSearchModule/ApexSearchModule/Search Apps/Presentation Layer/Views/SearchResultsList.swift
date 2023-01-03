@@ -22,29 +22,32 @@ struct SearchResultsList: View {
     var items: [SearchResultRowItem]
     @State var selectedItem: SearchResultRowItem? = nil
     
-    @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
-    @EnvironmentObject var favorites: AppFavorites
+//    @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
+//    @EnvironmentObject var favorites: AppFavorites
+    
+    @EnvironmentObject var viewModel: SearchAppsViewModel
 
     var body: some View {
         List {
             ForEach(items) { item in
-                NavigationLink(value: item) {
+//                SearchResultRow(item: item)
+//                NavigationLink(value: item) {
+//                        .foregroundColor(.black)
+//                        .fixedSize(horizontal: false, vertical: true)
+//                }
+                Button {
+                    let app = AppSummary(trackId: item.appDetails.trackId,
+                                         trackName: item.appDetails.trackName,
+                                         sellerName: item.appDetails.sellerName,
+                                         storeCode: item.appDetails.storeCode)
+                    self.viewModel.selectedApp = app
+//                    self.favorites.add(app)
+//                    self.rootPresentationMode.wrappedValue.dismiss()
+                } label: {
                     SearchResultRow(item: item)
                         .foregroundColor(.black)
                         .fixedSize(horizontal: false, vertical: true)
                 }
-//                Button {
-//                    let app = AppSummary(trackId: item.appDetails.trackId,
-//                                         trackName: item.appDetails.trackName,
-//                                         sellerName: item.appDetails.sellerName,
-//                                         storeCode: item.appDetails.storeCode)
-//                    self.favorites.add(app)
-//                    self.rootPresentationMode.wrappedValue.dismiss()
-//                } label: {
-//                    SearchResultRow(item: item)
-//                        .foregroundColor(.black)
-//                        .fixedSize(horizontal: false, vertical: true)
-//                }
             }
         }
     }

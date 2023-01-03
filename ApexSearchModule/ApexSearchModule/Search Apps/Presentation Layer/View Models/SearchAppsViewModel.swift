@@ -14,11 +14,13 @@ public final class SearchAppsViewModel: ObservableObject {
     let store: AppStore
     @Published var state = State.idle
     @Published var term = ""
+    @Published var selectedApp: AppSummary? = nil
 
     private var cancellables = Set<AnyCancellable>()
     private let action = PassthroughSubject<Event, Never>()
 
     public init(state: State = .idle, store: AppStore) {
+        OLLogger.info("SearchAppsViewModel - init(\(store.code))")
         self.state = state
         self.store = store
         setupFeedbacks()

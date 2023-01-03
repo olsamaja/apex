@@ -10,10 +10,15 @@ import ApexCore
 import ApexCoreUI
 import ApexViewModule
 
+//public final class SelectedApp: ObservableObject {
+//    @Published var summary: AppSummary? = nil
+//}
+//
 public struct SearchAppsView: View {
     
     @ObservedObject var viewModel: SearchAppsViewModel
-
+    @EnvironmentObject var favorites: AppFavorites
+    
     public init(viewModel: SearchAppsViewModel) {
         self.viewModel = viewModel
     }
@@ -22,11 +27,24 @@ public struct SearchAppsView: View {
         content
             .searchable(text: $viewModel.term, placement: .navigationBarDrawer(displayMode: .always))
             .navigationBarTitle(viewModel.store.name, displayMode: .inline)
-            .navigationDestination(for: SearchResultRowItem.self) { item in
-                AppView(viewModel: AppViewModel(appSummary: AppSummary(trackId: item.appDetails.trackId,
-                                                                       trackName: item.appDetails.trackName,
-                                                                       sellerName: item.appDetails.sellerName, storeCode: item.appDetails.storeCode)))
-            }
+//            .navigationDestination(for: SearchResultRowItem.self) { item in
+//                AppView(viewModel: AppViewModel(appSummary: AppSummary(trackId: item.appDetails.trackId,
+//                                                                       trackName: item.appDetails.trackName,
+//                                                                       sellerName: item.appDetails.sellerName, storeCode: item.appDetails.storeCode)))
+//            }
+            .sheet(item: $viewModel.selectedApp, content: { appSummary in
+                NavigationStack {
+                    AppView(viewModel: AppViewModel(appSummary: appSummary))
+                        .environmentObject(favorites)
+                        .navigationBarTitle(appSummary.trackName)
+                        .navigationBarItems(
+                            leading:
+                                Button("Cancel") {
+                                },
+                            trailing: Button("Add") {}
+                        )
+                }
+            })
     }
     
     private var content: some View {

@@ -17,6 +17,7 @@ public struct SelectAppStoreView: View {
 
     public init(viewModel: SelectAppStoreViewModel) {
         self.viewModel = viewModel
+        OLLogger.info("SelectAppStoreView()")
     }
     
     public var body: some View {

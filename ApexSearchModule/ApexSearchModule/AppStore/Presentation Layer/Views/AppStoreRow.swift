@@ -17,9 +17,13 @@ struct AppStoreRow: View {
         self._selectedStore = selectedStore
     }
 
+    @ViewBuilder
     var body: some View {
         HStack {
-            Text(store.name)
+            if self.selectedStore == self.store {
+                Text("SEL - ")
+            }
+            Text(store.name + " (\(store.code))")
             Spacer()
         }
         .onTapGesture {

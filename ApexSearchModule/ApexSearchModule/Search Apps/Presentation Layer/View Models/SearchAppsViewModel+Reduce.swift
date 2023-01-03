@@ -51,12 +51,16 @@ extension SearchAppsViewModel {
     public static func reduce(_ state: State, _ event: Event) -> State {
         switch state {
         case .idle:
+            OLLogger.info("SearchAppsViewModel: idle")
             return reduceIdle(state, event)
         case .searching:
+            OLLogger.info("SearchAppsViewModel: searching")
             return reduceSearching(state, event)
         case .loaded:
+            OLLogger.info("SearchAppsViewModel: loaded")
             return reduceLoaded(state, event)
         case .error:
+            OLLogger.info("SearchAppsViewModel: error")
             return reduceError(state, event)
         }
     }
