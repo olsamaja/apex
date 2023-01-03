@@ -10,7 +10,7 @@ import ApexStoreModule
 
 public struct SettingsView: View {
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.dismiss) var dismiss
 
     @ObservedObject var viewModel = SettingsViewModel()
     @ObservedObject var selectedStore = SelectedStore()
@@ -35,7 +35,7 @@ public struct SettingsView: View {
             }
             .navigationBarTitle("Settings")
             .navigationBarItems(trailing: Button("Done", action: {
-                self.presentationMode.wrappedValue.dismiss()
+                dismiss()
             }))
         }
     }

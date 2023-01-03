@@ -17,7 +17,6 @@ struct AppsView: View {
     
     @State var showSelectStore = false
     @State var searchApps = ""
-    @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
 
     var body: some View {
         NavigationStack {
@@ -39,7 +38,6 @@ struct AppsView: View {
             SelectAppStoreView(viewModel: SelectAppStoreViewModel())
                 .environmentObject(viewModel.favorites)
         })
-        .environment(\.rootPresentationMode, $showSelectStore)
         .ignoresSafeArea()
     }
 }

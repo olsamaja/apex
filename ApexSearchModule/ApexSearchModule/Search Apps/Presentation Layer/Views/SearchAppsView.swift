@@ -16,6 +16,7 @@ import ApexViewModule
 //
 public struct SearchAppsView: View {
     
+    @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: SearchAppsViewModel
     @EnvironmentObject var favorites: AppFavorites
     
@@ -40,8 +41,13 @@ public struct SearchAppsView: View {
                         .navigationBarItems(
                             leading:
                                 Button("Cancel") {
+                                    dismiss()
                                 },
-                            trailing: Button("Add") {}
+                            trailing:
+                                Button("Add") {
+                                    self.favorites.add(appSummary)
+                                    dismiss()
+                                }
                         )
                 }
             })
