@@ -10,10 +10,6 @@ import ApexCore
 import ApexCoreUI
 import ApexViewModule
 
-//public final class SelectedApp: ObservableObject {
-//    @Published var summary: AppSummary? = nil
-//}
-//
 public struct SearchAppsView: View {
     
     @Environment(\.dismiss) var dismiss

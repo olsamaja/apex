@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		642D7519297EEAB8009BDD38 /* UIPilot in Frameworks */ = {isa = PBXBuildFile; productRef = 642D7518297EEAB8009BDD38 /* UIPilot */; };
+		64B1C3A02979BE230078217F /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B1C39F2979BE230078217F /* Route.swift */; };
+		64B1C3A22979BE2A0078217F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B1C3A12979BE2A0078217F /* Router.swift */; };
 		7D45E49126A34BE100D2C796 /* OLLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D45E49026A34BE100D2C796 /* OLLoggerTests.swift */; };
 		7D9CD65F26988249000450E0 /* ApexCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD65526988249000450E0 /* ApexCore.framework */; };
 		7D9CD66626988249000450E0 /* ApexCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D9CD65826988249000450E0 /* ApexCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		64B1C39F2979BE230078217F /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		64B1C3A12979BE2A0078217F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		7D45E49026A34BE100D2C796 /* OLLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLLoggerTests.swift; sourceTree = "<group>"; };
 		7D9CD65526988249000450E0 /* ApexCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApexCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD65826988249000450E0 /* ApexCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApexCore.h; sourceTree = "<group>"; };
@@ -70,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				642D7519297EEAB8009BDD38 /* UIPilot in Frameworks */,
 				7D9CD76526988ABB000450E0 /* Resolver-Static in Frameworks */,
 				7D9CD762269889C4000450E0 /* Logging in Frameworks */,
 			);
@@ -86,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64B1C3A32979BE330078217F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				64B1C39F2979BE230078217F /* Route.swift */,
+				64B1C3A12979BE2A0078217F /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		7D9CD64B26988249000450E0 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +128,7 @@
 				7D9CD7A926989305000450E0 /* Feedback */,
 				7D9CD7A226989256000450E0 /* Extensions */,
 				D5B9FB61274B4D0000E6DE6A /* Data Models */,
+				64B1C3A32979BE330078217F /* Router */,
 			);
 			path = ApexCore;
 			sourceTree = "<group>";
@@ -201,6 +217,7 @@
 			packageProductDependencies = (
 				7D9CD761269889C4000450E0 /* Logging */,
 				7D9CD76426988ABB000450E0 /* Resolver-Static */,
+				642D7518297EEAB8009BDD38 /* UIPilot */,
 			);
 			productName = ApexCore;
 			productReference = 7D9CD65526988249000450E0 /* ApexCore.framework */;
@@ -255,6 +272,7 @@
 			packageReferences = (
 				7D9CD760269889C4000450E0 /* XCRemoteSwiftPackageReference "swift-log" */,
 				7D9CD76326988ABB000450E0 /* XCRemoteSwiftPackageReference "Resolver" */,
+				642D7517297EEAB8009BDD38 /* XCRemoteSwiftPackageReference "UIPilot" */,
 			);
 			productRefGroup = 7D9CD65626988249000450E0 /* Products */;
 			projectDirPath = "";
@@ -291,10 +309,12 @@
 				7D9CD79D269891F8000450E0 /* OLLogger.swift in Sources */,
 				D59968D827583331006ACB34 /* UserDefaults+Custom.swift in Sources */,
 				7D9CD7AC269895B6000450E0 /* BuilderProtocol.swift in Sources */,
+				64B1C3A02979BE230078217F /* Route.swift in Sources */,
 				7D9CD7A6269892A0000450E0 /* Bundle+Extensions.swift in Sources */,
 				D5B9FB60274B4CFA00E6DE6A /* AppDetails.swift in Sources */,
 				7D9CD7A12698924F000450E0 /* Data+Decode.swift in Sources */,
 				7D9CD79B269891A9000450E0 /* DataError.swift in Sources */,
+				64B1C3A22979BE2A0078217F /* Router.swift in Sources */,
 				D572BE15275FDD1600CBE614 /* AppSummary.swift in Sources */,
 				D54A539726F4D7960006C7C3 /* String+Parse.swift in Sources */,
 				7D9CD7A8269892E8000450E0 /* Publishers+System.swift in Sources */,
@@ -573,6 +593,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		642D7517297EEAB8009BDD38 /* XCRemoteSwiftPackageReference "UIPilot" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/canopas/UIPilot";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		7D9CD760269889C4000450E0 /* XCRemoteSwiftPackageReference "swift-log" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-log.git";
@@ -592,6 +620,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		642D7518297EEAB8009BDD38 /* UIPilot */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 642D7517297EEAB8009BDD38 /* XCRemoteSwiftPackageReference "UIPilot" */;
+			productName = UIPilot;
+		};
 		7D9CD761269889C4000450E0 /* Logging */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7D9CD760269889C4000450E0 /* XCRemoteSwiftPackageReference "swift-log" */;

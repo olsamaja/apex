@@ -8,9 +8,11 @@
 import SwiftUI
 import ApexCoreUI
 import ApexCore
+import UIPilot
 
 struct AppsContentView: View {
     
+    @EnvironmentObject var pilot: UIPilot<AppRoute>
     @ObservedObject var viewModel: AppsViewModel
     var searchApps = ""
 
@@ -33,8 +35,8 @@ struct AppsContentView: View {
             if items.count > 0 {
                 List {
                     ForEach(searchResults(from: items, with: searchApps)) { item in
-                        NavigationLink(value: item) {
-                            AppRow(item: item)
+                        Button(item.trackName) {
+                            pilot.push(.details(item.appSummary))
                         }
                     }
                 }
