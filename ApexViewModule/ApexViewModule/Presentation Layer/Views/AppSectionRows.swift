@@ -34,7 +34,9 @@ struct AppSectionRows: View {
     
     private func contentRows(_ rowModels: [AppContentRowModel]) -> some View {
         ForEach(rowModels) { model in
-            contentRow(model)
+            NavigationLink(value: model) {
+                contentRow(model)
+            }
         }
     }
 }

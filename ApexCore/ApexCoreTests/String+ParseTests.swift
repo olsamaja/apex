@@ -16,6 +16,7 @@ class String_ParseTests: XCTestCase {
     private struct TestDTO: Decodable {
         let firstName: String
         let lastName: String
+        let description: String
     }
 
     override func tearDown() {
@@ -27,7 +28,8 @@ class String_ParseTests: XCTestCase {
         let jsonString = """
         {
           "firstName": "Carl",
-          "lastName": "Lewis"
+          "lastName": "Lewis",
+          "description": "Athlete"
         }
         """
         
@@ -40,6 +42,31 @@ class String_ParseTests: XCTestCase {
             { person in
                 XCTAssertEqual(person.firstName, "Carl")
                 XCTAssertEqual(person.lastName, "Lewis")
+                XCTAssertEqual(person.description, "Athlete")
+                expectation.fulfill()
+            }
+        
+        wait(for: [expectation], timeout: 1)
+    }
+
+    func testParseWithDeletingNewlinesSuccessful() throws {
+        
+        let jsonString = """
+        {
+            "firstName": "Carl",
+            "lastName": "Lewis",
+            "description": "Text with a \n character."
+        }
+        """
+        
+        let expectation = XCTestExpectation(description: "Decoding TestDTO")
+        let publisher: AnyPublisher<TestDTO, DataError> = jsonString.parse(with: .deletingNewlineCharacters)
+
+        cancellable = publisher
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { _ in })
+            { person in
+                XCTAssertEqual(person.description, "Text with a  character.")
                 expectation.fulfill()
             }
         

@@ -19,6 +19,7 @@ struct AppsView: View {
     @State var searchApps = ""
     @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
 
+    @ViewBuilder
     var body: some View {
         NavigationStack {
             AppsContentView(viewModel: viewModel, searchApps: searchApps)
@@ -33,6 +34,13 @@ struct AppsView: View {
                 }
                 .navigationDestination(for: AppRowItem.self) { item in
                     AppView(viewModel: AppViewModel(appSummary: item.appSummary))
+                }
+                .navigationDestination(for: AppContentRowModel.self) { model in
+                    if ((model.type.self as? AppReviewRow.Type) != nil) {
+                        Text("hello")
+                    } else {
+                        EmptyView()
+                    }
                 }
         }
         .sheet(isPresented: $showSelectStore, content: {

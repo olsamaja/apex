@@ -32,6 +32,11 @@ struct AppContentRow: View {
                 return AnyView(EmptyView())
             }
             return AnyView( AppReviewRow(item: model) )
+        case is AppDetailsRow.Type:
+            guard let model = model.model as? AppDetailsRowViewModel else {
+                return AnyView(EmptyView())
+            }
+            return AnyView( AppDetailsRow(item: model) )
         default: return AnyView(EmptyView())
         }
     }

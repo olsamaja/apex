@@ -33,7 +33,7 @@ public final class AppViewModel: ObservableObject {
             reduce: Self.reduce,
             scheduler: RunLoop.main,
             feedbacks: [
-                Self.whenLoadingReviews(appId: appSummary.trackId),
+                Self.whenLoadingAppDetailsAndReviews(appId: appSummary.trackId, storeCode: appSummary.storeCode),
                 Self.userAction(action: action.eraseToAnyPublisher())
             ]
         )
@@ -45,15 +45,21 @@ public final class AppViewModel: ObservableObject {
         action.send(event)
     }
     
-    static func whenLoadingReviews(appId: Int) -> Feedback<State, Event> {
+    static func whenLoadingAppDetailsAndReviews(appId: Int, storeCode: String) -> Feedback<State, Event> {
 
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
-            guard case .loadingReviews = state else { return Empty().eraseToAnyPublisher() }
+            guard case .loading = state else { return Empty().eraseToAnyPublisher() }
 
-            return DataManager().getReviews(appId: appId)
+            let appDetails = DataManager().getAppDetails(appId: appId, storeCode: storeCode)
+                .map { AppDetailsRowViewModel(appDetails: $0) }
+                .map { AppSectionModel.makeDetailsSectionModel(with: $0) }
+
+            let reviews = DataManager().getReviews(appId: appId)
                 .map { $0.map(AppReviewRowViewModel.init) }
                 .map { AppSectionModel.makeReviewsSectionModel(with: $0) }
-                .map(Event.onLoadedReviews)
+
+            return Publishers.Zip(appDetails, reviews)
+                .map(Event.onLoaded)
                 .catch { Just(Event.onFailedToLoadData($0)) }
                 .eraseToAnyPublisher()
         }

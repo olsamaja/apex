@@ -32,14 +32,14 @@ public struct AppView: View {
                 .withSymbol("xmark.octagon")
                 .withMessage(error.localizedDescription)
                 .build()
-        case .loaded(let sections):
+        case .loadedDetailsAndReviews(let sections):
             List {
                 ForEach(sections) { section in
                     AppSectionRows(with: section)
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
-        case .loadingReviews:
+        case .loading:
             SpinnerBuilder()
                 .withStyle(.large)
                 .isAnimating(true)
