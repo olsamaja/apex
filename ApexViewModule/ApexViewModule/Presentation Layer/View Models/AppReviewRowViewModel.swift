@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct AppReviewRowViewModel: Identifiable {
+public struct AppReviewRowViewModel: Identifiable, Hashable {
     
     public let id: String
     let title: String

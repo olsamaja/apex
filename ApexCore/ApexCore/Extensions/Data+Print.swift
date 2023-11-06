@@ -19,6 +19,8 @@ public extension Data {
     func debugPrintJSONString() {
         if let string = self.prettyPrintedJSONString {
             debugPrint(string)
+        } else if let string = String(data: self, encoding: .utf8) {
+            debugPrint(string)
         }
     }
 }

@@ -13,14 +13,15 @@ public extension AppViewModel {
     
     enum State {
         case idle
-        case loadingReviews
-        case loaded([AppSectionModel])
+        case loading
+        case loadedDetailsAndReviews([AppSectionModel])
         case error(DataError)
     }
     
     enum Event {
         case onAppear
-        case onLoadedReviews(AppSectionModel)
+        case onLoaded(AppSectionModel, AppSectionModel)
+        case onLoadedDetailsAndReviews([AppSectionModel])
         case onFailedToLoadData(DataError)
     }
 }
@@ -29,8 +30,8 @@ extension AppViewModel.State: Equatable {
     public static func == (lhs: AppViewModel.State, rhs: AppViewModel.State) -> Bool {
         switch (lhs, rhs) {
         case (.idle, .idle),
-             (.loadingReviews, .loadingReviews),
-             (.loaded, .loaded),
+             (.loading, .loading),
+             (.loadedDetailsAndReviews, .loadedDetailsAndReviews),
              (.error, .error):
             return true
         default:
@@ -45,9 +46,9 @@ extension AppViewModel {
         switch state {
         case .idle:
             return reduceIdle(state, event)
-        case .loadingReviews:
-            return reduceLoadingReviews(state, event)
-        case .loaded:
+        case .loading:
+            return reduceLoading(state, event)
+        case .loadedDetailsAndReviews:
             return reduceLoaded(state, event)
         case .error:
             return reduceError(state, event)
@@ -57,20 +58,20 @@ extension AppViewModel {
     static func reduceIdle(_ state: State, _ event: Event) -> State {
         switch event {
         case .onAppear:
-            return .loadingReviews
+            return .loading
         default:
             return state
         }
     }
     
-    static func reduceLoadingReviews(_ state: State, _ event: Event) -> State {
+    static func reduceLoading(_ state: State, _ event: Event) -> State {
         switch event {
         case .onFailedToLoadData(let error):
             return .error(error)
-        case .onLoadedReviews(let reviews):
-            // If state == .loadedDetails(details), then return .loadedReviews(details + reviews)
-            // In the mean time, just return reviews
-            return .loaded([reviews])
+        case .onLoaded(let appDetails, let reviews):
+            return .loadedDetailsAndReviews([appDetails] + [reviews])
+        case .onLoadedDetailsAndReviews(let reviews):
+            return .loadedDetailsAndReviews(reviews)
         default:
             return state
         }
@@ -90,4 +91,3 @@ extension AppViewModel {
         Feedback { _ in action }
     }
 }
-

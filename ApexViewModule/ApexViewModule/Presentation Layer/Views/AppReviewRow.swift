@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct AppReviewRow: View {
+public struct AppReviewRow: View {
     
     var item: AppReviewRowViewModel
     
-    var body: some View {
+    public var body: some View {
         VStack {
             Text(item.rating)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
