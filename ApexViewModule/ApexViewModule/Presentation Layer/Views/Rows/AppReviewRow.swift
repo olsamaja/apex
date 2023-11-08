@@ -9,11 +9,11 @@ import SwiftUI
 
 public struct AppReviewRow: View {
     
-    var item: AppReviewRowViewModel
+    var item: ReviewRowViewModel
     private let lineLimitForTitle: Int?
     private let lineLimitForContent: Int?
 
-    public init(item: AppReviewRowViewModel, isExpanded: Bool = false) {
+    public init(item: ReviewRowViewModel, isExpanded: Bool = false) {
         self.item = item
         self.lineLimitForTitle = isExpanded ? nil : 1
         self.lineLimitForContent = isExpanded ? nil : 2
@@ -51,7 +51,7 @@ public struct AppReviewRow: View {
 struct AppReviewRow_Previews: PreviewProvider {
     
     enum Constants {
-        static let item = AppReviewRowViewModel(review: Review(title: "Incredible super long title for this review", author: "author", rating: "3", content: "This is a wonderful app, which never ceases to amaze me! Please keep the good work. Well done!", version: "4.5.6", updated: Date()))
+        static let item = ReviewRowViewModel(review: Review(title: "Incredible super long title for this review", author: "author", rating: "3", content: "This is a wonderful app, which never ceases to amaze me! Please keep the good work. Well done!", version: "4.5.6", updated: Date()))
     }
     
     static var previews: some View {

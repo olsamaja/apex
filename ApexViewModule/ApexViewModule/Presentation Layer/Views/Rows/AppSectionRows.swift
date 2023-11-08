@@ -10,26 +10,26 @@ import ApexCoreUI
 
 struct AppSectionRows: View {
 
-    let sectionModel: AppSectionModel
+    let sectionModel: SectionModel
     
-    init(with model: AppSectionModel) {
+    init(with model: SectionModel) {
         self.sectionModel = model
     }
     
     var body: some View {
-        if let headerModel = sectionModel.headerModel {
+        if let headerModel = sectionModel.header {
             Section(header: contentRow(headerModel)) {
-                if let rowModels = sectionModel.rowModels {
+                if let rowModels = sectionModel.rows {
                     contentRows(rowModels)
                 }
             }
             .textCase(nil)
-        } else if let rowModels = sectionModel.rowModels {
+        } else if let rowModels = sectionModel.rows {
             contentRows(rowModels)
         }
     }
     
-    private func contentRow(_ rowModel: AppContentRowModel) -> some View {
+    private func contentRow(_ rowModel: ContentRowModel) -> some View {
         AppContentRow(model: rowModel)
     }
     
@@ -38,7 +38,7 @@ struct AppSectionRows: View {
     // Cons: performance as content row is rendered twice.
     
     @ViewBuilder
-    private func contentRows(_ rowModels: [AppContentRowModel]) -> some View {
+    private func contentRows(_ rowModels: [ContentRowModel]) -> some View {
         ForEach(rowModels) { model in
             if case .review = model.category {
                 ZStack(alignment: .leading) {

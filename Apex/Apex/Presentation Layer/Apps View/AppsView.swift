@@ -35,7 +35,7 @@ struct AppsView: View {
                 .navigationDestination(for: AppRowItem.self) { item in
                     AppView(viewModel: AppViewModel(appSummary: item.appSummary))
                 }
-                .navigationDestination(for: AppContentRowModel.self) { model in
+                .navigationDestination(for: ContentRowModel.self) { model in
                     switch model.category {
                     case .review(let model):
                         ReviewView(model: model)

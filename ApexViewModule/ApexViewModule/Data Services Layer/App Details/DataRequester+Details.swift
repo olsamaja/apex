@@ -13,7 +13,7 @@ import ApexCore
 
 extension DataRequester {
     
-    public func getAppDetails(with appId: Int, storeCode: String) -> AnyPublisher<AppDetailsDTO, DataError> {
+    public func getDetails(with appId: Int, storeCode: String) -> AnyPublisher<DetailsDTO, DataError> {
         loadData(with: LookupApi(appId: appId, storeCode: storeCode).urlComponents())
     }
 }

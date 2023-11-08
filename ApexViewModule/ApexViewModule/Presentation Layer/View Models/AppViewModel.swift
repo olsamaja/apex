@@ -50,13 +50,13 @@ public final class AppViewModel: ObservableObject {
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
             guard case .loading = state else { return Empty().eraseToAnyPublisher() }
 
-            let appDetails = DataManager().getAppDetails(appId: appId, storeCode: storeCode)
-                .map { AppDetailsRowViewModel(appDetails: $0) }
-                .map { AppSectionModel.makeDetailsSectionModel(with: $0) }
+            let appDetails = DataManager().getDetails(appId: appId, storeCode: storeCode)
+                .map { DetailsRowViewModel(details: $0) }
+                .map { SectionModel.makeDetailsSectionModel(with: $0) }
 
             let reviews = DataManager().getReviews(appId: appId)
-                .map { $0.map(AppReviewRowViewModel.init) }
-                .map { AppSectionModel.makeReviewsSectionModel(with: $0) }
+                .map { $0.map(ReviewRowViewModel.init) }
+                .map { SectionModel.makeReviewsSectionModel(with: $0) }
 
             return Publishers.Zip(appDetails, reviews)
                 .map(Event.onLoaded)

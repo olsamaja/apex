@@ -33,7 +33,7 @@ final class DataRequester_DetailsTests: XCTestCase {
         
         MockURLProtocol.requestHandler = MockURLProtocol.makeRequestHandler(in: bundle, with: "MockGetAppDetailsSuccessful")
         
-        cancellable = dataRequester.getAppDetails(with: 0)
+        cancellable = dataRequester.getDetails(with: 0, storeCode: "gb")
             .sink(receiveCompletion: { _ in }) { response in
                 XCTAssertEqual(response.trackId, 1052238659)
                 XCTAssertEqual(response.trackName, "Monzo - Mobile Banking")
@@ -49,7 +49,7 @@ final class DataRequester_DetailsTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Invalid json format")
         MockURLProtocol.requestHandler = MockURLProtocol.makeRequestHandler(with: "Invalid")
         
-        cancellable = dataRequester.getAppDetails(with: 0)
+        cancellable = dataRequester.getDetails(with: 0, storeCode: "gb")
             .sink(receiveCompletion: { completion in
                 XCTAssertEqual(completion, .failure(DataError.parsing(description: "The data couldn’t be read because it isn’t in the correct format.")))
                 expectation.fulfill()
@@ -63,7 +63,7 @@ final class DataRequester_DetailsTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Valid json with missing data")
         MockURLProtocol.requestHandler = MockURLProtocol.makeRequestHandler(with: "{}")
         
-        cancellable = dataRequester.getAppDetails(with: 0)
+        cancellable = dataRequester.getDetails(with: 0, storeCode: "gb")
             .sink(receiveCompletion: { completion in
                 XCTAssertEqual(completion, .failure(DataError.parsing(description: "The data couldn’t be read because it is missing.")))
                   expectation.fulfill()
@@ -77,7 +77,7 @@ final class DataRequester_DetailsTests: XCTestCase {
         let expectation = XCTestExpectation(description: "I nvalid request")
         MockURLProtocol.requestHandler = MockURLProtocol.makeInvalidRequestHandler()
         
-        cancellable = dataRequester.getAppDetails(with: 0)
+        cancellable = dataRequester.getDetails(with: 0, storeCode: "gb")
             .sink(receiveCompletion: { completion in
                 XCTAssertEqual(completion, .failure(DataError.network(description: "The operation couldn’t be completed. (NSURLErrorDomain error -1.)")))
                   expectation.fulfill()

@@ -11,14 +11,14 @@ import ApexCore
 
 public extension DataManager {
     
-    func getAppDetails(appId: Int, storeCode: String) -> AnyPublisher<AppDetails, DataError> {
-        return dataRequester.getAppDetails(with: appId, storeCode: storeCode)
+    func getDetails(appId: Int, storeCode: String) -> AnyPublisher<Details, DataError> {
+        return dataRequester.getDetails(with: appId, storeCode: storeCode)
             .mapError {
                 print("error: " + $0.localizedDescription)
                 return $0
             }
             .map {
-                AppDetailsDTOMapper.map($0)
+                DetailsDTOMapper.map($0)
             }
             .eraseToAnyPublisher()
     }

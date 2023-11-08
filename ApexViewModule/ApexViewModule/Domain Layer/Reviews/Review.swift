@@ -25,3 +25,5 @@ public struct Review {
         self.updated = updated
     }
 }
+
+extension Review: Equatable {}

@@ -10,9 +10,9 @@ import ApexCoreUI
 
 struct AppContentRow: View {
     
-    let model: AppContentRowModel
+    let model: ContentRowModel
     
-    init(model: AppContentRowModel) {
+    init(model: ContentRowModel) {
         self.model = model
     }
 
@@ -20,7 +20,7 @@ struct AppContentRow: View {
         AppContentRow.makeRow(with: model)
     }
     
-    static private func makeRow(with model: AppContentRowModel) -> some View {
+    static private func makeRow(with model: ContentRowModel) -> some View {
         switch model.category {
         case .text(let title):
             return AnyView( TextRow(title: title) )

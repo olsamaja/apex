@@ -8,7 +8,7 @@
 import Foundation
 import ApexCore
 
-public struct AppDetailsDTO: Decodable {
+public struct DetailsDTO: Decodable {
     
     let trackId: Int
     let trackName: String
@@ -21,7 +21,7 @@ public struct AppDetailsDTO: Decodable {
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let results = try container.decode([AppDetailsResultDTO].self, forKey: CodingKeys.results)
+        let results = try container.decode([DetailsResultDTO].self, forKey: CodingKeys.results)
         
         guard let first = results.first else {
             throw DataError.parsing(description: "App details data missing in payload.")
@@ -34,7 +34,7 @@ public struct AppDetailsDTO: Decodable {
     }
 }
 
-public struct AppDetailsResultDTO: Decodable {
+public struct DetailsResultDTO: Decodable {
     let trackId: Int
     let trackName: String
     let averageUserRating: Double

@@ -1,5 +1,5 @@
 //
-//  AppDetails.swift
+//  Details.swift
 //  ApexViewModule
 //
 //  Created by Olivier Rigault on 02/11/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct AppDetails {
+public struct Details {
     
     public let trackId: Int
     public let trackName: String
@@ -21,3 +21,5 @@ public struct AppDetails {
         self.version = version
     }
 }
+
+extension Details: Equatable {}
