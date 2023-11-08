@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D39BB622AFB7DA900198217 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D39BB612AFB7DA900198217 /* RatingView.swift */; };
+		7D39BB642AFB940000198217 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D39BB632AFB940000198217 /* ReviewView.swift */; };
 		7D5922A22AF40A9100EAD7A9 /* DataManager+Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5922A12AF40A9100EAD7A9 /* DataManager+Details.swift */; };
 		7D5922A42AF40ACB00EAD7A9 /* AppDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5922A32AF40ACB00EAD7A9 /* AppDetails.swift */; };
 		7D5922A62AF40BF800EAD7A9 /* AppDetailsDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5922A52AF40BF800EAD7A9 /* AppDetailsDTOMapper.swift */; };
@@ -71,6 +73,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7D39BB612AFB7DA900198217 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		7D39BB632AFB940000198217 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		7D5922A12AF40A9100EAD7A9 /* DataManager+Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+Details.swift"; sourceTree = "<group>"; };
 		7D5922A32AF40ACB00EAD7A9 /* AppDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetails.swift; sourceTree = "<group>"; };
 		7D5922A52AF40BF800EAD7A9 /* AppDetailsDTOMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsDTOMapper.swift; sourceTree = "<group>"; };
@@ -298,6 +302,8 @@
 			isa = PBXGroup;
 			children = (
 				D5CD22E92792123B001C69EA /* AppView.swift */,
+				7D39BB632AFB940000198217 /* ReviewView.swift */,
+				7D39BB612AFB7DA900198217 /* RatingView.swift */,
 				7D39BB602AFB734C00198217 /* Rows */,
 			);
 			path = Views;
@@ -426,6 +432,8 @@
 				7D97CEB92AF309D60032EC42 /* DataRequester+Details.swift in Sources */,
 				D5CD22F92792123C001C69EA /* AppDetailsRow.swift in Sources */,
 				D5CD22C527921219001C69EA /* ApexViewModule.docc in Sources */,
+				7D39BB642AFB940000198217 /* ReviewView.swift in Sources */,
+				7D39BB622AFB7DA900198217 /* RatingView.swift in Sources */,
 				D5CD22F22792123C001C69EA /* AppViewModel+Reduce.swift in Sources */,
 				D5CD22EF2792123C001C69EA /* AppReviewRowViewModel.swift in Sources */,
 				D5CD22F82792123C001C69EA /* AppReviewRow.swift in Sources */,

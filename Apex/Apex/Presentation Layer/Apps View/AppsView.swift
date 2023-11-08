@@ -38,7 +38,7 @@ struct AppsView: View {
                 .navigationDestination(for: AppContentRowModel.self) { model in
                     switch model.category {
                     case .review(let model):
-                        AppReviewRow(item: model)
+                        ReviewView(model: model)
                     default:
                         EmptyView()
                     }

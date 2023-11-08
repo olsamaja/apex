@@ -20,34 +20,30 @@ public struct AppReviewRow: View {
     }
     
     public var body: some View {
-        VStack {
-            Text(item.rating)
-                .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+        VStack(alignment: .leading) {
+            RatingView(rating: Int(item.rating)!)
+                .padding(.vertical, 3)
+            Text(item.title)
+                .multilineTextAlignment(.leading)
+                .font(.headline)
+                .lineLimit(lineLimitForTitle)
+            Text(item.content)
+                .multilineTextAlignment(.leading)
+                .padding(.vertical, 3)
+                .lineLimit(lineLimitForContent)
             HStack {
-                VStack(alignment: .leading) {
-                    Text(item.title)
-                        .multilineTextAlignment(.leading)
-                        .font(.headline)
-                        .lineLimit(lineLimitForTitle)
-                    Text(item.content)
-                        .multilineTextAlignment(.leading)
-                        .padding(.vertical, 3)
-                        .lineLimit(lineLimitForContent)
-                    HStack {
-                        Image(systemName: "person")
-                            .font(.callout)
-                        Text(item.author)
-                            .font(.callout)
-                            .multilineTextAlignment(.leading)
-                        Spacer()
-                        Text(item.version)
-                            .font(.callout)
-                    }
-                    .padding(.vertical, 2)
-                    Text(item.updated)
-                        .font(.footnote)
-                }
+                Image(systemName: "person")
+                    .font(.callout)
+                Text(item.author)
+                    .font(.callout)
+                    .multilineTextAlignment(.leading)
+                Spacer()
+                Text(item.version)
+                    .font(.callout)
             }
+            .padding(.vertical, 2)
+            Text(item.updated)
+                .font(.footnote)
         }
     }
 }
