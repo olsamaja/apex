@@ -13,7 +13,7 @@ public struct ContentRowModel: Identifiable {
     
     public enum Category {
         case text(String)
-        case appDetails(DetailsRowViewModel)
+        case details(DetailsRowViewModel)
         case review(ReviewRowViewModel)
     }
     
@@ -36,7 +36,7 @@ extension ContentRowModel: Equatable {
         switch (lhs.category, rhs.category) {
         case (.text(let lhsText), .text(let rhsText)):
             return lhsText == rhsText
-        case (.appDetails(let lhsDetails), .appDetails(let rhsDetails)):
+        case (.details(let lhsDetails), .details(let rhsDetails)):
             return lhsDetails.id == rhsDetails.id
         case (.review(let lhsReview), .review(let rhsReview)):
             return lhsReview.id == rhsReview.id

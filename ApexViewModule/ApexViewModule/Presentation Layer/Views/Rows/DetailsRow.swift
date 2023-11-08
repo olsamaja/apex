@@ -8,7 +8,7 @@
 import SwiftUI
 import ApexCore
 
-struct AppDetailsRow: View {
+struct DetailsRow: View {
 
     var item: DetailsRowViewModel
     
@@ -28,7 +28,7 @@ struct AppDetailsRow_Previews: PreviewProvider {
     }
     
     static var previews: some View {
-        AppDetailsRow(item: Constants.item)
+        DetailsRow(item: Constants.item)
             .sizeThatFitPreview(with: "Default")
     }
 }

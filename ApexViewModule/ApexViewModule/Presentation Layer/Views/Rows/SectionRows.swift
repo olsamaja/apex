@@ -1,5 +1,5 @@
 //
-//  AppSectionsRow.swift
+//  SectionsRow.swift
 //  Apex
 //
 //  Created by Olivier Rigault on 07/01/2022.
@@ -8,29 +8,29 @@
 import SwiftUI
 import ApexCoreUI
 
-struct AppSectionRows: View {
+struct SectionRows: View {
 
-    let sectionModel: SectionModel
+    let model: SectionModel
     
     init(with model: SectionModel) {
-        self.sectionModel = model
+        self.model = model
     }
     
     var body: some View {
-        if let headerModel = sectionModel.header {
-            Section(header: contentRow(headerModel)) {
-                if let rowModels = sectionModel.rows {
-                    contentRows(rowModels)
+        if let header = model.header {
+            Section(header: contentRow(header)) {
+                if let rows = model.rows {
+                    contentRows(rows)
                 }
             }
             .textCase(nil)
-        } else if let rowModels = sectionModel.rows {
-            contentRows(rowModels)
+        } else if let rows = model.rows {
+            contentRows(rows)
         }
     }
     
-    private func contentRow(_ rowModel: ContentRowModel) -> some View {
-        AppContentRow(model: rowModel)
+    private func contentRow(_ model: ContentRowModel) -> some View {
+        ContentRow(model: model)
     }
     
     // Trick to hide disclosure indicator for iOS 16-
@@ -38,8 +38,8 @@ struct AppSectionRows: View {
     // Cons: performance as content row is rendered twice.
     
     @ViewBuilder
-    private func contentRows(_ rowModels: [ContentRowModel]) -> some View {
-        ForEach(rowModels) { model in
+    private func contentRows(_ rows: [ContentRowModel]) -> some View {
+        ForEach(rows) { model in
             if case .review = model.category {
                 ZStack(alignment: .leading) {
                     NavigationLink(value: model) {

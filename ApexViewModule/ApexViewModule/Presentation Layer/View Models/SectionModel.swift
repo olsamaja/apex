@@ -32,7 +32,7 @@ extension SectionModel {
     static func makeDetailsSectionModel(with model: DetailsRowViewModel) -> SectionModel {
         SectionModel(
             header: ContentRowModel(.text("App Details")),
-            rows: [ContentRowModel(.appDetails(model))])
+            rows: [ContentRowModel(.details(model))])
     }
 
     static func makeReviewsSectionModel(with reviews: [ReviewRowViewModel]) -> SectionModel {

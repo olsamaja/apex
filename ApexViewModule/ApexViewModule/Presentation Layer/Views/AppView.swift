@@ -35,7 +35,7 @@ public struct AppView: View {
         case .loadedDetailsAndReviews(let sections):
             List {
                 ForEach(sections) { section in
-                    AppSectionRows(with: section)
+                    SectionRows(with: section)
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }

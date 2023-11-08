@@ -1,5 +1,5 @@
 //
-//  AppContentRow.swift
+//  ContentRow.swift
 //  Apex
 //
 //  Created by Olivier Rigault on 07/01/2022.
@@ -8,7 +8,7 @@
 import SwiftUI
 import ApexCoreUI
 
-struct AppContentRow: View {
+struct ContentRow: View {
     
     let model: ContentRowModel
     
@@ -17,17 +17,17 @@ struct AppContentRow: View {
     }
 
     var body: some View {
-        AppContentRow.makeRow(with: model)
+        ContentRow.makeRow(with: model)
     }
     
     static private func makeRow(with model: ContentRowModel) -> some View {
         switch model.category {
         case .text(let title):
             return AnyView( TextRow(title: title) )
-        case .appDetails(let model):
-            return AnyView( AppDetailsRow(item: model) )
+        case .details(let model):
+            return AnyView( DetailsRow(item: model) )
         case .review(let model):
-            return AnyView( AppReviewRow(item: model) )
+            return AnyView( ReviewRow(item: model) )
         }
     }
 }

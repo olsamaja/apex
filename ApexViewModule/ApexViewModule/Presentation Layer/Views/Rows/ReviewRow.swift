@@ -1,5 +1,5 @@
 //
-//  AppReviewRow.swift
+//  ReviewRow.swift
 //  Apex
 //
 //  Created by Olivier Rigault on 07/01/2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct AppReviewRow: View {
+public struct ReviewRow: View {
     
     var item: ReviewRowViewModel
     private let lineLimitForTitle: Int?
@@ -56,9 +56,9 @@ struct AppReviewRow_Previews: PreviewProvider {
     
     static var previews: some View {
         List {
-            AppReviewRow(item: Constants.item)
+            ReviewRow(item: Constants.item)
                 .sizeThatFitPreview(with: "Default")
-            AppReviewRow(item: Constants.item, isExpanded: true)
+            ReviewRow(item: Constants.item, isExpanded: true)
                 .sizeThatFitPreview(with: "Expanded review")
         }
     }
