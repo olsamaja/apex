@@ -186,6 +186,17 @@
 			path = Reviews;
 			sourceTree = "<group>";
 		};
+		7D39BB602AFB734C00198217 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				D5CD22EC2792123B001C69EA /* AppSectionRows.swift */,
+				D5CD22E82792123B001C69EA /* AppContentRow.swift */,
+				D5CD22EB2792123B001C69EA /* AppDetailsRow.swift */,
+				D5CD22EA2792123B001C69EA /* AppReviewRow.swift */,
+			);
+			path = Rows;
+			sourceTree = "<group>";
+		};
 		7D97CEBE2AF3A3490032EC42 /* Data Services Layer */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,9 +278,9 @@
 			children = (
 				D5CD22E02792123B001C69EA /* AppViewModel.swift */,
 				D5CD22E22792123B001C69EA /* AppViewModel+Reduce.swift */,
+				D5CD22E12792123B001C69EA /* AppSectionModel.swift */,
 				D5CD22DF2792123B001C69EA /* AppReviewRowViewModel.swift */,
 				7D5922AF2AF6C00200EAD7A9 /* AppDetailsRowViewModel.swift */,
-				D5CD22E12792123B001C69EA /* AppSectionModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -287,10 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				D5CD22E92792123B001C69EA /* AppView.swift */,
-				D5CD22EC2792123B001C69EA /* AppSectionRows.swift */,
-				D5CD22E82792123B001C69EA /* AppContentRow.swift */,
-				D5CD22EB2792123B001C69EA /* AppDetailsRow.swift */,
-				D5CD22EA2792123B001C69EA /* AppReviewRow.swift */,
+				7D39BB602AFB734C00198217 /* Rows */,
 			);
 			path = Views;
 			sourceTree = "<group>";

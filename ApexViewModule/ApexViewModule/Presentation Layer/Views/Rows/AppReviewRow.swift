@@ -10,6 +10,14 @@ import SwiftUI
 public struct AppReviewRow: View {
     
     var item: AppReviewRowViewModel
+    private let lineLimitForTitle: Int?
+    private let lineLimitForContent: Int?
+
+    public init(item: AppReviewRowViewModel, isExpanded: Bool = false) {
+        self.item = item
+        self.lineLimitForTitle = isExpanded ? nil : 1
+        self.lineLimitForContent = isExpanded ? nil : 2
+    }
     
     public var body: some View {
         VStack {
@@ -19,10 +27,12 @@ public struct AppReviewRow: View {
                 VStack(alignment: .leading) {
                     Text(item.title)
                         .multilineTextAlignment(.leading)
-                        .font(.title2)
+                        .font(.headline)
+                        .lineLimit(lineLimitForTitle)
                     Text(item.content)
                         .multilineTextAlignment(.leading)
                         .padding(.vertical, 3)
+                        .lineLimit(lineLimitForContent)
                     HStack {
                         Image(systemName: "person")
                             .font(.callout)
@@ -33,11 +43,9 @@ public struct AppReviewRow: View {
                         Text(item.version)
                             .font(.callout)
                     }
-                    HStack {
-                        Spacer()
-                        Text(item.updated)
-                            .font(.footnote)
-                    }
+                    .padding(.vertical, 2)
+                    Text(item.updated)
+                        .font(.footnote)
                 }
             }
         }
@@ -47,11 +55,15 @@ public struct AppReviewRow: View {
 struct AppReviewRow_Previews: PreviewProvider {
     
     enum Constants {
-        static let item = AppReviewRowViewModel(review: Review(title: "Title", author: "author", rating: "3", content: "This is a wonderful app, which never ceases to amaze me! Please keep the good work. Well done!", version: "1.2.3", updated: Date()))
+        static let item = AppReviewRowViewModel(review: Review(title: "Incredible super long title for this review", author: "author", rating: "3", content: "This is a wonderful app, which never ceases to amaze me! Please keep the good work. Well done!", version: "4.5.6", updated: Date()))
     }
     
     static var previews: some View {
+        List {
             AppReviewRow(item: Constants.item)
-            .sizeThatFitPreview(with: "Default")
+                .sizeThatFitPreview(with: "Default")
+            AppReviewRow(item: Constants.item, isExpanded: true)
+                .sizeThatFitPreview(with: "Expanded review")
+        }
     }
 }

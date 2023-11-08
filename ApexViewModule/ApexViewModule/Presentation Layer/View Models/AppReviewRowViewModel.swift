@@ -10,12 +10,12 @@ import Foundation
 public struct AppReviewRowViewModel: Identifiable, Hashable {
     
     public let id: String
-    let title: String
-    let author: String
-    let rating: String
-    let content: String
-    let version: String
-    let updated: String
+    public let title: String
+    public let author: String
+    public let rating: String
+    public let content: String
+    public let version: String
+    public let updated: String
     
     init(review: Review) {
         self.id = UUID().uuidString

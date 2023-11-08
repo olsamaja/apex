@@ -36,9 +36,10 @@ struct AppsView: View {
                     AppView(viewModel: AppViewModel(appSummary: item.appSummary))
                 }
                 .navigationDestination(for: AppContentRowModel.self) { model in
-                    if ((model.type.self as? AppReviewRow.Type) != nil) {
-                        Text("hello")
-                    } else {
+                    switch model.category {
+                    case .review(let model):
+                        AppReviewRow(item: model)
+                    default:
                         EmptyView()
                     }
                 }

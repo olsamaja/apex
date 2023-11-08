@@ -11,16 +11,17 @@ import ApexCore
 
 public struct AppContentRowModel: Identifiable {
     
+    public enum Category {
+        case text(String)
+        case appDetails(AppDetailsRowViewModel)
+        case review(AppReviewRowViewModel)
+    }
+    
     public var id = UUID().uuidString
-    public let type: Any
+    public let category: AppContentRowModel.Category
     
-    let model: Any?
-    let destination: AnyView?
-    
-    init(type: Any, model: Any? = nil, destination: AnyView? = nil) {
-        self.type = type
-        self.model = model
-        self.destination = destination
+    init(_ category: AppContentRowModel.Category) {
+        self.category = category
     }
 }
 
@@ -29,15 +30,21 @@ extension AppContentRowModel: Hashable {
         hasher.combine(id)
     }
 }
+
 extension AppContentRowModel: Equatable {
     public static func == (lhs: AppContentRowModel, rhs: AppContentRowModel) -> Bool {
-        
-//        guard lhs.type == rhs.type else { return false }
-//        guard lhs.model == rhs.model else { return false }
-        return true
+        switch (lhs.category, rhs.category) {
+        case (.text(let lhsText), .text(let rhsText)):
+            return lhsText == rhsText
+        case (.appDetails(let lhsDetails), .appDetails(let rhsDetails)):
+            return lhsDetails.id == rhsDetails.id
+        case (.review(let lhsReview), .review(let rhsReview)):
+            return lhsReview.id == rhsReview.id
+        default:
+            return false
+        }
     }
 }
-
 
 public struct AppSectionModel: Identifiable {
     
@@ -61,13 +68,13 @@ extension AppSectionModel {
     
     static func makeDetailsSectionModel(with model: AppDetailsRowViewModel) -> AppSectionModel {
         AppSectionModel(
-            header: AppContentRowModel(type: TextRow.self, model: "App Details"),
-            rows: [AppContentRowModel(type: AppDetailsRow.self, model: model)])
+            header: AppContentRowModel(.text("App Details")),
+            rows: [AppContentRowModel(.appDetails(model))])
     }
 
     static func makeReviewsSectionModel(with reviews: [AppReviewRowViewModel]) -> AppSectionModel {
         AppSectionModel(
-            header: AppContentRowModel(type: TextRow.self, model: "Reviews (\(reviews.count))"),
-            rows: reviews.map { AppContentRowModel(type: AppReviewRow.self, model: $0) })
+            header: AppContentRowModel(.text("Reviews (\(reviews.count))")),
+            rows: reviews.map { AppContentRowModel(.review($0)) })
     }
 }

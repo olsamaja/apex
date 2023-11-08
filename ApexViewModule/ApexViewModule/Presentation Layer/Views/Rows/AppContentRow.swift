@@ -21,23 +21,13 @@ struct AppContentRow: View {
     }
     
     static private func makeRow(with model: AppContentRowModel) -> some View {
-        switch model.type.self {
-        case is TextRow.Type:
-            guard let title = model.model as? String else {
-                return AnyView(EmptyView())
-            }
+        switch model.category {
+        case .text(let title):
             return AnyView( TextRow(title: title) )
-        case is AppReviewRow.Type:
-            guard let model = model.model as? AppReviewRowViewModel else {
-                return AnyView(EmptyView())
-            }
-            return AnyView( AppReviewRow(item: model) )
-        case is AppDetailsRow.Type:
-            guard let model = model.model as? AppDetailsRowViewModel else {
-                return AnyView(EmptyView())
-            }
+        case .appDetails(let model):
             return AnyView( AppDetailsRow(item: model) )
-        default: return AnyView(EmptyView())
+        case .review(let model):
+            return AnyView( AppReviewRow(item: model) )
         }
     }
 }

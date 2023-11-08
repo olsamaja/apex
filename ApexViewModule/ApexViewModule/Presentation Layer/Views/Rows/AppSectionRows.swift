@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ApexCoreUI
 
 struct AppSectionRows: View {
 
@@ -32,9 +33,23 @@ struct AppSectionRows: View {
         AppContentRow(model: rowModel)
     }
     
+    // Trick to hide disclosure indicator for iOS 16-
+    // Source: https://www.appcoda.com/hide-disclosure-indicator-swiftui-list/
+    // Cons: performance as content row is rendered twice.
+    
+    @ViewBuilder
     private func contentRows(_ rowModels: [AppContentRowModel]) -> some View {
         ForEach(rowModels) { model in
-            NavigationLink(value: model) {
+            if case .review = model.category {
+                ZStack(alignment: .leading) {
+                    NavigationLink(value: model) {
+                        contentRow(model)
+                        EmptyView()
+                    }
+                    .opacity(0)
+                    contentRow(model)
+                }
+            } else {
                 contentRow(model)
             }
         }
