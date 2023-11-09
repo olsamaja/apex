@@ -54,7 +54,7 @@ public final class AppViewModel: ObservableObject {
                 .map { DetailsRowViewModel(details: $0) }
                 .map { SectionModel.makeDetailsSectionModel(with: $0) }
 
-            let reviews = DataManager().getReviews(appId: appId)
+            let reviews = DataManager().getReviews(appId: appId, storeCode: storeCode)
                 .map { $0.map(ReviewRowViewModel.init) }
                 .map { SectionModel.makeReviewsSectionModel(with: $0) }
 

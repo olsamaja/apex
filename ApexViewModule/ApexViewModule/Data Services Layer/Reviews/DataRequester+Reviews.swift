@@ -13,16 +13,17 @@ import ApexCore
 
 extension DataRequester {
     
-    public func getReviews(with appId: Int) -> AnyPublisher<ReviewsDTO, DataError> {
-        loadData(with: ReviewsApi(appId: appId).urlComponents())
+    public func getReviews(with appId: Int, storeCode: String) -> AnyPublisher<ReviewsDTO, DataError> {
+        loadData(with: ReviewsApi(appId: appId, storeCode: storeCode.lowercased()).urlComponents())
     }
 }
 
 struct ReviewsApi: ApiProtocol {
     
     let appId: Int
+    let storeCode: String
     
     func path() -> String {
-        return "/gb/rss/customerreviews/id=\(appId)/mostrecent/json"
+        return "/\(storeCode)/rss/customerreviews/id=\(appId)/mostrecent/json"
     }
 }

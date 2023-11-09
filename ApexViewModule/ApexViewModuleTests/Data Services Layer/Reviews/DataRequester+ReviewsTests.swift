@@ -33,7 +33,7 @@ final class DataRequester_ReviewsTests: XCTestCase {
         
         MockURLProtocol.requestHandler = MockURLProtocol.makeRequestHandler(in: bundle, with: "MockGetReviewsSuccessful")
         
-        cancellable = dataRequester.getReviews(with: 0)
+        cancellable = dataRequester.getReviews(with: 0, storeCode: "")
             .sink(receiveCompletion: { _ in }) { response in
                 XCTAssertEqual(response.feed.entry.count, 2)
                 let review = response.feed.entry.first!
@@ -56,7 +56,7 @@ final class DataRequester_ReviewsTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Invalid json format")
         MockURLProtocol.requestHandler = MockURLProtocol.makeRequestHandler(with: "Invalid")
         
-        cancellable = dataRequester.getReviews(with: 0)
+        cancellable = dataRequester.getReviews(with: 0, storeCode: "")
             .sink(receiveCompletion: { completion in
                 XCTAssertEqual(completion, .failure(DataError.parsing(description: "The data couldn’t be read because it isn’t in the correct format.")))
                 expectation.fulfill()
@@ -70,7 +70,7 @@ final class DataRequester_ReviewsTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Valid json with missing data")
         MockURLProtocol.requestHandler = MockURLProtocol.makeRequestHandler(with: "{}")
         
-        cancellable = dataRequester.getReviews(with: 0)
+        cancellable = dataRequester.getReviews(with: 0, storeCode: "")
             .sink(receiveCompletion: { completion in
                 XCTAssertEqual(completion, .failure(DataError.parsing(description: "The data couldn’t be read because it is missing.")))
                   expectation.fulfill()
@@ -84,7 +84,7 @@ final class DataRequester_ReviewsTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Invalid request")
         MockURLProtocol.requestHandler = MockURLProtocol.makeInvalidRequestHandler()
         
-        cancellable = dataRequester.getReviews(with: 0)
+        cancellable = dataRequester.getReviews(with: 0, storeCode: "")
             .sink(receiveCompletion: { completion in
                 XCTAssertEqual(completion, .failure(DataError.network(description: "The operation couldn’t be completed. (NSURLErrorDomain error -1.)")))
                   expectation.fulfill()
@@ -115,7 +115,7 @@ final class DataManager_ReviewsTests: XCTestCase {
         
         MockURLProtocol.requestHandler = MockURLProtocol.makeRequestHandler(in: bundle, with: "MockGetReviewsSuccessful")
         
-        cancellable = dataManager.getReviews(appId: 0)
+        cancellable = dataManager.getReviews(appId: 0, storeCode: "")
             .sink(receiveCompletion: { _ in }) { response in
                 XCTAssertEqual(response.count, 2)
                 let review = response.first!
@@ -138,7 +138,7 @@ final class DataManager_ReviewsTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Invalid json format")
         MockURLProtocol.requestHandler = MockURLProtocol.makeRequestHandler(with: "Invalid")
         
-        cancellable = dataManager.getReviews(appId: 0)
+        cancellable = dataManager.getReviews(appId: 0, storeCode: "")
             .sink(receiveCompletion: { completion in
                 XCTAssertEqual(completion, .failure(DataError.parsing(description: "The data couldn’t be read because it isn’t in the correct format.")))
                 expectation.fulfill()
@@ -152,7 +152,7 @@ final class DataManager_ReviewsTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Valid json with missing data")
         MockURLProtocol.requestHandler = MockURLProtocol.makeRequestHandler(with: "{}")
         
-        cancellable = dataManager.getReviews(appId: 0)
+        cancellable = dataManager.getReviews(appId: 0, storeCode: "")
             .sink(receiveCompletion: { completion in
                 XCTAssertEqual(completion, .failure(DataError.parsing(description: "The data couldn’t be read because it is missing.")))
                   expectation.fulfill()
@@ -166,7 +166,7 @@ final class DataManager_ReviewsTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Invalid request")
         MockURLProtocol.requestHandler = MockURLProtocol.makeInvalidRequestHandler()
         
-        cancellable = dataManager.getReviews(appId: 0)
+        cancellable = dataManager.getReviews(appId: 0, storeCode: "")
             .sink(receiveCompletion: { completion in
                 XCTAssertEqual(completion, .failure(DataError.network(description: "The operation couldn’t be completed. (NSURLErrorDomain error -1.)")))
                   expectation.fulfill()

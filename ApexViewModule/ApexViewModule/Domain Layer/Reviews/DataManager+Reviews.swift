@@ -11,8 +11,8 @@ import ApexCore
 
 public extension DataManager {
     
-    func getReviews(appId: Int) -> AnyPublisher<[Review], DataError> {
-        return dataRequester.getReviews(with: appId)
+    func getReviews(appId: Int, storeCode: String) -> AnyPublisher<[Review], DataError> {
+        return dataRequester.getReviews(with: appId, storeCode: storeCode)
             .mapError { $0 }
             .map {
                 ReviewsDTOMapper.map($0)
