@@ -10,7 +10,7 @@ import ApexCore
 
 struct DetailsRow: View {
 
-    var item: DetailsRowViewModel
+    var item: DetailsRowModel
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -24,7 +24,7 @@ struct DetailsRow: View {
 struct AppDetailsRow_Previews: PreviewProvider {
     
     enum Constants {
-        static let item = DetailsRowViewModel(details: Details(trackId: 123, trackName: "trackName", averageUserRating: 4.69179, version: "1.2.3"))
+        static let item = DetailsRowModel(details: Details(trackId: 123, trackName: "trackName", averageUserRating: 4.69179, version: "1.2.3"))
     }
     
     static var previews: some View {

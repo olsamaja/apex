@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D338CD12AFDA47800EC0256 /* AppsSectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CD02AFDA47800EC0256 /* AppsSectionRow.swift */; };
+		7D338CD32AFDA49F00EC0256 /* StoreHeaderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CD22AFDA49F00EC0256 /* StoreHeaderRow.swift */; };
+		7D338CD52AFDA4E300EC0256 /* StoreHeaderRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CD42AFDA4E300EC0256 /* StoreHeaderRowModel.swift */; };
 		7D9CD73026988477000450E0 /* ApexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD72F26988477000450E0 /* ApexApp.swift */; };
 		7D9CD73426988479000450E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D9CD73326988479000450E0 /* Assets.xcassets */; };
 		7D9CD73726988479000450E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D9CD73626988479000450E0 /* Preview Assets.xcassets */; };
@@ -26,7 +29,7 @@
 		D551149E279212A60030B167 /* ApexViewModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D551149C279212A60030B167 /* ApexViewModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D56ADEE92773979E00E36BB3 /* AppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56ADEE82773979E00E36BB3 /* AppsView.swift */; };
 		D572BE192763CF7500CBE614 /* AppsViewModel+Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572BE182763CF7500CBE614 /* AppsViewModel+Reduce.swift */; };
-		D572BE1B2763CFCF00CBE614 /* AppRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572BE1A2763CFCF00CBE614 /* AppRowItem.swift */; };
+		D572BE1B2763CFCF00CBE614 /* AppRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572BE1A2763CFCF00CBE614 /* AppRowModel.swift */; };
 		D572BE1E2769440B00CBE614 /* AppsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572BE1D2769440B00CBE614 /* AppsContentView.swift */; };
 		D572BE20276A40D700CBE614 /* AppRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572BE1F276A40D700CBE614 /* AppRow.swift */; };
 		D596104D2746B2C900E256F8 /* ApexSettingsModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D596104C2746B2C900E256F8 /* ApexSettingsModule.framework */; };
@@ -73,6 +76,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7D338CD02AFDA47800EC0256 /* AppsSectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSectionRow.swift; sourceTree = "<group>"; };
+		7D338CD22AFDA49F00EC0256 /* StoreHeaderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHeaderRow.swift; sourceTree = "<group>"; };
+		7D338CD42AFDA4E300EC0256 /* StoreHeaderRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHeaderRowModel.swift; sourceTree = "<group>"; };
 		7D9CD72C26988477000450E0 /* Apex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD72F26988477000450E0 /* ApexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexApp.swift; sourceTree = "<group>"; };
 		7D9CD73326988479000450E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,7 +101,7 @@
 		D551149C279212A60030B167 /* ApexViewModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexViewModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56ADEE82773979E00E36BB3 /* AppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsView.swift; sourceTree = "<group>"; };
 		D572BE182763CF7500CBE614 /* AppsViewModel+Reduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppsViewModel+Reduce.swift"; sourceTree = "<group>"; };
-		D572BE1A2763CFCF00CBE614 /* AppRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRowItem.swift; sourceTree = "<group>"; };
+		D572BE1A2763CFCF00CBE614 /* AppRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRowModel.swift; sourceTree = "<group>"; };
 		D572BE1D2769440B00CBE614 /* AppsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsContentView.swift; sourceTree = "<group>"; };
 		D572BE1F276A40D700CBE614 /* AppRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRow.swift; sourceTree = "<group>"; };
 		D5777022278F47BA006D4C81 /* ApexViewModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexViewModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +240,8 @@
 			children = (
 				D56ADEE82773979E00E36BB3 /* AppsView.swift */,
 				D572BE1D2769440B00CBE614 /* AppsContentView.swift */,
+				7D338CD02AFDA47800EC0256 /* AppsSectionRow.swift */,
+				7D338CD22AFDA49F00EC0256 /* StoreHeaderRow.swift */,
 				D572BE1F276A40D700CBE614 /* AppRow.swift */,
 				D572BE1C2763CFD700CBE614 /* View Models */,
 			);
@@ -245,7 +253,8 @@
 			children = (
 				D5023F4C274EB76900E10942 /* AppsViewModel.swift */,
 				D572BE182763CF7500CBE614 /* AppsViewModel+Reduce.swift */,
-				D572BE1A2763CFCF00CBE614 /* AppRowItem.swift */,
+				7D338CD42AFDA4E300EC0256 /* StoreHeaderRowModel.swift */,
+				D572BE1A2763CFCF00CBE614 /* AppRowModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -401,14 +410,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D338CD12AFDA47800EC0256 /* AppsSectionRow.swift in Sources */,
 				7DA999A9269A4C1C008DDBA9 /* AppConfiguration.swift in Sources */,
-				D572BE1B2763CFCF00CBE614 /* AppRowItem.swift in Sources */,
+				D572BE1B2763CFCF00CBE614 /* AppRowModel.swift in Sources */,
 				D572BE1E2769440B00CBE614 /* AppsContentView.swift in Sources */,
+				7D338CD52AFDA4E300EC0256 /* StoreHeaderRowModel.swift in Sources */,
 				D56ADEE92773979E00E36BB3 /* AppsView.swift in Sources */,
 				D5023F4D274EB76900E10942 /* AppsViewModel.swift in Sources */,
 				D572BE20276A40D700CBE614 /* AppRow.swift in Sources */,
 				D572BE192763CF7500CBE614 /* AppsViewModel+Reduce.swift in Sources */,
 				7D9CD73026988477000450E0 /* ApexApp.swift in Sources */,
+				7D338CD32AFDA49F00EC0256 /* StoreHeaderRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  AppReviewRowViewModel.swift
+//  ReviewRowViewModel.swift
 //  ApexViewModule
 //
 //  Created by Olivier Rigault on 14/01/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ReviewRowViewModel: Identifiable {
+public struct ReviewRowModel: Identifiable {
     
     public let id: String
     private let review: Review
@@ -18,7 +18,7 @@ public struct ReviewRowViewModel: Identifiable {
     }
 }
 
-extension ReviewRowViewModel {
+extension ReviewRowModel {
     
     var title: String { review.title }
     var author: String { review.author }
@@ -29,8 +29,8 @@ extension ReviewRowViewModel {
 
 }
 
-extension ReviewRowViewModel: Equatable {
-    public static func == (lhs: ReviewRowViewModel, rhs: ReviewRowViewModel) -> Bool {
+extension ReviewRowModel: Equatable {
+    public static func == (lhs: ReviewRowModel, rhs: ReviewRowModel) -> Bool {
         lhs.review == rhs.review
     }
 }

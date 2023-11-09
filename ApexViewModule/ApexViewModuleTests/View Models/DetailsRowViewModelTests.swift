@@ -14,7 +14,7 @@ final class DetailsRowViewModelTests: XCTestCase {
     func testProperties() throws {
         
         let details = Details(trackId: 123, trackName: "name", averageUserRating: 4.678, version: "1.2.3")
-        let model = DetailsRowViewModel(details: details)
+        let model = DetailsRowModel(details: details)
         
         XCTAssertEqual(model.trackName, details.trackName)
         XCTAssertEqual(model.version, "Current version: v" + details.version)

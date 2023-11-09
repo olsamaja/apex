@@ -59,7 +59,7 @@ public final class AppsViewModel: ObservableObject {
             guard case .loading = state else { return Empty().eraseToAnyPublisher() }
             
             return DataManager().loadFavorites()
-                .map { $0.map(AppRowItem.init) }
+                .map { $0.map(AppRowModel.init) }
                 .map(Event.onDataLoaded)
                 .catch { Just(Event.onFailedToLoadData($0)) }
                 .eraseToAnyPublisher()

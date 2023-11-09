@@ -14,12 +14,12 @@ final class AppViewModel_ReduceTests: XCTestCase {
     enum Constants {
         static let details = Details(trackId: 123, trackName: "name", averageUserRating: 4.678, version: "1.2.3")
         static let header = SectionModel(header: ContentRowModel(.text("header")),
-                                         rows: [ContentRowModel(.details(DetailsRowViewModel(details: details)))])
+                                         rows: [ContentRowModel(.details(DetailsRowModel(details: details)))])
         static let review1 = Review(title: "title1", author: "author1", rating: "1", content: "content1", version: "1.2.1", updated: Date())
         static let review2 = Review(title: "title2", author: "author2", rating: "2", content: "content2", version: "1.2.2", updated: Date())
         static let rows = SectionModel(header: ContentRowModel(.text("reviews")),
-                                       rows: [ContentRowModel(.review(ReviewRowViewModel(review: review1))),
-                                              ContentRowModel(.review(ReviewRowViewModel(review: review2)))])
+                                       rows: [ContentRowModel(.review(ReviewRowModel(review: review1))),
+                                              ContentRowModel(.review(ReviewRowModel(review: review2)))])
     }
     
     func testReduceIdle() throws {

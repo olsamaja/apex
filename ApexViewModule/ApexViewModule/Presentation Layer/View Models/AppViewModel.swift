@@ -51,11 +51,11 @@ public final class AppViewModel: ObservableObject {
             guard case .loading = state else { return Empty().eraseToAnyPublisher() }
 
             let appDetails = DataManager().getDetails(appId: appId, storeCode: storeCode)
-                .map { DetailsRowViewModel(details: $0) }
+                .map { DetailsRowModel(details: $0) }
                 .map { SectionModel.makeDetailsSectionModel(with: $0) }
 
             let reviews = DataManager().getReviews(appId: appId, storeCode: storeCode)
-                .map { $0.map(ReviewRowViewModel.init) }
+                .map { $0.map(ReviewRowModel.init) }
                 .map { SectionModel.makeReviewsSectionModel(with: $0) }
 
             return Publishers.Zip(appDetails, reviews)

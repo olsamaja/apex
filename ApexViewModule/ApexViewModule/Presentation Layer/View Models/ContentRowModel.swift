@@ -13,8 +13,8 @@ public struct ContentRowModel: Identifiable {
     
     public enum Category: Equatable {
         case text(String)
-        case details(DetailsRowViewModel)
-        case review(ReviewRowViewModel)
+        case details(DetailsRowModel)
+        case review(ReviewRowModel)
     }
     
     public var id = UUID().uuidString

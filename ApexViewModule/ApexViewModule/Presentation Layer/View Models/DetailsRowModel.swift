@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct DetailsRowViewModel: Identifiable {
+public struct DetailsRowModel: Identifiable {
     
     public let id: String
     let details: Details
@@ -18,7 +18,7 @@ public struct DetailsRowViewModel: Identifiable {
     }
 }
 
-extension DetailsRowViewModel {
+extension DetailsRowModel {
     
     var rating: String { String(format: "Rating: %.1f", details.averageUserRating) }
     var trackName: String { details.trackName }
@@ -26,8 +26,8 @@ extension DetailsRowViewModel {
     
 }
 
-extension DetailsRowViewModel: Equatable {
-    public static func == (lhs: DetailsRowViewModel, rhs: DetailsRowViewModel) -> Bool {
+extension DetailsRowModel: Equatable {
+    public static func == (lhs: DetailsRowModel, rhs: DetailsRowModel) -> Bool {
         lhs.details == rhs.details
     }
 }

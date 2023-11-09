@@ -9,7 +9,7 @@ import Foundation
 
 public struct Store {
     public let code: String
-    let name: String
+    public let name: String
 }
 
 extension Store: Equatable {}

@@ -9,9 +9,9 @@ import SwiftUI
 
 public struct ReviewView: View {
     
-    private let model: ReviewRowViewModel
+    private let model: ReviewRowModel
 
-    public init(model: ReviewRowViewModel) {
+    public init(model: ReviewRowModel) {
         self.model = model
     }
     
@@ -59,7 +59,7 @@ public struct ReviewView: View {
 struct ReviewView_Previews: PreviewProvider {
     
     enum Constants {
-        static let model = ReviewRowViewModel(review: Review(title: "Incredible super long title for this review", author: "author", rating: "3", content: "This is a wonderful app, which never ceases to amaze me! Please keep the good work. Well done!", version: "4.5.6", updated: Date()))
+        static let model = ReviewRowModel(review: Review(title: "Incredible super long title for this review", author: "author", rating: "3", content: "This is a wonderful app, which never ceases to amaze me! Please keep the good work. Well done!", version: "4.5.6", updated: Date()))
     }
     
     static var previews: some View {

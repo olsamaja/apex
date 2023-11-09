@@ -32,7 +32,7 @@ struct AppsView: View {
                         Image(systemName: "plus")
                     }
                 }
-                .navigationDestination(for: AppRowItem.self) { item in
+                .navigationDestination(for: AppRowModel.self) { item in
                     AppView(viewModel: AppViewModel(appSummary: item.appSummary))
                 }
                 .navigationDestination(for: ContentRowModel.self) { model in

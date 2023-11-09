@@ -8,7 +8,7 @@
 import Foundation
 import ApexCore
 
-public struct AppRowItem: Identifiable, Hashable {
+public struct AppRowModel: Identifiable, Hashable {
     
     public let id: String
     let appSummary: AppSummary
@@ -27,4 +27,4 @@ public struct AppRowItem: Identifiable, Hashable {
     }
 }
 
-extension AppRowItem: Equatable {}
+extension AppRowModel: Equatable {}

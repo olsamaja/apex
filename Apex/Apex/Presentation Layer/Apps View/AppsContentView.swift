@@ -43,7 +43,7 @@ struct AppsContentView: View {
         }
     }
     
-    private func searchResults(from items: [AppRowItem], with term: String) -> [AppRowItem] {
+    private func searchResults(from items: [AppRowModel], with term: String) -> [AppRowModel] {
         if term.isEmpty {
             return items
         } else {
