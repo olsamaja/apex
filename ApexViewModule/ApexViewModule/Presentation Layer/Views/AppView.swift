@@ -4,6 +4,18 @@
 //
 //  Created by Olivier Rigault on 04/01/2022.
 //
+//  @StateObject and @ObservedObject have similar characteristics but differ in how SwiftUI manages their lifecycle.
+//  Use the state object property wrapper to ensure consistent results when the current view creates the observed object.
+//  Whenever you inject an observed object as a dependency, you can use the @ObservedObject.
+//
+//  It’s unsafe to create an @ObservedObject inside a view since SwiftUI might create or recreate a view at any time.
+//  Unless you inject the @ObservedObject as a dependency, you want to use the @StateObject wrapper to ensure consistent results after a view redraw.
+//
+//  References:
+//      - https://www.avanderlee.com/swiftui/stateobject-observedobject-differences/
+//
+//  How to inject a @StateObject:
+//      - https://stackoverflow.com/questions/64938325/how-to-initialize-a-view-with-a-stateobject-as-a-parameter
 
 import SwiftUI
 import ApexCore
@@ -11,10 +23,10 @@ import ApexCoreUI
 
 public struct AppView: View {
     
-    @ObservedObject var viewModel: AppViewModel
+    @StateObject var viewModel: AppViewModel
 
     public init(viewModel: AppViewModel) {
-        self.viewModel = viewModel
+        self._viewModel = StateObject(wrappedValue: viewModel)
     }
     
     public var body: some View {
@@ -32,7 +44,7 @@ public struct AppView: View {
                 .withSymbol("xmark.octagon")
                 .withMessage(error.localizedDescription)
                 .build()
-        case .loadedDetailsAndReviews(let sections):
+        case .loaded(let sections):
             List {
                 ForEach(sections) { section in
                     SectionRows(with: section)

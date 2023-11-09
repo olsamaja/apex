@@ -33,7 +33,7 @@ public final class AppViewModel: ObservableObject {
             reduce: Self.reduce,
             scheduler: RunLoop.main,
             feedbacks: [
-                Self.whenLoadingAppDetailsAndReviews(appId: appSummary.trackId, storeCode: appSummary.storeCode),
+                Self.whenLoadingDetailsAndReviews(appId: appSummary.trackId, storeCode: appSummary.storeCode),
                 Self.userAction(action: action.eraseToAnyPublisher())
             ]
         )
@@ -45,7 +45,7 @@ public final class AppViewModel: ObservableObject {
         action.send(event)
     }
     
-    static func whenLoadingAppDetailsAndReviews(appId: Int, storeCode: String) -> Feedback<State, Event> {
+    static func whenLoadingDetailsAndReviews(appId: Int, storeCode: String) -> Feedback<State, Event> {
 
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
             guard case .loading = state else { return Empty().eraseToAnyPublisher() }
