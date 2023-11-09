@@ -26,4 +26,8 @@ extension DetailsRowViewModel {
     
 }
 
-extension DetailsRowViewModel: Equatable {}
+extension DetailsRowViewModel: Equatable {
+    public static func == (lhs: DetailsRowViewModel, rhs: DetailsRowViewModel) -> Bool {
+        lhs.details == rhs.details
+    }
+}

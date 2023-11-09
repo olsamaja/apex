@@ -19,6 +19,13 @@ public struct DetailsDTO: Decodable {
         case results = "results"
     }
     
+    public init(trackId: Int, trackName: String, averageUserRating: Double, version: String) {
+        self.trackId = trackId
+        self.trackName = trackName
+        self.averageUserRating = averageUserRating
+        self.version = version
+    }
+    
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let results = try container.decode([DetailsResultDTO].self, forKey: CodingKeys.results)

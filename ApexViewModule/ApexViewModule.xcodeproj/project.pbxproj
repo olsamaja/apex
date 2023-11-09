@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D338CC32AFCE8AA00EC0256 /* ReviewsDTOMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CC22AFCE8AA00EC0256 /* ReviewsDTOMapperTests.swift */; };
+		7D338CC62AFCFEA500EC0256 /* DetailsDTOMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CC52AFCFEA500EC0256 /* DetailsDTOMapperTests.swift */; };
+		7D338CC82AFD4CBD00EC0256 /* AppViewModel+ReduceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CC72AFD4CBD00EC0256 /* AppViewModel+ReduceTests.swift */; };
+		7D338CCB2AFD833B00EC0256 /* SectionModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CCA2AFD833B00EC0256 /* SectionModelTests.swift */; };
+		7D338CCD2AFD8DA400EC0256 /* ReviewRowViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CCC2AFD8DA400EC0256 /* ReviewRowViewModelTests.swift */; };
+		7D338CCF2AFD8E7600EC0256 /* DetailsRowViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CCE2AFD8E7600EC0256 /* DetailsRowViewModelTests.swift */; };
 		7D39BB622AFB7DA900198217 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D39BB612AFB7DA900198217 /* RatingView.swift */; };
 		7D39BB642AFB940000198217 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D39BB632AFB940000198217 /* ReviewView.swift */; };
 		7D39BB662AFBDCAD00198217 /* ContentRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D39BB652AFBDCAD00198217 /* ContentRowModel.swift */; };
@@ -74,6 +80,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7D338CC22AFCE8AA00EC0256 /* ReviewsDTOMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsDTOMapperTests.swift; sourceTree = "<group>"; };
+		7D338CC52AFCFEA500EC0256 /* DetailsDTOMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDTOMapperTests.swift; sourceTree = "<group>"; };
+		7D338CC72AFD4CBD00EC0256 /* AppViewModel+ReduceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppViewModel+ReduceTests.swift"; sourceTree = "<group>"; };
+		7D338CCA2AFD833B00EC0256 /* SectionModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModelTests.swift; sourceTree = "<group>"; };
+		7D338CCC2AFD8DA400EC0256 /* ReviewRowViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRowViewModelTests.swift; sourceTree = "<group>"; };
+		7D338CCE2AFD8E7600EC0256 /* DetailsRowViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRowViewModelTests.swift; sourceTree = "<group>"; };
 		7D39BB612AFB7DA900198217 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		7D39BB632AFB940000198217 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		7D39BB652AFBDCAD00198217 /* ContentRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRowModel.swift; sourceTree = "<group>"; };
@@ -192,6 +204,26 @@
 			path = Reviews;
 			sourceTree = "<group>";
 		};
+		7D338CC42AFCE8B200EC0256 /* Domain Layer */ = {
+			isa = PBXGroup;
+			children = (
+				7D338CC22AFCE8AA00EC0256 /* ReviewsDTOMapperTests.swift */,
+				7D338CC52AFCFEA500EC0256 /* DetailsDTOMapperTests.swift */,
+			);
+			path = "Domain Layer";
+			sourceTree = "<group>";
+		};
+		7D338CC92AFD4CC500EC0256 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				7D338CC72AFD4CBD00EC0256 /* AppViewModel+ReduceTests.swift */,
+				7D338CCA2AFD833B00EC0256 /* SectionModelTests.swift */,
+				7D338CCC2AFD8DA400EC0256 /* ReviewRowViewModelTests.swift */,
+				7D338CCE2AFD8E7600EC0256 /* DetailsRowViewModelTests.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		7D39BB602AFB734C00198217 /* Rows */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +288,8 @@
 		D5CD22CE27921219001C69EA /* ApexViewModuleTests */ = {
 			isa = PBXGroup;
 			children = (
+				7D338CC92AFD4CC500EC0256 /* View Models */,
+				7D338CC42AFCE8B200EC0256 /* Domain Layer */,
 				7D97CEBE2AF3A3490032EC42 /* Data Services Layer */,
 			);
 			path = ApexViewModuleTests;
@@ -455,9 +489,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D338CC82AFD4CBD00EC0256 /* AppViewModel+ReduceTests.swift in Sources */,
 				7D97CEBD2AF3A3370032EC42 /* DetailsDTOTests.swift in Sources */,
 				7D97CEC02AF3D7A60032EC42 /* ReviewsDTOTests.swift in Sources */,
+				7D338CCB2AFD833B00EC0256 /* SectionModelTests.swift in Sources */,
+				7D338CCF2AFD8E7600EC0256 /* DetailsRowViewModelTests.swift in Sources */,
 				7D5922AC2AF66F2400EAD7A9 /* DataRequester+DetailsTests.swift in Sources */,
+				7D338CCD2AFD8DA400EC0256 /* ReviewRowViewModelTests.swift in Sources */,
+				7D338CC62AFCFEA500EC0256 /* DetailsDTOMapperTests.swift in Sources */,
+				7D338CC32AFCE8AA00EC0256 /* ReviewsDTOMapperTests.swift in Sources */,
 				7D5922A82AF6646600EAD7A9 /* DataRequester+ReviewsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

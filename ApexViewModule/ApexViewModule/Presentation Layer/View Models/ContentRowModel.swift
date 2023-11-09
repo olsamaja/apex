@@ -11,7 +11,7 @@ import ApexCore
 
 public struct ContentRowModel: Identifiable {
     
-    public enum Category {
+    public enum Category: Equatable {
         case text(String)
         case details(DetailsRowViewModel)
         case review(ReviewRowViewModel)
@@ -37,7 +37,7 @@ extension ContentRowModel: Equatable {
         case (.text(let lhsText), .text(let rhsText)):
             return lhsText == rhsText
         case (.details(let lhsDetails), .details(let rhsDetails)):
-            return lhsDetails.id == rhsDetails.id
+            return lhsDetails.details == rhsDetails.details
         case (.review(let lhsReview), .review(let rhsReview)):
             return lhsReview.id == rhsReview.id
         default:

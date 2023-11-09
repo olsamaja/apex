@@ -29,4 +29,8 @@ extension ReviewRowViewModel {
 
 }
 
-extension ReviewRowViewModel: Equatable {}
+extension ReviewRowViewModel: Equatable {
+    public static func == (lhs: ReviewRowViewModel, rhs: ReviewRowViewModel) -> Bool {
+        lhs.review == rhs.review
+    }
+}
