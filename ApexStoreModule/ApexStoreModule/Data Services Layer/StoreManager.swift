@@ -9,7 +9,7 @@ import Foundation
 
 public struct StoreManager {
     
-    static var allStores: [Store] {
+    public static var allStores: [Store] {
         get { StoreLocalRepository.allStores }
     }
 

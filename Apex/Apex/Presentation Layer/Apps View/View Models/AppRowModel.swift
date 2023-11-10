@@ -27,4 +27,8 @@ public struct AppRowModel: Identifiable, Hashable {
     }
 }
 
-extension AppRowModel: Equatable {}
+extension AppRowModel: Equatable {
+    public static func == (lhs: AppRowModel, rhs: AppRowModel) -> Bool {
+        lhs.appSummary == rhs.appSummary
+    }
+}

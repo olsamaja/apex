@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D338CDB2AFE707B00EC0256 /* Array+Uniqued.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CDA2AFE707B00EC0256 /* Array+Uniqued.swift */; };
 		7D45E49126A34BE100D2C796 /* OLLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D45E49026A34BE100D2C796 /* OLLoggerTests.swift */; };
 		7D9CD65F26988249000450E0 /* ApexCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD65526988249000450E0 /* ApexCore.framework */; };
 		7D9CD66626988249000450E0 /* ApexCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D9CD65826988249000450E0 /* ApexCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D338CDA2AFE707B00EC0256 /* Array+Uniqued.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Uniqued.swift"; sourceTree = "<group>"; };
 		7D45E49026A34BE100D2C796 /* OLLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLLoggerTests.swift; sourceTree = "<group>"; };
 		7D9CD65526988249000450E0 /* ApexCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApexCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD65826988249000450E0 /* ApexCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApexCore.h; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		7D9CD7A226989256000450E0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7D338CDA2AFE707B00EC0256 /* Array+Uniqued.swift */,
 				7D9CD7A02698924F000450E0 /* Data+Decode.swift */,
 				D54A539A26F534120006C7C3 /* Date+String.swift */,
 				7D9CD7A32698927D000450E0 /* Data+Print.swift */,
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D9CD79D269891F8000450E0 /* OLLogger.swift in Sources */,
+				7D338CDB2AFE707B00EC0256 /* Array+Uniqued.swift in Sources */,
 				D59968D827583331006ACB34 /* UserDefaults+Custom.swift in Sources */,
 				7D9CD7AC269895B6000450E0 /* BuilderProtocol.swift in Sources */,
 				7D9CD7A6269892A0000450E0 /* Bundle+Extensions.swift in Sources */,

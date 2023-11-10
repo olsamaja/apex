@@ -19,3 +19,4 @@ public struct Store {
 }
 
 extension Store: Equatable {}
+extension Store: Hashable {}

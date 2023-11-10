@@ -23,3 +23,4 @@ public struct AppSummary: Codable {
 }
 
 extension AppSummary: Hashable {}
+extension AppSummary: Equatable {}
