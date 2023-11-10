@@ -41,7 +41,7 @@
 		D5CD22EE2792123C001C69EA /* DataRequester+Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22DD2792123B001C69EA /* DataRequester+Reviews.swift */; };
 		D5CD22EF2792123C001C69EA /* ReviewRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22DF2792123B001C69EA /* ReviewRowModel.swift */; };
 		D5CD22F02792123C001C69EA /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E02792123B001C69EA /* AppViewModel.swift */; };
-		D5CD22F12792123C001C69EA /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E12792123B001C69EA /* SectionModel.swift */; };
+		D5CD22F12792123C001C69EA /* SectionRowsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E12792123B001C69EA /* SectionRowsModel.swift */; };
 		D5CD22F22792123C001C69EA /* AppViewModel+Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E22792123B001C69EA /* AppViewModel+Reduce.swift */; };
 		D5CD22F32792123C001C69EA /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E42792123B001C69EA /* Review.swift */; };
 		D5CD22F42792123C001C69EA /* DataManager+Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E52792123B001C69EA /* DataManager+Reviews.swift */; };
@@ -112,7 +112,7 @@
 		D5CD22DD2792123B001C69EA /* DataRequester+Reviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataRequester+Reviews.swift"; sourceTree = "<group>"; };
 		D5CD22DF2792123B001C69EA /* ReviewRowModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewRowModel.swift; sourceTree = "<group>"; };
 		D5CD22E02792123B001C69EA /* AppViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
-		D5CD22E12792123B001C69EA /* SectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
+		D5CD22E12792123B001C69EA /* SectionRowsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionRowsModel.swift; sourceTree = "<group>"; };
 		D5CD22E22792123B001C69EA /* AppViewModel+Reduce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppViewModel+Reduce.swift"; sourceTree = "<group>"; };
 		D5CD22E42792123B001C69EA /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		D5CD22E52792123B001C69EA /* DataManager+Reviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManager+Reviews.swift"; sourceTree = "<group>"; };
@@ -318,7 +318,7 @@
 			children = (
 				D5CD22E02792123B001C69EA /* AppViewModel.swift */,
 				D5CD22E22792123B001C69EA /* AppViewModel+Reduce.swift */,
-				D5CD22E12792123B001C69EA /* SectionModel.swift */,
+				D5CD22E12792123B001C69EA /* SectionRowsModel.swift */,
 				7D39BB652AFBDCAD00198217 /* ContentRowModel.swift */,
 				D5CD22DF2792123B001C69EA /* ReviewRowModel.swift */,
 				7D5922AF2AF6C00200EAD7A9 /* DetailsRowModel.swift */,
@@ -465,7 +465,7 @@
 				D5CD22F42792123C001C69EA /* DataManager+Reviews.swift in Sources */,
 				7D5922B02AF6C00200EAD7A9 /* DetailsRowModel.swift in Sources */,
 				D5CD22F32792123C001C69EA /* Review.swift in Sources */,
-				D5CD22F12792123C001C69EA /* SectionModel.swift in Sources */,
+				D5CD22F12792123C001C69EA /* SectionRowsModel.swift in Sources */,
 				7D97CEB92AF309D60032EC42 /* DataRequester+Details.swift in Sources */,
 				D5CD22F92792123C001C69EA /* DetailsRow.swift in Sources */,
 				D5CD22C527921219001C69EA /* ApexViewModule.docc in Sources */,

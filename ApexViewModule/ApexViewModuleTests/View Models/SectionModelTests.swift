@@ -15,7 +15,7 @@ final class SectionModelTests: XCTestCase {
 
         let header = ContentRowModel(.text("App Details"))
         let details = Details(trackId: 123, trackName: "name", averageUserRating: 4.678, version: "1.2.3")
-        let sections = SectionModel.makeDetailsSectionModel(with: DetailsRowModel(details: details))
+        let sections = SectionRowsModel.makeDetailsSectionModel(with: DetailsRowModel(details: details))
         
         XCTAssertNotNil(sections.header)
         XCTAssertEqual(sections.header!, header)
@@ -35,7 +35,7 @@ final class SectionModelTests: XCTestCase {
         let review1 = Review(title: "title1", author: "author2", rating: "1", content: "content1", version: "1.2.1", updated: Date())
         let review2 = Review(title: "title2", author: "author2", rating: "2", content: "content2", version: "1.2.2", updated: Date())
 
-        let sections = SectionModel.makeReviewsSectionModel(with: [ReviewRowModel(review: review1),
+        let sections = SectionRowsModel.makeReviewsSectionModel(with: [ReviewRowModel(review: review1),
                                                                    ReviewRowModel(review: review2)])
         
         XCTAssertNotNil(sections.header)

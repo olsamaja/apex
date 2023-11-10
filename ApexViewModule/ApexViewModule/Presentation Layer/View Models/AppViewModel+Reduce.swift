@@ -14,13 +14,13 @@ public extension AppViewModel {
     enum State {
         case idle
         case loading
-        case loaded([SectionModel])
+        case loaded([SectionRowsModel])
         case error(DataError)
     }
     
     enum Event {
         case onAppear
-        case onLoaded(SectionModel, SectionModel)
+        case onLoaded(SectionRowsModel, SectionRowsModel)
         case onFailedToLoadData(DataError)
     }
 }

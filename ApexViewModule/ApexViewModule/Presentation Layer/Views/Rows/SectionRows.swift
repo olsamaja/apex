@@ -10,9 +10,9 @@ import ApexCoreUI
 
 struct SectionRows: View {
 
-    let model: SectionModel
+    let model: SectionRowsModel
     
-    init(with model: SectionModel) {
+    init(with model: SectionRowsModel) {
         self.model = model
     }
     

@@ -14,7 +14,7 @@ struct AppRow: View {
     
     var body: some View {
         HStack {
-            Text(item.trackName + " - " + item.storeCode)
+            Text(item.trackName)
             Spacer()
         }
     }
