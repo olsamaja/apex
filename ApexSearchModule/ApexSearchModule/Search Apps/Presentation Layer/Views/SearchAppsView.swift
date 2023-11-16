@@ -18,15 +18,11 @@ public struct SearchAppsView: View {
     }
     
     public var body: some View {
-        content
-            .searchable(text: $viewModel.term, placement: .navigationBarDrawer(displayMode: .always))
-            .navigationBarTitle(viewModel.store.name, displayMode: .inline)
-    }
-    
-    private var content: some View {
         SearchAppsContentViewBuilder()
             .withViewModel(viewModel)
             .build()
+            .searchable(text: $viewModel.term, placement: .navigationBarDrawer(displayMode: .always))
+            .navigationBarTitle(viewModel.store.name, displayMode: .inline)
     }
 }
 

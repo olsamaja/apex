@@ -8,6 +8,7 @@
 import SwiftUI
 import ApexCoreUI
 import ApexCore
+import ApexSearchModule
 
 struct AppsContentView: View {
     

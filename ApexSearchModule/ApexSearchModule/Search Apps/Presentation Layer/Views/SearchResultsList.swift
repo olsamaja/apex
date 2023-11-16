@@ -21,6 +21,7 @@ struct SearchResultsList: View {
     
     var items: [SearchResultRowItem]
     @State var selectedItem: SearchResultRowItem? = nil
+    @State private var selectedApp: [AppSummary] = []
     
     @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
     @EnvironmentObject var favorites: AppFavorites

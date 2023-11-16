@@ -16,6 +16,7 @@ struct AppsView: View {
     @ObservedObject var viewModel: AppsViewModel
     
     @State var showSelectStore = false
+    @State var showSelectApp = false
     @State var searchApps = ""
     @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
 
@@ -26,10 +27,16 @@ struct AppsView: View {
                 .searchable(text: $searchApps, placement: .navigationBarDrawer(displayMode: .always))
                 .navigationTitle("Applications")
                 .toolbar {
-                    Button {
-                        self.showSelectStore.toggle()
-                    } label: {
-                        Image(systemName: "plus")
+                    ToolbarItemGroup(placement: .bottomBar) {
+                        Button {
+                            self.showSelectStore.toggle()
+                        } label: {
+                            Image(systemName: "plus")
+                        }
+                        Spacer()
+                        Button("Add") {
+                            self.showSelectApp.toggle()
+                        }
                     }
                 }
                 .navigationDestination(for: AppRowModel.self) { item in
@@ -48,6 +55,11 @@ struct AppsView: View {
             SelectAppStoreView(viewModel: SelectAppStoreViewModel())
                 .environmentObject(viewModel.favorites)
         })
+        .sheet(isPresented: $showSelectApp, content: {
+            SearchApplicationsView(viewModel: SearchApplicationsViewModel())
+                .environmentObject(viewModel.favorites)
+        })
+        .environment(\.rootPresentationMode, $showSelectApp)
         .environment(\.rootPresentationMode, $showSelectStore)
         .ignoresSafeArea()
     }
