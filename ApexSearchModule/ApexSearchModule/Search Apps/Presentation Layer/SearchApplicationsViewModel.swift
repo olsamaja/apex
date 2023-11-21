@@ -90,3 +90,9 @@ public final class SearchApplicationsViewModel: ObservableObject {
         }
     }
 }
+
+extension SearchApplicationsViewModel {
+    static func userAction(action: AnyPublisher<Event, Never>) -> Feedback<State, Event> {
+        Feedback { _ in action }
+    }
+}

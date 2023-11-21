@@ -74,8 +74,8 @@ extension SearchAppsViewModel {
         switch event {
         case .onFailedToLoadData(let error):
             return .error(error)
-        case .onDataLoaded(let artists):
-            return .loaded(artists)
+        case .onDataLoaded(let items):
+            return .loaded(items)
         default:
             return state
         }

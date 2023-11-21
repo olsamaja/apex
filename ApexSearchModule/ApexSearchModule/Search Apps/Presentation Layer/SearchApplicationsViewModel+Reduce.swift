@@ -97,9 +97,3 @@ extension SearchApplicationsViewModel {
         return state
     }
 }
-
-extension SearchApplicationsViewModel {
-    static func userAction(action: AnyPublisher<Event, Never>) -> Feedback<State, Event> {
-        Feedback { _ in action }
-    }
-}

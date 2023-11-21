@@ -4,10 +4,13 @@
 //
 //  Created by Olivier Rigault on 11/11/2023.
 //
+//  Source:
+//  - https://stackoverflow.com/questions/58384580/how-do-you-create-a-swiftui-view-that-takes-an-optional-secondary-view-argument
 
 import SwiftUI
 import ApexCoreUI
 import ApexCore
+import ApexStoreModule
 
 public struct SearchApplicationsContentView: View {
     
@@ -16,27 +19,37 @@ public struct SearchApplicationsContentView: View {
     public var body: some View {
         switch viewModel.state {
         case .idle:
-            MessageViewBuilder()
-                .withMessage("Search apps")
-                .withAlignment(.top)
-                .build()
-                .onAppear {
-                    viewModel.send(event: .onAppear)
-                }
+            HeaderRowAndContentView("Store") {
+                SelectStoreView(viewModel: viewModel)
+            }
         case .error(let error):
-            MessageViewBuilder()
-                .withSymbol("xmark.octagon")
-                .withMessage(error.localizedDescription)
-                .build()
+            HeaderRowAndContentView {
+                SelectStoreView(viewModel: viewModel)
+            } content: {
+                VStack {
+                    Spacer()
+                    MessageViewBuilder()
+                        .withSymbol("xmark.octagon")
+                        .withMessage(error.localizedDescription)
+                        .build()
+                    Spacer()
+                }
+            }
         case .loaded(let items):
-            SearchResultsListBuilder()
+            SearchApplicationsResultsListBuilder()
                 .withItems(items)
+                .withViewModel(viewModel)
                 .build()
         case .searching:
-            SpinnerBuilder()
-                .withStyle(.large)
-                .isAnimating(true)
-                .build()
+            HeaderRowAndContentView {
+                SelectStoreView(viewModel: viewModel)
+            } content: {
+                SpinnerBuilder()
+                    .withStyle(.large)
+                    .isAnimating(true)
+                    .build()
+                    .background(Color(UIColor.systemGroupedBackground))
+            }
         }
     }
 }
@@ -56,6 +69,22 @@ public class SearchApplicationsContentViewBuilder: BuilderProtocol {
             SearchApplicationsContentView(viewModel: viewModel)
         } else {
             EmptyView()
+        }
+    }
+}
+
+struct SearchApplicationsContentView_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        Group {
+            SearchApplicationsContentViewBuilder()
+                .withViewModel(SearchApplicationsViewModel(state: .idle))
+                .build()
+                .previewDisplayName("default state = .idle")
+            SearchApplicationsContentViewBuilder()
+                .withViewModel(SearchApplicationsViewModel(state: .error(.invalidResponse)))
+                .build()
+                .previewDisplayName("default state = .error")
         }
     }
 }
