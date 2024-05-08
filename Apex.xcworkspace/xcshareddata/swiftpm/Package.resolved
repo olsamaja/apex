@@ -1,12 +1,13 @@
 {
+  "originHash" : "76a6624442cf31533974a440848b20069ee77f8bd29380c1f33c78c06195c08c",
   "pins" : [
     {
       "identity" : "resolver",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/hmlongco/Resolver",
       "state" : {
-        "revision" : "48e26b8fdf22877cd89b4a1f3927a56cc9f34d46",
-        "version" : "1.4.3"
+        "revision" : "47602af1ac8d7952299fbd0bda3cfbd12cf3a8ca",
+        "version" : "1.5.1"
       }
     },
     {
@@ -14,10 +15,10 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-log.git",
       "state" : {
-        "revision" : "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
-        "version" : "1.4.2"
+        "revision" : "e97a6fcb1ab07462881ac165fdbb37f067e205d5",
+        "version" : "1.5.4"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
