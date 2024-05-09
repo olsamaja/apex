@@ -9,6 +9,7 @@ import Foundation
 
 public extension Bundle {
     
+    // TODO: add throws error
     func loadContents(of file: String, ofType type: String) -> String? {
         
         var contents: String?

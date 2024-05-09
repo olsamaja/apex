@@ -11,20 +11,19 @@ import XCTest
 final class Date_StringTests: XCTestCase {
 
     enum Constants {
-        static let calendar = Calendar(identifier: .gregorian).TimeZone(abbreviation: "GMT")
+        static let gmtCalendar: Calendar = {
+            var calendar = Calendar(identifier: .gregorian)
+            calendar.timeZone = TimeZone(abbreviation: "GMT")!
+            return calendar
+        }()
+        static let date = Constants.gmtCalendar.startOfDay(for: Date(timeIntervalSince1970: 1590242591))
     }
     
     func testDefaultDateFormatIsValid() throws {
-        var calendar = Calendar(identifier: .gregorian)
-        calendar.timeZone = TimeZone(abbreviation: "GMT")!
-        let date = calendar.startOfDay(for: Date(timeIntervalSince1970: 1590242591))
-        XCTAssertEqual(date.toString(), "23/05/2020")
+        XCTAssertEqual(Constants.date.toString(), "23/05/2020")
     }
 
     func testAnotherDateFormatIsValid() throws {
-        var calendar = Calendar(identifier: .gregorian)
-        calendar.timeZone = TimeZone(abbreviation: "GMT")!
-        let date = calendar.startOfDay(for: Date(timeIntervalSince1970: 1590242591))
-        XCTAssertEqual(date.toString(format: "yyyy-MM-dd"), "2020-05-23")
+        XCTAssertEqual(Constants.date.toString(format: "yyyy-MM-dd"), "2020-05-23")
     }
 }

@@ -26,19 +26,19 @@ public class AppFavorites: ObservableObject {
         self.apps = defaults.customObject(forKey: Constants.favoritesKey) ?? Set<AppSummary>()
     }
 
-    // returns true if our set contains this resort
-    func contains(_ app: AppSummary) -> Bool {
+    // returns true if our set contains this favorite
+    public func contains(_ app: AppSummary) -> Bool {
         apps.contains(app)
     }
 
-    // adds the resort to our set, updates all views, and saves the change
+    // adds the favorite to our set, updates all views, and saves the change
     public func add(_ app: AppSummary) {
         objectWillChange.send()
         apps.insert(app)
         save()
     }
 
-    // removes the resort from our set, updates all views, and saves the change
+    // removes the favorite from our set, updates all views, and saves the change
     public func remove(_ app: AppSummary) {
         objectWillChange.send()
         apps.remove(app)
