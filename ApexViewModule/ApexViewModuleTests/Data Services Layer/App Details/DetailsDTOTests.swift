@@ -1,5 +1,5 @@
 //
-//  AppDetailsDTOTests.swift
+//  DetailsDTOTests.swift
 //  ApexViewModuleTests
 //
 //  Created by Olivier Rigault on 02/11/2023.
@@ -10,7 +10,7 @@ import Combine
 @testable import ApexCore
 @testable import ApexViewModule
 
-final class AppDetailsDTOTests: XCTestCase {
+final class DetailsDTOTests: XCTestCase {
     
     private var cancellable: AnyCancellable?
 
@@ -187,7 +187,7 @@ final class AppDetailsDTOTests: XCTestCase {
     func testDetailsDTOSuccessful() throws {
 
         let expectation = XCTestExpectation(description: "Decoding DetailsDTO")
-        let publisher: AnyPublisher<AppDetailsDTO, DataError> = Constants.jsonString.parse()
+        let publisher: AnyPublisher<DetailsDTO, DataError> = Constants.jsonString.parse()
 
         cancellable = publisher
             .receive(on: DispatchQueue.main)
@@ -203,7 +203,7 @@ final class AppDetailsDTOTests: XCTestCase {
     
     func testDetailsDTOInvalid() {
         let expectation = XCTestExpectation(description: "Decoding invalid DetailsDTO")
-        let publisher: AnyPublisher<AppDetailsDTO, DataError> = "invalid dto".parse()
+        let publisher: AnyPublisher<DetailsDTO, DataError> = "invalid dto".parse()
 
         cancellable = publisher
             .receive(on: DispatchQueue.main)

@@ -10,11 +10,11 @@ import ApexCore
 
 struct AppRow: View {
     
-    let item: AppRowItem
+    let item: AppRowModel
     
     var body: some View {
         HStack {
-            Text(item.trackName + " - " + item.storeCode)
+            Text(item.trackName)
             Spacer()
         }
     }
@@ -24,9 +24,9 @@ struct AppRow_Previews: PreviewProvider {
     
     static var previews: some View {
         Group {
-            AppRow(item: AppRowItem(appSummary: AppSummary(trackId: 0, trackName: "MyApp", sellerName: "My Company", storeCode: "GB")))
+            AppRow(item: AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "MyApp", sellerName: "My Company", storeCode: "GB")))
                 .sizeThatFitPreview(with: "Default")
-            AppRow(item: AppRowItem(appSummary: AppSummary(trackId: 0, trackName: "MyApp", sellerName: "My Company", storeCode: "GB")))
+            AppRow(item: AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "MyApp", sellerName: "My Company", storeCode: "GB")))
                 .sizeThatFitPreview(with: "Dark Theme")
                 .preferredColorScheme(.dark)
         }

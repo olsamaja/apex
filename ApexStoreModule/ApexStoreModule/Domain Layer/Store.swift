@@ -8,8 +8,15 @@
 import Foundation
 
 public struct Store {
+    
     public let code: String
-    let name: String
+    public let name: String
+    
+    public init(code: String, name: String) {
+        self.code = code
+        self.name = name
+    }
 }
 
 extension Store: Equatable {}
+extension Store: Hashable {}

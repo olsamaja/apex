@@ -16,7 +16,6 @@ A very sample app developed in Swift, which I use as a playground to test framew
 
 ## Installation
 
-
 To get started, clone this repository.
 
 ```

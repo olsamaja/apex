@@ -14,14 +14,13 @@ public extension AppViewModel {
     enum State {
         case idle
         case loading
-        case loadedDetailsAndReviews([AppSectionModel])
+        case loaded([SectionRowsModel])
         case error(DataError)
     }
     
     enum Event {
         case onAppear
-        case onLoaded(AppSectionModel, AppSectionModel)
-        case onLoadedDetailsAndReviews([AppSectionModel])
+        case onLoaded(SectionRowsModel, SectionRowsModel)
         case onFailedToLoadData(DataError)
     }
 }
@@ -31,7 +30,7 @@ extension AppViewModel.State: Equatable {
         switch (lhs, rhs) {
         case (.idle, .idle),
              (.loading, .loading),
-             (.loadedDetailsAndReviews, .loadedDetailsAndReviews),
+             (.loaded, .loaded),
              (.error, .error):
             return true
         default:
@@ -48,7 +47,7 @@ extension AppViewModel {
             return reduceIdle(state, event)
         case .loading:
             return reduceLoading(state, event)
-        case .loadedDetailsAndReviews:
+        case .loaded:
             return reduceLoaded(state, event)
         case .error:
             return reduceError(state, event)
@@ -69,9 +68,7 @@ extension AppViewModel {
         case .onFailedToLoadData(let error):
             return .error(error)
         case .onLoaded(let appDetails, let reviews):
-            return .loadedDetailsAndReviews([appDetails] + [reviews])
-        case .onLoadedDetailsAndReviews(let reviews):
-            return .loadedDetailsAndReviews(reviews)
+            return .loaded([appDetails] + [reviews])
         default:
             return state
         }

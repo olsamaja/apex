@@ -8,9 +8,9 @@
 import SwiftUI
 import ApexCore
 
-struct AppDetailsRow: View {
+struct DetailsRow: View {
 
-    var item: AppDetailsRowViewModel
+    var item: DetailsRowModel
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -24,11 +24,11 @@ struct AppDetailsRow: View {
 struct AppDetailsRow_Previews: PreviewProvider {
     
     enum Constants {
-        static let item = AppDetailsRowViewModel(appDetails: AppDetails(trackId: 123, trackName: "trackName", averageUserRating: 4.69179, version: "1.2.3"))
+        static let item = DetailsRowModel(details: Details(trackId: 123, trackName: "trackName", averageUserRating: 4.69179, version: "1.2.3"))
     }
     
     static var previews: some View {
-        AppDetailsRow(item: Constants.item)
+        DetailsRow(item: Constants.item)
             .sizeThatFitPreview(with: "Default")
     }
 }

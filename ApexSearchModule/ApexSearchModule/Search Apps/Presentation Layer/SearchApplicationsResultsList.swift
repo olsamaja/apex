@@ -1,5 +1,5 @@
 //
-//  SearchResultsList.swift
+//  SearchApplicationsResultsList.swift
 //  ApexSearchModule
 //
 //  Created by Olivier Rigault on 12/07/2021.
@@ -17,9 +17,10 @@ import SwiftUI
 import ApexCore
 import ApexCoreUI
 
-struct SearchResultsList: View {
+struct SearchApplicationsResultsList: View {
     
     var items: [SearchResultRowItem]
+    var viewModel: SearchApplicationsViewModel
     @State var selectedItem: SearchResultRowItem? = nil
     @State private var selectedApp: [AppSummary] = []
     
@@ -30,7 +31,7 @@ struct SearchResultsList: View {
     var body: some View {
         List {
             Section {
-                SelectStoreView(viewModel: SearchApplicationsViewModel(state: .idle))
+                SelectStoreView(viewModel: viewModel)
             } header: {
                 Text("Store")
             }
@@ -56,19 +57,25 @@ struct SearchResultsList: View {
     }
 }
 
-public class SearchResultsListBuilder: BuilderProtocol {
+public class SearchApplicationsResultsListBuilder: BuilderProtocol {
     
-    var items: [SearchResultRowItem]?
+    private var items: [SearchResultRowItem]?
+    private var viewModel = SearchApplicationsViewModel(state: .idle)
 
-    public func withItems(_ items: [SearchResultRowItem]) -> SearchResultsListBuilder {
+    public func withItems(_ items: [SearchResultRowItem]) -> SearchApplicationsResultsListBuilder {
         self.items = items
         return self
     }
-    
+        
+    public func withViewModel(_ viewModel: SearchApplicationsViewModel) -> SearchApplicationsResultsListBuilder {
+        self.viewModel = viewModel
+        return self
+    }
+
     @ViewBuilder
     public func build() -> some View {
         if let items = items, items.count > 0 {
-            SearchResultsList(items: items)
+            SearchApplicationsResultsList(items: items, viewModel: viewModel)
         } else {
             MessageViewBuilder()
                 .withMessage("No results")

@@ -13,13 +13,13 @@ public extension AppsViewModel {
     enum State {
         case idle
         case loading
-        case loaded([AppRowItem])
+        case loaded([AppRowModel])
         case error(DataError)
     }
     
     enum Event {
         case onAppear
-        case onDataLoaded([AppRowItem])
+        case onDataLoaded([AppRowModel])
         case onFailedToLoadData(DataError)
         case onPerform(UserAction)
     }
@@ -46,7 +46,6 @@ extension AppsViewModel.State: Equatable {
 extension AppsViewModel {
     
     public static func reduce(_ state: State, _ event: Event) -> State {
-        OLLogger.info("State (input): \(state)")
         switch state {
         case .idle:
             return reduceIdle(state, event)

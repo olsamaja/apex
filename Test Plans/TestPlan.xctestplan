@@ -53,6 +53,13 @@
         "identifier" : "7D9CD6ED269883F1000450E0",
         "name" : "ApexSearchModuleTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/ApexViewModule\/ApexViewModule.xcodeproj",
+        "identifier" : "D5CD22C927921219001C69EA",
+        "name" : "ApexViewModuleTests"
+      }
     }
   ],
   "version" : 1

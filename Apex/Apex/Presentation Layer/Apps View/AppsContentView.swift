@@ -8,6 +8,7 @@
 import SwiftUI
 import ApexCoreUI
 import ApexCore
+import ApexSearchModule
 
 struct AppsContentView: View {
     
@@ -30,24 +31,15 @@ struct AppsContentView: View {
                 .build()
         case .loaded(let items):
             List {
-                ForEach(searchResults(from: items, with: searchApps)) { item in
-                    NavigationLink(value: item) {
-                        AppRow(item: item)
-                    }
+                ForEach(AppsSectionRowsModel.searchAndSort(from: items, with: searchApps)) { section in
+                    AppsSectionRows(with: section)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
             }
         case .error:
             MessageViewBuilder()
                 .withMessage("Cannot load favorites")
                 .build()
-        }
-    }
-    
-    private func searchResults(from items: [AppRowItem], with term: String) -> [AppRowItem] {
-        if term.isEmpty {
-            return items
-        } else {
-            return items.filter { $0.trackName.contains(term) || $0.storeCode.contains(term) }
         }
     }
 }

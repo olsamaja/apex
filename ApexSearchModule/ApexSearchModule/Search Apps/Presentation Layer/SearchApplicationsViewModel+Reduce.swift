@@ -1,19 +1,20 @@
 //
-//  SearchAppsViewModel+Reduce.swift
+//  SearchApplicationsViewModel+Reduce.swift
 //  ApexSearchModule
 //
-//  Created by Olivier Rigault on 25/11/2021.
+//  Created by Olivier Rigault on 11/11/2023.
 //
 
 import Combine
 import ApexNetwork
 import ApexCore
+import ApexStoreModule
 
-public extension SearchAppsViewModel {
+public extension SearchApplicationsViewModel {
     
     enum State {
         case idle
-        case searching(String, AppStore)
+        case searching(String, Store)
         case loaded([SearchResultRowItem])
         case error(DataError)
     }
@@ -26,13 +27,13 @@ public extension SearchAppsViewModel {
     }
     
     enum UserAction {
-        case search(String, AppStore)
+        case search(String, Store)
         case clear
     }
 }
 
-extension SearchAppsViewModel.State: Equatable {
-    public static func == (lhs: SearchAppsViewModel.State, rhs: SearchAppsViewModel.State) -> Bool {
+extension SearchApplicationsViewModel.State: Equatable {
+    public static func == (lhs: SearchApplicationsViewModel.State, rhs: SearchApplicationsViewModel.State) -> Bool {
         switch (lhs, rhs) {
         case (.idle, .idle),
              (.loaded, .loaded),
@@ -46,7 +47,7 @@ extension SearchAppsViewModel.State: Equatable {
     }
 }
 
-extension SearchAppsViewModel {
+extension SearchApplicationsViewModel {
     
     public static func reduce(_ state: State, _ event: Event) -> State {
         switch state {
@@ -74,8 +75,8 @@ extension SearchAppsViewModel {
         switch event {
         case .onFailedToLoadData(let error):
             return .error(error)
-        case .onDataLoaded(let items):
-            return .loaded(items)
+        case .onDataLoaded(let artists):
+            return .loaded(artists)
         default:
             return state
         }
@@ -94,11 +95,5 @@ extension SearchAppsViewModel {
     
     static func reduceError(_ state: State, _ event: Event) -> State {
         return state
-    }
-}
-
-extension SearchAppsViewModel {
-    static func userAction(action: AnyPublisher<Event, Never>) -> Feedback<State, Event> {
-        Feedback { _ in action }
     }
 }

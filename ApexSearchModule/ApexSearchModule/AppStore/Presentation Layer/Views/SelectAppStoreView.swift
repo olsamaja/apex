@@ -47,7 +47,7 @@ public struct SelectAppStoreView: View {
     }
 }
 
-struct SelectStoreView_Previews: PreviewProvider {
+struct SelectAppStoreView_Previews: PreviewProvider {
     static var previews: some View {
         SelectAppStoreView(viewModel: SelectAppStoreViewModel())
     }

@@ -1,5 +1,5 @@
 //
-//  AppDetailsDTOMapper.swift
+//  DetailsDTOMapper.swift
 //  ApexViewModule
 //
 //  Created by Olivier Rigault on 02/11/2023.
@@ -8,10 +8,10 @@
 import Foundation
 import ApexCore
 
-public struct AppDetailsDTOMapper {
+public struct DetailsDTOMapper {
     
-    static func map(_ dto: AppDetailsDTO) -> AppDetails {
-        AppDetails(trackId: dto.trackId,
+    static func map(_ dto: DetailsDTO) -> Details {
+        Details(trackId: dto.trackId,
                    trackName: dto.trackName,
                    averageUserRating: dto.averageUserRating,
                    version: dto.version)
