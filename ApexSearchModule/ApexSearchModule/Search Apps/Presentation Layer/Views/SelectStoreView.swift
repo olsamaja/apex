@@ -13,7 +13,8 @@ import ApexStoreModule
 struct SelectStoreView: View {
     
     @StateObject var viewModel: SearchApplicationsViewModel
-    
+    @State var showSelectStore = false
+
     @ViewBuilder
     var body: some View {
         if let store = AppStoreManager.defaultStore {
@@ -23,12 +24,17 @@ struct SelectStoreView: View {
                 Spacer()
                 Button {
                     print(viewModel.state)
-                    viewModel.send(event: .onPerform(.search(viewModel.term, Store(code: "FR", name: "France"))))
+                    self.showSelectStore.toggle()
+//                    viewModel.send(event: .onPerform(.search(viewModel.term, Store(code: "FR", name: "France"))))
                 } label: {
                     Text("Change Store")
                         .font(.callout)
                 }
             }
+            .sheet(isPresented: $showSelectStore, content: {
+                SelectAppStoreView(viewModel: SelectAppStoreViewModel())
+//                    .environmentObject(viewModel.favorites)
+            })
         } else {
             Button {
                 print("no store selected")
