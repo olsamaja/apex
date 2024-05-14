@@ -20,6 +20,7 @@
 import SwiftUI
 import ApexCore
 import ApexCoreUI
+import Resolver
 
 public struct AppScreen: View {
     
@@ -42,7 +43,7 @@ public struct AppScreen: View {
         case .error(let error):
             MessageViewBuilder()
                 .withSymbol("xmark.octagon")
-                .withMessage(error.localizedDescription)
+                .withMessage(error.description)
                 .build()
         case .loaded(let sections):
             List {
@@ -60,8 +61,30 @@ public struct AppScreen: View {
     }
 }
 
-struct AppView_Previews: PreviewProvider {
+struct AppScreen_Previews: PreviewProvider {
+    
+    enum Constants {
+        static let dates = [Date(timeIntervalSince1970: 0), Date(timeIntervalSince1970: 523456789)]
+        static let reviews = [Review(title: "title 1", author: "author 1", rating: "3", content: "content 1", version: "1.2.3", updated: Constants.dates[0]),
+                              Review(title: "title 2", author: "author 2", rating: "5", content: "This is a long comment for a suber app I intend to use every single day from now on!", version: "1.2.3", updated: Constants.dates[1])]
+        static let sectionRowsModel = [SectionRowsModel(header: ContentRowModel(.text("First Section Header")),
+                                                        rows: [ContentRowModel(.text("some text")),
+                                                               ContentRowModel(.text("some other text"))]),
+                                       SectionRowsModel(header: ContentRowModel(.text("Second Section Header")),
+                                                        rows: [ContentRowModel(.details(DetailsRowModel(details: Details(trackId: 0, trackName: "App name", averageUserRating: 3.5, version: "1.2.3"))))]),
+                                       SectionRowsModel(rows: [ContentRowModel(.review(ReviewRowModel(review: Constants.reviews[0]))),
+                                                               ContentRowModel(.review(ReviewRowModel(review: Constants.reviews[1])))])]
+        static let appSummary = AppSummary(trackId: 1234, trackName: "My App", sellerName: "Seller", storeCode: "Store")
+    }
+    
     static var previews: some View {
-        AppScreen(viewModel: AppViewModel(appSummary: AppSummary(trackId: 1234, trackName: "My App", sellerName: "Seller", storeCode: "Store")))
+        Group {
+            AppScreen(viewModel: AppViewModel(appSummary: Constants.appSummary))
+                .previewDisplayName("default")
+            AppScreen(viewModel: AppViewModel(appSummary: Constants.appSummary, state: .error(DataError.parsing(description: "Unable to parse data"))))
+                .previewDisplayName("error")
+            AppScreen(viewModel: AppViewModel(appSummary: Constants.appSummary, state: .loaded(Constants.sectionRowsModel)))
+                .previewDisplayName("loaded")
+        }
     }
 }

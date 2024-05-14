@@ -26,7 +26,7 @@ public struct SearchAppsContentView: View {
         case .error(let error):
             MessageViewBuilder()
                 .withSymbol("xmark.octagon")
-                .withMessage(error.localizedDescription)
+                .withMessage(error.description)
                 .build()
         case .loaded(let items):
             SearchResultsListBuilder()

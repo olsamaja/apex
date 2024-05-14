@@ -30,7 +30,7 @@ public struct SearchApplicationsContentView: View {
                     Spacer()
                     MessageViewBuilder()
                         .withSymbol("xmark.octagon")
-                        .withMessage(error.localizedDescription)
+                        .withMessage(error.description)
                         .build()
                     Spacer()
                 }
