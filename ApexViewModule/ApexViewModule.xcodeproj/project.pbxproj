@@ -14,7 +14,7 @@
 		7D338CCD2AFD8DA400EC0256 /* ReviewRowViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CCC2AFD8DA400EC0256 /* ReviewRowViewModelTests.swift */; };
 		7D338CCF2AFD8E7600EC0256 /* DetailsRowViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CCE2AFD8E7600EC0256 /* DetailsRowViewModelTests.swift */; };
 		7D39BB622AFB7DA900198217 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D39BB612AFB7DA900198217 /* RatingView.swift */; };
-		7D39BB642AFB940000198217 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D39BB632AFB940000198217 /* ReviewView.swift */; };
+		7D39BB642AFB940000198217 /* ReviewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D39BB632AFB940000198217 /* ReviewScreen.swift */; };
 		7D39BB662AFBDCAD00198217 /* ContentRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D39BB652AFBDCAD00198217 /* ContentRowModel.swift */; };
 		7D5922A22AF40A9100EAD7A9 /* DataManager+Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5922A12AF40A9100EAD7A9 /* DataManager+Details.swift */; };
 		7D5922A42AF40ACB00EAD7A9 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5922A32AF40ACB00EAD7A9 /* Details.swift */; };
@@ -47,7 +47,7 @@
 		D5CD22F42792123C001C69EA /* DataManager+Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E52792123B001C69EA /* DataManager+Reviews.swift */; };
 		D5CD22F52792123C001C69EA /* ReviewsDTOMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E62792123B001C69EA /* ReviewsDTOMapper.swift */; };
 		D5CD22F62792123C001C69EA /* ContentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E82792123B001C69EA /* ContentRow.swift */; };
-		D5CD22F72792123C001C69EA /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E92792123B001C69EA /* AppView.swift */; };
+		D5CD22F72792123C001C69EA /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22E92792123B001C69EA /* AppScreen.swift */; };
 		D5CD22F82792123C001C69EA /* ReviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22EA2792123B001C69EA /* ReviewRow.swift */; };
 		D5CD22F92792123C001C69EA /* DetailsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22EB2792123B001C69EA /* DetailsRow.swift */; };
 		D5CD22FA2792123C001C69EA /* SectionRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CD22EC2792123B001C69EA /* SectionRows.swift */; };
@@ -87,7 +87,7 @@
 		7D338CCC2AFD8DA400EC0256 /* ReviewRowViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRowViewModelTests.swift; sourceTree = "<group>"; };
 		7D338CCE2AFD8E7600EC0256 /* DetailsRowViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRowViewModelTests.swift; sourceTree = "<group>"; };
 		7D39BB612AFB7DA900198217 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
-		7D39BB632AFB940000198217 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		7D39BB632AFB940000198217 /* ReviewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewScreen.swift; sourceTree = "<group>"; };
 		7D39BB652AFBDCAD00198217 /* ContentRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRowModel.swift; sourceTree = "<group>"; };
 		7D5922A12AF40A9100EAD7A9 /* DataManager+Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+Details.swift"; sourceTree = "<group>"; };
 		7D5922A32AF40ACB00EAD7A9 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		D5CD22E52792123B001C69EA /* DataManager+Reviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManager+Reviews.swift"; sourceTree = "<group>"; };
 		D5CD22E62792123B001C69EA /* ReviewsDTOMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsDTOMapper.swift; sourceTree = "<group>"; };
 		D5CD22E82792123B001C69EA /* ContentRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentRow.swift; sourceTree = "<group>"; };
-		D5CD22E92792123B001C69EA /* AppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		D5CD22E92792123B001C69EA /* AppScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
 		D5CD22EA2792123B001C69EA /* ReviewRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewRow.swift; sourceTree = "<group>"; };
 		D5CD22EB2792123B001C69EA /* DetailsRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsRow.swift; sourceTree = "<group>"; };
 		D5CD22EC2792123B001C69EA /* SectionRows.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionRows.swift; sourceTree = "<group>"; };
@@ -338,8 +338,8 @@
 		D5CD22E72792123B001C69EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D5CD22E92792123B001C69EA /* AppView.swift */,
-				7D39BB632AFB940000198217 /* ReviewView.swift */,
+				D5CD22E92792123B001C69EA /* AppScreen.swift */,
+				7D39BB632AFB940000198217 /* ReviewScreen.swift */,
 				7D39BB612AFB7DA900198217 /* RatingView.swift */,
 				7D39BB602AFB734C00198217 /* Rows */,
 			);
@@ -405,7 +405,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					D5CD22BF27921219001C69EA = {
 						CreatedOnToolsVersion = 13.1;
@@ -469,14 +469,14 @@
 				7D97CEB92AF309D60032EC42 /* DataRequester+Details.swift in Sources */,
 				D5CD22F92792123C001C69EA /* DetailsRow.swift in Sources */,
 				D5CD22C527921219001C69EA /* ApexViewModule.docc in Sources */,
-				7D39BB642AFB940000198217 /* ReviewView.swift in Sources */,
+				7D39BB642AFB940000198217 /* ReviewScreen.swift in Sources */,
 				7D39BB662AFBDCAD00198217 /* ContentRowModel.swift in Sources */,
 				7D39BB622AFB7DA900198217 /* RatingView.swift in Sources */,
 				D5CD22F22792123C001C69EA /* AppViewModel+Reduce.swift in Sources */,
 				D5CD22EF2792123C001C69EA /* ReviewRowModel.swift in Sources */,
 				D5CD22F82792123C001C69EA /* ReviewRow.swift in Sources */,
 				7D97CEBB2AF30ABB0032EC42 /* DetailsDTO.swift in Sources */,
-				D5CD22F72792123C001C69EA /* AppView.swift in Sources */,
+				D5CD22F72792123C001C69EA /* AppScreen.swift in Sources */,
 				D5CD22EE2792123C001C69EA /* DataRequester+Reviews.swift in Sources */,
 				D5CD22F52792123C001C69EA /* ReviewsDTOMapper.swift in Sources */,
 				D5CD22ED2792123B001C69EA /* ReviewsDTO.swift in Sources */,
@@ -551,6 +551,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -615,6 +616,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -638,6 +640,7 @@
 		D5CD22D527921219001C69EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -645,6 +648,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -654,6 +658,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++17";
 				PRODUCT_BUNDLE_IDENTIFIER = com.olsamaja.ApexViewModule;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -666,6 +671,7 @@
 		D5CD22D627921219001C69EA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -673,6 +679,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -682,6 +689,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++17";
 				PRODUCT_BUNDLE_IDENTIFIER = com.olsamaja.ApexViewModule;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

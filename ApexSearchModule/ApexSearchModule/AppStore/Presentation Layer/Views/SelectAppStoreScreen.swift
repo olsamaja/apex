@@ -1,5 +1,5 @@
 //
-//  SelectAppStoreView.swift
+//  SelectAppStoreScreen.swift
 //  ApexSearchModule
 //
 //  Created by Olivier Rigault on 24/11/2021.
@@ -9,7 +9,7 @@ import SwiftUI
 import ApexCore
 import ApexStoreModule
 
-public struct SelectAppStoreView: View {
+public struct SelectAppStoreScreen: View {
 
     @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: SelectAppStoreViewModel
@@ -49,6 +49,6 @@ public struct SelectAppStoreView: View {
 
 struct SelectAppStoreView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectAppStoreView(viewModel: SelectAppStoreViewModel())
+        SelectAppStoreScreen(viewModel: SelectAppStoreViewModel())
     }
 }

@@ -1,5 +1,5 @@
 //
-//  CountriesView.swift
+//  StoresScreen.swift
 //  ApexStoreModule
 //
 //  Created by Olivier Rigault on 17/11/2021.
@@ -9,7 +9,7 @@ import SwiftUI
 import ApexCore
 import ApexCoreUI
 
-public struct StoresView: View {
+public struct StoresScreen: View {
     
     let allItems = StoreRowItem.allStores()
     @EnvironmentObject var selectedStore: SelectedStore
@@ -30,6 +30,6 @@ public struct StoresView: View {
 
 struct CountriesView_Previews: PreviewProvider {
     static var previews: some View {
-        StoresView()
+        StoresScreen()
     }
 }

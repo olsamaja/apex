@@ -23,7 +23,7 @@ public struct SettingsView: View {
                 Section(header: Text("Store")) {
                     NavigationLink(
                         destination:
-                            StoresView()
+                            StoresScreen()
                                 .environmentObject(selectedStore)
                                 .navigationTitle("Select a Store"),
                         label: {

@@ -32,7 +32,7 @@ struct SelectStoreView: View {
                 }
             }
             .sheet(isPresented: $showSelectStore, content: {
-                SelectAppStoreView(viewModel: SelectAppStoreViewModel())
+                SelectAppStoreScreen(viewModel: SelectAppStoreViewModel())
 //                    .environmentObject(viewModel.favorites)
             })
         } else {

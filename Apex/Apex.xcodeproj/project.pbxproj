@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,7 +26,7 @@
 		D5023F4D274EB76900E10942 /* AppsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5023F4C274EB76900E10942 /* AppsViewModel.swift */; };
 		D551149D279212A60030B167 /* ApexViewModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D551149C279212A60030B167 /* ApexViewModule.framework */; };
 		D551149E279212A60030B167 /* ApexViewModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D551149C279212A60030B167 /* ApexViewModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D56ADEE92773979E00E36BB3 /* AppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56ADEE82773979E00E36BB3 /* AppsView.swift */; };
+		D56ADEE92773979E00E36BB3 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56ADEE82773979E00E36BB3 /* HomeScreen.swift */; };
 		D572BE192763CF7500CBE614 /* AppsViewModel+Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572BE182763CF7500CBE614 /* AppsViewModel+Reduce.swift */; };
 		D572BE1B2763CFCF00CBE614 /* AppRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572BE1A2763CFCF00CBE614 /* AppRowModel.swift */; };
 		D572BE1E2769440B00CBE614 /* AppsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572BE1D2769440B00CBE614 /* AppsContentView.swift */; };
@@ -97,7 +97,7 @@
 		7DA999AC269A4CB3008DDBA9 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		D5023F4C274EB76900E10942 /* AppsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewModel.swift; sourceTree = "<group>"; };
 		D551149C279212A60030B167 /* ApexViewModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexViewModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D56ADEE82773979E00E36BB3 /* AppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsView.swift; sourceTree = "<group>"; };
+		D56ADEE82773979E00E36BB3 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		D572BE182763CF7500CBE614 /* AppsViewModel+Reduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppsViewModel+Reduce.swift"; sourceTree = "<group>"; };
 		D572BE1A2763CFCF00CBE614 /* AppRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRowModel.swift; sourceTree = "<group>"; };
 		D572BE1D2769440B00CBE614 /* AppsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsContentView.swift; sourceTree = "<group>"; };
@@ -228,21 +228,21 @@
 		7DA999C7269DA004008DDBA9 /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
-				D56ADEEC2784AF0800E36BB3 /* Apps View */,
+				D56ADEEC2784AF0800E36BB3 /* Home Screen */,
 			);
 			path = "Presentation Layer";
 			sourceTree = "<group>";
 		};
-		D56ADEEC2784AF0800E36BB3 /* Apps View */ = {
+		D56ADEEC2784AF0800E36BB3 /* Home Screen */ = {
 			isa = PBXGroup;
 			children = (
-				D56ADEE82773979E00E36BB3 /* AppsView.swift */,
+				D56ADEE82773979E00E36BB3 /* HomeScreen.swift */,
 				D572BE1D2769440B00CBE614 /* AppsContentView.swift */,
 				7D338CD02AFDA47800EC0256 /* AppsSectionRows.swift */,
 				D572BE1F276A40D700CBE614 /* AppRow.swift */,
 				D572BE1C2763CFD700CBE614 /* View Models */,
 			);
-			path = "Apps View";
+			path = "Home Screen";
 			sourceTree = "<group>";
 		};
 		D572BE1C2763CFD700CBE614 /* View Models */ = {
@@ -337,8 +337,9 @@
 		7D9CD72426988477000450E0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					7D9CD72B26988477000450E0 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -411,7 +412,7 @@
 				7DA999A9269A4C1C008DDBA9 /* AppConfiguration.swift in Sources */,
 				D572BE1B2763CFCF00CBE614 /* AppRowModel.swift in Sources */,
 				D572BE1E2769440B00CBE614 /* AppsContentView.swift in Sources */,
-				D56ADEE92773979E00E36BB3 /* AppsView.swift in Sources */,
+				D56ADEE92773979E00E36BB3 /* HomeScreen.swift in Sources */,
 				7D338CD72AFDA84A00EC0256 /* AppsSectionRowsModel.swift in Sources */,
 				D5023F4D274EB76900E10942 /* AppsViewModel.swift in Sources */,
 				D572BE20276A40D700CBE614 /* AppRow.swift in Sources */,
@@ -489,6 +490,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -550,6 +552,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

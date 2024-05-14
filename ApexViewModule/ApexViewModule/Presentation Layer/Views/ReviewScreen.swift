@@ -1,5 +1,5 @@
 //
-//  ReviewView.swift
+//  ReviewScreen.swift
 //  ApexViewModule
 //
 //  Created by Olivier Rigault on 08/11/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct ReviewView: View {
+public struct ReviewScreen: View {
     
     private let model: ReviewRowModel
 
@@ -64,7 +64,7 @@ struct ReviewView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationStack {
-            ReviewView(model: Constants.model)
+            ReviewScreen(model: Constants.model)
                 .sizeThatFitPreview(with: "Default")
         }
     }

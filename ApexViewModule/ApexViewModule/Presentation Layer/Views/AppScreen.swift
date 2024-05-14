@@ -1,5 +1,5 @@
 //
-//  AppView.swift
+//  AppScreen.swift
 //  Apex
 //
 //  Created by Olivier Rigault on 04/01/2022.
@@ -21,7 +21,7 @@ import SwiftUI
 import ApexCore
 import ApexCoreUI
 
-public struct AppView: View {
+public struct AppScreen: View {
     
     @StateObject var viewModel: AppViewModel
 
@@ -62,6 +62,6 @@ public struct AppView: View {
 
 struct AppView_Previews: PreviewProvider {
     static var previews: some View {
-        AppView(viewModel: AppViewModel(appSummary: AppSummary(trackId: 1234, trackName: "My App", sellerName: "Seller", storeCode: "Store")))
+        AppScreen(viewModel: AppViewModel(appSummary: AppSummary(trackId: 1234, trackName: "My App", sellerName: "Seller", storeCode: "Store")))
     }
 }

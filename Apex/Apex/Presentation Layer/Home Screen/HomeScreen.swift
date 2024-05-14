@@ -1,5 +1,5 @@
 //
-//  AppsView.swift
+//  HomeScreen.swift
 //  Apex
 //
 //  Created by Olivier Rigault on 22/12/2021.
@@ -11,7 +11,7 @@ import ApexCore
 import ApexSearchModule
 import ApexViewModule
 
-struct AppsView: View {
+struct HomeScreen: View {
 
     @ObservedObject var viewModel: AppsViewModel
     
@@ -40,19 +40,19 @@ struct AppsView: View {
                     }
                 }
                 .navigationDestination(for: AppRowModel.self) { item in
-                    AppView(viewModel: AppViewModel(appSummary: item.appSummary))
+                    AppScreen(viewModel: AppViewModel(appSummary: item.appSummary))
                 }
                 .navigationDestination(for: ContentRowModel.self) { model in
                     switch model.category {
                     case .review(let model):
-                        ReviewView(model: model)
+                        ReviewScreen(model: model)
                     default:
                         EmptyView()
                     }
                 }
         }
         .sheet(isPresented: $showSelectStore, content: {
-            SelectAppStoreView(viewModel: SelectAppStoreViewModel())
+            SelectAppStoreScreen(viewModel: SelectAppStoreViewModel())
                 .environmentObject(viewModel.favorites)
         })
         .sheet(isPresented: $showSelectApp, content: {
@@ -67,6 +67,6 @@ struct AppsView: View {
 
 struct AppsView_Previews: PreviewProvider {
     static var previews: some View {
-        AppsView(viewModel: AppsViewModel())
+        HomeScreen(viewModel: AppsViewModel())
     }
 }
