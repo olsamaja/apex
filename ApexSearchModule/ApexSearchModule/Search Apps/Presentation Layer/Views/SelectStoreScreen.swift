@@ -14,34 +14,30 @@ struct SelectStoreScreen: View {
     
     @StateObject var viewModel: SearchApplicationsViewModel
     @State var showSelectStore = false
+    @ObservedObject var selectedStore = SelectedStore()
 
     @ViewBuilder
     var body: some View {
-        if let store = AppStoreManager.defaultStore {
             HStack {
-                Text(store.name)
-                    .font(.callout)
-                Spacer()
-                Button {
-                    print(viewModel.state)
-                    self.showSelectStore.toggle()
-//                    viewModel.send(event: .onPerform(.search(viewModel.term, Store(code: "FR", name: "France"))))
-                } label: {
-                    Text("Change Store")
-                        .font(.callout)
-                }
-            }
-            .sheet(isPresented: $showSelectStore, content: {
-                SelectAppStoreScreen(viewModel: SelectAppStoreViewModel())
-//                    .environmentObject(viewModel.favorites)
-            })
-        } else {
+            Text(selectedStore.current.name)
+                .font(.callout)
+            Spacer()
             Button {
-                print("no store selected")
+                print(viewModel.state)
+                self.showSelectStore.toggle()
             } label: {
-                Text("Select Store")
+                Text("Change Store")
+                    .font(.callout)
             }
         }
+        .sheet(isPresented: $showSelectStore, content: {
+            #if true // open new select store screen w/o searching apps
+            ChangeStoreScreen()
+                .environmentObject(selectedStore)
+            #else
+            SelectAppStoreScreen(viewModel: SelectAppStoreViewModel())
+            #endif
+        })
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A778B632BF61ADB00A83250 /* ChangeStoreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A778B622BF61ADB00A83250 /* ChangeStoreScreen.swift */; };
 		D51E2AB42746F6F7000FF75B /* ApexCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51E2AB22746F6F7000FF75B /* ApexCore.framework */; };
 		D51E2AB52746F6F7000FF75B /* ApexCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D51E2AB22746F6F7000FF75B /* ApexCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D51E2AB62746F6F7000FF75B /* ApexCoreUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51E2AB32746F6F7000FF75B /* ApexCoreUI.framework */; };
@@ -52,6 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6A778B622BF61ADB00A83250 /* ChangeStoreScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStoreScreen.swift; sourceTree = "<group>"; };
 		D51E2AB22746F6F7000FF75B /* ApexCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D51E2AB32746F6F7000FF75B /* ApexCoreUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCoreUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D57C76A52746F5E10095D667 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				D57C76AE2746F5FA0095D667 /* StoresScreen.swift */,
+				6A778B622BF61ADB00A83250 /* ChangeStoreScreen.swift */,
 				D57C76AD2746F5FA0095D667 /* StoreRow.swift */,
 				D57C76AB2746F5FA0095D667 /* SelectedStoreView.swift */,
 			);
@@ -317,6 +320,7 @@
 				D57C76A72746F5E10095D667 /* Store.swift in Sources */,
 				D5B9FB5B2748052D00E6DE6A /* SelectedStore.swift in Sources */,
 				D57C76B32746F5FA0095D667 /* SelectedStoreView.swift in Sources */,
+				6A778B632BF61ADB00A83250 /* ChangeStoreScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

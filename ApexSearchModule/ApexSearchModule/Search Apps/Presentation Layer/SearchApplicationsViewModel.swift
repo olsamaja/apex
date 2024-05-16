@@ -12,7 +12,6 @@ import ApexStoreModule
 
 public final class SearchApplicationsViewModel: ObservableObject {
 
-    let store: Store
     @Published var state = State.idle
     @Published var term = ""
 
@@ -21,7 +20,6 @@ public final class SearchApplicationsViewModel: ObservableObject {
 
     public init(state: State = .idle) {
         self.state = state
-        self.store = Store(code: "GB", name: "United Kingdom")
         setupFeedbacks()
         setupBindings()
     }
@@ -56,7 +54,7 @@ public final class SearchApplicationsViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] (term) in
                 guard let self = self else { return }
-                self.send(event: .onPerform(.search(term, self.store)))
+                self.send(event: .onPerform(.search(term, SelectedStore().current)))
             })
         .store(in: &cancellables)
         

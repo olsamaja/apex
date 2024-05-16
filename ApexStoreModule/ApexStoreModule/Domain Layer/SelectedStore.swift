@@ -11,7 +11,7 @@ public class SelectedStore: ObservableObject {
     
     public init() {}
     
-    var current: Store {
+    public var current: Store {
         get { StoreManager.currentStore }
         set (newValue) {
             objectWillChange.send()
