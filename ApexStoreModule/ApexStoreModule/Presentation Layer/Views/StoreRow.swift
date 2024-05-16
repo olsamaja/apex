@@ -11,7 +11,7 @@ import ApexCoreUI
 
 struct StoreRow: View {
     
-    var item: StoreRowItem
+    var item: StoreRowModel
     @EnvironmentObject var selectedStore: SelectedStore
 
     var body: some View {

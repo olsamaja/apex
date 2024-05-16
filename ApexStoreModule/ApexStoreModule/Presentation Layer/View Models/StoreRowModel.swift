@@ -1,5 +1,5 @@
 //
-//  StoreRowItem.swift
+//  StoreRowModel.swift
 //  ApexStoreModule
 //
 //  Created by Olivier Rigault on 17/11/2021.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct StoreRowItem: Identifiable {
+public struct StoreRowModel: Identifiable {
     
     public let id: String
     let store: Store
@@ -17,7 +17,7 @@ public struct StoreRowItem: Identifiable {
         self.store = store
     }
 
-    static func allStores() -> [StoreRowItem] {
-        StoreManager.allStores.map { StoreRowItem(store: $0) }
+    static func allStores() -> [StoreRowModel] {
+        StoreManager.allStores.map { StoreRowModel(store: $0) }
     }
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A778B632BF61ADB00A83250 /* ChangeStoreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A778B622BF61ADB00A83250 /* ChangeStoreScreen.swift */; };
+		6A778B632BF61ADB00A83250 /* SelectStoreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A778B622BF61ADB00A83250 /* SelectStoreScreen.swift */; };
 		D51E2AB42746F6F7000FF75B /* ApexCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51E2AB22746F6F7000FF75B /* ApexCore.framework */; };
 		D51E2AB52746F6F7000FF75B /* ApexCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D51E2AB22746F6F7000FF75B /* ApexCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D51E2AB62746F6F7000FF75B /* ApexCoreUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51E2AB32746F6F7000FF75B /* ApexCoreUI.framework */; };
@@ -17,7 +17,7 @@
 		D57C76B12746F5FA0095D667 /* StoreRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76AD2746F5FA0095D667 /* StoreRow.swift */; };
 		D57C76B22746F5FA0095D667 /* StoresScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76AE2746F5FA0095D667 /* StoresScreen.swift */; };
 		D57C76B32746F5FA0095D667 /* SelectedStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76AB2746F5FA0095D667 /* SelectedStoreView.swift */; };
-		D57C76B52746F5FA0095D667 /* StoreRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76B02746F5FA0095D667 /* StoreRowItem.swift */; };
+		D57C76B52746F5FA0095D667 /* StoreRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76B02746F5FA0095D667 /* StoreRowModel.swift */; };
 		D57C76B82746F6140095D667 /* StoreRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C76B72746F6140095D667 /* StoreRepositoryTests.swift */; };
 		D59610682746F55200E256F8 /* ApexStoreModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D596105E2746F55200E256F8 /* ApexStoreModule.framework */; };
 		D596106F2746F55200E256F8 /* ApexStoreModule.h in Headers */ = {isa = PBXBuildFile; fileRef = D59610612746F55200E256F8 /* ApexStoreModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -53,7 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6A778B622BF61ADB00A83250 /* ChangeStoreScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStoreScreen.swift; sourceTree = "<group>"; };
+		6A778B622BF61ADB00A83250 /* SelectStoreScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStoreScreen.swift; sourceTree = "<group>"; };
 		D51E2AB22746F6F7000FF75B /* ApexCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D51E2AB32746F6F7000FF75B /* ApexCoreUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCoreUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D57C76A52746F5E10095D667 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 		D57C76AB2746F5FA0095D667 /* SelectedStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedStoreView.swift; sourceTree = "<group>"; };
 		D57C76AD2746F5FA0095D667 /* StoreRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRow.swift; sourceTree = "<group>"; };
 		D57C76AE2746F5FA0095D667 /* StoresScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresScreen.swift; sourceTree = "<group>"; };
-		D57C76B02746F5FA0095D667 /* StoreRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRowItem.swift; sourceTree = "<group>"; };
+		D57C76B02746F5FA0095D667 /* StoreRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRowModel.swift; sourceTree = "<group>"; };
 		D57C76B72746F6140095D667 /* StoreRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRepositoryTests.swift; sourceTree = "<group>"; };
 		D596105E2746F55200E256F8 /* ApexStoreModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApexStoreModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59610612746F55200E256F8 /* ApexStoreModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApexStoreModule.h; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				D57C76AE2746F5FA0095D667 /* StoresScreen.swift */,
-				6A778B622BF61ADB00A83250 /* ChangeStoreScreen.swift */,
+				6A778B622BF61ADB00A83250 /* SelectStoreScreen.swift */,
 				D57C76AD2746F5FA0095D667 /* StoreRow.swift */,
 				D57C76AB2746F5FA0095D667 /* SelectedStoreView.swift */,
 			);
@@ -137,7 +137,7 @@
 		D57C76AF2746F5FA0095D667 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				D57C76B02746F5FA0095D667 /* StoreRowItem.swift */,
+				D57C76B02746F5FA0095D667 /* StoreRowModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -313,14 +313,14 @@
 				D57C76B12746F5FA0095D667 /* StoreRow.swift in Sources */,
 				D57C76B22746F5FA0095D667 /* StoresScreen.swift in Sources */,
 				D5B9FB4F2747F0B600E6DE6A /* StoreDTO.swift in Sources */,
-				D57C76B52746F5FA0095D667 /* StoreRowItem.swift in Sources */,
+				D57C76B52746F5FA0095D667 /* StoreRowModel.swift in Sources */,
 				D5B9FB522747F20500E6DE6A /* StoresDTOMapper.swift in Sources */,
 				D57C76A82746F5E10095D667 /* StoreLocalRepository.swift in Sources */,
 				D5B9FB542747F66900E6DE6A /* StoreManager.swift in Sources */,
 				D57C76A72746F5E10095D667 /* Store.swift in Sources */,
 				D5B9FB5B2748052D00E6DE6A /* SelectedStore.swift in Sources */,
 				D57C76B32746F5FA0095D667 /* SelectedStoreView.swift in Sources */,
-				6A778B632BF61ADB00A83250 /* ChangeStoreScreen.swift in Sources */,
+				6A778B632BF61ADB00A83250 /* SelectStoreScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

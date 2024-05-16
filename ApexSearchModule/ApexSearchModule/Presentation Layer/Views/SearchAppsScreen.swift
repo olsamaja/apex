@@ -1,5 +1,5 @@
 //
-//  SearchApplicationsScreen.swift
+//  SearchAppsScreen.swift
 //  ApexSearchModule
 //
 //  Created by Olivier Rigault on 10/11/2023.
@@ -9,12 +9,12 @@ import SwiftUI
 import ApexCore
 import ApexCoreUI
 
-public struct SearchApplicationsScreen: View {
+public struct SearchAppsScreen: View {
     
     @Environment(\.dismiss) var dismiss
-    @ObservedObject var viewModel: SearchApplicationsViewModel
+    @ObservedObject var viewModel: SearchAppsViewModel
 
-    public init(viewModel: SearchApplicationsViewModel) {
+    public init(viewModel: SearchAppsViewModel) {
         self.viewModel = viewModel
     }
     
@@ -39,9 +39,9 @@ struct SearchApplicationsScreen_Previews: PreviewProvider {
     
     static var previews: some View {
         Group {
-            SearchApplicationsScreen(viewModel: SearchApplicationsViewModel(state: .idle))
+            SearchAppsScreen(viewModel: SearchAppsViewModel(state: .idle))
                 .previewDisplayName("default state = .idle")
-            SearchApplicationsScreen(viewModel: SearchApplicationsViewModel(state: .error(DataError.invalidRequest)))
+            SearchAppsScreen(viewModel: SearchAppsViewModel(state: .error(DataError.invalidRequest)))
                 .previewDisplayName("default state = .error")
         }
     }

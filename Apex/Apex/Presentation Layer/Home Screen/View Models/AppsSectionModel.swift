@@ -1,5 +1,5 @@
 //
-//  AppsSectionRowsModel.swift
+//  AppsSectionModel.swift
 //  Apex
 //
 //  Created by Olivier Rigault on 10/11/2023.
@@ -9,7 +9,7 @@ import Foundation
 import ApexCore
 import ApexStoreModule
 
-public struct AppsSectionRowsModel: Identifiable {
+public struct AppsSectionModel: Identifiable {
     
     public var id = UUID().uuidString
     
@@ -21,7 +21,7 @@ public struct AppsSectionRowsModel: Identifiable {
         self.apps = apps
     }
     
-    public func search(with term: String) -> AppsSectionRowsModel? {
+    public func search(with term: String) -> AppsSectionModel? {
         
         guard !term.isEmpty else { return self }
 
@@ -29,15 +29,15 @@ public struct AppsSectionRowsModel: Identifiable {
         
         guard filteredApps.count > 0 else { return nil }
 
-        return AppsSectionRowsModel(store: store, apps: filteredApps)
+        return AppsSectionModel(store: store, apps: filteredApps)
     }
 }
 
-extension AppsSectionRowsModel {
+extension AppsSectionModel {
     
-    static func searchAndSort(from items: [AppRowModel], with term: String) -> [AppsSectionRowsModel] {
+    static func searchAndSort(from items: [AppRowModel], with term: String) -> [AppsSectionModel] {
         
-        let sections = AppsSectionRowsModel.makeSortedAppsSectionRowsModel(with: items)
+        let sections = AppsSectionModel.makeSortedAppsSectionRowsModel(with: items)
         
         if term.isEmpty {
             return sections
@@ -50,7 +50,7 @@ extension AppsSectionRowsModel {
         return filteredSections
     }
 
-    static func makeSortedAppsSectionRowsModel(with unsortedRows: [AppRowModel] ) -> [AppsSectionRowsModel] {
+    static func makeSortedAppsSectionRowsModel(with unsortedRows: [AppRowModel] ) -> [AppsSectionModel] {
         
         // Build an array of Stores (sorted by name) from the unsorted array of AppRowModels
         let storeCodes = unsortedRows.map { $0.storeCode }
@@ -71,15 +71,15 @@ extension AppsSectionRowsModel {
             let sortedApps = apps.sorted(by: { app1, app2 in
                 app1.trackName.lowercased() < app2.trackName.lowercased()
             })
-            return AppsSectionRowsModel(store: store, apps: sortedApps)
+            return AppsSectionModel(store: store, apps: sortedApps)
         }
         
         return sections
     }
 }
 
-extension AppsSectionRowsModel: Equatable {
-    public static func == (lhs: AppsSectionRowsModel, rhs: AppsSectionRowsModel) -> Bool {
+extension AppsSectionModel: Equatable {
+    public static func == (lhs: AppsSectionModel, rhs: AppsSectionModel) -> Bool {
         (lhs.store == rhs.store) && (lhs.apps == rhs.apps)
     }
 }

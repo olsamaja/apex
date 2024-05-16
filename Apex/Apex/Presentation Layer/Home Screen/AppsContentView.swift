@@ -31,8 +31,8 @@ struct AppsContentView: View {
                 .build()
         case .loaded(let items):
             List {
-                ForEach(AppsSectionRowsModel.searchAndSort(from: items, with: searchApps)) { section in
-                    AppsSectionRows(with: section)
+                ForEach(AppsSectionModel.searchAndSort(from: items, with: searchApps)) { section in
+                    AppsSection(with: section)
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }

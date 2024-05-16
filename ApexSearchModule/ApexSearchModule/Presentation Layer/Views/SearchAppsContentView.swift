@@ -1,5 +1,5 @@
 //
-//  SearchApplicationsContentView.swift
+//  SearchAppsContentView.swift
 //  ApexSearchModule
 //
 //  Created by Olivier Rigault on 11/11/2023.
@@ -12,19 +12,19 @@ import ApexCoreUI
 import ApexCore
 import ApexStoreModule
 
-public struct SearchApplicationsContentView: View {
+public struct SearchAppsContentView: View {
     
-    @StateObject var viewModel: SearchApplicationsViewModel
+    @StateObject var viewModel: SearchAppsViewModel
 
     public var body: some View {
         switch viewModel.state {
         case .idle:
             HeaderRowAndContentView("Store") {
-                SelectStoreScreen(viewModel: viewModel)
+                ChangeStoreView(viewModel: viewModel)
             }
         case .error(let error):
             HeaderRowAndContentView {
-                SelectStoreScreen(viewModel: viewModel)
+                ChangeStoreView(viewModel: viewModel)
             } content: {
                 VStack {
                     Spacer()
@@ -42,7 +42,7 @@ public struct SearchApplicationsContentView: View {
                 .build()
         case .searching:
             HeaderRowAndContentView {
-                SelectStoreScreen(viewModel: viewModel)
+                ChangeStoreView(viewModel: viewModel)
             } content: {
                 SpinnerBuilder()
                     .withStyle(.large)
@@ -56,9 +56,9 @@ public struct SearchApplicationsContentView: View {
 
 public class SearchApplicationsContentViewBuilder: BuilderProtocol {
     
-    private var viewModel: SearchApplicationsViewModel?
+    private var viewModel: SearchAppsViewModel?
     
-    public func withViewModel(_ viewModel: SearchApplicationsViewModel) -> SearchApplicationsContentViewBuilder {
+    public func withViewModel(_ viewModel: SearchAppsViewModel) -> SearchApplicationsContentViewBuilder {
         self.viewModel = viewModel
         return self
     }
@@ -66,7 +66,7 @@ public class SearchApplicationsContentViewBuilder: BuilderProtocol {
     @ViewBuilder
     public func build() -> some View {
         if let viewModel = viewModel {
-            SearchApplicationsContentView(viewModel: viewModel)
+            SearchAppsContentView(viewModel: viewModel)
         } else {
             EmptyView()
         }
@@ -78,11 +78,11 @@ struct SearchApplicationsContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             SearchApplicationsContentViewBuilder()
-                .withViewModel(SearchApplicationsViewModel(state: .idle))
+                .withViewModel(SearchAppsViewModel(state: .idle))
                 .build()
                 .previewDisplayName("default state = .idle")
             SearchApplicationsContentViewBuilder()
-                .withViewModel(SearchApplicationsViewModel(state: .error(.invalidResponse)))
+                .withViewModel(SearchAppsViewModel(state: .error(.invalidResponse)))
                 .build()
                 .previewDisplayName("default state = .error")
         }

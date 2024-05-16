@@ -1,5 +1,5 @@
 //
-//  SearchApplicationsViewModel+Reduce.swift
+//  SearchAppsViewModel+Reduce.swift
 //  ApexSearchModule
 //
 //  Created by Olivier Rigault on 11/11/2023.
@@ -10,18 +10,18 @@ import ApexNetwork
 import ApexCore
 import ApexStoreModule
 
-public extension SearchApplicationsViewModel {
+public extension SearchAppsViewModel {
     
     enum State {
         case idle
         case searching(String, Store)
-        case loaded([SearchResultRowItem])
+        case loaded([SearchResultRowModel])
         case error(DataError)
     }
     
     enum Event {
         case onAppear
-        case onDataLoaded([SearchResultRowItem])
+        case onDataLoaded([SearchResultRowModel])
         case onFailedToLoadData(DataError)
         case onPerform(UserAction)
     }
@@ -32,8 +32,8 @@ public extension SearchApplicationsViewModel {
     }
 }
 
-extension SearchApplicationsViewModel.State: Equatable {
-    public static func == (lhs: SearchApplicationsViewModel.State, rhs: SearchApplicationsViewModel.State) -> Bool {
+extension SearchAppsViewModel.State: Equatable {
+    public static func == (lhs: SearchAppsViewModel.State, rhs: SearchAppsViewModel.State) -> Bool {
         switch (lhs, rhs) {
         case (.idle, .idle),
              (.loaded, .loaded),
@@ -47,7 +47,7 @@ extension SearchApplicationsViewModel.State: Equatable {
     }
 }
 
-extension SearchApplicationsViewModel {
+extension SearchAppsViewModel {
     
     public static func reduce(_ state: State, _ event: Event) -> State {
         switch state {

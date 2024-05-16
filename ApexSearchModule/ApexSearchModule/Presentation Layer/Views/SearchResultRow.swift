@@ -11,7 +11,7 @@ import ApexCoreUI
 
 struct SearchResultRow: View {
 
-    var item: SearchResultRowItem
+    var item: SearchResultRowModel
 
     var body: some View {
         HStack {
@@ -62,16 +62,16 @@ struct SearchResultRow_Previews: PreviewProvider {
                                      averageUserRating: 4.7655,
                                      userRatingCountForCurrentVersion: 123456,
                                      storeCode: "FR")
-        static let item1 = SearchResultRowItem(appDetails: Constants.app1)
+        static let item1 = SearchResultRowModel(appDetails: Constants.app1)
     }
     
     static var previews: some View {
         Group {
             SearchResultRow(item: Constants.item1)
                 .sizeThatFitPreview(with: "Default")
-            SearchResultRow(item: SearchResultRowItem(appDetails: Constants.app2))
+            SearchResultRow(item: SearchResultRowModel(appDetails: Constants.app2))
                 .sizeThatFitPreview(with: "Long application name")
-            SearchResultRow(item: SearchResultRowItem(appDetails: Constants.app3))
+            SearchResultRow(item: SearchResultRowModel(appDetails: Constants.app3))
                 .sizeThatFitPreview(with: "Long seller's name")
         }
     }

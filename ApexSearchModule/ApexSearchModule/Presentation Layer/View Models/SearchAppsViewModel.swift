@@ -1,5 +1,5 @@
 //
-//  SearchApplicationsViewModel.swift
+//  SearchAppsViewModel.swift
 //  ApexSearchModule
 //
 //  Created by Olivier Rigault on 10/11/2023.
@@ -10,7 +10,7 @@ import ApexNetwork
 import ApexCore
 import ApexStoreModule
 
-public final class SearchApplicationsViewModel: ObservableObject {
+public final class SearchAppsViewModel: ObservableObject {
 
     @Published var state = State.idle
     @Published var term = ""
@@ -81,7 +81,7 @@ public final class SearchApplicationsViewModel: ObservableObject {
             guard case .searching(let term, let store) = state else { return Empty().eraseToAnyPublisher() }
             
             return DataManager().search(with: term, storeCode: store.code)
-                .map { $0.map(SearchResultRowItem.init) }
+                .map { $0.map(SearchResultRowModel.init) }
                 .map(Event.onDataLoaded)
                 .catch { Just(Event.onFailedToLoadData($0)) }
                 .eraseToAnyPublisher()
@@ -89,7 +89,7 @@ public final class SearchApplicationsViewModel: ObservableObject {
     }
 }
 
-extension SearchApplicationsViewModel {
+extension SearchAppsViewModel {
     static func userAction(action: AnyPublisher<Event, Never>) -> Feedback<State, Event> {
         Feedback { _ in action }
     }

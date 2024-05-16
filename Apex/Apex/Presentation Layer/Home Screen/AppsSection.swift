@@ -1,5 +1,5 @@
 //
-//  AppsSectionRows.swift
+//  AppsSection.swift
 //  Apex
 //
 //  Created by Olivier Rigault on 10/11/2023.
@@ -11,11 +11,11 @@
 import SwiftUI
 import ApexCore
 
-struct AppsSectionRows: View {
+struct AppsSection: View {
     
-    let model: AppsSectionRowsModel
+    let model: AppsSectionModel
     
-    init(with model: AppsSectionRowsModel) {
+    init(with model: AppsSectionModel) {
         self.model = model
     }
     

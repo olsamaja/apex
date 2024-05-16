@@ -11,7 +11,7 @@ import ApexCoreUI
 
 public struct StoresScreen: View {
     
-    let allItems = StoreRowItem.allStores()
+    let allItems = StoreRowModel.allStores()
     @EnvironmentObject var selectedStore: SelectedStore
 
     public init() {}

@@ -1,5 +1,5 @@
 //
-//  SearchApplicationsResultsList.swift
+//  SearchAppsResultsList.swift
 //  ApexSearchModule
 //
 //  Created by Olivier Rigault on 12/07/2021.
@@ -17,11 +17,11 @@ import SwiftUI
 import ApexCore
 import ApexCoreUI
 
-struct SearchApplicationsResultsList: View {
+struct SearchAppsResultsList: View {
     
-    var items: [SearchResultRowItem]
-    var viewModel: SearchApplicationsViewModel
-    @State var selectedItem: SearchResultRowItem? = nil
+    var items: [SearchResultRowModel]
+    var viewModel: SearchAppsViewModel
+    @State var selectedItem: SearchResultRowModel? = nil
     @State private var selectedApp: [AppSummary] = []
     
     @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
@@ -31,7 +31,7 @@ struct SearchApplicationsResultsList: View {
     var body: some View {
         List {
             Section {
-                SelectStoreScreen(viewModel: viewModel)
+                ChangeStoreView(viewModel: viewModel)
             } header: {
                 Text("Store")
             }
@@ -59,15 +59,15 @@ struct SearchApplicationsResultsList: View {
 
 public class SearchApplicationsResultsListBuilder: BuilderProtocol {
     
-    private var items: [SearchResultRowItem]?
-    private var viewModel = SearchApplicationsViewModel(state: .idle)
+    private var items: [SearchResultRowModel]?
+    private var viewModel = SearchAppsViewModel(state: .idle)
 
-    public func withItems(_ items: [SearchResultRowItem]) -> SearchApplicationsResultsListBuilder {
+    public func withItems(_ items: [SearchResultRowModel]) -> SearchApplicationsResultsListBuilder {
         self.items = items
         return self
     }
         
-    public func withViewModel(_ viewModel: SearchApplicationsViewModel) -> SearchApplicationsResultsListBuilder {
+    public func withViewModel(_ viewModel: SearchAppsViewModel) -> SearchApplicationsResultsListBuilder {
         self.viewModel = viewModel
         return self
     }
@@ -75,7 +75,7 @@ public class SearchApplicationsResultsListBuilder: BuilderProtocol {
     @ViewBuilder
     public func build() -> some View {
         if let items = items, items.count > 0 {
-            SearchApplicationsResultsList(items: items, viewModel: viewModel)
+            SearchAppsResultsList(items: items, viewModel: viewModel)
         } else {
             MessageViewBuilder()
                 .withMessage("No results")

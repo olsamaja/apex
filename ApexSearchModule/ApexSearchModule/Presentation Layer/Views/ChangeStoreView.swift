@@ -1,5 +1,5 @@
 //
-//  SelectStoreView.swift
+//  ChangeStoreView.swift
 //  ApexSearchModule
 //
 //  Created by Olivier Rigault on 19/11/2023.
@@ -10,9 +10,9 @@ import ApexCore
 import ApexCoreUI
 import ApexStoreModule
 
-struct SelectStoreScreen: View {
+struct ChangeStoreView: View {
     
-    @StateObject var viewModel: SearchApplicationsViewModel
+    @StateObject var viewModel: SearchAppsViewModel
     @State var showSelectStore = false
     @ObservedObject var selectedStore = SelectedStore()
 
@@ -31,7 +31,7 @@ struct SelectStoreScreen: View {
             }
         }
         .sheet(isPresented: $showSelectStore, content: {
-            ChangeStoreScreen()
+            SelectStoreScreen()
                 .environmentObject(selectedStore)
         })
     }

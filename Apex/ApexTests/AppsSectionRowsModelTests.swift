@@ -27,14 +27,14 @@ final class AppsSectionRowsModelTests: XCTestCase {
         static let deApps = [AppSummary(trackId: 123, trackName: "Great App", sellerName: "Acme Gmbh", storeCode: "DE"),
                              AppSummary(trackId: 234, trackName: "TokTok", sellerName: "Tok Gmbh", storeCode: "DE"),
                              AppSummary(trackId: 456, trackName: "Bip Bip", sellerName: "Coyote Gmbh", storeCode: "DE")]
-        static let ukSection = AppsSectionRowsModel(store: Constants.stores["GB"]!,
+        static let ukSection = AppsSectionModel(store: Constants.stores["GB"]!,
                                                     apps: [AppRowModel(appSummary: Constants.ukApps[2]),
                                                            AppRowModel(appSummary: Constants.ukApps[0]),
                                                            AppRowModel(appSummary: Constants.ukApps[1])])
-        static let frSection = AppsSectionRowsModel(store: Constants.stores["FR"]!,
+        static let frSection = AppsSectionModel(store: Constants.stores["FR"]!,
                                                     apps: [AppRowModel(appSummary: Constants.frApps[0]),
                                                            AppRowModel(appSummary: Constants.frApps[1])])
-        static let deSection = AppsSectionRowsModel(store: Constants.stores["DE"]!,
+        static let deSection = AppsSectionModel(store: Constants.stores["DE"]!,
                                                     apps: [AppRowModel(appSummary: Constants.deApps[2]),
                                                            AppRowModel(appSummary: Constants.deApps[0]),
                                                            AppRowModel(appSummary: Constants.deApps[1])])
@@ -54,7 +54,7 @@ final class AppsSectionRowsModelTests: XCTestCase {
         
         let unsortedAppRowModels = unsortedApps.map { AppRowModel(appSummary: $0) }
         
-        let sections = AppsSectionRowsModel.makeSortedAppsSectionRowsModel(with: unsortedAppRowModels)
+        let sections = AppsSectionModel.makeSortedAppsSectionRowsModel(with: unsortedAppRowModels)
         
         XCTAssertEqual(sections, expected)
     }
@@ -81,17 +81,17 @@ final class AppsSectionRowsModelTests: XCTestCase {
                             Constants.ukApps[2], Constants.deApps[2],]
         let unsortedAppRowModels = unsortedApps.map { AppRowModel(appSummary: $0) }
 
-        let sections = AppsSectionRowsModel.searchAndSort(from: unsortedAppRowModels, with: "BIP")
+        let sections = AppsSectionModel.searchAndSort(from: unsortedAppRowModels, with: "BIP")
         
         // Expected result
 
-        let expectedUk = AppsSectionRowsModel(store: Constants.stores["GB"]!,
+        let expectedUk = AppsSectionModel(store: Constants.stores["GB"]!,
                                               apps: [AppRowModel(appSummary: Constants.ukApps[2])])
 
-        let expectedFr = AppsSectionRowsModel(store: Constants.stores["FR"]!,
+        let expectedFr = AppsSectionModel(store: Constants.stores["FR"]!,
                                               apps: [AppRowModel(appSummary: Constants.frApps[0])])
 
-        let expectedDe = AppsSectionRowsModel(store: Constants.stores["DE"]!,
+        let expectedDe = AppsSectionModel(store: Constants.stores["DE"]!,
                                               apps: [AppRowModel(appSummary: Constants.deApps[2])])
 
         let expected = [expectedFr, expectedDe, expectedUk]

@@ -1,5 +1,5 @@
 //
-//  ChangeStoreScreen.swift
+//  SelectStoreScreen.swift
 //  ApexStoreModule
 //
 //  Created by Olivier Rigault on 16/05/2024.
@@ -9,9 +9,9 @@ import SwiftUI
 import ApexCore
 import ApexCoreUI
 
-public struct ChangeStoreScreen: View {
+public struct SelectStoreScreen: View {
     
-    let allItems = StoreRowItem.allStores()
+    let allItems = StoreRowModel.allStores()
     @EnvironmentObject var selectedStore: SelectedStore
     @Environment(\.dismiss) var dismiss
 
@@ -38,5 +38,5 @@ public struct ChangeStoreScreen: View {
 }
 
 #Preview {
-    ChangeStoreScreen()
+    SelectStoreScreen()
 }
