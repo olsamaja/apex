@@ -1,5 +1,5 @@
 //
-//  SearchApplicationsView.swift
+//  SearchApplicationsScreen.swift
 //  ApexSearchModule
 //
 //  Created by Olivier Rigault on 10/11/2023.
@@ -9,7 +9,7 @@ import SwiftUI
 import ApexCore
 import ApexCoreUI
 
-public struct SearchApplicationsView: View {
+public struct SearchApplicationsScreen: View {
     
     @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: SearchApplicationsViewModel
@@ -24,7 +24,7 @@ public struct SearchApplicationsView: View {
                 .withViewModel(viewModel)
                 .build()
                 .searchable(text: $viewModel.term, placement: .navigationBarDrawer(displayMode: .always))
-                .navigationBarTitle("Select Apps", displayMode: .inline)
+                .navigationBarTitle("Search Applications", displayMode: .inline)
                 .navigationBarItems(
                     leading:
                         Button("Cancel") {
@@ -35,13 +35,13 @@ public struct SearchApplicationsView: View {
     }
 }
 
-struct SearchApplicationsView_Previews: PreviewProvider {
+struct SearchApplicationsScreen_Previews: PreviewProvider {
     
     static var previews: some View {
         Group {
-            SearchApplicationsView(viewModel: SearchApplicationsViewModel(state: .idle))
+            SearchApplicationsScreen(viewModel: SearchApplicationsViewModel(state: .idle))
                 .previewDisplayName("default state = .idle")
-            SearchApplicationsView(viewModel: SearchApplicationsViewModel(state: .error(DataError.invalidRequest)))
+            SearchApplicationsScreen(viewModel: SearchApplicationsViewModel(state: .error(DataError.invalidRequest)))
                 .previewDisplayName("default state = .error")
         }
     }

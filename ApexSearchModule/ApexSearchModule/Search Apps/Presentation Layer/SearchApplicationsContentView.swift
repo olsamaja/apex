@@ -20,11 +20,11 @@ public struct SearchApplicationsContentView: View {
         switch viewModel.state {
         case .idle:
             HeaderRowAndContentView("Store") {
-                SelectStoreView(viewModel: viewModel)
+                SelectStoreScreen(viewModel: viewModel)
             }
         case .error(let error):
             HeaderRowAndContentView {
-                SelectStoreView(viewModel: viewModel)
+                SelectStoreScreen(viewModel: viewModel)
             } content: {
                 VStack {
                     Spacer()
@@ -42,7 +42,7 @@ public struct SearchApplicationsContentView: View {
                 .build()
         case .searching:
             HeaderRowAndContentView {
-                SelectStoreView(viewModel: viewModel)
+                SelectStoreScreen(viewModel: viewModel)
             } content: {
                 SpinnerBuilder()
                     .withStyle(.large)

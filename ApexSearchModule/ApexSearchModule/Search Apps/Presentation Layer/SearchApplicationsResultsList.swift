@@ -31,7 +31,7 @@ struct SearchApplicationsResultsList: View {
     var body: some View {
         List {
             Section {
-                SelectStoreView(viewModel: viewModel)
+                SelectStoreScreen(viewModel: viewModel)
             } header: {
                 Text("Store")
             }

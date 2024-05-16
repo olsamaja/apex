@@ -10,7 +10,7 @@ import ApexCore
 import ApexCoreUI
 import ApexStoreModule
 
-struct SelectStoreView: View {
+struct SelectStoreScreen: View {
     
     @StateObject var viewModel: SearchApplicationsViewModel
     @State var showSelectStore = false

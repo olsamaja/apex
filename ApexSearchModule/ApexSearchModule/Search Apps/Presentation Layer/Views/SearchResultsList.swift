@@ -30,7 +30,7 @@ struct SearchResultsList: View {
     var body: some View {
         List {
             Section {
-                SelectStoreView(viewModel: SearchApplicationsViewModel(state: .idle))
+                SelectStoreScreen(viewModel: SearchApplicationsViewModel(state: .idle))
             } header: {
                 Text("Store")
             }

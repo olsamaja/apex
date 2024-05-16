@@ -56,7 +56,7 @@ struct HomeScreen: View {
                 .environmentObject(viewModel.favorites)
         })
         .sheet(isPresented: $showSelectApp, content: {
-            SearchApplicationsView(viewModel: SearchApplicationsViewModel())
+            SearchApplicationsScreen(viewModel: SearchApplicationsViewModel())
                 .environmentObject(viewModel.favorites)
         })
         .environment(\.rootPresentationMode, $showSelectApp)
