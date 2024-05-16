@@ -15,7 +15,6 @@ struct HomeScreen: View {
 
     @ObservedObject var viewModel: AppsViewModel
     
-    @State var showSelectStore = false
     @State var showSelectApp = false
     @State var searchApps = ""
     @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
@@ -28,11 +27,6 @@ struct HomeScreen: View {
                 .navigationTitle("Applications")
                 .toolbar {
                     ToolbarItemGroup(placement: .bottomBar) {
-                        Button {
-                            self.showSelectStore.toggle()
-                        } label: {
-                            Image(systemName: "plus")
-                        }
                         Spacer()
                         Button("Add") {
                             self.showSelectApp.toggle()
@@ -51,16 +45,12 @@ struct HomeScreen: View {
                     }
                 }
         }
-        .sheet(isPresented: $showSelectStore, content: {
-            SelectAppStoreScreen(viewModel: SelectAppStoreViewModel())
-                .environmentObject(viewModel.favorites)
-        })
         .sheet(isPresented: $showSelectApp, content: {
             SearchApplicationsScreen(viewModel: SearchApplicationsViewModel())
                 .environmentObject(viewModel.favorites)
         })
         .environment(\.rootPresentationMode, $showSelectApp)
-        .environment(\.rootPresentationMode, $showSelectStore)
+//        .environment(\.rootPresentationMode, $showSelectStore)
         .ignoresSafeArea()
     }
 }

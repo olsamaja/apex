@@ -31,12 +31,8 @@ struct SelectStoreScreen: View {
             }
         }
         .sheet(isPresented: $showSelectStore, content: {
-            #if true // open new select store screen w/o searching apps
             ChangeStoreScreen()
                 .environmentObject(selectedStore)
-            #else
-            SelectAppStoreScreen(viewModel: SelectAppStoreViewModel())
-            #endif
         })
     }
 }
