@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7D338CD12AFDA47800EC0256 /* AppsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CD02AFDA47800EC0256 /* AppsSection.swift */; };
 		7D338CD72AFDA84A00EC0256 /* AppsSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CD62AFDA84A00EC0256 /* AppsSectionModel.swift */; };
-		7D338CD92AFE355500EC0256 /* AppsSectionRowsModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CD82AFE355500EC0256 /* AppsSectionRowsModelTests.swift */; };
+		7D338CD92AFE355500EC0256 /* AppsSectionModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CD82AFE355500EC0256 /* AppsSectionModelTests.swift */; };
 		7D9CD73026988477000450E0 /* ApexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CD72F26988477000450E0 /* ApexApp.swift */; };
 		7D9CD73426988479000450E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D9CD73326988479000450E0 /* Assets.xcassets */; };
 		7D9CD73726988479000450E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D9CD73626988479000450E0 /* Preview Assets.xcassets */; };
@@ -77,7 +77,7 @@
 /* Begin PBXFileReference section */
 		7D338CD02AFDA47800EC0256 /* AppsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSection.swift; sourceTree = "<group>"; };
 		7D338CD62AFDA84A00EC0256 /* AppsSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSectionModel.swift; sourceTree = "<group>"; };
-		7D338CD82AFE355500EC0256 /* AppsSectionRowsModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSectionRowsModelTests.swift; sourceTree = "<group>"; };
+		7D338CD82AFE355500EC0256 /* AppsSectionModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSectionModelTests.swift; sourceTree = "<group>"; };
 		7D9CD72C26988477000450E0 /* Apex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9CD72F26988477000450E0 /* ApexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexApp.swift; sourceTree = "<group>"; };
 		7D9CD73326988479000450E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 		7D9CD7402698847A000450E0 /* ApexTests */ = {
 			isa = PBXGroup;
 			children = (
-				7D338CD82AFE355500EC0256 /* AppsSectionRowsModelTests.swift */,
+				7D338CD82AFE355500EC0256 /* AppsSectionModelTests.swift */,
 				7D9CD7432698847A000450E0 /* Info.plist */,
 			);
 			path = ApexTests;
@@ -425,7 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D338CD92AFE355500EC0256 /* AppsSectionRowsModelTests.swift in Sources */,
+				7D338CD92AFE355500EC0256 /* AppsSectionModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

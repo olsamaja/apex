@@ -1,5 +1,5 @@
 //
-//  AppsSectionRowsModelTests.swift
+//  AppsSectionModelTests.swift
 //  ApexTests
 //
 //  Created by Olivier Rigault on 10/11/2023.
@@ -10,7 +10,7 @@ import XCTest
 @testable import ApexStoreModule
 @testable import Apex
 
-final class AppsSectionRowsModelTests: XCTestCase {
+final class AppsSectionModelTests: XCTestCase {
     
     enum Constants {
         static let stores = ["GB": Store(code: "GB", name: "United Kingdom"),

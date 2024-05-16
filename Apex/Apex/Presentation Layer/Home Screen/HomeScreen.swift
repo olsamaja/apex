@@ -50,7 +50,6 @@ struct HomeScreen: View {
                 .environmentObject(viewModel.favorites)
         })
         .environment(\.rootPresentationMode, $showSelectApp)
-//        .environment(\.rootPresentationMode, $showSelectStore)
         .ignoresSafeArea()
     }
 }

@@ -126,8 +126,8 @@
 		D57C76AA2746F5FA0095D667 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D57C76AE2746F5FA0095D667 /* StoresScreen.swift */,
 				6A778B622BF61ADB00A83250 /* SelectStoreScreen.swift */,
+				D57C76AE2746F5FA0095D667 /* StoresScreen.swift */,
 				D57C76AD2746F5FA0095D667 /* StoreRow.swift */,
 				D57C76AB2746F5FA0095D667 /* SelectedStoreView.swift */,
 			);
