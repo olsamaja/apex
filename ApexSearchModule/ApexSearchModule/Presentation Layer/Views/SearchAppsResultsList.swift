@@ -21,9 +21,8 @@ struct SearchAppsResultsList: View {
     
     var items: [SearchResultRowModel]
     var viewModel: SearchAppsViewModel
-    @State var selectedItem: SearchResultRowModel? = nil
-    @State private var selectedApp: [AppSummary] = []
-    
+    @State private var selectedFavoriteStatus = SelectedFavoriteStatus()
+
     @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
     @EnvironmentObject var favorites: AppFavorites
 
@@ -38,12 +37,7 @@ struct SearchAppsResultsList: View {
             Section {
                 ForEach(items) { item in
                     Button {
-                        let app = AppSummary(trackId: item.appDetails.trackId,
-                                             trackName: item.appDetails.trackName,
-                                             sellerName: item.appDetails.sellerName,
-                                             storeCode: item.appDetails.storeCode)
-                        self.favorites.add(app)
-                        self.rootPresentationMode.wrappedValue.dismiss()
+                        self.selectedFavoriteStatus.toggle(with: item)
                     } label: {
                         SearchResultRow(item: item)
                             .foregroundColor(.black)
@@ -53,6 +47,17 @@ struct SearchAppsResultsList: View {
             } header: {
                 Text("Apps")
             }
+        }
+        .confirmationDialog("", isPresented: $selectedFavoriteStatus.showConfirmation) {
+            Button("Add Favorite", action: {
+                guard let item = selectedFavoriteStatus.item else { return }
+                let app = AppSummary(trackId: item.appDetails.trackId,
+                                     trackName: item.appDetails.trackName,
+                                     sellerName: item.appDetails.sellerName,
+                                     storeCode: item.appDetails.storeCode)
+                self.favorites.add(app)
+                self.rootPresentationMode.wrappedValue.dismiss()
+            })
         }
     }
 }
@@ -81,5 +86,21 @@ public class SearchApplicationsResultsListBuilder: BuilderProtocol {
                 .withMessage("No results")
                 .build()
         }
+    }
+}
+
+private struct SelectedFavoriteStatus {
+    
+    var showConfirmation: Bool
+    var item: SearchResultRowModel?
+    
+    mutating func toggle(with item: SearchResultRowModel) {
+        self.item = item
+        showConfirmation.toggle()
+    }
+    
+    init(showConfirmation: Bool = false, item: SearchResultRowModel? = nil) {
+        self.showConfirmation = showConfirmation
+        self.item = item
     }
 }
