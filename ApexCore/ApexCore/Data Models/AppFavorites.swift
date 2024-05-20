@@ -13,9 +13,8 @@ public class AppFavorites: ObservableObject {
         static let favoritesKey = "Favorites"
     }
     
-    public static let shared = AppFavorites()
     let defaults: UserDefaults
-    var apps: Set<AppSummary>
+    @Published public var apps: Set<AppSummary>
     
     public var allFavorites: [AppSummary] {
         apps.map { $0 }

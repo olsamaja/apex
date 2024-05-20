@@ -42,7 +42,14 @@ public final class AppsViewModel: ObservableObject {
         .store(in: &cancellables)
     }
     
-    private func setupBindings() {}
+    private func setupBindings() {
+        let _ = favorites.$apps
+            .sink(receiveValue: { [weak self] (_) in
+                guard let self = self else { return }
+                self.send(event: .onRefresh)
+            })
+        .store(in: &cancellables)
+    }
     
     func send(event: Event) {
         action.send(event)
@@ -70,7 +77,7 @@ public final class AppsViewModel: ObservableObject {
 extension DataManager {
     
     func loadFavorites() -> AnyPublisher<[AppSummary], DataError> {
-        return Just(AppFavorites.shared.allFavorites)
+        return Just(AppFavorites().allFavorites)
             .mapError { $0 }
             .eraseToAnyPublisher()
     }

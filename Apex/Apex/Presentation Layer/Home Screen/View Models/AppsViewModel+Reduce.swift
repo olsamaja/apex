@@ -19,6 +19,7 @@ public extension AppsViewModel {
     
     enum Event {
         case onAppear
+        case onRefresh
         case onDataLoaded([AppRowModel])
         case onFailedToLoadData(DataError)
         case onPerform(UserAction)
@@ -79,7 +80,12 @@ extension AppsViewModel {
     }
 
     static func reduceLoaded(_ state: State, _ event: Event) -> State {
-        return state
+        switch event {
+        case .onRefresh:
+            return .loading
+        default:
+            return state
+        }
     }
     
     static func reduceError(_ state: State, _ event: Event) -> State {
