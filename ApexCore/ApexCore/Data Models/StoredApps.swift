@@ -20,6 +20,10 @@ public class StoredApps: ObservableObject {
         apps.map { $0 }
     }
     
+    public var favorites: [AppSummary] {
+        apps.map { $0 }.filter { $0.isFavorite }
+    }
+    
     public init(defaults: UserDefaults = UserDefaults.standard) {
         self.defaults = defaults
         self.apps = defaults.customObject(forKey: Constants.storedAppsKey) ?? Set<AppSummary>()

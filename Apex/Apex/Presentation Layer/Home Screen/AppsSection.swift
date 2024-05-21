@@ -10,6 +10,7 @@
 
 import SwiftUI
 import ApexCore
+import ApexStoreModule
 
 struct AppsSection: View {
     
@@ -47,8 +48,9 @@ struct AppsSection: View {
     }
 }
 
-//struct AppsSectionRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AppsSectionRows()
-//    }
-//}
+#Preview("Default") {
+    AppsSection(with: AppsSectionModel(store: Store(code: "FR", name: "United Kingdom"),
+                                       apps: [AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "Matisse Photo Editor", sellerName: "My Company", storeCode: "GB")),
+                                              AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "Picasso Photo Editor", sellerName: "My Company", storeCode: "GB", isFavorite: true))]))
+}
+

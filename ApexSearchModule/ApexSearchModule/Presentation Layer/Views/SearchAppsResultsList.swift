@@ -58,6 +58,16 @@ struct SearchAppsResultsList: View {
                 self.storedApps.add(app)
                 self.rootPresentationMode.wrappedValue.dismiss()
             })
+            Button("Add as Favorite", action: {
+                guard let item = selectedAppStatus.item else { return }
+                let app = AppSummary(trackId: item.appDetails.trackId,
+                                     trackName: item.appDetails.trackName,
+                                     sellerName: item.appDetails.sellerName,
+                                     storeCode: item.appDetails.storeCode,
+                                     isFavorite: true)
+                self.storedApps.add(app)
+                self.rootPresentationMode.wrappedValue.dismiss()
+            })
         }
     }
 }

@@ -39,4 +39,13 @@ final class StoredAppsTests: XCTestCase {
         XCTAssertEqual(apps.apps.count, 2)
         XCTAssertFalse(apps.contains(Constants.apps[1]))
     }
+
+    func testFavoriteApps() throws {
+        let apps = StoredApps(defaults: userDefaults)
+        for app in Constants.apps {
+            apps.add(app)
+        }
+        XCTAssertEqual(apps.favorites.count, 1)
+        XCTAssertTrue(apps.favorites.contains(Constants.apps[1]))
+    }
 }
