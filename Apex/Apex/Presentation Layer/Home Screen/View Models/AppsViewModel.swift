@@ -13,7 +13,7 @@ public final class AppsViewModel: ObservableObject {
 
     @Published var state = State.idle
     @Published var term = ""
-    @Published var favorites = AppFavorites()
+    @Published var storedApps = StoredApps()
     
     private var cancellables = Set<AnyCancellable>()
     private let action = PassthroughSubject<Event, Never>()
@@ -43,7 +43,7 @@ public final class AppsViewModel: ObservableObject {
     }
     
     private func setupBindings() {
-        let _ = favorites.$apps
+        let _ = storedApps.$apps
             .sink(receiveValue: { [weak self] (_) in
                 guard let self = self else { return }
                 self.send(event: .onRefresh)
@@ -65,7 +65,7 @@ public final class AppsViewModel: ObservableObject {
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
             guard case .loading = state else { return Empty().eraseToAnyPublisher() }
             
-            return DataManager().loadFavorites()
+            return DataManager().loadStoredApps()
                 .map { $0.map(AppRowModel.init) }
                 .map(Event.onDataLoaded)
                 .catch { Just(Event.onFailedToLoadData($0)) }
@@ -76,8 +76,8 @@ public final class AppsViewModel: ObservableObject {
 
 extension DataManager {
     
-    func loadFavorites() -> AnyPublisher<[AppSummary], DataError> {
-        return Just(AppFavorites().allFavorites)
+    func loadStoredApps() -> AnyPublisher<[AppSummary], DataError> {
+        return Just(StoredApps().all)
             .mapError { $0 }
             .eraseToAnyPublisher()
     }

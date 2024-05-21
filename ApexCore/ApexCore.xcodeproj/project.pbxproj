@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A1711472BEBCB6900E156F5 /* AppFavoritesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1711462BEBCB6900E156F5 /* AppFavoritesTests.swift */; };
+		6A1711472BEBCB6900E156F5 /* StoredAppsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1711462BEBCB6900E156F5 /* StoredAppsTests.swift */; };
 		6A2216CA2BEB5F8400F00948 /* Date+StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2216C92BEB5F8400F00948 /* Date+StringTests.swift */; };
 		6A9168B62BECF9380044BD95 /* Data+PrintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9168B52BECF9380044BD95 /* Data+PrintTests.swift */; };
 		6AAA3F082BF3A3AA004F4F96 /* DataErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA3F072BF3A3AA004F4F96 /* DataErrorTests.swift */; };
@@ -29,7 +29,7 @@
 		D54A539926F4D7CB0006C7C3 /* String+ParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A539826F4D7CB0006C7C3 /* String+ParseTests.swift */; };
 		D54A539B26F534120006C7C3 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A539A26F534120006C7C3 /* Date+String.swift */; };
 		D572BE15275FDD1600CBE614 /* AppSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572BE14275FDD1600CBE614 /* AppSummary.swift */; };
-		D572BE17275FDD5800CBE614 /* AppFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572BE16275FDD5800CBE614 /* AppFavorites.swift */; };
+		D572BE17275FDD5800CBE614 /* StoredApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572BE16275FDD5800CBE614 /* StoredApps.swift */; };
 		D59968D827583331006ACB34 /* UserDefaults+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59968D727583331006ACB34 /* UserDefaults+Custom.swift */; };
 		D59968DA27583366006ACB34 /* UserDefaults+CustomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59968D927583366006ACB34 /* UserDefaults+CustomTests.swift */; };
 		D5B9FB60274B4CFA00E6DE6A /* AppDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9FB5F274B4CFA00E6DE6A /* AppDetails.swift */; };
@@ -46,7 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6A1711462BEBCB6900E156F5 /* AppFavoritesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFavoritesTests.swift; sourceTree = "<group>"; };
+		6A1711462BEBCB6900E156F5 /* StoredAppsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredAppsTests.swift; sourceTree = "<group>"; };
 		6A2216C92BEB5F8400F00948 /* Date+StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+StringTests.swift"; sourceTree = "<group>"; };
 		6A9168B52BECF9380044BD95 /* Data+PrintTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PrintTests.swift"; sourceTree = "<group>"; };
 		6AAA3F072BF3A3AA004F4F96 /* DataErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataErrorTests.swift; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		D54A539826F4D7CB0006C7C3 /* String+ParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ParseTests.swift"; sourceTree = "<group>"; };
 		D54A539A26F534120006C7C3 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		D572BE14275FDD1600CBE614 /* AppSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSummary.swift; sourceTree = "<group>"; };
-		D572BE16275FDD5800CBE614 /* AppFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFavorites.swift; sourceTree = "<group>"; };
+		D572BE16275FDD5800CBE614 /* StoredApps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredApps.swift; sourceTree = "<group>"; };
 		D59968D727583331006ACB34 /* UserDefaults+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Custom.swift"; sourceTree = "<group>"; };
 		D59968D927583366006ACB34 /* UserDefaults+CustomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+CustomTests.swift"; sourceTree = "<group>"; };
 		D5B9FB5F274B4CFA00E6DE6A /* AppDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetails.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 				6A2216C92BEB5F8400F00948 /* Date+StringTests.swift */,
 				6A9168B52BECF9380044BD95 /* Data+PrintTests.swift */,
 				D59968D927583366006ACB34 /* UserDefaults+CustomTests.swift */,
-				6A1711462BEBCB6900E156F5 /* AppFavoritesTests.swift */,
+				6A1711462BEBCB6900E156F5 /* StoredAppsTests.swift */,
 			);
 			path = ApexCoreTests;
 			sourceTree = "<group>";
@@ -180,7 +180,7 @@
 			children = (
 				D5B9FB5F274B4CFA00E6DE6A /* AppDetails.swift */,
 				D572BE14275FDD1600CBE614 /* AppSummary.swift */,
-				D572BE16275FDD5800CBE614 /* AppFavorites.swift */,
+				D572BE16275FDD5800CBE614 /* StoredApps.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -316,7 +316,7 @@
 				D54A539726F4D7960006C7C3 /* String+Parse.swift in Sources */,
 				7D9CD7A8269892E8000450E0 /* Publishers+System.swift in Sources */,
 				7D9CD7A42698927D000450E0 /* Data+Print.swift in Sources */,
-				D572BE17275FDD5800CBE614 /* AppFavorites.swift in Sources */,
+				D572BE17275FDD5800CBE614 /* StoredApps.swift in Sources */,
 				D54A539B26F534120006C7C3 /* Date+String.swift in Sources */,
 				7D9CD79F2698922D000450E0 /* Feedback.swift in Sources */,
 			);
@@ -327,7 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AAA3F082BF3A3AA004F4F96 /* DataErrorTests.swift in Sources */,
-				6A1711472BEBCB6900E156F5 /* AppFavoritesTests.swift in Sources */,
+				6A1711472BEBCB6900E156F5 /* StoredAppsTests.swift in Sources */,
 				6A9168B62BECF9380044BD95 /* Data+PrintTests.swift in Sources */,
 				6A2216CA2BEB5F8400F00948 /* Date+StringTests.swift in Sources */,
 				D59968DA27583366006ACB34 /* UserDefaults+CustomTests.swift in Sources */,

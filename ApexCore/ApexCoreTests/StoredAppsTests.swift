@@ -1,5 +1,5 @@
 //
-//  AppFavoritesTests.swift
+//  StoredAppsTests.swift
 //  ApexCoreTests
 //
 //  Created by Olivier Rigault on 08/05/2024.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import ApexCore
 
-final class AppFavoritesTests: XCTestCase {
+final class StoredAppsTests: XCTestCase {
     
     private var userDefaults: UserDefaults!
     
@@ -27,16 +27,16 @@ final class AppFavoritesTests: XCTestCase {
         userDefaults.removePersistentDomain(forName: #file)
     }
 
-    func testAddAndRemoveFavorites() throws {
-        let favorites = AppFavorites(defaults: userDefaults)
+    func testAddAndRemoveApps() throws {
+        let apps = StoredApps(defaults: userDefaults)
         for app in Constants.apps {
-            favorites.add(app)
+            apps.add(app)
         }
-        XCTAssertEqual(favorites.apps.count, 3)
-        XCTAssertTrue(favorites.contains(Constants.apps[1]))
+        XCTAssertEqual(apps.apps.count, 3)
+        XCTAssertTrue(apps.contains(Constants.apps[1]))
 
-        favorites.remove(Constants.apps[1])
-        XCTAssertEqual(favorites.apps.count, 2)
-        XCTAssertFalse(favorites.contains(Constants.apps[1]))
+        apps.remove(Constants.apps[1])
+        XCTAssertEqual(apps.apps.count, 2)
+        XCTAssertFalse(apps.contains(Constants.apps[1]))
     }
 }

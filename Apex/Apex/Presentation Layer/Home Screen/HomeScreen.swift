@@ -47,7 +47,7 @@ struct HomeScreen: View {
         }
         .sheet(isPresented: $showSelectApp, content: {
             SearchAppsScreen(viewModel: SearchAppsViewModel())
-                .environmentObject(viewModel.favorites)
+                .environmentObject(viewModel.storedApps)
         })
         .environment(\.rootPresentationMode, $showSelectApp)
         .ignoresSafeArea()

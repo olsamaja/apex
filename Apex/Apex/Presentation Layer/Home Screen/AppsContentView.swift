@@ -41,7 +41,7 @@ struct AppsContentView: View {
             }
         case .error:
             MessageViewBuilder()
-                .withMessage("Cannot load favorites")
+                .withMessage("Cannot load stored apps")
                 .build()
         }
     }

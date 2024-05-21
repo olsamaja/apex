@@ -21,10 +21,10 @@ struct SearchAppsResultsList: View {
     
     var items: [SearchResultRowModel]
     var viewModel: SearchAppsViewModel
-    @State private var selectedFavoriteStatus = SelectedFavoriteStatus()
+    @State private var selectedAppStatus = SelectedAppStatus()
 
     @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
-    @EnvironmentObject var favorites: AppFavorites
+    @EnvironmentObject var storedApps: StoredApps
 
     @ViewBuilder
     var body: some View {
@@ -37,7 +37,7 @@ struct SearchAppsResultsList: View {
             Section {
                 ForEach(items) { item in
                     Button {
-                        self.selectedFavoriteStatus.toggle(with: item)
+                        self.selectedAppStatus.toggle(with: item)
                     } label: {
                         SearchResultRow(item: item)
                             .foregroundColor(.black)
@@ -48,14 +48,14 @@ struct SearchAppsResultsList: View {
                 Text("Apps")
             }
         }
-        .confirmationDialog("", isPresented: $selectedFavoriteStatus.showConfirmation) {
-            Button("Add Favorite", action: {
-                guard let item = selectedFavoriteStatus.item else { return }
+        .confirmationDialog("", isPresented: $selectedAppStatus.showConfirmation) {
+            Button("Add Application", action: {
+                guard let item = selectedAppStatus.item else { return }
                 let app = AppSummary(trackId: item.appDetails.trackId,
                                      trackName: item.appDetails.trackName,
                                      sellerName: item.appDetails.sellerName,
                                      storeCode: item.appDetails.storeCode)
-                self.favorites.add(app)
+                self.storedApps.add(app)
                 self.rootPresentationMode.wrappedValue.dismiss()
             })
         }
@@ -89,7 +89,7 @@ public class SearchApplicationsResultsListBuilder: BuilderProtocol {
     }
 }
 
-private struct SelectedFavoriteStatus {
+private struct SelectedAppStatus {
     
     var showConfirmation: Bool
     var item: SearchResultRowModel?

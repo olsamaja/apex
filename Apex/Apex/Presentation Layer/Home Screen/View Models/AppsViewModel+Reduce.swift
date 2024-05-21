@@ -72,8 +72,8 @@ extension AppsViewModel {
         switch event {
         case .onFailedToLoadData(let error):
             return .error(error)
-        case .onDataLoaded(let favorites):
-            return .loaded(favorites)
+        case .onDataLoaded(let apps):
+            return .loaded(apps)
         default:
             return state
         }
