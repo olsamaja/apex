@@ -15,7 +15,7 @@ final class StoredAppsTests: XCTestCase {
     enum Constants {
         static let apps = [
             AppSummary(trackId: 123, trackName: "track123", sellerName: "seller1", storeCode: "code1"),
-            AppSummary(trackId: 456, trackName: "track456", sellerName: "seller2", storeCode: "code2"),
+            AppSummary(trackId: 456, trackName: "track456", sellerName: "seller2", storeCode: "code2", isFavorite: true),
             AppSummary(trackId: 789, trackName: "track789", sellerName: "seller3", storeCode: "code3")]
     }
 

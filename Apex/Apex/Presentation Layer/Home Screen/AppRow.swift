@@ -12,23 +12,34 @@ struct AppRow: View {
     
     let item: AppRowModel
     
+    @ViewBuilder
     var body: some View {
-        HStack {
-            Text(item.trackName)
-            Spacer()
+        if item.appSummary.isFavorite {
+            HStack {
+                Text(item.trackName)
+                Spacer()
+                Image(systemName: "star.fill")
+                    .foregroundColor(.orange)
+                    .font(.caption)
+            }
+        } else {
+            HStack {
+                Text(item.trackName)
+                Spacer()
+            }
         }
     }
 }
 
-struct AppRow_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        Group {
-            AppRow(item: AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "MyApp", sellerName: "My Company", storeCode: "GB")))
-                .sizeThatFitPreview(with: "Default")
-            AppRow(item: AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "MyApp", sellerName: "My Company", storeCode: "GB")))
-                .sizeThatFitPreview(with: "Dark Theme")
-                .preferredColorScheme(.dark)
-        }
-    }
+#Preview("Default") {
+    AppRow(item: AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "Picasso Photo Editor", sellerName: "My Company", storeCode: "GB")))
+}
+
+#Preview("Favorite") {
+    AppRow(item: AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "Picasso Photo Editor", sellerName: "My Company", storeCode: "GB", isFavorite: true)))
+}
+
+#Preview("Dark") {
+    AppRow(item: AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "Picasso Photo Editor", sellerName: "My Company", storeCode: "GB")))
+        .preferredColorScheme(.dark)
 }

@@ -69,8 +69,8 @@ struct HomeScreen: View {
 #Preview("loaded") {
     HomeScreen(viewModel: AppsViewModel(state: .loaded([
         AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "app 1", sellerName: "", storeCode: "FR")),
-        AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "app 2", sellerName: "", storeCode: "FR")),
-        AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "app 3", sellerName: "", storeCode: "FR")),
-        AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "app 4", sellerName: "", storeCode: "GB")),
+        AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "app 2", sellerName: "", storeCode: "FR", isFavorite: true)),
+        AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "app 3", sellerName: "", storeCode: "FR", isFavorite: true)),
+        AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "app 4", sellerName: "", storeCode: "GB", isFavorite: true)),
         AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "app 5", sellerName: "", storeCode: "GB"))])))
 }
