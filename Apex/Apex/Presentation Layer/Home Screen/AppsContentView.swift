@@ -36,6 +36,9 @@ struct AppsContentView: View {
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
+            .toolbar {
+                EditButton()
+            }
         case .error:
             MessageViewBuilder()
                 .withMessage("Cannot load favorites")

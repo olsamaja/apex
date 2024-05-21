@@ -31,6 +31,18 @@ struct AppsSection: View {
                     AppRow(item: model)
                 }
             }
+            .onDelete(perform: delete)
+        }
+    }
+    
+    func delete(at offsets: IndexSet) {
+        let appsToDelete = offsets.map { model.apps[$0].appSummary }
+        
+        _ = appsToDelete.compactMap { app in
+            DispatchQueue.main.async {
+                OLLogger.info("delete \(app.trackName)")
+                AppFavorites().remove(app)
+            }
         }
     }
 }
