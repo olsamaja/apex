@@ -28,6 +28,11 @@ public class StoredApps: ObservableObject {
         self.defaults = defaults
         self.apps = defaults.customObject(forKey: Constants.storedAppsKey) ?? Set<AppSummary>()
     }
+    
+    public init(defaults: UserDefaults = UserDefaults.standard, apps: Set<AppSummary>) {
+        self.defaults = defaults
+        self.apps = apps
+    }
 
     // returns true if our set contains this app
     public func contains(_ app: AppSummary) -> Bool {

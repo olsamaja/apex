@@ -61,15 +61,15 @@ struct AppsScreen: View {
 }
 
 #Preview("default") {
-    AppsScreen(viewModel: AppsViewModel())
+    AppsScreen(viewModel: AppsViewModel(storedApps: .constant(StoredApps(apps: []))))
 }
 
 #Preview("error") {
-    AppsScreen(viewModel: AppsViewModel(state: .error(.invalidResponse)))
+    AppsScreen(viewModel: AppsViewModel(state: .error(.invalidResponse), storedApps: .constant(StoredApps(apps: []))))
 }
 
 #Preview("loading") {
-    AppsScreen(viewModel: AppsViewModel(state: .loading))
+    AppsScreen(viewModel: AppsViewModel(state: .loading, storedApps: .constant(StoredApps(apps: []))))
 }
 
 #Preview("loaded") {
@@ -78,5 +78,7 @@ struct AppsScreen: View {
         AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "app 2", sellerName: "", storeCode: "FR", isFavorite: true)),
         AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "app 3", sellerName: "", storeCode: "FR", isFavorite: true)),
         AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "app 4", sellerName: "", storeCode: "GB", isFavorite: true)),
-        AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "app 5", sellerName: "", storeCode: "GB"))])))
+        AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "app 5", sellerName: "", storeCode: "GB"))]),
+                                        storedApps: .constant(StoredApps(apps: [
+                                            AppSummary(trackId: 0, trackName: "app 1", sellerName: "", storeCode: "FR")]))))
 }

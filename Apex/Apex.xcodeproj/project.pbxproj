@@ -11,6 +11,7 @@
 		6A2E8B242BFCFBCC0032430C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E8B232BFCFBCC0032430C /* HomeViewModel.swift */; };
 		6A2E8B262BFCFEF40032430C /* HomeViewModel+Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E8B252BFCFEF40032430C /* HomeViewModel+Reduce.swift */; };
 		6A2E8B282BFD022B0032430C /* HomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E8B272BFD022B0032430C /* HomeContentView.swift */; };
+		6A5F1B062BFE7BC600EADF0F /* ApexViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5F1B052BFE7BC600EADF0F /* ApexViewModel.swift */; };
 		7D338CD12AFDA47800EC0256 /* AppsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CD02AFDA47800EC0256 /* AppsSection.swift */; };
 		7D338CD72AFDA84A00EC0256 /* AppsSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CD62AFDA84A00EC0256 /* AppsSectionModel.swift */; };
 		7D338CD92AFE355500EC0256 /* AppsSectionModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CD82AFE355500EC0256 /* AppsSectionModelTests.swift */; };
@@ -83,6 +84,7 @@
 		6A2E8B232BFCFBCC0032430C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		6A2E8B252BFCFEF40032430C /* HomeViewModel+Reduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewModel+Reduce.swift"; sourceTree = "<group>"; };
 		6A2E8B272BFD022B0032430C /* HomeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentView.swift; sourceTree = "<group>"; };
+		6A5F1B052BFE7BC600EADF0F /* ApexViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexViewModel.swift; sourceTree = "<group>"; };
 		7D338CD02AFDA47800EC0256 /* AppsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSection.swift; sourceTree = "<group>"; };
 		7D338CD62AFDA84A00EC0256 /* AppsSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSectionModel.swift; sourceTree = "<group>"; };
 		7D338CD82AFE355500EC0256 /* AppsSectionModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSectionModelTests.swift; sourceTree = "<group>"; };
@@ -199,7 +201,6 @@
 		7D9CD72E26988477000450E0 /* Apex */ = {
 			isa = PBXGroup;
 			children = (
-				7D9CD72F26988477000450E0 /* ApexApp.swift */,
 				7DA999C7269DA004008DDBA9 /* Presentation Layer */,
 				7DA999C6269D9FFA008DDBA9 /* Configuration Layer */,
 				7DA999AC269A4CB3008DDBA9 /* Config.xcconfig */,
@@ -263,7 +264,9 @@
 		7DA999C7269DA004008DDBA9 /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
+				7D9CD72F26988477000450E0 /* ApexApp.swift */,
 				D56ADEEC2784AF0800E36BB3 /* Views */,
+				D572BE1C2763CFD700CBE614 /* View Models */,
 			);
 			path = "Presentation Layer";
 			sourceTree = "<group>";
@@ -274,7 +277,6 @@
 				6A2E8B292BFD02390032430C /* Home */,
 				6A2E8B2A2BFD02420032430C /* Apps */,
 				6A2E8B2B2BFD02A90032430C /* Shared */,
-				D572BE1C2763CFD700CBE614 /* View Models */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -282,6 +284,7 @@
 		D572BE1C2763CFD700CBE614 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				6A5F1B052BFE7BC600EADF0F /* ApexViewModel.swift */,
 				6A2E8B232BFCFBCC0032430C /* HomeViewModel.swift */,
 				6A2E8B252BFCFEF40032430C /* HomeViewModel+Reduce.swift */,
 				D5023F4C274EB76900E10942 /* AppsViewModel.swift */,
@@ -444,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A5F1B062BFE7BC600EADF0F /* ApexViewModel.swift in Sources */,
 				7D338CD12AFDA47800EC0256 /* AppsSection.swift in Sources */,
 				7DA999A9269A4C1C008DDBA9 /* AppConfiguration.swift in Sources */,
 				D572BE1B2763CFCF00CBE614 /* AppRowModel.swift in Sources */,

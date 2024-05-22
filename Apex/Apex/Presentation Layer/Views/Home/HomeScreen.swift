@@ -41,5 +41,5 @@ struct HomeScreen: View {
 }
 
 #Preview {
-    HomeScreen(viewModel: HomeViewModel(state: .idle))
+    HomeScreen(viewModel: HomeViewModel(state: .idle, storedApps: .constant(StoredApps(apps: []))))
 }

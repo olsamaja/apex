@@ -5,6 +5,7 @@
 //  Created by Olivier Rigault on 21/05/2024.
 //
 
+import SwiftUI
 import Combine
 import ApexCore
 import ApexNetwork
@@ -12,17 +13,18 @@ import ApexNetwork
 public final class HomeViewModel: ObservableObject {
     
     @Published var state = State.idle
-    @Published var storedApps = StoredApps()
-    
+    @Binding var storedApps: StoredApps
+
     private var cancellables = Set<AnyCancellable>()
     private let action = PassthroughSubject<Event, Never>()
 
-    public init(state: State = .idle) {
+    public init(state: State = .idle, storedApps: Binding<StoredApps>) {
         self.state = state
+        _storedApps = storedApps
         setupFeedbacks()
         setupBindings()
     }
-    
+
     deinit {
         cancellables.removeAll()
     }

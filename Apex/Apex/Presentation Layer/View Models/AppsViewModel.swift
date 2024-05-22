@@ -5,22 +5,24 @@
 //  Created by Olivier Rigault on 24/11/2021.
 //
 
+import SwiftUI
 import Combine
 import ApexCore
 import ApexNetwork
 
 public final class AppsViewModel: ObservableObject {
 
+    @Binding var storedApps: StoredApps
     @Published var state = State.idle
     @Published var term = ""
-    @Published var storedApps = StoredApps()
     @Published var addApplication = false
 
     private var cancellables = Set<AnyCancellable>()
     private let action = PassthroughSubject<Event, Never>()
 
-    public init(state: State = .idle) {
+    public init(state: State = .idle, storedApps: Binding<StoredApps>) {
         self.state = state
+        _storedApps = storedApps
         setupFeedbacks()
         setupBindings()
     }

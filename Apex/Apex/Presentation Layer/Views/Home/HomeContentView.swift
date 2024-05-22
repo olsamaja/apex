@@ -62,5 +62,8 @@ public class HomeContentViewBuilder: BuilderProtocol {
 }
 
 #Preview {
-    HomeContentView(viewModel: HomeViewModel(state: .idle))
+    HomeContentView(viewModel: HomeViewModel(state: .idle, 
+                                             storedApps: .constant(StoredApps(apps: [
+                                                AppSummary(trackId: 0, trackName: "app 1", sellerName: "", storeCode: "", isFavorite: true),
+                                                AppSummary(trackId: 0, trackName: "app 2", sellerName: "", storeCode: "", isFavorite: true)]))))
 }
