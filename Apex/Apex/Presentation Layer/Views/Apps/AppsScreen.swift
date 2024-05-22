@@ -1,5 +1,5 @@
 //
-//  HomeScreen.swift
+//  AppsScreen.swift
 //  Apex
 //
 //  Created by Olivier Rigault on 22/12/2021.
@@ -11,7 +11,7 @@ import ApexCore
 import ApexSearchModule
 import ApexViewModule
 
-struct HomeScreen: View {
+struct AppsScreen: View {
 
     @ObservedObject var viewModel: AppsViewModel
     
@@ -26,8 +26,10 @@ struct HomeScreen: View {
                 .searchable(text: $searchApps, placement: .navigationBarDrawer(displayMode: .always))
                 .navigationTitle("Applications")
                 .toolbar {
-                    ToolbarItemGroup(placement: .bottomBar) {
-                        Spacer()
+                    ToolbarItemGroup(placement: .topBarTrailing) {
+                        Button("Add New") {
+                            self.viewModel.addApplication.toggle()
+                        }
                         Button("Add") {
                             self.showSelectApp.toggle()
                         }
@@ -45,6 +47,10 @@ struct HomeScreen: View {
                     }
                 }
         }
+        .sheet(isPresented: $viewModel.addApplication, content: {
+            SearchAppsScreen(viewModel: SearchAppsViewModel())
+                .environmentObject(viewModel.storedApps)
+        })
         .sheet(isPresented: $showSelectApp, content: {
             SearchAppsScreen(viewModel: SearchAppsViewModel())
                 .environmentObject(viewModel.storedApps)
@@ -55,19 +61,19 @@ struct HomeScreen: View {
 }
 
 #Preview("default") {
-    HomeScreen(viewModel: AppsViewModel())
+    AppsScreen(viewModel: AppsViewModel())
 }
 
 #Preview("error") {
-    HomeScreen(viewModel: AppsViewModel(state: .error(.invalidResponse)))
+    AppsScreen(viewModel: AppsViewModel(state: .error(.invalidResponse)))
 }
 
 #Preview("loading") {
-    HomeScreen(viewModel: AppsViewModel(state: .loading))
+    AppsScreen(viewModel: AppsViewModel(state: .loading))
 }
 
 #Preview("loaded") {
-    HomeScreen(viewModel: AppsViewModel(state: .loaded([
+    AppsScreen(viewModel: AppsViewModel(state: .loaded([
         AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "app 1", sellerName: "", storeCode: "FR")),
         AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "app 2", sellerName: "", storeCode: "FR", isFavorite: true)),
         AppRowModel(appSummary: AppSummary(trackId: 0, trackName: "app 3", sellerName: "", storeCode: "FR", isFavorite: true)),

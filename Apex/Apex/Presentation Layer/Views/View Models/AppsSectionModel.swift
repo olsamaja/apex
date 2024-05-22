@@ -35,6 +35,10 @@ public struct AppsSectionModel: Identifiable {
 
 extension AppsSectionModel {
     
+    static func sort(from items: [AppRowModel]) -> [AppsSectionModel] {
+        searchAndSort(from: items, with: "")
+    }
+
     static func searchAndSort(from items: [AppRowModel], with term: String) -> [AppsSectionModel] {
         
         let sections = AppsSectionModel.makeSortedAppsSectionRowsModel(with: items)

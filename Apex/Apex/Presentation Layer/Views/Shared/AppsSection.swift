@@ -21,7 +21,7 @@ struct AppsSection: View {
     }
     
     var body: some View {
-        Section(header: Text(model.store.name)) {
+        Section(header: sectionHeader(with: model.store)) {
             ForEach(model.apps) { model in
                 ZStack(alignment: .leading) {
                     NavigationLink(value: model) {
@@ -35,7 +35,19 @@ struct AppsSection: View {
             .onDelete(perform: delete)
         }
     }
-    
+
+    func sectionHeader(with store: Store) -> some View {
+        HStack {
+            Text(store.name)
+            Spacer()
+            Button {
+                
+            } label: {
+                Image(systemName: "plus.circle")
+            }
+        }
+    }
+
     func delete(at offsets: IndexSet) {
         let appsToDelete = offsets.map { model.apps[$0].appSummary }
         

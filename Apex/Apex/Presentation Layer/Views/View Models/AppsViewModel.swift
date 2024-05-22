@@ -14,7 +14,8 @@ public final class AppsViewModel: ObservableObject {
     @Published var state = State.idle
     @Published var term = ""
     @Published var storedApps = StoredApps()
-    
+    @Published var addApplication = false
+
     private var cancellables = Set<AnyCancellable>()
     private let action = PassthroughSubject<Event, Never>()
 

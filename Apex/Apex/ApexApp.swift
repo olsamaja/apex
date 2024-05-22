@@ -11,7 +11,16 @@ import SwiftUI
 struct ApexApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeScreen(viewModel: AppsViewModel())
+            TabView {
+                HomeScreen(viewModel: HomeViewModel())
+                    .tabItem {
+                        Label("Home", systemImage: "star")
+                    }
+                AppsScreen(viewModel: AppsViewModel())
+                    .tabItem {
+                        Label("Applications", systemImage: "circle")
+                    }
+            }
         }
     }
 }
