@@ -24,6 +24,7 @@ struct AppsScreen: View {
         NavigationStack {
             AppsContentView(viewModel: viewModel, searchApps: searchApps)
                 .searchable(text: $searchApps, placement: .navigationBarDrawer(displayMode: .always))
+                .autocorrectionDisabled(true)
                 .navigationTitle("Applications")
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarTrailing) {

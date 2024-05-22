@@ -24,6 +24,7 @@ public struct SearchAppsScreen: View {
                 .withViewModel(viewModel)
                 .build()
                 .searchable(text: $viewModel.term, placement: .navigationBarDrawer(displayMode: .always))
+                .autocorrectionDisabled(true)
                 .navigationBarTitle("Search Applications", displayMode: .inline)
                 .navigationBarItems(
                     leading:
