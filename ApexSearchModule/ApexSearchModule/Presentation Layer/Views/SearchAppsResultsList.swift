@@ -49,22 +49,15 @@ struct SearchAppsResultsList: View {
             }
         }
         .confirmationDialog("", isPresented: $selectedAppStatus.showConfirmation) {
-            Button("Add Application", action: {
+            Button("Add", action: {
                 guard let item = selectedAppStatus.item else { return }
-                let app = AppSummary(trackId: item.appDetails.trackId,
-                                     trackName: item.appDetails.trackName,
-                                     sellerName: item.appDetails.sellerName,
-                                     storeCode: item.appDetails.storeCode)
+                let app = AppSummary(with: item.appDetails)
                 self.storedApps.add(app)
                 self.rootPresentationMode.wrappedValue.dismiss()
             })
             Button("Add as Favorite", action: {
                 guard let item = selectedAppStatus.item else { return }
-                let app = AppSummary(trackId: item.appDetails.trackId,
-                                     trackName: item.appDetails.trackName,
-                                     sellerName: item.appDetails.sellerName,
-                                     storeCode: item.appDetails.storeCode,
-                                     isFavorite: true)
+                let app = AppSummary(with: item.appDetails, isFavorite: true)
                 self.storedApps.add(app)
                 self.rootPresentationMode.wrappedValue.dismiss()
             })

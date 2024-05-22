@@ -22,6 +22,14 @@ public struct AppSummary: Codable {
         self.storeCode = storeCode
         self.isFavorite = isFavorite
     }
+    
+    public init(with appDetails: AppDetails, isFavorite: Bool = false) {
+        self.trackId = appDetails.trackId
+        self.trackName = appDetails.trackName
+        self.sellerName = appDetails.sellerName
+        self.storeCode = appDetails.storeCode
+        self.isFavorite = isFavorite
+    }
 }
 
 extension AppSummary: Hashable {}
