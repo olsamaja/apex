@@ -42,25 +42,6 @@ struct HomeContentView: View {
     }
 }
 
-public class HomeContentViewBuilder: BuilderProtocol {
-    
-    private var viewModel: HomeViewModel?
-    
-    public func withViewModel(_ viewModel: HomeViewModel) -> HomeContentViewBuilder {
-        self.viewModel = viewModel
-        return self
-    }
-    
-    @ViewBuilder
-    public func build() -> some View {
-        if let viewModel = viewModel {
-            HomeContentView(viewModel: viewModel)
-        } else {
-            EmptyView()
-        }
-    }
-}
-
 #Preview {
     HomeContentView(viewModel: HomeViewModel(state: .idle, 
                                              storedApps: .constant(StoredApps(apps: [

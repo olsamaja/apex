@@ -46,22 +46,3 @@ struct AppsContentView: View {
         }
     }
 }
-
-public class AppsContentViewBuilder: BuilderProtocol {
-    
-    private var viewModel: AppsViewModel?
-    
-    public func withViewModel(_ viewModel: AppsViewModel) -> AppsContentViewBuilder {
-        self.viewModel = viewModel
-        return self
-    }
-    
-    @ViewBuilder
-    public func build() -> some View {
-        if let viewModel = viewModel {
-            AppsContentView(viewModel: viewModel)
-        } else {
-            EmptyView()
-        }
-    }
-}
