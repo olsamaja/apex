@@ -15,6 +15,7 @@ import ApexStoreModule
 public struct SearchAppsContentView: View {
     
     @StateObject var viewModel: SearchAppsViewModel
+    @EnvironmentObject var selectedStore: SelectedStore
 
     public var body: some View {
         switch viewModel.state {

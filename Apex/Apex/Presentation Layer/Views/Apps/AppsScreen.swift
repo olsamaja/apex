@@ -10,11 +10,13 @@ import ApexCoreUI
 import ApexCore
 import ApexSearchModule
 import ApexViewModule
+import ApexStoreModule
 
 struct AppsScreen: View {
 
     @ObservedObject var viewModel: AppsViewModel
-    
+    @ObservedObject var selectedStore = SelectedStore()
+
     @State var showSelectApp = false
     @State var searchApps = ""
     @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
@@ -47,7 +49,12 @@ struct AppsScreen: View {
                         EmptyView()
                     }
                 }
+                .environmentObject(selectedStore)
         }
+        .sheet(isPresented: $selectedStore.showSearchApps, content: {
+            SearchAppsScreen(viewModel: SearchAppsViewModel())
+                .environmentObject(viewModel.storedApps)
+        })
         .sheet(isPresented: $viewModel.addApplication, content: {
             SearchAppsScreen(viewModel: SearchAppsViewModel())
                 .environmentObject(viewModel.storedApps)

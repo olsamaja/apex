@@ -8,7 +8,9 @@
 import Foundation
 
 public class SelectedStore: ObservableObject {
-    
+
+    @Published public var showSearchApps = false
+
     public init() {}
     
     public var current: Store {

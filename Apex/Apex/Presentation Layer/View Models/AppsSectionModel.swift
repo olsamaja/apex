@@ -15,10 +15,12 @@ public struct AppsSectionModel: Identifiable {
     
     let store: Store
     public let apps: [AppRowModel]
+    public let showAddAppButton: Bool
     
-    public init(store: Store, apps: [AppRowModel]) {
+    public init(store: Store, apps: [AppRowModel], showAddAppButton: Bool) {
         self.store = store
         self.apps = apps
+        self.showAddAppButton = showAddAppButton
     }
     
     public func search(with term: String) -> AppsSectionModel? {
@@ -29,19 +31,19 @@ public struct AppsSectionModel: Identifiable {
         
         guard filteredApps.count > 0 else { return nil }
 
-        return AppsSectionModel(store: store, apps: filteredApps)
+        return AppsSectionModel(store: store, apps: filteredApps, showAddAppButton: showAddAppButton)
     }
 }
 
 extension AppsSectionModel {
     
-    static func sort(from items: [AppRowModel]) -> [AppsSectionModel] {
-        searchAndSort(from: items, with: "")
+    static func sort(from items: [AppRowModel], showAddAppButton: Bool = false) -> [AppsSectionModel] {
+        searchAndSort(from: items, with: "", showAddAppButton: showAddAppButton)
     }
 
-    static func searchAndSort(from items: [AppRowModel], with term: String) -> [AppsSectionModel] {
+    static func searchAndSort(from items: [AppRowModel], with term: String, showAddAppButton: Bool) -> [AppsSectionModel] {
         
-        let sections = AppsSectionModel.makeSortedAppsSectionRowsModel(with: items)
+        let sections = AppsSectionModel.makeSortedAppsSectionRowsModel(with: items, showAddAppButton: showAddAppButton)
         
         if term.isEmpty {
             return sections
@@ -54,7 +56,7 @@ extension AppsSectionModel {
         return filteredSections
     }
 
-    static func makeSortedAppsSectionRowsModel(with unsortedRows: [AppRowModel] ) -> [AppsSectionModel] {
+    static func makeSortedAppsSectionRowsModel(with unsortedRows: [AppRowModel], showAddAppButton: Bool) -> [AppsSectionModel] {
         
         // Build an array of Stores (sorted by name) from the unsorted array of AppRowModels
         let storeCodes = unsortedRows.map { $0.storeCode }
@@ -75,7 +77,7 @@ extension AppsSectionModel {
             let sortedApps = apps.sorted(by: { app1, app2 in
                 app1.trackName.lowercased() < app2.trackName.lowercased()
             })
-            return AppsSectionModel(store: store, apps: sortedApps)
+            return AppsSectionModel(store: store, apps: sortedApps, showAddAppButton: showAddAppButton)
         }
         
         return sections

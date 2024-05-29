@@ -4,6 +4,8 @@
 //
 //  Created by Olivier Rigault on 09/07/2021.
 //
+//  Notes: ApexViewModel contains published objects (stored apps) that are observed by two screens.
+//
 //  Use Binding to pass Published var from one class (view model) as Published property
 //  in other class (view model) for binding to view of second view model
 //  https://stackoverflow.com/questions/77009431/how-pass-published-var-from-one-class-view-model-as-published-property-in-othe

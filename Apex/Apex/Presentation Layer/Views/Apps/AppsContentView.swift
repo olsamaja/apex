@@ -9,9 +9,11 @@ import SwiftUI
 import ApexCoreUI
 import ApexCore
 import ApexSearchModule
+import ApexStoreModule
 
 struct AppsContentView: View {
     
+    @EnvironmentObject var selectedStore: SelectedStore
     @ObservedObject var viewModel: AppsViewModel
     var searchApps = ""
 
@@ -31,9 +33,10 @@ struct AppsContentView: View {
                 .build()
         case .loaded(let items):
             List {
-                ForEach(AppsSectionModel.searchAndSort(from: items, with: searchApps)) { section in
+                ForEach(AppsSectionModel.searchAndSort(from: items, with: searchApps, showAddAppButton: true)) { section in
                     AppsSection(with: section)
                         .fixedSize(horizontal: false, vertical: true)
+                        .environmentObject(selectedStore)
                 }
             }
             .toolbar {
