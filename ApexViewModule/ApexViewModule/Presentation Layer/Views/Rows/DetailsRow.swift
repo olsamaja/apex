@@ -31,14 +31,18 @@ struct DetailsRow: View {
     }
 }
 
-struct AppDetailsRow_Previews: PreviewProvider {
-    
-    enum Constants {
-        static let item = DetailsRowModel(details: Details(trackId: 123, trackName: "trackName", averageUserRating: 4.69179, version: "1.2.3"))
-    }
-    
-    static var previews: some View {
-        DetailsRow(item: Constants.item)
-            .sizeThatFitPreview(with: "Default")
-    }
+//struct AppDetailsRow_Previews: PreviewProvider {
+//    
+//    enum Constants {
+//        static let item = DetailsRowModel(details: Details(trackId: 123, trackName: "trackName", averageUserRating: 4.69179, version: "1.2.3"))
+//    }
+//    
+//    static var previews: some View {
+//        DetailsRow(item: Constants.item)
+//            .sizeThatFitPreview(with: "Default")
+//    }
+//}
+//
+#Preview(traits: .sizeThatFitsLayout) {
+    DetailsRow(item: DetailsRowModel(details: Details(trackId: 123, trackName: "trackName", averageUserRating: 4.69179, version: "1.2.3")))
 }
