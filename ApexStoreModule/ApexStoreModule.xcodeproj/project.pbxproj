@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A01C5CA2C0784B200E94AEF /* SearchSelectedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A01C5C92C0784B200E94AEF /* SearchSelectedStore.swift */; };
 		6A778B632BF61ADB00A83250 /* SelectStoreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A778B622BF61ADB00A83250 /* SelectStoreScreen.swift */; };
 		D51E2AB42746F6F7000FF75B /* ApexCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51E2AB22746F6F7000FF75B /* ApexCore.framework */; };
 		D51E2AB52746F6F7000FF75B /* ApexCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D51E2AB22746F6F7000FF75B /* ApexCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -54,7 +53,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6A01C5C92C0784B200E94AEF /* SearchSelectedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSelectedStore.swift; sourceTree = "<group>"; };
 		6A778B622BF61ADB00A83250 /* SelectStoreScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStoreScreen.swift; sourceTree = "<group>"; };
 		D51E2AB22746F6F7000FF75B /* ApexCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D51E2AB32746F6F7000FF75B /* ApexCoreUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexCoreUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,7 +195,6 @@
 			children = (
 				D57C76A52746F5E10095D667 /* Store.swift */,
 				D5B9FB5A2748052D00E6DE6A /* SelectedStore.swift */,
-				6A01C5C92C0784B200E94AEF /* SearchSelectedStore.swift */,
 				D5B9FB512747F20500E6DE6A /* StoresDTOMapper.swift */,
 			);
 			path = "Domain Layer";
@@ -313,7 +310,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A01C5CA2C0784B200E94AEF /* SearchSelectedStore.swift in Sources */,
 				D57C76B12746F5FA0095D667 /* StoreRow.swift in Sources */,
 				D57C76B22746F5FA0095D667 /* StoresScreen.swift in Sources */,
 				D5B9FB4F2747F0B600E6DE6A /* StoreDTO.swift in Sources */,

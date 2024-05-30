@@ -17,7 +17,6 @@ struct AppsScreen: View {
     @ObservedObject var viewModel: AppsViewModel
     @ObservedObject var selectedStore = SelectedStore()
 
-    @State var showSelectApp = false
     @State var searchApps = ""
     @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
 
@@ -30,11 +29,8 @@ struct AppsScreen: View {
                 .navigationTitle("Applications")
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarTrailing) {
-                        Button("Add New") {
-                            self.viewModel.addApplication.toggle()
-                        }
                         Button("Add") {
-                            self.showSelectApp.toggle()
+                            self.selectedStore.showSearchApps.toggle()
                         }
                     }
                 }
@@ -55,15 +51,7 @@ struct AppsScreen: View {
             SearchAppsScreen(viewModel: SearchAppsViewModel())
                 .environmentObject(viewModel.storedApps)
         })
-        .sheet(isPresented: $viewModel.addApplication, content: {
-            SearchAppsScreen(viewModel: SearchAppsViewModel())
-                .environmentObject(viewModel.storedApps)
-        })
-        .sheet(isPresented: $showSelectApp, content: {
-            SearchAppsScreen(viewModel: SearchAppsViewModel())
-                .environmentObject(viewModel.storedApps)
-        })
-        .environment(\.rootPresentationMode, $showSelectApp)
+        .environment(\.rootPresentationMode, $selectedStore.showSearchApps)
         .ignoresSafeArea()
     }
 }

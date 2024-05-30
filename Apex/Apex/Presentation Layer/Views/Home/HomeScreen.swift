@@ -15,9 +15,6 @@ struct HomeScreen: View {
 
     @ObservedObject var viewModel: HomeViewModel
     
-    @State var showSelectApp = false
-    @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
-
     @ViewBuilder
     var body: some View {
         NavigationStack {
@@ -35,7 +32,6 @@ struct HomeScreen: View {
                     }
                 }
         }
-        .environment(\.rootPresentationMode, $showSelectApp)
         .ignoresSafeArea()
     }
 }
