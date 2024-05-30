@@ -67,8 +67,8 @@ extension AppViewModel {
         switch event {
         case .onFailedToLoadData(let error):
             return .error(error)
-        case .onLoaded(let appDetails, let reviews):
-            return .loaded([appDetails] + [reviews])
+        case .onLoaded(let details, let reviews):
+            return .loaded([details] + [reviews])
         default:
             return state
         }

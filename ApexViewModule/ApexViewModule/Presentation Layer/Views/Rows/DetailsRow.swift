@@ -13,10 +13,20 @@ struct DetailsRow: View {
     var item: DetailsRowModel
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(item.trackName)
-            Text(item.rating)
-            Text(item.version)
+        HStack(alignment: .top) {
+            AsyncImage(url: item.artwork) { image in
+                image.resizable()
+            } placeholder: {
+                Color.gray
+            }
+            .frame(width: 64, height: 64)
+            .clipShape(.rect(cornerRadius: 8))
+            VStack(alignment: .leading) {
+                Text(item.trackName)
+                Text(item.rating)
+                Text(item.version)
+            }
+            Spacer()
         }
     }
 }

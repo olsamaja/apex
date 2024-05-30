@@ -13,12 +13,14 @@ public struct Details {
     public let trackName: String
     public let averageUserRating: Double
     public let version: String
+    public let artworkUrl: URL?
     
-    public init(trackId: Int, trackName: String, averageUserRating: Double, version: String) {
+    public init(trackId: Int, trackName: String, averageUserRating: Double, version: String, artworkUrl100: URL? = nil) {
         self.trackId = trackId
         self.trackName = trackName
         self.averageUserRating = averageUserRating
         self.version = version
+        self.artworkUrl = artworkUrl100
     }
 }
 

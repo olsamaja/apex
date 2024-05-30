@@ -23,6 +23,7 @@ extension DetailsRowModel {
     var rating: String { String(format: "Rating: %.1f", details.averageUserRating) }
     var trackName: String { details.trackName }
     var version: String { "Current version: v" + details.version }
+    var artwork: URL? { details.artworkUrl }
     
 }
 

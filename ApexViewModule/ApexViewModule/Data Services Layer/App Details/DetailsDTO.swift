@@ -14,16 +14,18 @@ public struct DetailsDTO: Decodable {
     let trackName: String
     let averageUserRating: Double
     let version: String
+    let artworkUrl: URL?
     
     private enum CodingKeys : String, CodingKey {
         case results = "results"
     }
     
-    public init(trackId: Int, trackName: String, averageUserRating: Double, version: String) {
+    public init(trackId: Int, trackName: String, averageUserRating: Double, version: String, artworkUrl: URL?) {
         self.trackId = trackId
         self.trackName = trackName
         self.averageUserRating = averageUserRating
         self.version = version
+        self.artworkUrl = artworkUrl
     }
     
     public init(from decoder: Decoder) throws {
@@ -38,6 +40,7 @@ public struct DetailsDTO: Decodable {
         trackName = first.trackName
         averageUserRating = first.averageUserRating
         version = first.version
+        artworkUrl = URL(string: first.artworkUrl100)
     }
 }
 
@@ -46,4 +49,5 @@ public struct DetailsResultDTO: Decodable {
     let trackName: String
     let averageUserRating: Double
     let version: String
+    let artworkUrl100: String
 }
