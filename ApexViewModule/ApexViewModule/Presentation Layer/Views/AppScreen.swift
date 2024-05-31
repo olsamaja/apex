@@ -52,6 +52,7 @@ public struct AppScreen: View {
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
+            .listStyle(.grouped)
         case .loading:
             SpinnerBuilder()
                 .withStyle(.large)

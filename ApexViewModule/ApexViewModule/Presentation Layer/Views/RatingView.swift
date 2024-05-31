@@ -31,19 +31,12 @@ struct RatingView: View {
     }
 }
 
-struct RatingView_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            RatingView(rating: 1)
-                .sizeThatFitPreview(with: "")
-            RatingView(rating: 2)
-                .sizeThatFitPreview(with: "")
-            RatingView(rating: 3)
-                .sizeThatFitPreview(with: "")
-            RatingView(rating: 4)
-                .sizeThatFitPreview(with: "")
-            RatingView(rating: 5)
-                .sizeThatFitPreview(with: "")
-        }
+#Preview(traits: .sizeThatFitsLayout) {
+    VStack {
+        RatingView(rating: 1)
+        RatingView(rating: 2)
+        RatingView(rating: 3)
+        RatingView(rating: 4)
+        RatingView(rating: 5)
     }
 }

@@ -25,7 +25,12 @@ struct ContentRow: View {
         case .text(let title):
             return AnyView( TextRow(title: title) )
         case .details(let model):
-            return AnyView( DetailsRow(item: model) )
+            return AnyView(
+                DetailsRow(item: model)
+                    .listRowBackground(Color.clear)
+                    .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+
+            )
         case .review(let model):
             return AnyView( ReviewRow(item: model) )
         }

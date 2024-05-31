@@ -13,36 +13,31 @@ struct DetailsRow: View {
     var item: DetailsRowModel
     
     var body: some View {
-        HStack(alignment: .top) {
-            AsyncImage(url: item.artwork) { image in
-                image.resizable()
-            } placeholder: {
-                Color.gray
+        VStack {
+            HStack(alignment: .top) {
+                AsyncImage(url: item.artwork) { image in
+                    image.resizable()
+                } placeholder: {
+                    Color.gray
+                }
+                .frame(width: 80, height: 80)
+                .clipShape(.rect(cornerRadius: 16))
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 4))
+                VStack(alignment: .leading) {
+                    Text(item.trackName)
+                        .font(.title2)
+                    Text(item.version)
+                        .font(.callout)
+                }
+                Spacer()
             }
-            .frame(width: 64, height: 64)
-            .clipShape(.rect(cornerRadius: 8))
-            VStack(alignment: .leading) {
-                Text(item.trackName)
-                Text(item.rating)
-                Text(item.version)
-            }
-            Spacer()
+            Divider()
+            Text(item.rating)
+                .font(.callout)
         }
     }
 }
 
-//struct AppDetailsRow_Previews: PreviewProvider {
-//    
-//    enum Constants {
-//        static let item = DetailsRowModel(details: Details(trackId: 123, trackName: "trackName", averageUserRating: 4.69179, version: "1.2.3"))
-//    }
-//    
-//    static var previews: some View {
-//        DetailsRow(item: Constants.item)
-//            .sizeThatFitPreview(with: "Default")
-//    }
-//}
-//
 #Preview(traits: .sizeThatFitsLayout) {
-    DetailsRow(item: DetailsRowModel(details: Details(trackId: 123, trackName: "trackName", averageUserRating: 4.69179, version: "1.2.3")))
+    DetailsRow(item: DetailsRowModel(details: Details(trackId: 123, trackName: "Trainline: Book train tickets", averageUserRating: 4.69179, version: "1.2.3")))
 }
