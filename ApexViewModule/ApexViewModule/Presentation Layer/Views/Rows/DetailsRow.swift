@@ -32,8 +32,10 @@ struct DetailsRow: View {
                 Spacer()
             }
             Divider()
-            Text(item.rating)
-                .font(.callout)
+            VStack {
+                StarsView(rating: item.rating)
+                Text(String(format: "Rating: %.1f", item.rating))
+            }
         }
     }
 }

@@ -17,7 +17,7 @@ public struct ReviewScreen: View {
     
     public var body: some View {
         VStack() {
-            RatingView(rating: Int(model.rating)!)
+            StarsView(rating: Double(model.rating)!)
             VStack(alignment: .leading) {
                 HStack {
                     Grid(alignment: .leading) {

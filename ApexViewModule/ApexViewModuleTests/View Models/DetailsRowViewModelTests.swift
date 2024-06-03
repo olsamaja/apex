@@ -17,7 +17,7 @@ final class DetailsRowViewModelTests: XCTestCase {
         let model = DetailsRowModel(details: details)
         
         XCTAssertEqual(model.trackName, details.trackName)
-        XCTAssertEqual(model.version, "Current version: v" + details.version)
-        XCTAssertEqual(model.rating, String(format: "Rating: %.1f", details.averageUserRating))
+        XCTAssertEqual(model.version, "ersion: v" + details.version)
+        XCTAssertEqual(model.rating, details.averageUserRating)
     }
 }
