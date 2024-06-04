@@ -10,7 +10,7 @@ import Foundation
 public struct DetailsRowModel: Identifiable {
     
     public let id: String
-    let details: Details
+    public let details: Details
     
     init(details: Details) {
         self.id = UUID().uuidString

@@ -40,7 +40,8 @@ struct SectionRows: View {
     @ViewBuilder
     private func contentRows(_ rows: [ContentRowModel]) -> some View {
         ForEach(rows) { model in
-            if case .review = model.category {
+            switch model.category {
+            case .review, .details:
                 ZStack(alignment: .leading) {
                     NavigationLink(value: model) {
                         contentRow(model)
@@ -49,7 +50,7 @@ struct SectionRows: View {
                     .opacity(0)
                     contentRow(model)
                 }
-            } else {
+            default:
                 contentRow(model)
             }
         }

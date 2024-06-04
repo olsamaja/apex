@@ -68,11 +68,20 @@ struct AppScreen_Previews: PreviewProvider {
         static let dates = [Date(timeIntervalSince1970: 0), Date(timeIntervalSince1970: 523456789)]
         static let reviews = [Review(title: "title 1", author: "author 1", rating: "3", content: "content 1", version: "1.2.3", updated: Constants.dates[0]),
                               Review(title: "title 2", author: "author 2", rating: "5", content: "This is a long comment for a suber app I intend to use every single day from now on!", version: "1.2.3", updated: Constants.dates[1])]
+        static let details = Details(trackId: 0,
+                                     trackName: "App name",
+                                     averageUserRating: 3.5,
+                                     version: "1.2.3",
+                                     minimumOsVersion: "13.0",
+                                     description: "Some description",
+                                     sellerName: "Seller name",
+                                     fileSizeBytes: "426137600",
+                                     userRatingCount: 1234)
         static let sectionRowsModel = [SectionRowsModel(header: ContentRowModel(.text("First Section Header")),
                                                         rows: [ContentRowModel(.text("some text")),
                                                                ContentRowModel(.text("some other text"))]),
                                        SectionRowsModel(header: ContentRowModel(.text("Second Section Header")),
-                                                        rows: [ContentRowModel(.details(DetailsRowModel(details: Details(trackId: 0, trackName: "App name", averageUserRating: 3.5, version: "1.2.3"))))]),
+                                                        rows: [ContentRowModel(.details(DetailsRowModel(details: Constants.details)))]),
                                        SectionRowsModel(rows: [ContentRowModel(.review(ReviewRowModel(review: Constants.reviews[0]))),
                                                                ContentRowModel(.review(ReviewRowModel(review: Constants.reviews[1])))])]
         static let appSummary = AppSummary(trackId: 1234, trackName: "My App", sellerName: "Seller", storeCode: "Store")

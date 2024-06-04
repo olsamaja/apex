@@ -27,6 +27,8 @@ struct HomeScreen: View {
                     switch model.category {
                     case .review(let model):
                         ReviewScreen(model: model)
+                    case .details(let model):
+                        DetailsScreen(model: DetailsViewModel(details: model.details))
                     default:
                         EmptyView()
                     }

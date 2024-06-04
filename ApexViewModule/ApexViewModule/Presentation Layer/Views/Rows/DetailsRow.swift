@@ -41,5 +41,13 @@ struct DetailsRow: View {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    DetailsRow(item: DetailsRowModel(details: Details(trackId: 123, trackName: "Trainline: Book train tickets", averageUserRating: 4.69179, version: "1.2.3")))
+    DetailsRow(item: DetailsRowModel(details: Details(trackId: 0,
+                                                      trackName: "App name",
+                                                      averageUserRating: 3.5,
+                                                      version: "1.2.3",
+                                                      minimumOsVersion: "13.0",
+                                                      description: "Some description",
+                                                      sellerName: "Seller name",
+                                                      fileSizeBytes: "426137600",
+                                                      userRatingCount: 1234)))
 }

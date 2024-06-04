@@ -15,17 +15,36 @@ public struct DetailsDTO: Decodable {
     let averageUserRating: Double
     let version: String
     let artworkUrl: URL?
+    let minimumOsVersion: String
+    let description: String
+    let sellerName: String
+    let fileSizeBytes: String
+    let userRatingCount: Int
     
     private enum CodingKeys : String, CodingKey {
         case results = "results"
     }
     
-    public init(trackId: Int, trackName: String, averageUserRating: Double, version: String, artworkUrl: URL?) {
+    public init(trackId: Int, 
+                trackName: String,
+                averageUserRating: Double,
+                version: String,
+                artworkUrl: URL?,
+                minimumOsVersion: String,
+                description: String,
+                sellerName: String,
+                fileSizeBytes: String,
+                userRatingCount: Int) {
         self.trackId = trackId
         self.trackName = trackName
         self.averageUserRating = averageUserRating
         self.version = version
         self.artworkUrl = artworkUrl
+        self.minimumOsVersion = minimumOsVersion
+        self.description = description
+        self.sellerName = sellerName
+        self.fileSizeBytes = fileSizeBytes
+        self.userRatingCount = userRatingCount
     }
     
     public init(from decoder: Decoder) throws {
@@ -41,6 +60,11 @@ public struct DetailsDTO: Decodable {
         averageUserRating = first.averageUserRating
         version = first.version
         artworkUrl = URL(string: first.artworkUrl100)
+        minimumOsVersion = first.minimumOsVersion
+        description = first.description
+        sellerName = first.sellerName
+        fileSizeBytes = first.fileSizeBytes
+        userRatingCount = first.userRatingCount
     }
 }
 
@@ -50,4 +74,9 @@ public struct DetailsResultDTO: Decodable {
     let averageUserRating: Double
     let version: String
     let artworkUrl100: String
+    let minimumOsVersion: String
+    let description: String
+    let sellerName: String
+    let fileSizeBytes: String
+    let userRatingCount: Int
 }

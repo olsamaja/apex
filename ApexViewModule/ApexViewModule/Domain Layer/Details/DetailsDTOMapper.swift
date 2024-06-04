@@ -15,6 +15,11 @@ public struct DetailsDTOMapper {
                 trackName: dto.trackName,
                 averageUserRating: dto.averageUserRating,
                 version: dto.version,
-                artworkUrl100: dto.artworkUrl)
+                artworkUrl100: dto.artworkUrl,
+                minimumOsVersion: dto.minimumOsVersion,
+                description: dto.description,
+                sellerName: dto.sellerName,
+                fileSizeBytes: dto.fileSizeBytes,
+                userRatingCount: dto.userRatingCount)
     }
 }
