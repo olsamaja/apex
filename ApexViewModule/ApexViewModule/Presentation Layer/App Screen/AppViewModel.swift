@@ -52,11 +52,11 @@ public final class AppViewModel: ObservableObject {
 
             let details = DataManager().getDetails(appId: appId, storeCode: storeCode)
                 .map { DetailsRowModel(details: $0) }
-                .map { SectionRowsModel.makeDetailsSectionModel(with: $0) }
+                .map { SectionRowsModel.makeDetailsSectionModel(with: $0, isTappable: true) }
 
             let reviews = DataManager().getReviews(appId: appId, storeCode: storeCode)
                 .map { $0.map(ReviewRowModel.init) }
-                .map { SectionRowsModel.makeReviewsSectionModel(with: $0) }
+                .map { SectionRowsModel.makeReviewsSectionModel(with: $0, isTappable: true) }
 
             return Publishers.Zip(details, reviews)
                 .map(Event.onLoaded)

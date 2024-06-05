@@ -26,6 +26,8 @@ struct DetailsRow: View {
                 VStack(alignment: .leading) {
                     Text(item.trackName)
                         .font(.title2)
+                    Text(item.details.sellerName)
+                        .font(.callout)
                     Text(item.version)
                         .font(.callout)
                 }
@@ -35,6 +37,7 @@ struct DetailsRow: View {
             VStack {
                 StarsView(rating: item.rating)
                 Text(String(format: "Rating: %.1f", item.rating))
+                    .font(.callout)
             }
         }
     }
@@ -48,6 +51,6 @@ struct DetailsRow: View {
                                                       minimumOsVersion: "13.0",
                                                       description: "Some description",
                                                       sellerName: "Seller name",
-                                                      fileSizeBytes: "426137600",
+                                                      fileSizeBytes: 426137600,
                                                       userRatingCount: 1234)))
 }

@@ -13,11 +13,19 @@ final class DetailsRowViewModelTests: XCTestCase {
 
     func testProperties() throws {
         
-        let details = Details(trackId: 123, trackName: "name", averageUserRating: 4.678, version: "1.2.3")
+        let details = Details(trackId: 123,
+                              trackName: "name",
+                              averageUserRating: 4.678,
+                              version: "1.2.3",
+                              minimumOsVersion: "12.0",
+                              description: "some description",
+                              sellerName: "seller",
+                              fileSizeBytes: 12345678,
+                              userRatingCount: 12345678)
         let model = DetailsRowModel(details: details)
         
         XCTAssertEqual(model.trackName, details.trackName)
-        XCTAssertEqual(model.version, "ersion: v" + details.version)
+        XCTAssertEqual(model.version, "Version: v" + details.version)
         XCTAssertEqual(model.rating, details.averageUserRating)
     }
 }

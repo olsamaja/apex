@@ -11,6 +11,10 @@
 		6A2216CA2BEB5F8400F00948 /* Date+StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2216C92BEB5F8400F00948 /* Date+StringTests.swift */; };
 		6A9168B62BECF9380044BD95 /* Data+PrintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9168B52BECF9380044BD95 /* Data+PrintTests.swift */; };
 		6AAA3F082BF3A3AA004F4F96 /* DataErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA3F072BF3A3AA004F4F96 /* DataErrorTests.swift */; };
+		6ACB57AB2C105E4800AA4F9F /* Int+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB57AA2C105E4800AA4F9F /* Int+String.swift */; };
+		6ACB57AD2C105F2500AA4F9F /* Int+StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB57AC2C105F2500AA4F9F /* Int+StringTests.swift */; };
+		6ACB57AF2C10645B00AA4F9F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB57AE2C10645B00AA4F9F /* String+Extensions.swift */; };
+		6ACB57B12C1064ED00AA4F9F /* String+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB57B02C1064ED00AA4F9F /* String+ExtensionsTests.swift */; };
 		7D338CDB2AFE707B00EC0256 /* Array+Uniqued.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CDA2AFE707B00EC0256 /* Array+Uniqued.swift */; };
 		7D45E49126A34BE100D2C796 /* OLLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D45E49026A34BE100D2C796 /* OLLoggerTests.swift */; };
 		7D9CD65F26988249000450E0 /* ApexCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9CD65526988249000450E0 /* ApexCore.framework */; };
@@ -50,6 +54,10 @@
 		6A2216C92BEB5F8400F00948 /* Date+StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+StringTests.swift"; sourceTree = "<group>"; };
 		6A9168B52BECF9380044BD95 /* Data+PrintTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PrintTests.swift"; sourceTree = "<group>"; };
 		6AAA3F072BF3A3AA004F4F96 /* DataErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataErrorTests.swift; sourceTree = "<group>"; };
+		6ACB57AA2C105E4800AA4F9F /* Int+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+String.swift"; sourceTree = "<group>"; };
+		6ACB57AC2C105F2500AA4F9F /* Int+StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+StringTests.swift"; sourceTree = "<group>"; };
+		6ACB57AE2C10645B00AA4F9F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		6ACB57B02C1064ED00AA4F9F /* String+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ExtensionsTests.swift"; sourceTree = "<group>"; };
 		7D338CDA2AFE707B00EC0256 /* Array+Uniqued.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Uniqued.swift"; sourceTree = "<group>"; };
 		7D45E49026A34BE100D2C796 /* OLLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLLoggerTests.swift; sourceTree = "<group>"; };
 		7D9CD65526988249000450E0 /* ApexCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApexCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +143,8 @@
 				6AAA3F072BF3A3AA004F4F96 /* DataErrorTests.swift */,
 				D54A539826F4D7CB0006C7C3 /* String+ParseTests.swift */,
 				6A2216C92BEB5F8400F00948 /* Date+StringTests.swift */,
+				6ACB57AC2C105F2500AA4F9F /* Int+StringTests.swift */,
+				6ACB57B02C1064ED00AA4F9F /* String+ExtensionsTests.swift */,
 				6A9168B52BECF9380044BD95 /* Data+PrintTests.swift */,
 				D59968D927583366006ACB34 /* UserDefaults+CustomTests.swift */,
 				6A1711462BEBCB6900E156F5 /* StoredAppsTests.swift */,
@@ -148,9 +158,11 @@
 				7D338CDA2AFE707B00EC0256 /* Array+Uniqued.swift */,
 				7D9CD7A02698924F000450E0 /* Data+Decode.swift */,
 				D54A539A26F534120006C7C3 /* Date+String.swift */,
+				6ACB57AA2C105E4800AA4F9F /* Int+String.swift */,
 				7D9CD7A32698927D000450E0 /* Data+Print.swift */,
 				7D9CD7A5269892A0000450E0 /* Bundle+Extensions.swift */,
 				D54A539626F4D7960006C7C3 /* String+Parse.swift */,
+				6ACB57AE2C10645B00AA4F9F /* String+Extensions.swift */,
 				D59968D727583331006ACB34 /* UserDefaults+Custom.swift */,
 			);
 			path = Extensions;
@@ -312,9 +324,11 @@
 				D5B9FB60274B4CFA00E6DE6A /* AppDetails.swift in Sources */,
 				7D9CD7A12698924F000450E0 /* Data+Decode.swift in Sources */,
 				7D9CD79B269891A9000450E0 /* DataError.swift in Sources */,
+				6ACB57AB2C105E4800AA4F9F /* Int+String.swift in Sources */,
 				D572BE15275FDD1600CBE614 /* AppSummary.swift in Sources */,
 				D54A539726F4D7960006C7C3 /* String+Parse.swift in Sources */,
 				7D9CD7A8269892E8000450E0 /* Publishers+System.swift in Sources */,
+				6ACB57AF2C10645B00AA4F9F /* String+Extensions.swift in Sources */,
 				7D9CD7A42698927D000450E0 /* Data+Print.swift in Sources */,
 				D572BE17275FDD5800CBE614 /* StoredApps.swift in Sources */,
 				D54A539B26F534120006C7C3 /* Date+String.swift in Sources */,
@@ -326,7 +340,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ACB57AD2C105F2500AA4F9F /* Int+StringTests.swift in Sources */,
 				6AAA3F082BF3A3AA004F4F96 /* DataErrorTests.swift in Sources */,
+				6ACB57B12C1064ED00AA4F9F /* String+ExtensionsTests.swift in Sources */,
 				6A1711472BEBCB6900E156F5 /* StoredAppsTests.swift in Sources */,
 				6A9168B62BECF9380044BD95 /* Data+PrintTests.swift in Sources */,
 				6A2216CA2BEB5F8400F00948 /* Date+StringTests.swift in Sources */,

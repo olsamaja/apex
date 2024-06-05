@@ -33,6 +33,8 @@ struct ContentRow: View {
             )
         case .review(let model):
             return AnyView( ReviewRow(item: model) )
+        case .vitals(let model):
+            return AnyView( VitalDetailsRow(item: model) )
         }
     }
 }

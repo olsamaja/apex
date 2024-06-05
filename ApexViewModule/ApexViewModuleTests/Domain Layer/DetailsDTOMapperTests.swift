@@ -13,7 +13,16 @@ final class DetailsDTOMapperTests: XCTestCase {
 
     func testSuccessfulMapper() throws {
         
-        let dto = DetailsDTO(trackId: 123, trackName: "name", averageUserRating: 4.678, version: "1.2.3", artworkUrl: nil)
+        let dto = DetailsDTO(trackId: 123,
+                             trackName: "name",
+                             averageUserRating: 4.678,
+                             version: "1.2.3",
+                             artworkUrl: nil,
+                             minimumOsVersion: "12.0",
+                             description: "some description",
+                             sellerName: "seller",
+                             fileSizeBytes: "12345678",
+                             userRatingCount: 12345678)
 
         let details = DetailsDTOMapper.map(dto)
         XCTAssertEqual(details.trackId, 123)

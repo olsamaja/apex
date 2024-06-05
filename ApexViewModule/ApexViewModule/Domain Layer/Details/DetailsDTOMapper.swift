@@ -19,7 +19,7 @@ public struct DetailsDTOMapper {
                 minimumOsVersion: dto.minimumOsVersion,
                 description: dto.description,
                 sellerName: dto.sellerName,
-                fileSizeBytes: dto.fileSizeBytes,
+                fileSizeBytes: dto.fileSizeBytes.toInt,
                 userRatingCount: dto.userRatingCount)
     }
 }

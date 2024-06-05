@@ -17,7 +17,7 @@ public struct Details {
     public let minimumOsVersion: String
     public let description: String
     public let sellerName: String
-    public let fileSizeBytes: String
+    public let fileSizeBytes: Int
     public let userRatingCount: Int
 
     public init(trackId: Int, 
@@ -28,7 +28,7 @@ public struct Details {
                 minimumOsVersion: String,
                 description: String,
                 sellerName: String,
-                fileSizeBytes: String,
+                fileSizeBytes: Int,
                 userRatingCount: Int) {
         self.trackId = trackId
         self.trackName = trackName

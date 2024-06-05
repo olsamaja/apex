@@ -75,7 +75,7 @@ struct AppScreen_Previews: PreviewProvider {
                                      minimumOsVersion: "13.0",
                                      description: "Some description",
                                      sellerName: "Seller name",
-                                     fileSizeBytes: "426137600",
+                                     fileSizeBytes: 426137600,
                                      userRatingCount: 1234)
         static let sectionRowsModel = [SectionRowsModel(header: ContentRowModel(.text("First Section Header")),
                                                         rows: [ContentRowModel(.text("some text")),

@@ -12,7 +12,15 @@ import XCTest
 final class AppViewModel_ReduceTests: XCTestCase {
 
     enum Constants {
-        static let details = Details(trackId: 123, trackName: "name", averageUserRating: 4.678, version: "1.2.3")
+        static let details = Details(trackId: 123,
+                                     trackName: "name", 
+                                     averageUserRating: 4.678,
+                                     version: "1.2.3",
+                                     minimumOsVersion: "12.0",
+                                     description: "some description",
+                                     sellerName: "seller",
+                                     fileSizeBytes: 12345678,
+                                     userRatingCount: 12345678)
         static let header = SectionRowsModel(header: ContentRowModel(.text("header")),
                                          rows: [ContentRowModel(.details(DetailsRowModel(details: details)))])
         static let review1 = Review(title: "title1", author: "author1", rating: "1", content: "content1", version: "1.2.1", updated: Date())

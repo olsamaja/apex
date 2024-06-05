@@ -29,13 +29,13 @@ extension SectionRowsModel {
         case reviews([Review])
     }
     
-    static func makeDetailsSectionModel(with model: DetailsRowModel) -> SectionRowsModel {
-        SectionRowsModel(rows: [ContentRowModel(.details(model))])
+    static func makeDetailsSectionModel(with model: DetailsRowModel, isTappable: Bool = false) -> SectionRowsModel {
+        SectionRowsModel(rows: [ContentRowModel(.details(model), isTappable: isTappable)])
     }
 
-    static func makeReviewsSectionModel(with reviews: [ReviewRowModel]) -> SectionRowsModel {
+    static func makeReviewsSectionModel(with reviews: [ReviewRowModel], isTappable: Bool = false) -> SectionRowsModel {
         SectionRowsModel(
             header: ContentRowModel(.text("Reviews (\(reviews.count))")),
-            rows: reviews.map { ContentRowModel(.review($0)) })
+            rows: reviews.map { ContentRowModel(.review($0), isTappable: isTappable) })
     }
 }

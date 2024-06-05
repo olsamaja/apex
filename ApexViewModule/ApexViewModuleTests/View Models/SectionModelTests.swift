@@ -13,13 +13,18 @@ final class SectionModelTests: XCTestCase {
 
     func testMakeDetailsSectionModel() throws {
 
-        let header = ContentRowModel(.text("App Details"))
-        let details = Details(trackId: 123, trackName: "name", averageUserRating: 4.678, version: "1.2.3")
+        let details = Details(trackId: 123,
+                              trackName: "name",
+                              averageUserRating: 4.678,
+                              version: "1.2.3",
+                              minimumOsVersion: "12.0",
+                              description: "some description",
+                              sellerName: "seller",
+                              fileSizeBytes: 12345678,
+                              userRatingCount: 12345678)
         let sections = SectionRowsModel.makeDetailsSectionModel(with: DetailsRowModel(details: details))
         
-        XCTAssertNotNil(sections.header)
-        XCTAssertEqual(sections.header!, header)
-
+        XCTAssertNil(sections.header)
         XCTAssertNotNil(sections.rows)
         
         let rows = sections.rows!
