@@ -15,6 +15,7 @@ public struct ContentRowModel: Identifiable {
         case text(String)
         case details(DetailsRowModel)
         case vitals(DetailsRowModel)
+        case graph([Review])
         case review(ReviewRowModel)
     }
     
@@ -43,6 +44,8 @@ extension ContentRowModel: Equatable {
             return lhsDetails.details == rhsDetails.details
         case (.vitals(let lhsDetails), .vitals(let rhsDetails)):
             return lhsDetails.details == rhsDetails.details
+        case (.graph(let lhsReview), .graph(let rhsReview)):
+            return lhsReview.count == rhsReview.count
         case (.review(let lhsReview), .review(let rhsReview)):
             return lhsReview.id == rhsReview.id
         default:

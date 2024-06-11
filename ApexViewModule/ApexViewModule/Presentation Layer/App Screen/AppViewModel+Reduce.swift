@@ -20,7 +20,7 @@ public extension AppViewModel {
     
     enum Event {
         case onAppear
-        case onLoaded(SectionRowsModel, SectionRowsModel)
+        case onLoaded(SectionRowsModel, SectionRowsModel, SectionRowsModel)
         case onFailedToLoadData(DataError)
     }
 }
@@ -67,8 +67,8 @@ extension AppViewModel {
         switch event {
         case .onFailedToLoadData(let error):
             return .error(error)
-        case .onLoaded(let details, let reviews):
-            return .loaded([details] + [reviews])
+        case .onLoaded(let details, let graph, let reviews):
+            return .loaded([details] + [graph] + [reviews])
         default:
             return state
         }

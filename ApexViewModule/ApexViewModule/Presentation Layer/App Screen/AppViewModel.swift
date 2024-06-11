@@ -54,11 +54,16 @@ public final class AppViewModel: ObservableObject {
                 .map { DetailsRowModel(details: $0) }
                 .map { SectionRowsModel.makeDetailsSectionModel(with: $0, isTappable: true) }
 
-            let reviews = DataManager().getReviews(appId: appId, storeCode: storeCode)
+            let reviewsPublisher = DataManager().getReviews(appId: appId, storeCode: storeCode)
+            
+            let graph = reviewsPublisher
+                .map { SectionRowsModel.makeGraphSectionModel(with: $0) }
+
+            let reviews = reviewsPublisher
                 .map { $0.map(ReviewRowModel.init) }
                 .map { SectionRowsModel.makeReviewsSectionModel(with: $0, isTappable: true) }
 
-            return Publishers.Zip(details, reviews)
+            return Publishers.Zip3(details, graph, reviews)
                 .map(Event.onLoaded)
                 .catch { Just(Event.onFailedToLoadData($0)) }
                 .eraseToAnyPublisher()

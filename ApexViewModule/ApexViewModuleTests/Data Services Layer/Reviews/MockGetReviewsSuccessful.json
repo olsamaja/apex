@@ -1,114 +1,2568 @@
 {
-    "feed": {
-        "author": {
-            "name": {
-                "label": "iTunes Store"
-            },
-            "uri": {
-                "label": "http://www.apple.com/uk/itunes/"
-            }
+  "feed" : {
+    "author" : {
+      "name" : {
+        "label" : "iTunes Store"
+      },
+      "uri" : {
+        "label" : "http:\/\/www.apple.com\/uk\/itunes\/"
+      }
+    },
+    "updated" : {
+      "label" : "2024-06-11T09:28:32-07:00"
+    },
+    "rights" : {
+      "label" : "Copyright 2008 Apple Inc."
+    },
+    "id" : {
+      "label" : "https:\/\/mzstoreservices-int-st.itunes.apple.com\/gb\/rss\/customerreviews\/id=1052238659\/mostrecent\/json"
+    },
+    "title" : {
+      "label" : "iTunes Store: Customer Reviews"
+    },
+    "entry" : [
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id761967374"
+          },
+          "name" : {
+            "label" : "fatteddy007"
+          },
+          "label" : ""
         },
-        "entry": [
-            {
-                "author": {
-                    "uri": {
-                        "label": "https://itunes.apple.com/gb/reviews/id1270430290"
-                    },
-                    "name": {
-                        "label": "Jay007andrews"
-                    },
-                    "label": ""
-                },
-                "updated": {
-                    "label": "2023-10-31T11:42:44-07:00"
-                },
-                "im:rating": {
-                    "label": "5"
-                },
-                "im:version": {
-                    "label": "5.47.0"
-                },
-                "id": {
-                    "label": "10535898992"
-                },
-                "title": {
-                    "label": "Great"
-                },
-                "content": {
-                    "label": "Easy to get in touch with the call centre after a nightmare of a day ha. Thanks Andrea. 🙂",
-                    "attributes": {
-                        "type": "text"
-                    }
-                },
-                "link": {
-                    "attributes": {
-                        "rel": "related",
-                        "href": "https://itunes.apple.com/gb/review?id=1052238659&type=Purple%20Software"
-                    }
-                },
-                "im:voteSum": {
-                    "label": "0"
-                },
-                "im:contentType": {
-                    "attributes": {
-                        "term": "Application",
-                        "label": "Application"
-                    }
-                },
-                "im:voteCount": {
-                    "label": "0"
-                }
-            },
-            {
-                "author": {
-                    "uri": {
-                        "label": "https://itunes.apple.com/gb/reviews/id929984050"
-                    },
-                    "name": {
-                        "label": "lannas77"
-                    },
-                    "label": ""
-                },
-                "updated": {
-                    "label": "2023-10-31T10:23:24-07:00"
-                },
-                "im:rating": {
-                    "label": "4"
-                },
-                "im:version": {
-                    "label": "5.47.0"
-                },
-                "id": {
-                    "label": "10535705656"
-                },
-                "title": {
-                    "label": "Great app"
-                },
-                "content": {
-                    "label": "Best banking app ever. So simple to use",
-                    "attributes": {
-                        "type": "text"
-                    }
-                },
-                "link": {
-                    "attributes": {
-                        "rel": "related",
-                        "href": "https://itunes.apple.com/gb/review?id=1052238659&type=Purple%20Software"
-                    }
-                },
-                "im:voteSum": {
-                    "label": "0"
-                },
-                "im:contentType": {
-                    "attributes": {
-                        "term": "Application",
-                        "label": "Application"
-                    }
-                },
-                "im:voteCount": {
-                    "label": "0"
-                }
-            }
-        ]
+        "updated" : {
+          "label" : "2024-06-09T12:02:57-07:00"
+        },
+        "content" : {
+          "label" : "I have to keep deleting the app and reinstalling it just to see up to date transactions. Terrible slow app",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11362499729"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "So slow"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "1"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id1601458641"
+          },
+          "name" : {
+            "label" : "TudBosi"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-09T09:42:43-07:00"
+        },
+        "content" : {
+          "label" : "I been with Monzo for 5 years. I was looking to purchase something from market place. I meet the person I was happy to purchase the item i amde the payment but due to the new technology which now monzo do checks on anything new questions where in place. I have responded to them my payments on hold, couldn’t get the item has the payment wasn’t yet realised by monzo and waiting for 2 hours for someone to get back to me so I can know if I can go home with the item been paid or without the item but with the money in my account. Very unprofessional I understand the security in place but ensure someone check the form in a normal time frame. Still waiting for an update from Monzo regarding the payment while all the transactions are now on hold for a bank transfer.",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11362077822"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Very unprofessional for a old customer."
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "1"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id352764958"
+          },
+          "name" : {
+            "label" : "Sucsdhcd"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-09T09:19:48-07:00"
+        },
+        "content" : {
+          "label" : "Whatever you do, do not make the mistake i did as to BANKING WITH MONZO. I heard many stories on tiktok of individual’s accounts randomly closing and i was loyal towards monzo, i have had an account with them for over 3 years so i thought i would never experience the same. WRONG! Truth be told, couple days ago Monzo shut my account without letting me know beforehand and after they closed my account it was a trouble trying to get in touch with them as their call disconnected every time i put it through or they took hours or more than a day to respond to emails! After getting in touch, they told me that they were unable to give me a reason as to why they have closed my bank and i am not able to open a new one with them! I am stumped and disappointed. I was forced to open another bank as i used Monzo as my main banking app! I even referred people on this app but i would never again!!!",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11362002819"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "DO NOT BANK WITH MONZO"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "1"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id367764412"
+          },
+          "name" : {
+            "label" : "Ashad729"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-09T07:05:31-07:00"
+        },
+        "content" : {
+          "label" : "Everybody knows Monzo. It’s the easiest way to bank with all the features that the other banks are still missing because their IT systems were built in 1985",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11361539352"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "It’s Monzo"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id204229452"
+          },
+          "name" : {
+            "label" : "Anthony_enc"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-08T15:19:42-07:00"
+        },
+        "content" : {
+          "label" : "I use to have different account the all the high st bank , however few months ago I closed them all and use Monzo for everything- everyday banking. And it’s always handy with the saving pots and I’m able to use my card abroad.",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11359168059"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Best bank I’ve ever been with"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id224596512"
+          },
+          "name" : {
+            "label" : "Yendor Senrsb"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-08T06:45:39-07:00"
+        },
+        "content" : {
+          "label" : "Always there always food",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11357662157"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Awesome"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id131518055"
+          },
+          "name" : {
+            "label" : "Sylvia44500"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-07T18:59:09-07:00"
+        },
+        "content" : {
+          "label" : "I cashed in some premium bonds to pay for some renovation bills when the money reached my monzo account monzo decided to block my account telling me they needed to run so checks to make sure I wasn’t a fraud ! The money came from me going on my monzo account to be transferred to my other accounts all are in my name. Done that before not the first time now they are telling me they are running checks and all is blocked I can’t do my payments and I have no access to my money what is going on monzo you can’t keep my 5K they can’t tell me when their “specialists ‘team will do it it could be 7 days it has already been one day their customer service keep saying the same thing in circle and no one does any thing or you can’t speak to anyone with responsibility taking charge of anything. I have lost all trust in this bank I am closing all my accounts when it’s over and I have access to my money again.",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11355853298"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Access blocked to my money"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "1"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id112640341"
+          },
+          "name" : {
+            "label" : "Tech girl85"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-07T13:05:36-07:00"
+        },
+        "content" : {
+          "label" : "I set up a shared tab to use on holiday with 3 others. The tab has somehow malfunctioned paying people money who didn’t pay for anything and I am owed money. One failure of shared tabs is that you can’t even retrospectively look back at how you apportioned a payment between the tab members, if you could I might be able to work out what’s gone wrong. I have been waiting for 3 weeks for a ‘specialist’ to look into this issue, meanwhile I am owed money. Monzo can’t tell me any info regarding how much longer I need to wait. If nobody sorts this out soon I will be submitting a formal complaint, this is not in the spirit of consumer duty at all.",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11354998162"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Everything is great until it’s not"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "1"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id1484434036"
+          },
+          "name" : {
+            "label" : "Beejay0007"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-07T09:14:11-07:00"
+        },
+        "content" : {
+          "label" : "Easy to use app",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11354322383"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Convenient"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id732793008"
+          },
+          "name" : {
+            "label" : "Becky66650"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-07T08:15:13-07:00"
+        },
+        "content" : {
+          "label" : "Great account. With easy ways to save and track your spending",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11354122300"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Fantastic"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id563580445"
+          },
+          "name" : {
+            "label" : "Bella233121"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-06T15:19:15-07:00"
+        },
+        "content" : {
+          "label" : "I've been using this app for over six years, and it has honestly grown with my financial needs as I've grown: spending account, joint account with my husband, and now saving ( all the points have a different purpose supporting our financial management), business accounts and now investing! Love, love love Monzo",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11351533103"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Soo Efficient and user friendly!!"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id1218621570"
+          },
+          "name" : {
+            "label" : "Koeurtis Jackson"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-06T13:45:34-07:00"
+        },
+        "content" : {
+          "label" : "Monzo really makes life very easy , great online banking service",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11351302023"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Very satisfying banking app"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id1538006939"
+          },
+          "name" : {
+            "label" : "siiiaaaszxx"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-06T11:26:49-07:00"
+        },
+        "content" : {
+          "label" : "Simply one day earlier pay🫡🫡🫡",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11350923115"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Monzo"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id1646923983"
+          },
+          "name" : {
+            "label" : "#Lion 7"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-06T10:51:09-07:00"
+        },
+        "content" : {
+          "label" : "Awesome feature",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11350819994"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Get pay one day before"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "4"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id450445352"
+          },
+          "name" : {
+            "label" : "Corin2"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-06T09:05:09-07:00"
+        },
+        "content" : {
+          "label" : "easy to use, get paid early if you chose, only thing is it takes a bit of getting used to on the menu, especially if you have more than one account.  One menu would be more easier to use.",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11350491596"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Recommended"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id1581742709"
+          },
+          "name" : {
+            "label" : "Psychofairynails"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-06T08:52:06-07:00"
+        },
+        "content" : {
+          "label" : "I love this bank however heard reports of it closing peoples account and taking there money which is worring",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11350449111"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Great app"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "4"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id951263356"
+          },
+          "name" : {
+            "label" : "jo7jo5"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-06T08:42:18-07:00"
+        },
+        "content" : {
+          "label" : "I normally never leave reviews for apps, but this one is definitely worth the review. \nI’ve been using MONZO now for approximately 2-3 years. Compared with my other online bank, MONZO definitely makes life easier to navigate, constant updates, and more content added. I now have upgraded to Monzo’s Max account which is £22 per month (as I’ve opted in for additional phone coverage for my partner at £5 extra). For this I have phone insurance x2, worldwide travel insurance, access to my credit reports, and much more benefits. To purchase these things separately I would have paid much more. \nSo, all in all it’s a great well rounded bank. Hence why I’ve given this 5 stars.",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11350416995"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Best online banking"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id139581419"
+          },
+          "name" : {
+            "label" : "Great white1234"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-06T08:22:24-07:00"
+        },
+        "content" : {
+          "label" : "Great service thanks",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11350351108"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Service"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id961254009"
+          },
+          "name" : {
+            "label" : "Billybrad27"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-06T08:09:10-07:00"
+        },
+        "content" : {
+          "label" : "Quick and easy",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11350307175"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Rating"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id1463674742"
+          },
+          "name" : {
+            "label" : "David Abdul"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-06T08:00:33-07:00"
+        },
+        "content" : {
+          "label" : "Good",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11350277939"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Mr"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id103522054"
+          },
+          "name" : {
+            "label" : "jimmythemoonlight"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-06T06:44:16-07:00"
+        },
+        "content" : {
+          "label" : "This App has got to be the most unstable on my iPhone It’s forever freezing and has a detrimental effect on my iPhone overall. I love Monzo as a bank but the App is painful .",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11350015764"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Unstable"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "1"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id659839124"
+          },
+          "name" : {
+            "label" : "Anne-Sophie01"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-06T06:19:49-07:00"
+        },
+        "content" : {
+          "label" : "The Monzo banking app is awesome! It's super easy to use, with real-time notifications and great budgeting tools that make managing money a breeze. Highly recommend!",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11349932683"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Best Banking App"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id1439140718"
+          },
+          "name" : {
+            "label" : "vbvbvnbkakekemekn"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-06T03:18:50-07:00"
+        },
+        "content" : {
+          "label" : "Thanks for solving my problem!",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11349392305"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Thank you"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id1450778713"
+          },
+          "name" : {
+            "label" : "Sandie escol"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-05T10:07:38-07:00"
+        },
+        "content" : {
+          "label" : "Very organised and on time to credit",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11346892750"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "I like it"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id1601304432"
+          },
+          "name" : {
+            "label" : "VANEZA ASSUNCAO"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-05T09:35:35-07:00"
+        },
+        "content" : {
+          "label" : "I like",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11346792381"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Very nice"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id915444891"
+          },
+          "name" : {
+            "label" : "¥€$#%*"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-04T08:51:46-07:00"
+        },
+        "content" : {
+          "label" : "Best fintech app",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11342863554"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Monzo"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id1031605298"
+          },
+          "name" : {
+            "label" : "helpa33"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-04T08:18:07-07:00"
+        },
+        "content" : {
+          "label" : "So effective 👍",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11342750014"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Very good"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id37516200"
+          },
+          "name" : {
+            "label" : "M4RCUS2000"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-03T22:50:00-07:00"
+        },
+        "content" : {
+          "label" : "I've been a Monzo customer for about 4 years now and I've noticed the app getting more and more bloated and less intuitive, and consequently I minimise the time I have to spend in it. This may be a consequence of having to fit every feature into an iPhone app, where other banks would offload rarely used functionality to their web site or have multiple apps. I also get the impression the app is seen as a sales tool to push products rather than a tool to facilitate access to the services I already have. Please hire some designers and really focus on slimming things down!",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11341254405"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "App becoming bloated"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "2"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id188927954"
+          },
+          "name" : {
+            "label" : "fizzer60"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-03T08:22:59-07:00"
+        },
+        "content" : {
+          "label" : "Been with Monzo for a few years now and never looked back. Absolutely amazing bank can’t fault.",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11339077688"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Amazing"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id7335025"
+          },
+          "name" : {
+            "label" : "Mrs E-G"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-03T08:03:34-07:00"
+        },
+        "content" : {
+          "label" : "Really love this app.",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11339010841"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Best banking app."
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.76.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id376096269"
+          },
+          "name" : {
+            "label" : "Jaydeepsinh Pethapur"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-06-01T01:59:05-07:00"
+        },
+        "content" : {
+          "label" : "Good",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11330415172"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Hi"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id152860369"
+          },
+          "name" : {
+            "label" : "@TinieTweets"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-31T10:00:08-07:00"
+        },
+        "content" : {
+          "label" : "Pots are not hard to find. \nAvailable balances and balances after spend are now confusing. \nTransaction list is shortened. \nWhole Home Screen of app needs reverting. It was simpler and better. The new design doesn’t give any extra info. It gives less!\n\nRevert. Revert. Revert. UX XD Distaster!",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11328076677"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "App was better before the redesign"
+        },
+        "im:voteCount" : {
+          "label" : "1"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "1"
+        },
+        "im:voteSum" : {
+          "label" : "1"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id289949570"
+          },
+          "name" : {
+            "label" : "Sosina91"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-31T05:40:35-07:00"
+        },
+        "content" : {
+          "label" : "It’s difficult to reach out to support and get timely help. I can understand this issue as company has grown. \n\nHowever, I’m a paid user and would have thought they prioritise customer that pay for the service.",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11327219431"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Unfortunately support is not a great as it used to be"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "1"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id430707853"
+          },
+          "name" : {
+            "label" : "Williebims"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-30T14:24:24-07:00"
+        },
+        "content" : {
+          "label" : "Lovely app words can’t explain how smooth, attractive and friendly app with great service being provided",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11325138098"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Williams"
+        },
+        "im:voteCount" : {
+          "label" : "1"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id1297284192"
+          },
+          "name" : {
+            "label" : "peCh60"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-30T13:00:57-07:00"
+        },
+        "content" : {
+          "label" : "Best bank ever ! X",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11324941185"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Simply the best"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id354644268"
+          },
+          "name" : {
+            "label" : "Big Dave657"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-30T12:13:09-07:00"
+        },
+        "content" : {
+          "label" : "⭐️⭐️⭐️⭐️⭐️",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11324821149"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Excellence Personified"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id511718054"
+          },
+          "name" : {
+            "label" : "HarryFletcher"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-30T10:54:33-07:00"
+        },
+        "content" : {
+          "label" : "Monzo used to be great when they first set up the business, but in recent months\/years the customer service has been terrible. They have forgotten how important customer relations are. I have had several issues in recent months, none of which have been resolved. I would love to move banks, but unfortunately the convenience keeps me with Monzo, which is a huge shame.",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11324614391"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Terrible Customer Service"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "1"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id1196547403"
+          },
+          "name" : {
+            "label" : "zoe3054703"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-30T10:29:16-07:00"
+        },
+        "content" : {
+          "label" : "Love Monzo ! It’s so simple & easy to keep on top of your monthly bills.\nThe fact I can get my wage a day early is fantastic  !",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11324544327"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Best Bank"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id338166668"
+          },
+          "name" : {
+            "label" : "klaszek"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-30T09:41:20-07:00"
+        },
+        "content" : {
+          "label" : "Well o use monzo more than any other platform, simple, seamless and instantaneous.\nBravo Monzo",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11324407014"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Banking simplicity"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id1565865142"
+          },
+          "name" : {
+            "label" : "Rocky Agbley"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-30T09:07:31-07:00"
+        },
+        "content" : {
+          "label" : "Love the bank operational moves",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11324305280"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "I have not regretted moving my money to Monzo Bank"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id43304667"
+          },
+          "name" : {
+            "label" : "gugu73"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-30T08:59:43-07:00"
+        },
+        "content" : {
+          "label" : "Outstanding bank",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11324280660"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Fantastic"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id525558592"
+          },
+          "name" : {
+            "label" : "Lovebisha"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-30T08:55:42-07:00"
+        },
+        "content" : {
+          "label" : "Amazing service they provide to each customer",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11324268333"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Great job"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id141414638"
+          },
+          "name" : {
+            "label" : "1983James"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-30T00:10:17-07:00"
+        },
+        "content" : {
+          "label" : "It really is excellent",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11322791108"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Long time user"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id1458251477"
+          },
+          "name" : {
+            "label" : "ncp001"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-29T17:36:05-07:00"
+        },
+        "content" : {
+          "label" : "They take months to solve an issue.",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11321909975"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "AWFUL SERVICE"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "1"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id359805534"
+          },
+          "name" : {
+            "label" : "Dammie210"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-29T11:05:38-07:00"
+        },
+        "content" : {
+          "label" : "Very reliable and intuitive",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11320945008"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Great Finance App"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id723738393"
+          },
+          "name" : {
+            "label" : "JesusReigns4evermore"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-29T08:56:03-07:00"
+        },
+        "content" : {
+          "label" : "Best bank ever , the ease of transactions , the really cool features to help me track my money , what more can I want from a bank",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11320560780"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Will recommend Monzo"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id1661647168"
+          },
+          "name" : {
+            "label" : "ashcorbinxx"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-29T02:03:18-07:00"
+        },
+        "content" : {
+          "label" : "I wouldn’t go to this bank they won’t let me access my account. Wouldn’t recommend using. Only gave them 1 star because else it won’t let u.",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11319325255"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Ashtoncorbinxx"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "1"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id1474271560"
+          },
+          "name" : {
+            "label" : "Abou Hicham…A B"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-28T10:25:07-07:00"
+        },
+        "content" : {
+          "label" : "Honestly the best banking app around….",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11317129752"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Abou Hicham"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "5"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id159580887"
+          },
+          "name" : {
+            "label" : "Lippyalex"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-28T04:10:09-07:00"
+        },
+        "content" : {
+          "label" : "I have been banking with Monzo since 2018, all of the sudden and 6 years later, without notice, they closed my account! I will be reporting them to the OMBUDSMAN!",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11315989898"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Closed!"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.75.0"
+        },
+        "im:rating" : {
+          "label" : "1"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      },
+      {
+        "author" : {
+          "uri" : {
+            "label" : "https:\/\/itunes.apple.com\/gb\/reviews\/id38329591"
+          },
+          "name" : {
+            "label" : "This Latest Review"
+          },
+          "label" : ""
+        },
+        "updated" : {
+          "label" : "2024-05-28T00:23:57-07:00"
+        },
+        "content" : {
+          "label" : "Not happy with Monzo. For two weeks, the company has withheld money in a chargeback dispute despite bothe retailer and myself now in agreement. Monzo benefits from holding the money longer than they are entitled.\n\nIn addition, I have today been forced to logout of my account for the second time because I once added one other device. I've not added a second device again, I've forced to logout twice.\n\nThey will need an incredible explanation for their behaviour, I plan to file a c complaint with The Banking Ombudsman.",
+          "attributes" : {
+            "type" : "text"
+          }
+        },
+        "id" : {
+          "label" : "11315489551"
+        },
+        "im:contentType" : {
+          "attributes" : {
+            "label" : "Application",
+            "term" : "Application"
+          }
+        },
+        "title" : {
+          "label" : "Illegal withholding funds, forced logouts"
+        },
+        "im:voteCount" : {
+          "label" : "0"
+        },
+        "link" : {
+          "attributes" : {
+            "rel" : "related",
+            "href" : "https:\/\/itunes.apple.com\/gb\/review?id=1052238659&type=Purple%20Software"
+          }
+        },
+        "im:version" : {
+          "label" : "5.74.1"
+        },
+        "im:rating" : {
+          "label" : "1"
+        },
+        "im:voteSum" : {
+          "label" : "0"
+        }
+      }
+    ],
+    "link" : [
+      {
+        "attributes" : {
+          "rel" : "alternate",
+          "type" : "text\/html",
+          "href" : "https:\/\/music.apple.com\/WebObjects\/MZStore.woa\/wa\/viewGrouping?cc=gb&id=130"
+        }
+      },
+      {
+        "attributes" : {
+          "rel" : "self",
+          "href" : "https:\/\/mzstoreservices-int-st.itunes.apple.com\/gb\/rss\/customerreviews\/id=1052238659\/mostrecent\/json"
+        }
+      },
+      {
+        "attributes" : {
+          "rel" : "first",
+          "href" : "https:\/\/itunes.apple.com\/gb\/rss\/customerreviews\/page=1\/id=1052238659\/sortby=mostrecent\/xml?urlDesc=\/customerreviews\/id=1052238659\/mostrecent\/json"
+        }
+      },
+      {
+        "attributes" : {
+          "rel" : "last",
+          "href" : "https:\/\/itunes.apple.com\/gb\/rss\/customerreviews\/page=10\/id=1052238659\/sortby=mostrecent\/xml?urlDesc=\/customerreviews\/id=1052238659\/mostrecent\/json"
+        }
+      },
+      {
+        "attributes" : {
+          "rel" : "previous",
+          "href" : "https:\/\/itunes.apple.com\/gb\/rss\/customerreviews\/page=1\/id=1052238659\/sortby=mostrecent\/xml?urlDesc=\/customerreviews\/id=1052238659\/mostrecent\/json"
+        }
+      },
+      {
+        "attributes" : {
+          "rel" : "next",
+          "href" : "https:\/\/itunes.apple.com\/gb\/rss\/customerreviews\/page=2\/id=1052238659\/sortby=mostrecent\/xml?urlDesc=\/customerreviews\/id=1052238659\/mostrecent\/json"
+        }
+      }
+    ],
+    "icon" : {
+      "label" : "http:\/\/itunes.apple.com\/favicon.ico"
     }
+  }
 }

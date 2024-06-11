@@ -35,13 +35,13 @@ final class DataRequester_ReviewsTests: XCTestCase {
         
         cancellable = dataRequester.getReviews(with: 0, storeCode: "")
             .sink(receiveCompletion: { _ in }) { response in
-                XCTAssertEqual(response.feed.entry.count, 2)
+                XCTAssertEqual(response.feed.entry.count, 50)
                 let review = response.feed.entry.first!
-                XCTAssertEqual(review.title, "Great")
-                XCTAssertEqual(review.author, "Jay007andrews")
-                XCTAssertEqual(review.content, "Easy to get in touch with the call centre after a nightmare of a day ha. Thanks Andrea. 🙂")
-                XCTAssertEqual(review.rating, "5")
-                XCTAssertEqual(review.version, "5.47.0")
+                XCTAssertEqual(review.title, "So slow")
+                XCTAssertEqual(review.author, "fatteddy007")
+                XCTAssertEqual(review.content, "I have to keep deleting the app and reinstalling it just to see up to date transactions. Terrible slow app")
+                XCTAssertEqual(review.rating, "1")
+                XCTAssertEqual(review.version, "5.76.0")
 
                 let dateFormatter = ISO8601DateFormatter()
                 XCTAssertEqual(review.updated, dateFormatter.date(from: "2023-10-31T11:42:44-07:00") ?? Date())
@@ -117,13 +117,13 @@ final class DataManager_ReviewsTests: XCTestCase {
         
         cancellable = dataManager.getReviews(appId: 0, storeCode: "")
             .sink(receiveCompletion: { _ in }) { response in
-                XCTAssertEqual(response.count, 2)
+                XCTAssertEqual(response.count, 50)
                 let review = response.first!
-                XCTAssertEqual(review.title, "Great")
-                XCTAssertEqual(review.author, "Jay007andrews")
-                XCTAssertEqual(review.content, "Easy to get in touch with the call centre after a nightmare of a day ha. Thanks Andrea. 🙂")
-                XCTAssertEqual(review.rating, "5")
-                XCTAssertEqual(review.version, "5.47.0")
+                XCTAssertEqual(review.title, "So slow")
+                XCTAssertEqual(review.author, "fatteddy007")
+                XCTAssertEqual(review.content, "I have to keep deleting the app and reinstalling it just to see up to date transactions. Terrible slow app")
+                XCTAssertEqual(review.rating, "1")
+                XCTAssertEqual(review.version, "5.76.0")
 
                 let dateFormatter = ISO8601DateFormatter()
                 XCTAssertEqual(review.updated, dateFormatter.date(from: "2023-10-31T11:42:44-07:00") ?? Date())

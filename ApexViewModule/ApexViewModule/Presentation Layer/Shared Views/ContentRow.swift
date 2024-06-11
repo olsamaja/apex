@@ -31,6 +31,8 @@ struct ContentRow: View {
                     .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
 
             )
+        case .graph(let model):
+            return AnyView( Text("\(model.count)") )
         case .review(let model):
             return AnyView( ReviewRow(item: model) )
         case .vitals(let model):

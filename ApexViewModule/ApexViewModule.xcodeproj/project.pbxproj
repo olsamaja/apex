@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		6A8A64F12C0DEC98004FDC73 /* DetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A64F02C0DEC98004FDC73 /* DetailsScreen.swift */; };
 		6A8A64F32C0DF3DD004FDC73 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A64F22C0DF3DD004FDC73 /* DetailsViewModel.swift */; };
+		6A9BBE572C10C46C003727B5 /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9BBE562C10C46C003727B5 /* GraphViewModel.swift */; };
+		6A9BBE592C10C47B003727B5 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9BBE582C10C47B003727B5 /* GraphView.swift */; };
+		6A9BBE5B2C110DFC003727B5 /* GraphViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9BBE5A2C110DFC003727B5 /* GraphViewModelTests.swift */; };
 		6ACB57A92C0F624200AA4F9F /* VitalDetailsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB57A82C0F624200AA4F9F /* VitalDetailsRow.swift */; };
 		7D338CC32AFCE8AA00EC0256 /* ReviewsDTOMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CC22AFCE8AA00EC0256 /* ReviewsDTOMapperTests.swift */; };
 		7D338CC62AFCFEA500EC0256 /* DetailsDTOMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CC52AFCFEA500EC0256 /* DetailsDTOMapperTests.swift */; };
@@ -85,6 +88,9 @@
 /* Begin PBXFileReference section */
 		6A8A64F02C0DEC98004FDC73 /* DetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreen.swift; sourceTree = "<group>"; };
 		6A8A64F22C0DF3DD004FDC73 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		6A9BBE562C10C46C003727B5 /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
+		6A9BBE582C10C47B003727B5 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		6A9BBE5A2C110DFC003727B5 /* GraphViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModelTests.swift; sourceTree = "<group>"; };
 		6ACB57A82C0F624200AA4F9F /* VitalDetailsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalDetailsRow.swift; sourceTree = "<group>"; };
 		7D338CC22AFCE8AA00EC0256 /* ReviewsDTOMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsDTOMapperTests.swift; sourceTree = "<group>"; };
 		7D338CC52AFCFEA500EC0256 /* DetailsDTOMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDTOMapperTests.swift; sourceTree = "<group>"; };
@@ -169,6 +175,8 @@
 				6A8A64F02C0DEC98004FDC73 /* DetailsScreen.swift */,
 				6A8A64F22C0DF3DD004FDC73 /* DetailsViewModel.swift */,
 				6ACB57A82C0F624200AA4F9F /* VitalDetailsRow.swift */,
+				6A9BBE562C10C46C003727B5 /* GraphViewModel.swift */,
+				6A9BBE582C10C47B003727B5 /* GraphView.swift */,
 			);
 			path = "Details Screen";
 			sourceTree = "<group>";
@@ -256,6 +264,7 @@
 				7D338CCA2AFD833B00EC0256 /* SectionModelTests.swift */,
 				7D338CCC2AFD8DA400EC0256 /* ReviewRowViewModelTests.swift */,
 				7D338CCE2AFD8E7600EC0256 /* DetailsRowViewModelTests.swift */,
+				6A9BBE5A2C110DFC003727B5 /* GraphViewModelTests.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -492,10 +501,12 @@
 				D5CD22F32792123C001C69EA /* Review.swift in Sources */,
 				D5CD22F12792123C001C69EA /* SectionRowsModel.swift in Sources */,
 				7D97CEB92AF309D60032EC42 /* DataRequester+Details.swift in Sources */,
+				6A9BBE572C10C46C003727B5 /* GraphViewModel.swift in Sources */,
 				D5CD22F92792123C001C69EA /* DetailsRow.swift in Sources */,
 				D5CD22C527921219001C69EA /* ApexViewModule.docc in Sources */,
 				7D39BB642AFB940000198217 /* ReviewScreen.swift in Sources */,
 				7D39BB662AFBDCAD00198217 /* ContentRowModel.swift in Sources */,
+				6A9BBE592C10C47B003727B5 /* GraphView.swift in Sources */,
 				7D39BB622AFB7DA900198217 /* StarsView.swift in Sources */,
 				D5CD22F22792123C001C69EA /* AppViewModel+Reduce.swift in Sources */,
 				D5CD22EF2792123C001C69EA /* ReviewRowModel.swift in Sources */,
@@ -527,6 +538,7 @@
 				7D338CC62AFCFEA500EC0256 /* DetailsDTOMapperTests.swift in Sources */,
 				7D338CC32AFCE8AA00EC0256 /* ReviewsDTOMapperTests.swift in Sources */,
 				7D5922A82AF6646600EAD7A9 /* DataRequester+ReviewsTests.swift in Sources */,
+				6A9BBE5B2C110DFC003727B5 /* GraphViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
