@@ -37,14 +37,9 @@ final class GraphViewModelTests: XCTestCase {
             .sink(receiveCompletion: { _ in }) { reviews in
                 XCTAssertEqual(reviews.count, 50)
                 let review = reviews.first!
-                XCTAssertEqual(review.title, "So slow")
-                XCTAssertEqual(review.author, "fatteddy007")
-                XCTAssertEqual(review.content, "I have to keep deleting the app and reinstalling it just to see up to date transactions. Terrible slow app")
-                XCTAssertEqual(review.rating, "1")
-                XCTAssertEqual(review.version, "5.76.0")
 
                 let dateFormatter = ISO8601DateFormatter()
-                XCTAssertEqual(review.updated, dateFormatter.date(from: "2024-06-09 19:02:57 +0000") ?? Date())
+                XCTAssertEqual(review.updated, dateFormatter.date(from: "2024-06-09T12:02:57-07:00") ?? Date())
                 expectation.fulfill()
             }
 

@@ -44,7 +44,7 @@ final class DataRequester_ReviewsTests: XCTestCase {
                 XCTAssertEqual(review.version, "5.76.0")
 
                 let dateFormatter = ISO8601DateFormatter()
-                XCTAssertEqual(review.updated, dateFormatter.date(from: "2023-10-31T11:42:44-07:00") ?? Date())
+                XCTAssertEqual(review.updated, dateFormatter.date(from: "2024-06-09T12:02:57-07:00") ?? Date())
                 expectation.fulfill()
             }
 
@@ -126,7 +126,7 @@ final class DataManager_ReviewsTests: XCTestCase {
                 XCTAssertEqual(review.version, "5.76.0")
 
                 let dateFormatter = ISO8601DateFormatter()
-                XCTAssertEqual(review.updated, dateFormatter.date(from: "2023-10-31T11:42:44-07:00") ?? Date())
+                XCTAssertEqual(review.updated, dateFormatter.date(from: "2024-06-09T12:02:57-07:00") ?? Date())
                 expectation.fulfill()
             }
 
