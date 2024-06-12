@@ -46,7 +46,7 @@ final class GraphViewModelTests: XCTestCase {
                 let lastSevenDaysReviews = reviews.filter{ review in Calendar.current.isWithin(numberOfDays: 7, from: review.updated, and: endDate) }
                 XCTAssertEqual(lastSevenDaysReviews.count, 30)
                 
-                let graphDataItems = GraphData(endDate: endDate, numberOfDays: 7, reviews: lastSevenDaysReviews).getItems()
+                let graphDataItems = ReviewsGraphData(endDate: endDate, numberOfDays: 7, reviews: lastSevenDaysReviews).getItems()
                 XCTAssertEqual(graphDataItems.count, 30)
                 XCTAssertEqual(graphDataItems[0].daysSinceEndDate, 0)
                 XCTAssertEqual(graphDataItems[29].daysSinceEndDate, 6)
@@ -104,7 +104,7 @@ final class GraphViewModelTests: XCTestCase {
     }
 }
 
-struct GraphData {
+struct ReviewsGraphData {
     
     let endDate: Date
     let numberOfDays: Int
@@ -116,12 +116,12 @@ struct GraphData {
         self.reviews = reviews
     }
     
-    func getItems() -> [GraphDataItem] {
-        reviews.map { GraphDataItem(review: $0, daysSinceEndDate: Calendar.current.numberOfDaysBetween($0.updated, and: endDate)) }
+    func getItems() -> [ReviewGraphDataItem] {
+        reviews.map { ReviewGraphDataItem(review: $0, daysSinceEndDate: Calendar.current.numberOfDaysBetween($0.updated, and: endDate)) }
     }
 }
 
-struct GraphDataItem {
+struct ReviewGraphDataItem {
     let review: Review
     let daysSinceEndDate: Int
 }

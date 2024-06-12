@@ -175,8 +175,8 @@
 				6A8A64F02C0DEC98004FDC73 /* DetailsScreen.swift */,
 				6A8A64F22C0DF3DD004FDC73 /* DetailsViewModel.swift */,
 				6ACB57A82C0F624200AA4F9F /* VitalDetailsRow.swift */,
-				6A9BBE562C10C46C003727B5 /* GraphViewModel.swift */,
 				6A9BBE582C10C47B003727B5 /* GraphView.swift */,
+				6A9BBE562C10C46C003727B5 /* GraphViewModel.swift */,
 			);
 			path = "Details Screen";
 			sourceTree = "<group>";
