@@ -48,7 +48,8 @@ public class ReviewsGraphDataBuilder: BuilderProtocol {
     }
     
     public func build() -> ReviewsGraphData {
-        var graphDataItemsWithMissingDays = reviews.map { ReviewGraphDataItem(review: $0, daysSinceEndDate: Calendar.current.numberOfDaysBetween($0.updated, and: endDate)) }
+        let filteredReviews = reviews.filter{ review in Calendar.current.isWithin(numberOfDays: numberOfDays, from: review.updated, and: endDate) }
+        var graphDataItemsWithMissingDays = filteredReviews.map { ReviewGraphDataItem(review: $0, daysSinceEndDate: Calendar.current.numberOfDaysBetween($0.updated, and: endDate)) }
         let days = graphDataItemsWithMissingDays.map { $0.daysSinceEndDate }
         let allDays = Array(0...(numberOfDays - 1))
         let missingDays = allDays.filter { !days.contains($0) }

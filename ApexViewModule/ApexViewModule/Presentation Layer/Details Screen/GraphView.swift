@@ -41,6 +41,7 @@ struct GraphView: View {
     
     return GraphView(model: ReviewsGraphDataBuilder()
         .withEndDate(Constants.endDate)
+        .withNumberOfDays(7)
         .withReviews(Constants.reviews)
         .build())
 }

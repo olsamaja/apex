@@ -43,17 +43,19 @@ final class ReviewsGraphDataTests: XCTestCase {
                     return
                 }
 
-                let lastSevenDaysReviews = reviews.filter{ review in Calendar.current.isWithin(numberOfDays: 7, from: review.updated, and: endDate) }
-                XCTAssertEqual(lastSevenDaysReviews.count, 30)
-                
                 let graphData = ReviewsGraphDataBuilder()
                     .withEndDate(endDate)
                     .withNumberOfDays(7)
-                    .withReviews(lastSevenDaysReviews)
+                    .withReviews(reviews)
                     .build()
+                
                 XCTAssertEqual(graphData.items.count, 30)
                 XCTAssertEqual(graphData.items[0].daysSinceEndDate, 0)
+                XCTAssertEqual(graphData.items[0].ratingType, .negative)
+                XCTAssertEqual(graphData.items[0].weight, 1)
                 XCTAssertEqual(graphData.items[29].daysSinceEndDate, 6)
+                XCTAssertEqual(graphData.items[29].ratingType, .positive)
+                XCTAssertEqual(graphData.items[29].weight, 1)
 
                 expectation.fulfill()
             }
