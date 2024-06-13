@@ -10,15 +10,15 @@ import Charts
 
 struct GraphView: View {
     
-    var item: GraphViewModel
+    var model: ReviewsGraphData
 
     var body: some View {
-        Chart(item.reviewData) { review in
+        Chart(model.items) { item in
             BarMark(
-                x: .value("Date", review.dateOfDay),
-                y: .value("Rating", review.ratings)
+                x: .value("Date", 0 - item.daysSinceEndDate),
+                y: .value("Ratings", item.weight)
             )
-            .foregroundStyle(review.ratingType.color)
+            .foregroundStyle(item.ratingType.color)
         }
         .padding()
         .frame(height: 100)
@@ -29,14 +29,18 @@ struct GraphView: View {
     
     enum Constants {
         static let dateFormatter = ISO8601DateFormatter()
-        static let tuples = [(rating: "1", date: "2024-06-05T11:42:44-07:00", author: "Mon"),
-                             (rating: "5", date: "2024-06-05T11:42:44-07:00", author: "Mon"),
-                             (rating: "4", date: "2024-06-03T11:42:44-07:00", author: "Tue"),
-                             (rating: "3", date: "2024-06-02T11:42:44-07:00", author: "Wed"),
-                             (rating: "1", date: "2024-06-01T11:42:44-07:00", author: "Fri"),
-                             (rating: "5", date: "2024-06-05T11:42:44-07:00", author: "Fri")]
-        static let reviews = tuples.map { Review(title: "", author: $0.author, rating: $0.rating, content: "", version: "", updated: dateFormatter.date(from: $0.date) ?? Date()) }
+        static let tuples = [(rating: "3", date: "2024-06-06T11:42:44-07:00"),
+                             (rating: "1", date: "2024-06-05T11:42:44-07:00"),
+                             (rating: "4", date: "2024-06-03T11:42:44-07:00"),
+                             (rating: "3", date: "2024-06-02T11:42:44-07:00"),
+                             (rating: "1", date: "2024-06-01T11:42:44-07:00"),
+                             (rating: "5", date: "2024-06-05T11:42:44-07:00")]
+        static let endDate = dateFormatter.date(from: tuples[0].date)!
+        static let reviews = tuples.map { Review(title: "", author: "", rating: $0.rating, content: "", version: "", updated: dateFormatter.date(from: $0.date)!) }
     }
     
-    return GraphView(item: GraphViewModel(reviews: Constants.reviews, numberOfDays: 7))
+    return GraphView(model: ReviewsGraphDataBuilder()
+        .withEndDate(Constants.endDate)
+        .withReviews(Constants.reviews)
+        .build())
 }

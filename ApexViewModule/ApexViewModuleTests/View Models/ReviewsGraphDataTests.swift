@@ -1,5 +1,5 @@
 //
-//  GraphViewModelTests.swift
+//  ReviewsGraphDataTests.swift
 //  ApexViewModuleTests
 //
 //  Created by Olivier Rigault on 05/06/2024.
@@ -12,7 +12,7 @@ import XCTest
 @testable import ApexCore
 @testable import ApexViewModule
 
-final class GraphViewModelTests: XCTestCase {
+final class ReviewsGraphDataTests: XCTestCase {
 
     // Get reviews for the tests
     
@@ -46,10 +46,14 @@ final class GraphViewModelTests: XCTestCase {
                 let lastSevenDaysReviews = reviews.filter{ review in Calendar.current.isWithin(numberOfDays: 7, from: review.updated, and: endDate) }
                 XCTAssertEqual(lastSevenDaysReviews.count, 30)
                 
-                let graphDataItems = ReviewsGraphData(endDate: endDate, numberOfDays: 7, reviews: lastSevenDaysReviews).getItems()
-                XCTAssertEqual(graphDataItems.count, 30)
-                XCTAssertEqual(graphDataItems[0].daysSinceEndDate, 0)
-                XCTAssertEqual(graphDataItems[29].daysSinceEndDate, 6)
+                let graphData = ReviewsGraphDataBuilder()
+                    .withEndDate(endDate)
+                    .withNumberOfDays(7)
+                    .withReviews(lastSevenDaysReviews)
+                    .build()
+                XCTAssertEqual(graphData.items.count, 30)
+                XCTAssertEqual(graphData.items[0].daysSinceEndDate, 0)
+                XCTAssertEqual(graphData.items[29].daysSinceEndDate, 6)
 
                 expectation.fulfill()
             }
@@ -57,7 +61,7 @@ final class GraphViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 2)
         publisher.cancel()
     }
-
+    
     enum Constants {
         static let dateStrings = ["2024-06-09T12:02:57-07:00", "2024-06-09T09:42:43-07:00", "2024-06-09T09:19:48-07:00",
                                   "2024-06-09T07:05:31-07:00", "2024-06-08T15:19:42-07:00", "2024-06-08T06:45:39-07:00",
@@ -76,6 +80,15 @@ final class GraphViewModelTests: XCTestCase {
                                   "2024-05-30T00:10:17-07:00", "2024-05-29T17:36:05-07:00", "2024-05-29T11:05:38-07:00",
                                   "2024-05-29T08:56:03-07:00", "2024-05-29T02:03:18-07:00", "2024-05-28T10:25:07-07:00",
                                   "2024-05-28T04:10:09-07:00", "2024-05-28T00:23:57-07:00"]
+        static let dateFormatter = ISO8601DateFormatter()
+        static let tuples = [(rating: "3", date: "2024-06-06T11:42:44-07:00"),
+                             (rating: "1", date: "2024-06-05T11:42:44-07:00"),
+                             (rating: "4", date: "2024-06-03T11:42:44-07:00"),
+                             (rating: "3", date: "2024-06-02T11:42:44-07:00"),
+                             (rating: "1", date: "2024-06-01T11:42:44-07:00"),
+                             (rating: "5", date: "2024-06-05T11:42:44-07:00")]
+        static let endDate = dateFormatter.date(from: tuples[0].date)!
+        static let reviews = tuples.map { Review(title: "", author: "", rating: $0.rating, content: "", version: "", updated: dateFormatter.date(from: $0.date)!) }
     }
     
     func testFilterDatesWithinSeveralDays() {
@@ -102,26 +115,4 @@ final class GraphViewModelTests: XCTestCase {
             XCTAssertEqual(Calendar.current.numberOfDaysBetween(dict["end"] as! Date, and: dict["date"] as! Date), dict["days"] as! Int)
         }
     }
-}
-
-struct ReviewsGraphData {
-    
-    let endDate: Date
-    let numberOfDays: Int
-    private let reviews: [Review]
-    
-    init(endDate: Date, numberOfDays: Int, reviews: [Review]) {
-        self.endDate = endDate
-        self.numberOfDays = numberOfDays
-        self.reviews = reviews
-    }
-    
-    func getItems() -> [ReviewGraphDataItem] {
-        reviews.map { ReviewGraphDataItem(review: $0, daysSinceEndDate: Calendar.current.numberOfDaysBetween($0.updated, and: endDate)) }
-    }
-}
-
-struct ReviewGraphDataItem {
-    let review: Review
-    let daysSinceEndDate: Int
 }
