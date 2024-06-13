@@ -14,12 +14,31 @@ public struct ReviewsGraphData: Identifiable {
     public let id: String
     let endDate: Date
     let numberOfDays: Int
+    let numberofReviews: Int
     let items: [ReviewGraphDataItem]
     
-    init(endDate: Date, numberOfDays: Int, items: [ReviewGraphDataItem]) {
+    private var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d MMM"
+        return formatter
+    }
+    
+    var endDateShortString: String {
+        return dateFormatter.string(from: endDate)
+    }
+    
+    var startDateShortString: String {
+        guard let date = Calendar.current.date(byAdding: .day, value: 0 - numberOfDays, to: endDate) else {
+            return ""
+        }
+        return dateFormatter.string(from: date)
+    }
+    
+    init(endDate: Date, numberOfDays: Int, numberofReviews: Int, items: [ReviewGraphDataItem]) {
         self.id = UUID().uuidString
         self.endDate = endDate
         self.numberOfDays = numberOfDays
+        self.numberofReviews = numberofReviews
         self.items = items
     }
 }
@@ -56,7 +75,10 @@ public class ReviewsGraphDataBuilder: BuilderProtocol {
         for day in missingDays {
             graphDataItemsWithMissingDays.append(ReviewGraphDataItem(review: nil, daysSinceEndDate: day))
         }
-        return ReviewsGraphData(endDate: endDate, numberOfDays: numberOfDays, items: graphDataItemsWithMissingDays)
+        let graphDataItems = graphDataItemsWithMissingDays.sorted {
+            $0.ratingType.rawValue < $1.ratingType.rawValue
+        }
+        return ReviewsGraphData(endDate: endDate, numberOfDays: numberOfDays, numberofReviews: filteredReviews.count, items: graphDataItems)
     }
 }
 

@@ -13,12 +13,31 @@ struct ReviewsGraphView: View {
     var model: ReviewsGraphData
 
     var body: some View {
-        Chart(model.items) { item in
-            BarMark(
-                x: .value("Date", 0 - item.daysSinceEndDate),
-                y: .value("Ratings", item.weight)
-            )
-            .foregroundStyle(item.ratingType.color)
+        VStack(spacing: 12) {
+            HStack {
+                Text("Posts")
+                    .font(.title3)
+                Spacer()
+                Text("\(model.numberofReviews)")
+                    .font(.title3)
+            }
+            Chart(model.items) { item in
+                BarMark(
+                    x: .value("Date", 0 - item.daysSinceEndDate),
+                    y: .value("Ratings", item.weight)
+                )
+                .foregroundStyle(item.ratingType.color)
+            }
+            .chartXAxis(.hidden)
+            HStack {
+                Text(model.startDateShortString)
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+                Spacer()
+                Text(model.endDateShortString)
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+            }
         }
         .padding()
     }

@@ -13,7 +13,7 @@ struct DetailsRow: View {
     var item: DetailsRowModel
     
     var body: some View {
-        VStack {
+        VStack(spacing: 8) {
             HStack(alignment: .top) {
                 AsyncImage(url: item.artwork) { image in
                     image.resizable()
@@ -25,19 +25,19 @@ struct DetailsRow: View {
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 4))
                 VStack(alignment: .leading) {
                     Text(item.trackName)
-                        .font(.title2)
+                        .font(.title3)
                     Text(item.details.sellerName)
-                        .font(.callout)
+                        .font(.subheadline)
                     Text(item.version)
-                        .font(.callout)
+                        .font(.subheadline)
                 }
                 Spacer()
             }
             Divider()
-            VStack {
+            VStack(spacing: 6) {
                 StarsView(rating: item.rating)
                 Text(String(format: "Rating: %.1f", item.rating))
-                    .font(.callout)
+                    .font(.subheadline)
             }
         }
     }
