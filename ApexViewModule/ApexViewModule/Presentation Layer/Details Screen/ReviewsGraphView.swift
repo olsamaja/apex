@@ -1,5 +1,5 @@
 //
-//  GraphView.swift
+//  ReviewsGraphView.swift
 //  ApexViewModule
 //
 //  Created by Olivier Rigault on 05/06/2024.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Charts
 
-struct GraphView: View {
+struct ReviewsGraphView: View {
     
     var model: ReviewsGraphData
 
@@ -21,7 +21,6 @@ struct GraphView: View {
             .foregroundStyle(item.ratingType.color)
         }
         .padding()
-        .frame(height: 100)
     }
 }
 
@@ -39,7 +38,7 @@ struct GraphView: View {
         static let reviews = tuples.map { Review(title: "", author: "", rating: $0.rating, content: "", version: "", updated: dateFormatter.date(from: $0.date)!) }
     }
     
-    return GraphView(model: ReviewsGraphDataBuilder()
+    return ReviewsGraphView(model: ReviewsGraphDataBuilder()
         .withEndDate(Constants.endDate)
         .withNumberOfDays(7)
         .withReviews(Constants.reviews)
