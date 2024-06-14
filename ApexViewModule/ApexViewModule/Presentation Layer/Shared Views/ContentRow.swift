@@ -35,7 +35,7 @@ struct ContentRow: View {
             #if DEBUG
             return AnyView( ReviewsGraphView(model: ReviewsGraphDataBuilder()
                 .withReviews(model)
-                .withNumberOfDays(7)
+                .withNumberOfDays(30)
                 .build()) )
             #else
             return AnyView( Text("\(model.count)") )

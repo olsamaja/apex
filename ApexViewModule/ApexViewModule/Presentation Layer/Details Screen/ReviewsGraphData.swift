@@ -14,7 +14,7 @@ public struct ReviewsGraphData: Identifiable {
     public let id: String
     let endDate: Date
     let numberOfDays: Int
-    let numberofReviews: Int
+    let numberOfReviews: Int
     let items: [ReviewGraphDataItem]
     
     private var dateFormatter: DateFormatter {
@@ -38,7 +38,7 @@ public struct ReviewsGraphData: Identifiable {
         self.id = UUID().uuidString
         self.endDate = endDate
         self.numberOfDays = numberOfDays
-        self.numberofReviews = numberofReviews
+        self.numberOfReviews = numberofReviews
         self.items = items
     }
 }

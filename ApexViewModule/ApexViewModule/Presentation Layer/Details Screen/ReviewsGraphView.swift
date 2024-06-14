@@ -18,7 +18,7 @@ struct ReviewsGraphView: View {
                 Text("Posts")
                     .font(.title3)
                 Spacer()
-                Text("\(model.numberofReviews)")
+                Text("\(model.numberOfReviews)")
                     .font(.title3)
             }
             Chart(model.items) { item in
