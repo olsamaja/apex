@@ -25,6 +25,7 @@ import Resolver
 public struct AppScreen: View {
     
     @StateObject var viewModel: AppViewModel
+    @EnvironmentObject var storedApps: StoredApps
 
     public init(viewModel: AppViewModel) {
         self._viewModel = StateObject(wrappedValue: viewModel)
@@ -53,6 +54,14 @@ public struct AppScreen: View {
                 }
             }
             .listStyle(.grouped)
+            .toolbar {
+                Button {
+                    self.storedApps.toggleFavorite(viewModel.appSummary)
+                    viewModel.appSummary.isFavorite.toggle()
+                } label: {
+                    Image(systemName: viewModel.appSummary.isFavorite ? "heart.fill" : "heart")
+                }
+            }
         case .loading:
             SpinnerBuilder()
                 .withStyle(.large)

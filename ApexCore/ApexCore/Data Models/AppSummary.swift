@@ -13,7 +13,7 @@ public struct AppSummary: Codable {
     public let trackName: String
     public let sellerName: String
     public let storeCode: String
-    public let isFavorite: Bool
+    public var isFavorite: Bool
     
     public init(trackId: Int, trackName: String, sellerName: String, storeCode: String, isFavorite: Bool = false) {
         self.trackId = trackId

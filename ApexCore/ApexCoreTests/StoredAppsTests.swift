@@ -25,6 +25,7 @@ final class StoredAppsTests: XCTestCase {
     
     override func tearDownWithError() throws {
         userDefaults.removePersistentDomain(forName: #file)
+        userDefaults.synchronize()
     }
 
     func testAddAndRemoveApps() throws {
@@ -47,5 +48,41 @@ final class StoredAppsTests: XCTestCase {
         }
         XCTAssertEqual(apps.favorites.count, 1)
         XCTAssertTrue(apps.favorites.contains(Constants.apps[1]))
+    }
+
+    func testToggleFavoriteApps() throws {
+        let apps = StoredApps(defaults: userDefaults)
+        for app in Constants.apps {
+            apps.add(app)
+        }
+        XCTAssertEqual(apps.favorites.count, 1)
+        XCTAssertTrue(apps.favorites.contains(Constants.apps[1]))
+        
+        // Remove 2nd app from favorites
+        apps.toggleFavorite(Constants.apps[1])
+        XCTAssertEqual(apps.favorites.count, 0)
+
+        // Add 1st app to favorites
+        apps.toggleFavorite(Constants.apps[0])
+        XCTAssertEqual(apps.favorites.count, 1)
+        
+        let expectedFavorite = AppSummary(trackId: 123, trackName: "track123", sellerName: "seller1", storeCode: "code1", isFavorite: true)
+
+        XCTAssertTrue(apps.favorites.contains(expectedFavorite))
+        
+        apps.deleteAll()
+    }
+}
+
+extension StoredApps {
+
+    // returns true if our set contains this app
+    func contains(_ app: AppSummary) -> Bool {
+        apps.contains(app)
+    }
+
+    func deleteAll() {
+        apps.removeAll()
+        save()
     }
 }

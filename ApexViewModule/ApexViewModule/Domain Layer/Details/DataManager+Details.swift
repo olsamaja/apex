@@ -14,7 +14,7 @@ public extension DataManager {
     func getDetails(appId: Int, storeCode: String) -> AnyPublisher<Details, DataError> {
         return dataRequester.getDetails(with: appId, storeCode: storeCode)
             .mapError {
-                print("error: " + $0.localizedDescription)
+                debugPrint("error: " + $0.localizedDescription)
                 return $0
             }
             .map {

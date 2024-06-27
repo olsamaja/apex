@@ -23,7 +23,6 @@ struct ChangeStoreView: View {
                 .font(.callout)
             Spacer()
             Button {
-                print(viewModel.state)
                 self.showSelectStore.toggle()
             } label: {
                 Text("Change Store")

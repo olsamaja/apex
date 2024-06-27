@@ -34,15 +34,20 @@ public class StoredApps: ObservableObject {
         self.apps = apps
     }
 
-    // returns true if our set contains this app
-    public func contains(_ app: AppSummary) -> Bool {
-        apps.contains(app)
-    }
-
     // adds the app to our set, updates all views, and saves the change
     public func add(_ app: AppSummary) {
         objectWillChange.send()
         apps.insert(app)
+        save()
+    }
+
+    // updates the app to our set, updates all views, and saves the change
+    public func toggleFavorite(_ app: AppSummary) {
+        objectWillChange.send()
+        apps.remove(app)
+        var newApp = app
+        newApp.isFavorite = !app.isFavorite
+        apps.insert(newApp)
         save()
     }
 
@@ -56,5 +61,6 @@ public class StoredApps: ObservableObject {
     public func save() {
         // write out our data
         defaults.setCustomObject(apps, forKey: Constants.storedAppsKey)
+        defaults.synchronize()
     }
 }

@@ -11,7 +11,7 @@ import ApexNetwork
 
 public final class AppViewModel: ObservableObject {
     
-    public let appSummary: AppSummary
+    public var appSummary: AppSummary
     @Published var state = State.idle
     
     private var cancellables = Set<AnyCancellable>()
