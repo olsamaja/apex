@@ -35,7 +35,8 @@ struct ReviewsByStarView: View {
                     .foregroundStyle(.orange)
                     .cornerRadius(8)
                     .annotation(position: .leading) {
-                        StarsView(rating: Double(item.rating)!)                        .font(.system(size: 10, weight: .semibold))
+                        StarsView(item.rating, isInverted: true)
+                            .font(.system(size: 10, weight: .semibold))
                             .foregroundColor(.gray)
                     }
                 }

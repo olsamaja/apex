@@ -9,12 +9,20 @@ import SwiftUI
 
 struct StarsView: View {
     
-    var rating: Double
-    var maxRating: Int
+    let rating: Double
+    let maxRating: Int
+    let isInverted: Bool
     
-    init(rating: Double, maxRating: Int = 5) {
+    init(rating: Double, maxRating: Int = 5, isInverted: Bool = false) {
         self.rating = rating
         self.maxRating = maxRating
+        self.isInverted = isInverted
+    }
+
+    init(_ ratingString: String, maxRating: Int = 5, isInverted: Bool = false) {
+        self.rating = Double(ratingString) ?? 0
+        self.maxRating = maxRating
+        self.isInverted = isInverted
     }
 
     var body: some View {
@@ -28,10 +36,12 @@ struct StarsView: View {
         stars.overlay(
             GeometryReader { g in
                 let width = rating / CGFloat(maxRating) * g.size.width
+                let offsetX = isInverted ? (5.0 - rating) / CGFloat(maxRating) * g.size.width : 0
                 ZStack(alignment: .leading) {
                     Rectangle()
                         .frame(width: width)
                         .foregroundColor(.orange)
+                        .offset(x: offsetX)
                 }
             }
             .mask(stars)
@@ -53,6 +63,22 @@ struct StarsView: View {
         StarsView(rating: 4)
         StarsView(rating: 4.5)
         StarsView(rating: 5)
+    }
+}
+
+#Preview("Inverted", traits: .sizeThatFitsLayout) {
+    VStack {
+        StarsView(rating: 0, isInverted: true)
+        StarsView(rating: 0.5, isInverted: true)
+        StarsView(rating: 1, isInverted: true)
+        StarsView(rating: 1.5, isInverted: true)
+        StarsView(rating: 2, isInverted: true)
+        StarsView(rating: 2.5, isInverted: true)
+        StarsView(rating: 3, isInverted: true)
+        StarsView(rating: 3.5, isInverted: true)
+        StarsView(rating: 4, isInverted: true)
+        StarsView(rating: 4.5, isInverted: true)
+        StarsView(rating: 5, isInverted: true)
     }
 }
 

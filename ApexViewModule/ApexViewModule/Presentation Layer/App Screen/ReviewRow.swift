@@ -21,7 +21,7 @@ public struct ReviewRow: View {
     
     public var body: some View {
         VStack(alignment: .leading) {
-            StarsView(rating: Double(item.rating)!)
+            StarsView(item.rating)
                 .padding(.vertical, 3)
             Text(item.title)
                 .multilineTextAlignment(.leading)
