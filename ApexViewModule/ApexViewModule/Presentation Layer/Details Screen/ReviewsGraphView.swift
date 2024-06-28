@@ -13,34 +13,35 @@ struct ReviewsGraphView: View {
     var model: ReviewsGraphData
 
     var body: some View {
-        VStack(spacing: 12) {
-            HStack {
-                Text("Posts")
-                    .font(.title3)
-                Spacer()
-                Text("\(model.numberOfReviews)")
-                    .font(.title3)
-            }
-            Chart(model.items) { item in
-                BarMark(
-                    x: .value("Date", 0 - item.daysSinceEndDate),
-                    y: .value("Ratings", item.weight)
-                )
-                .foregroundStyle(item.ratingType.color)
-            }
-            .fixedSize(horizontal: false, vertical: true)
-            .chartXAxis(.hidden)
-            HStack {
-                Text(model.startDateShortString)
-                    .font(.footnote)
-                    .foregroundColor(.gray)
-                Spacer()
-                Text(model.endDateShortString)
-                    .font(.footnote)
-                    .foregroundColor(.gray)
+        GroupBox {
+            VStack(spacing: 12) {
+                HStack {
+                    Text("Posts")
+                        .font(.title3)
+                    Spacer()
+                    Text("\(model.numberOfReviews)")
+                        .font(.title3)
+                }
+                Chart(model.items) { item in
+                    BarMark(
+                        x: .value("Date", 0 - item.daysSinceEndDate),
+                        y: .value("Ratings", item.weight)
+                    )
+                    .foregroundStyle(item.ratingType.color)
+                }
+                .fixedSize(horizontal: false, vertical: true)
+                .chartXAxis(.hidden)
+                HStack {
+                    Text(model.startDateShortString)
+                        .font(.footnote)
+                        .foregroundColor(.gray)
+                    Spacer()
+                    Text(model.endDateShortString)
+                        .font(.footnote)
+                        .foregroundColor(.gray)
+                }
             }
         }
-        .padding()
     }
 }
 

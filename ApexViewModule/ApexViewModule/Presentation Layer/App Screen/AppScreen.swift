@@ -51,6 +51,7 @@ public struct AppScreen: View {
                 ForEach(sections) { section in
                     SectionRows(with: section)
                         .fixedSize(horizontal: false, vertical: true)
+                        .listRowSeparator(.hidden)
                 }
             }
             .listStyle(.grouped)

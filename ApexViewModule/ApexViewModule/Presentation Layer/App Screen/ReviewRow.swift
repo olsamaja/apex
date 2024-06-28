@@ -44,6 +44,7 @@ public struct ReviewRow: View {
             .padding(.vertical, 2)
             Text(item.updated)
                 .font(.footnote)
+            Divider()
         }
     }
 }
@@ -58,6 +59,7 @@ struct AppReviewRow_Previews: PreviewProvider {
         List {
             ReviewRow(item: Constants.item)
                 .sizeThatFitPreview(with: "Default")
+                .listRowSeparator(.hidden)
             ReviewRow(item: Constants.item, isExpanded: true)
                 .sizeThatFitPreview(with: "Expanded review")
         }

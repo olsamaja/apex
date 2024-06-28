@@ -13,39 +13,40 @@ struct ReviewsByStarView: View {
     var model: ReviewsByStarData
 
     var body: some View {
-        VStack(spacing: 12) {
-            HStack {
-                Text("Stars")
-                    .font(.title3)
-                Spacer()
-            }
-            HStack {
-                VStack {
-                    Text(model.averageRating)
-                        .font(.title2)
-                    Text("out of 5")
-                        .font(.footnote)
-                        .foregroundColor(.gray)
+        GroupBox {
+            VStack(spacing: 12) {
+                HStack {
+                    Text("Stars")
+                        .font(.title3)
+                    Spacer()
                 }
-                Chart(model.items) { item in
-                    BarMark(
-                        x: .value("Amount", item.numberOfStars),
-                        y: .value("Stars", item.rating)
-                    )
-                    .foregroundStyle(.orange)
-                    .cornerRadius(8)
-                    .annotation(position: .leading) {
-                        StarsView(item.rating, isInverted: true)
-                            .font(.system(size: 10, weight: .semibold))
+                HStack {
+                    VStack {
+                        Text(model.averageRating)
+                            .font(.title2)
+                        Text("out of 5")
+                            .font(.footnote)
                             .foregroundColor(.gray)
                     }
+                    Chart(model.items) { item in
+                        BarMark(
+                            x: .value("Amount", item.numberOfStars),
+                            y: .value("Stars", item.rating)
+                        )
+                        .foregroundStyle(.orange)
+                        .cornerRadius(8)
+                        .annotation(position: .leading) {
+                            StarsView(item.rating, isInverted: true)
+                                .font(.system(size: 10, weight: .semibold))
+                                .foregroundColor(.gray)
+                        }
+                    }
+                    .fixedSize(horizontal: false, vertical: true)
+                    .chartXAxis(.hidden)
+                    .chartYAxis(.hidden)
                 }
-                .fixedSize(horizontal: false, vertical: true)
-                .chartXAxis(.hidden)
-                .chartYAxis(.hidden)
             }
         }
-        .padding()
     }
 }
 
