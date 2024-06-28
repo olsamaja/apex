@@ -37,6 +37,7 @@ struct AppsScreen: View {
                 .navigationDestination(for: AppRowModel.self) { item in
                     AppScreen(viewModel: AppViewModel(appSummary: item.appSummary))
                         .environmentObject(viewModel.storedApps)
+                        .toolbar(.hidden, for: .tabBar)
                 }
                 .navigationDestination(for: ContentRowModel.self) { model in
                     switch model.category {
