@@ -37,6 +37,10 @@ extension SectionRowsModel {
         SectionRowsModel(rows: [ContentRowModel(.graph(reviews), isTappable: isTappable)])
     }
 
+    static func makeStarsSectionModel(with reviews: [Review], isTappable: Bool = false) -> SectionRowsModel {
+        SectionRowsModel(rows: [ContentRowModel(.stars(reviews), isTappable: isTappable)])
+    }
+
     static func makeReviewsSectionModel(with reviews: [ReviewRowModel], isTappable: Bool = false) -> SectionRowsModel {
         SectionRowsModel(
             header: ContentRowModel(.text("Reviews (\(reviews.count))")),

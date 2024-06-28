@@ -1,43 +1,47 @@
 //
-//  ReviewsGraphView.swift
+//  ReviewsByStarView.swift
 //  ApexViewModule
 //
-//  Created by Olivier Rigault on 05/06/2024.
+//  Created by Olivier Rigault on 28/06/2024.
 //
 
 import SwiftUI
 import Charts
 
-struct ReviewsGraphView: View {
-    
-    var model: ReviewsGraphData
+struct ReviewsByStarView: View {
+
+    var model: ReviewsByStarData
 
     var body: some View {
         VStack(spacing: 12) {
             HStack {
-                Text("Posts")
+                Text("Stars")
                     .font(.title3)
                 Spacer()
-                Text("\(model.numberOfReviews)")
-                    .font(.title3)
             }
-            Chart(model.items) { item in
-                BarMark(
-                    x: .value("Date", 0 - item.daysSinceEndDate),
-                    y: .value("Ratings", item.weight)
-                )
-                .foregroundStyle(item.ratingType.color)
-            }
-            .fixedSize(horizontal: false, vertical: true)
-            .chartXAxis(.hidden)
             HStack {
-                Text(model.startDateShortString)
-                    .font(.footnote)
-                    .foregroundColor(.gray)
-                Spacer()
-                Text(model.endDateShortString)
-                    .font(.footnote)
-                    .foregroundColor(.gray)
+                VStack {
+                    Text(model.averageRating)
+                        .font(.title2)
+                    Text("out of 5")
+                        .font(.footnote)
+                        .foregroundColor(.gray)
+                }
+                Chart(model.items) { item in
+                    BarMark(
+                        x: .value("Amount", item.numberOfStars),
+                        y: .value("Stars", item.rating)
+                    )
+                    .foregroundStyle(.orange)
+                    .cornerRadius(8)
+                    .annotation(position: .leading) {
+                        StarsView(rating: Double(item.rating)!)                        .font(.system(size: 10, weight: .semibold))
+                            .foregroundColor(.gray)
+                    }
+                }
+                .fixedSize(horizontal: false, vertical: true)
+                .chartXAxis(.hidden)
+                .chartYAxis(.hidden)
             }
         }
         .padding()
@@ -58,7 +62,7 @@ struct ReviewsGraphView: View {
         static let reviews = tuples.map { Review(title: "", author: "", rating: $0.rating, content: "", version: "", updated: dateFormatter.date(from: $0.date)!) }
     }
     
-    return ReviewsGraphView(model: ReviewsGraphDataBuilder()
+    return ReviewsByStarView(model: ReviewsByStarGraphDataBuilder()
         .withEndDate(Constants.endDate)
         .withNumberOfDays(7)
         .withReviews(Constants.reviews)

@@ -32,14 +32,15 @@ struct ContentRow: View {
 
             )
         case .graph(let model):
-            #if DEBUG
             return AnyView( ReviewsGraphView(model: ReviewsGraphDataBuilder()
                 .withReviews(model)
                 .withNumberOfDays(30)
                 .build()) )
-            #else
-            return AnyView( Text("\(model.count)") )
-            #endif
+        case .stars(let model):
+            return AnyView( ReviewsByStarView(model: ReviewsByStarGraphDataBuilder()
+                .withReviews(model)
+                .withNumberOfDays(30)
+                .build()) )
         case .review(let model):
             return AnyView( ReviewRow(item: model) )
         case .vitals(let model):

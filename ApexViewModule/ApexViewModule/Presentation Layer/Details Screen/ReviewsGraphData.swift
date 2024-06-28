@@ -34,11 +34,11 @@ public struct ReviewsGraphData: Identifiable {
         return dateFormatter.string(from: date)
     }
     
-    init(endDate: Date, numberOfDays: Int, numberofReviews: Int, items: [ReviewGraphDataItem]) {
+    init(endDate: Date, numberOfDays: Int, numberOfReviews: Int, items: [ReviewGraphDataItem]) {
         self.id = UUID().uuidString
         self.endDate = endDate
         self.numberOfDays = numberOfDays
-        self.numberOfReviews = numberofReviews
+        self.numberOfReviews = numberOfReviews
         self.items = items
     }
 }
@@ -78,7 +78,7 @@ public class ReviewsGraphDataBuilder: BuilderProtocol {
         let graphDataItems = graphDataItemsWithMissingDays.sorted {
             $0.ratingType.rawValue < $1.ratingType.rawValue
         }
-        return ReviewsGraphData(endDate: endDate, numberOfDays: numberOfDays, numberofReviews: filteredReviews.count, items: graphDataItems)
+        return ReviewsGraphData(endDate: endDate, numberOfDays: numberOfDays, numberOfReviews: filteredReviews.count, items: graphDataItems)
     }
 }
 

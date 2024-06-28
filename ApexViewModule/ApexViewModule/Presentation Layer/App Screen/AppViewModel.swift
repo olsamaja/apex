@@ -59,11 +59,14 @@ public final class AppViewModel: ObservableObject {
             let graph = reviewsPublisher
                 .map { SectionRowsModel.makeGraphSectionModel(with: $0) }
 
+            let stars = reviewsPublisher
+                .map { SectionRowsModel.makeStarsSectionModel(with: $0) }
+
             let reviews = reviewsPublisher
                 .map { $0.map(ReviewRowModel.init) }
                 .map { SectionRowsModel.makeReviewsSectionModel(with: $0, isTappable: true) }
 
-            return Publishers.Zip3(details, graph, reviews)
+            return Publishers.Zip4(details, graph, stars, reviews)
                 .map(Event.onLoaded)
                 .catch { Just(Event.onFailedToLoadData($0)) }
                 .eraseToAnyPublisher()
