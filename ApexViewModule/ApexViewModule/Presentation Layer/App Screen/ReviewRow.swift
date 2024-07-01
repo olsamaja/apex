@@ -44,7 +44,6 @@ public struct ReviewRow: View {
             .padding(.vertical, 2)
             Text(item.updated)
                 .font(.footnote)
-            Divider()
         }
     }
 }

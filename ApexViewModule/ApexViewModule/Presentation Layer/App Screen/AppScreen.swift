@@ -16,6 +16,9 @@
 //
 //  How to inject a @StateObject:
 //      - https://stackoverflow.com/questions/64938325/how-to-initialize-a-view-with-a-stateobject-as-a-parameter
+//
+//  How to do pagination in SwiftUI:
+//      - https://medium.engineering/how-to-do-pagination-in-swiftui-04511be7fbd1
 
 import SwiftUI
 import ApexCore
@@ -46,13 +49,19 @@ public struct AppScreen: View {
                 .withSymbol("xmark.octagon")
                 .withMessage(error.description)
                 .build()
-        case .loaded(let sections):
+        case .loaded(let details, let sections):
             List {
-                ForEach(sections) { section in
+                ForEach([details] + sections) { section in
                     SectionRows(with: section)
                         .fixedSize(horizontal: false, vertical: true)
-                        .listRowSeparator(.hidden)
+                        .listSectionRowSeparator(section.category)
                 }
+                Text("Load more reviews")
+                    .onAppear() {
+                        Task {
+                            OLLogger.info("load more reviews")
+                        }
+                    }
             }
             .listStyle(.grouped)
             .toolbar {
@@ -72,6 +81,28 @@ public struct AppScreen: View {
     }
 }
 
+struct ListSectionRowSeparator: ViewModifier {
+    
+    let visibility: Visibility
+
+    public func body(content: Content) -> some View {
+        content
+            .listRowSeparator(visibility)
+    }
+}
+    
+extension View {
+    
+    public func listSectionRowSeparator(_ category: SectionRowsModel.Category? = SectionRowsModel.Category.none) -> some View {
+        if let category = category, case SectionRowsModel.Category.reviews = category {
+            return self.modifier(ListSectionRowSeparator(visibility: .visible))
+        } else {
+            return self.modifier(ListSectionRowSeparator(visibility: .hidden))
+        }
+    }
+}
+
+
 struct AppScreen_Previews: PreviewProvider {
     
     enum Constants {
@@ -87,11 +118,10 @@ struct AppScreen_Previews: PreviewProvider {
                                      sellerName: "Seller name",
                                      fileSizeBytes: 426137600,
                                      userRatingCount: 1234)
-        static let sectionRowsModel = [SectionRowsModel(header: ContentRowModel(.text("First Section Header")),
-                                                        rows: [ContentRowModel(.text("some text")),
-                                                               ContentRowModel(.text("some other text"))]),
-                                       SectionRowsModel(header: ContentRowModel(.text("Second Section Header")),
-                                                        rows: [ContentRowModel(.details(DetailsRowModel(details: Constants.details)))]),
+        static let detailsRowsModel = SectionRowsModel(header: ContentRowModel(.text("Second Section Header")),
+                                                       rows: [ContentRowModel(.details(DetailsRowModel(details: Constants.details)))])
+        static let sectionRowsModel = [SectionRowsModel(rows: [ContentRowModel(.review(ReviewRowModel(review: Constants.reviews[0]))),
+                                                               ContentRowModel(.review(ReviewRowModel(review: Constants.reviews[1])))]),
                                        SectionRowsModel(rows: [ContentRowModel(.review(ReviewRowModel(review: Constants.reviews[0]))),
                                                                ContentRowModel(.review(ReviewRowModel(review: Constants.reviews[1])))])]
         static let appSummary = AppSummary(trackId: 1234, trackName: "My App", sellerName: "Seller", storeCode: "Store")
@@ -103,7 +133,7 @@ struct AppScreen_Previews: PreviewProvider {
                 .previewDisplayName("default")
             AppScreen(viewModel: AppViewModel(appSummary: Constants.appSummary, state: .error(DataError.parsing(description: "Unable to parse data"))))
                 .previewDisplayName("error")
-            AppScreen(viewModel: AppViewModel(appSummary: Constants.appSummary, state: .loaded(Constants.sectionRowsModel)))
+            AppScreen(viewModel: AppViewModel(appSummary: Constants.appSummary, state: .loaded(Constants.detailsRowsModel, Constants.sectionRowsModel)))
                 .previewDisplayName("loaded")
         }
     }
