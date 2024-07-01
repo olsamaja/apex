@@ -184,7 +184,6 @@
 				7D9CD7402698847A000450E0 /* ApexTests */,
 				7D9CD74B2698847A000450E0 /* ApexUITests */,
 				7D9CD72D26988477000450E0 /* Products */,
-				7D9CD78F26988C47000450E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,6 +231,7 @@
 		7D9CD74B2698847A000450E0 /* ApexUITests */ = {
 			isa = PBXGroup;
 			children = (
+				7D9CD78F26988C47000450E0 /* Frameworks */,
 				7D9CD74C2698847A000450E0 /* ApexUITests.swift */,
 				7D9CD74E2698847A000450E0 /* Info.plist */,
 			);
@@ -251,6 +251,7 @@
 				7D9CD79026988C47000450E0 /* ApexConfiguration.framework */,
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		7DA999C6269D9FFA008DDBA9 /* Configuration Layer */ = {

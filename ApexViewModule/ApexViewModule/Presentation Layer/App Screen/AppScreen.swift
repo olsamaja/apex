@@ -64,6 +64,7 @@ public struct AppScreen: View {
                     }
             }
             .listStyle(.grouped)
+            .padding(.top, -2)
             .toolbar {
                 Button {
                     self.storedApps.toggleFavorite(viewModel.appSummary)
