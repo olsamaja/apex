@@ -14,7 +14,7 @@ public extension AppViewModel {
     enum State {
         case idle
         case loading
-        case loaded(SectionRowsModel, [SectionRowsModel])
+        case loaded([SectionRowsModel], [SectionRowsModel])
         case error(DataError)
     }
     
@@ -68,7 +68,7 @@ extension AppViewModel {
         case .onFailedToLoadData(let error):
             return .error(error)
         case .onLoaded(let details, let graph, let stars, let reviews):
-            return .loaded(details, [graph] + [stars] + [reviews])
+            return .loaded([details], [graph] + [stars] + [reviews])
         default:
             return state
         }

@@ -51,7 +51,7 @@ public struct AppScreen: View {
                 .build()
         case .loaded(let details, let sections):
             List {
-                ForEach([details] + sections) { section in
+                ForEach(details + sections) { section in
                     SectionRows(with: section)
                         .fixedSize(horizontal: false, vertical: true)
                         .listSectionRowSeparator(section.category)
@@ -64,7 +64,6 @@ public struct AppScreen: View {
                     }
             }
             .listStyle(.grouped)
-            .padding(.top, -2)
             .toolbar {
                 Button {
                     self.storedApps.toggleFavorite(viewModel.appSummary)
@@ -119,8 +118,8 @@ struct AppScreen_Previews: PreviewProvider {
                                      sellerName: "Seller name",
                                      fileSizeBytes: 426137600,
                                      userRatingCount: 1234)
-        static let detailsRowsModel = SectionRowsModel(header: ContentRowModel(.text("Second Section Header")),
-                                                       rows: [ContentRowModel(.details(DetailsRowModel(details: Constants.details)))])
+        static let detailsRowsModel = [SectionRowsModel(header: ContentRowModel(.text("Second Section Header")),
+                                                       rows: [ContentRowModel(.details(DetailsRowModel(details: Constants.details)))])]
         static let sectionRowsModel = [SectionRowsModel(rows: [ContentRowModel(.review(ReviewRowModel(review: Constants.reviews[0]))),
                                                                ContentRowModel(.review(ReviewRowModel(review: Constants.reviews[1])))]),
                                        SectionRowsModel(rows: [ContentRowModel(.review(ReviewRowModel(review: Constants.reviews[0]))),
