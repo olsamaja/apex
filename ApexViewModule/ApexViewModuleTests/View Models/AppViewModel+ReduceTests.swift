@@ -33,7 +33,7 @@ final class AppViewModel_ReduceTests: XCTestCase {
     }
     
     func testReduceIdle() throws {
-        XCTAssertEqual(AppViewModel.reduce(.idle, .onAppear), .loading)
+        XCTAssertEqual(AppViewModel.reduce(.idle, .onAppear), .loadingDetails)
         
         let events: [AppViewModel.Event] = [.onLoaded(Constants.header, Constants.graph, Constants.rows),
                                             .onFailedToLoadData(DataError.invalidRequest)]
@@ -44,9 +44,9 @@ final class AppViewModel_ReduceTests: XCTestCase {
     }
     
     func testReduceLoading() throws {
-        XCTAssertEqual(AppViewModel.reduce(.loading, .onAppear), .loading)
+        XCTAssertEqual(AppViewModel.reduce(.loadingDetails, .onAppear), .loadingDetails)
         XCTAssertEqual(AppViewModel.reduce(.loading, .onLoaded(Constants.header, Constants.graph, Constants.rows)), .loaded([Constants.header] + [Constants.rows]))
-        XCTAssertEqual(AppViewModel.reduce(.loading, .onFailedToLoadData(DataError.invalidRequest)), .error(DataError.invalidRequest))
+        XCTAssertEqual(AppViewModel.reduce(.loadingDetails, .onFailedToLoadData(DataError.invalidRequest)), .error(DataError.invalidRequest))
     }
     
     func testReduceLoaded() throws {
