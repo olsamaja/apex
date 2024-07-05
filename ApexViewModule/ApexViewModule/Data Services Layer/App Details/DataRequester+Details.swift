@@ -27,7 +27,6 @@ struct LookupApi: ApiProtocol {
         return "/lookup"
     }
     
-    // TODO: Add country code to request for apps only present in some countries
     func queryItems() -> [URLQueryItem] {
         [
             URLQueryItem(name: "id", value: "\(appId)"),

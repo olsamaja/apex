@@ -28,8 +28,7 @@ struct DetailsRow: View {
                         .font(.title3)
                     Text(item.details.sellerName)
                         .font(.subheadline)
-                    Text(item.version)
-                        .font(.subheadline)
+                    Spacer()
                 }
                 Spacer()
             }
@@ -52,5 +51,7 @@ struct DetailsRow: View {
                                                       description: "Some description",
                                                       sellerName: "Seller name",
                                                       fileSizeBytes: 426137600,
-                                                      userRatingCount: 1234)))
+                                                      userRatingCount: 1234,
+                                                      releaseNotes: "Some release notes",
+                                                      releaseDate: Date())))
 }

@@ -19,6 +19,8 @@ public struct Details {
     public let sellerName: String
     public let fileSizeBytes: Int
     public let userRatingCount: Int
+    public let releaseNotes: String
+    public let releaseDate: Date
 
     public init(trackId: Int, 
                 trackName: String,
@@ -29,7 +31,9 @@ public struct Details {
                 description: String,
                 sellerName: String,
                 fileSizeBytes: Int,
-                userRatingCount: Int) {
+                userRatingCount: Int,
+                releaseNotes: String,
+                releaseDate: Date) {
         self.trackId = trackId
         self.trackName = trackName
         self.averageUserRating = averageUserRating
@@ -40,6 +44,8 @@ public struct Details {
         self.sellerName = sellerName
         self.fileSizeBytes = fileSizeBytes
         self.userRatingCount = userRatingCount
+        self.releaseNotes = releaseNotes
+        self.releaseDate = releaseDate
     }
 }
 

@@ -20,7 +20,9 @@ public struct DetailsDTO: Decodable {
     let sellerName: String
     let fileSizeBytes: String
     let userRatingCount: Int
-    
+    let releaseNotes: String
+    let releaseDate: Date
+
     private enum CodingKeys : String, CodingKey {
         case results = "results"
     }
@@ -34,7 +36,9 @@ public struct DetailsDTO: Decodable {
                 description: String,
                 sellerName: String,
                 fileSizeBytes: String,
-                userRatingCount: Int) {
+                userRatingCount: Int,
+                releaseNotes: String,
+                releaseDate: Date) {
         self.trackId = trackId
         self.trackName = trackName
         self.averageUserRating = averageUserRating
@@ -45,6 +49,8 @@ public struct DetailsDTO: Decodable {
         self.sellerName = sellerName
         self.fileSizeBytes = fileSizeBytes
         self.userRatingCount = userRatingCount
+        self.releaseNotes = releaseNotes
+        self.releaseDate = releaseDate
     }
     
     public init(from decoder: Decoder) throws {
@@ -65,6 +71,11 @@ public struct DetailsDTO: Decodable {
         sellerName = first.sellerName
         fileSizeBytes = first.fileSizeBytes
         userRatingCount = first.userRatingCount
+        releaseNotes = first.releaseNotes
+        
+        let releaseDateString = first.releaseDate
+        let dateFormatter = ISO8601DateFormatter()
+        releaseDate = dateFormatter.date(from: releaseDateString) ?? Date()
     }
 }
 
@@ -79,4 +90,6 @@ public struct DetailsResultDTO: Decodable {
     let sellerName: String
     let fileSizeBytes: String
     let userRatingCount: Int
+    let releaseNotes: String
+    let releaseDate: String
 }

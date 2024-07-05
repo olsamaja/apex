@@ -13,6 +13,12 @@ final class DetailsRowViewModelTests: XCTestCase {
 
     func testProperties() throws {
         
+        let dateFormatter = ISO8601DateFormatter()
+        guard let releaseDate = dateFormatter.date(from: "2023-10-30T11:35:32Z") else {
+            XCTAssert(false, "Start date cannot be nil")
+            return
+        }
+
         let details = Details(trackId: 123,
                               trackName: "name",
                               averageUserRating: 4.678,
@@ -21,11 +27,14 @@ final class DetailsRowViewModelTests: XCTestCase {
                               description: "some description",
                               sellerName: "seller",
                               fileSizeBytes: 12345678,
-                              userRatingCount: 12345678)
+                              userRatingCount: 12345678,
+                              releaseNotes: "some release notes",
+                              releaseDate: releaseDate)
+        
         let model = DetailsRowModel(details: details)
         
         XCTAssertEqual(model.trackName, details.trackName)
-        XCTAssertEqual(model.version, "Version: v" + details.version)
+        XCTAssertEqual(model.version, "Version " + details.version)
         XCTAssertEqual(model.rating, details.averageUserRating)
     }
 }

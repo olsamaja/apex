@@ -20,6 +20,8 @@ public struct DetailsDTOMapper {
                 description: dto.description,
                 sellerName: dto.sellerName,
                 fileSizeBytes: dto.fileSizeBytes.toInt,
-                userRatingCount: dto.userRatingCount)
+                userRatingCount: dto.userRatingCount,
+                releaseNotes: dto.releaseNotes,
+                releaseDate: dto.releaseDate)
     }
 }

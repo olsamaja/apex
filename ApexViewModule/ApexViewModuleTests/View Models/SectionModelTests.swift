@@ -13,6 +13,12 @@ final class SectionModelTests: XCTestCase {
 
     func testMakeDetailsSectionModel() throws {
 
+        let dateFormatter = ISO8601DateFormatter()
+        guard let releaseDate = dateFormatter.date(from: "2023-10-30T11:35:32Z") else {
+            XCTAssert(false, "Start date cannot be nil")
+            return
+        }
+        
         let details = Details(trackId: 123,
                               trackName: "name",
                               averageUserRating: 4.678,
@@ -21,7 +27,10 @@ final class SectionModelTests: XCTestCase {
                               description: "some description",
                               sellerName: "seller",
                               fileSizeBytes: 12345678,
-                              userRatingCount: 12345678)
+                              userRatingCount: 12345678,
+                              releaseNotes: "some release notes",
+                              releaseDate: releaseDate)
+        
         let sections = SectionRowsModel.makeDetailsSectionModel(with: DetailsRowModel(details: details))
         
         XCTAssertNil(sections.header)

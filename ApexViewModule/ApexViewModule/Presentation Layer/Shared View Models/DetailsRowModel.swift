@@ -22,7 +22,7 @@ extension DetailsRowModel {
     
     var rating: Double { details.averageUserRating }
     var trackName: String { details.trackName }
-    var version: String { "Version: v" + details.version }
+    var version: String { "Version " + details.version }
     var artwork: URL? { details.artworkUrl }
     
 }

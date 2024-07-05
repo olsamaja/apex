@@ -68,12 +68,14 @@ extension View {
 
 #Preview(traits: .sizeThatFitsLayout) {
     VitalDetailsRow(item: DetailsRowModel(details: Details(trackId: 0,
-                                          trackName: "App name",
-                                          averageUserRating: 3.5,
-                                          version: "1.2.3",
-                                          minimumOsVersion: "13.0",
-                                          description: "Some description",
-                                          sellerName: "Seller name",
-                                          fileSizeBytes: 426137600,
-                                          userRatingCount: 1234)))
+                                                           trackName: "App name",
+                                                           averageUserRating: 3.5,
+                                                           version: "1.2.3",
+                                                           minimumOsVersion: "13.0",
+                                                           description: "Some description",
+                                                           sellerName: "Seller name",
+                                                           fileSizeBytes: 426137600,
+                                                           userRatingCount: 1234,
+                                                           releaseNotes: "Some release notes",
+                                                           releaseDate: Date())))
 }

@@ -31,16 +31,27 @@ struct ContentRow: View {
                     .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
 
             )
+        case .release(let model):
+            return AnyView(
+                ReleaseRow(item: model)
+                    .listRowBackground(Color.clear)
+                    .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+
+            )
         case .graph(let model):
-            return AnyView( ReviewsGraphView(model: ReviewsGraphDataBuilder()
-                .withReviews(model)
-                .withNumberOfDays(30)
-                .build()) )
+            return AnyView(
+                ReviewsGraphView(model: ReviewsGraphDataBuilder()
+                    .withReviews(model)
+                    .withNumberOfDays(30)
+                    .build())
+            )
         case .stars(let model):
-            return AnyView( ReviewsByStarView(model: ReviewsByStarGraphDataBuilder()
-                .withReviews(model)
-                .withNumberOfDays(30)
-                .build()) )
+            return AnyView(
+                ReviewsByStarView(model: ReviewsByStarGraphDataBuilder()
+                    .withReviews(model)
+                    .withNumberOfDays(30)
+                    .build())
+            )
         case .review(let model):
             return AnyView( ReviewRow(item: model) )
         case .vitals(let model):

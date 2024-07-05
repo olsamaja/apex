@@ -11,6 +11,15 @@ import XCTest
 
 final class AppViewModel_ReduceTests: XCTestCase {
 
+    private static var releaseDate: Date {
+        let dateFormatter = ISO8601DateFormatter()
+        guard let date = dateFormatter.date(from: "2023-10-30T11:35:32Z") else {
+            XCTAssert(false, "Start date cannot be nil")
+            return Date()
+        }
+        return date
+    }
+    
     enum Constants {
         static let details = Details(trackId: 123,
                                      trackName: "name", 
@@ -20,7 +29,9 @@ final class AppViewModel_ReduceTests: XCTestCase {
                                      description: "some description",
                                      sellerName: "seller",
                                      fileSizeBytes: 12345678,
-                                     userRatingCount: 12345678)
+                                     userRatingCount: 12345678,
+                                     releaseNotes: "some release notes",
+                                     releaseDate: releaseDate)
         static let header = SectionRowsModel(header: ContentRowModel(.text("header")),
                                          rows: [ContentRowModel(.details(DetailsRowModel(details: details)))])
         static let graph = SectionRowsModel(header: ContentRowModel(.text("graph")),
@@ -35,7 +46,7 @@ final class AppViewModel_ReduceTests: XCTestCase {
     func testReduceIdle() throws {
         XCTAssertEqual(AppViewModel.reduce(.idle, .onAppear), .loadingDetails)
         
-        let events: [AppViewModel.Event] = [.onLoaded(Constants.header, Constants.graph, Constants.rows),
+        let events: [AppViewModel.Event] = [.onDetailsLoaded(Constants.header),
                                             .onFailedToLoadData(DataError.invalidRequest)]
         
         events.forEach { event in
@@ -43,16 +54,16 @@ final class AppViewModel_ReduceTests: XCTestCase {
         }
     }
     
-    func testReduceLoading() throws {
+    func testReduceLoadingDetails() throws {
         XCTAssertEqual(AppViewModel.reduce(.loadingDetails, .onAppear), .loadingDetails)
-        XCTAssertEqual(AppViewModel.reduce(.loading, .onLoaded(Constants.header, Constants.graph, Constants.rows)), .loaded([Constants.header] + [Constants.rows]))
+        XCTAssertEqual(AppViewModel.reduce(.loadingDetails, .onDetailsLoaded(Constants.header)), .detailsLoaded(Constants.header))
         XCTAssertEqual(AppViewModel.reduce(.loadingDetails, .onFailedToLoadData(DataError.invalidRequest)), .error(DataError.invalidRequest))
     }
     
-    func testReduceLoaded() throws {
-        let state = AppViewModel.State.loaded([Constants.header] + [Constants.rows])
+    func testReduceDetailsLoaded() throws {
+        let state = AppViewModel.State.detailsLoaded(Constants.header)
         let events: [AppViewModel.Event] = [.onAppear,
-                                            .onLoaded(Constants.header, Constants.graph, Constants.rows),
+                                            .onDetailsLoaded(Constants.header),
                                             .onFailedToLoadData(DataError.invalidRequest)]
         
         events.forEach { event in
@@ -63,7 +74,7 @@ final class AppViewModel_ReduceTests: XCTestCase {
     func testReduceError() throws {
         let state = AppViewModel.State.error(DataError.invalidRequest)
         let events: [AppViewModel.Event] = [.onAppear,
-                                            .onLoaded(Constants.header, Constants.graph, Constants.rows),
+                                            .onDetailsLoaded(Constants.header),
                                             .onFailedToLoadData(DataError.invalidRequest)]
         
         events.forEach { event in

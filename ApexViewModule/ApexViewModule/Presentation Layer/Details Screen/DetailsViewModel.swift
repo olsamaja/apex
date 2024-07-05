@@ -13,9 +13,11 @@ public struct DetailsViewModel: Identifiable {
     public let details: Details
     
     var sections: [SectionRowsModel] {
-        let sections = SectionRowsModel.makeDetailsSectionModel(with: DetailsRowModel(details: details))
+        let detailsRowModel = DetailsRowModel(details: details)
+        let sections = SectionRowsModel.makeDetailsSectionModel(with: detailsRowModel)
         let desc = SectionRowsModel(rows: [
-            ContentRowModel(.vitals(DetailsRowModel(details: details))),
+            ContentRowModel(.vitals(detailsRowModel)),
+            ContentRowModel(.release(detailsRowModel)),
             ContentRowModel(.text(details.description))
         ])
         return [sections, desc]
