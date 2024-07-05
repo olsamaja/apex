@@ -35,7 +35,6 @@ public final class AppViewModel: ObservableObject {
             feedbacks: [
                 Self.whenLoadingDetails(appId: appSummary.trackId, storeCode: appSummary.storeCode),
                 Self.whenLoadingNextReviews(appId: appSummary.trackId, storeCode: appSummary.storeCode),
-//                Self.whenLoadingDetailsAndReviews(appId: appSummary.trackId, storeCode: appSummary.storeCode),
                 Self.userAction(action: action.eraseToAnyPublisher())
             ]
         )
@@ -56,18 +55,6 @@ public final class AppViewModel: ObservableObject {
                 .map { DetailsRowModel(details: $0) }
                 .map { SectionRowsModel.makeDetailsSectionModel(with: $0, isTappable: true) }
 
-//            let reviewsPublisher = DataManager().getReviews(appId: appId, storeCode: storeCode)
-//            
-//            let graph = reviewsPublisher
-//                .map { SectionRowsModel.makeGraphSectionModel(with: $0) }
-//
-//            let stars = reviewsPublisher
-//                .map { SectionRowsModel.makeStarsSectionModel(with: $0) }
-//
-//            let reviews = reviewsPublisher
-//                .map { $0.map(ReviewRowModel.init) }
-//                .map { SectionRowsModel.makeReviewsSectionModel(with: $0, isTappable: true) }
-//
             return details
                 .map(Event.onDetailsLoaded)
                 .catch { Just(Event.onFailedToLoadData($0)) }
@@ -75,38 +62,10 @@ public final class AppViewModel: ObservableObject {
         }
     }
     
-//    static func whenLoadingDetailsAndReviews(appId: Int, storeCode: String) -> Feedback<State, Event> {
-//
-//        Feedback { (state: State) -> AnyPublisher<Event, Never> in
-//            guard case .loadingDetails = state else { return Empty().eraseToAnyPublisher() }
-//
-//            let details = DataManager().getDetails(appId: appId, storeCode: storeCode)
-//                .map { DetailsRowModel(details: $0) }
-//                .map { SectionRowsModel.makeDetailsSectionModel(with: $0, isTappable: true) }
-//
-//            let reviewsPublisher = DataManager().getReviews(appId: appId, storeCode: storeCode)
-//            
-//            let graph = reviewsPublisher
-//                .map { SectionRowsModel.makeGraphSectionModel(with: $0) }
-//
-//            let stars = reviewsPublisher
-//                .map { SectionRowsModel.makeStarsSectionModel(with: $0) }
-//
-//            let reviews = reviewsPublisher
-//                .map { $0.map(ReviewRowModel.init) }
-//                .map { SectionRowsModel.makeReviewsSectionModel(with: $0, isTappable: true) }
-//
-//            return Publishers.Zip4(details, graph, stars, reviews)
-//                .map(Event.onDetailsLoaded)
-//                .catch { Just(Event.onFailedToLoadData($0)) }
-//                .eraseToAnyPublisher()
-//        }
-//    }
-
     static func whenLoadingNextReviews(appId: Int, storeCode: String) -> Feedback<State, Event> {
 
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
-            guard case .loadingNextReviews = state else { return Empty().eraseToAnyPublisher() }
+            guard case .loadingNextReviews(let details) = state else { return Empty().eraseToAnyPublisher() }
 
             let reviewsPublisher = DataManager().getReviews(appId: appId, storeCode: storeCode)
             
@@ -116,19 +75,9 @@ public final class AppViewModel: ObservableObject {
                     let stars = SectionRowsModel.makeStarsSectionModel(with: $0)
                     let reviewRowModels = $0.map { ReviewRowModel.init(review: $0) }
                     let reviews = SectionRowsModel.makeReviewsSectionModel(with: reviewRowModels, isTappable: true)
-                    return [graph] + [stars] + [reviews]
+                    return details + [graph] + [stars] + [reviews]
                 }
 
-//            let graph = reviewsPublisher
-//                .map { SectionRowsModel.makeGraphSectionModel(with: $0) }
-//
-//            let stars = reviewsPublisher
-//                .map { SectionRowsModel.makeStarsSectionModel(with: $0) }
-//
-//            let reviews = reviewsPublisher
-//                .map { $0.map(ReviewRowModel.init) }
-//                .map { SectionRowsModel.makeReviewsSectionModel(with: $0, isTappable: true) }
-//
             return sections
                 .map(Event.onNextReviewsloaded)
                 .catch { Just(Event.onFailedToLoadData($0)) }

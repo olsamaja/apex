@@ -50,31 +50,15 @@ public struct AppScreen: View {
                 .withMessage(error.description)
                 .build()
         case .detailsLoaded(let details):
-            List {
-                ForEach([details]) { section in
-                    SectionRows(with: section)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .listSectionRowSeparator(section.category)
-                }
-                Text("Loading graph and reviews")
-                    .onAppear() {
-                        Task {
-                            viewModel.send(event: .onLoadingNextReviews([details]))
-                            OLLogger.info("details loaded")
-                        }
+            Spinner()
+                .onAppear() {
+                    Task {
+                        viewModel.send(event: .onLoadingNextReviews([details]))
+                        OLLogger.info("details loaded")
                     }
-            }
-            .listStyle(.grouped)
-            .toolbar {
-                Button {
-                    self.storedApps.toggleFavorite(viewModel.appSummary)
-                    viewModel.appSummary.isFavorite.toggle()
-                } label: {
-                    Image(systemName: viewModel.appSummary.isFavorite ? "heart.fill" : "heart")
                 }
-            }
-        case .loadingNextReviews(let sections):
-            Text("Loading next reviews: \(sections.count)")
+        case .loadingDetails, .loadingNextReviews:
+            Spinner()
         case .nextReviewsLoaded(let sections):
             List {
                 ForEach(sections) { section in
@@ -91,12 +75,22 @@ public struct AppScreen: View {
                     }
             }
             .listStyle(.grouped)
-        case .loadingDetails:
-            SpinnerBuilder()
-                .withStyle(.large)
-                .isAnimating(true)
-                .build()
+            .toolbar {
+                Button {
+                    self.storedApps.toggleFavorite(viewModel.appSummary)
+                    viewModel.appSummary.isFavorite.toggle()
+                } label: {
+                    Image(systemName: viewModel.appSummary.isFavorite ? "heart.fill" : "heart")
+                }
+            }
         }
+    }
+    
+    private func Spinner() -> some View {
+        SpinnerBuilder()
+            .withStyle(.large)
+            .isAnimating(true)
+            .build()
     }
 }
 
