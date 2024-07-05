@@ -18,7 +18,7 @@ public struct DetailsViewModel: Identifiable {
         let desc = SectionRowsModel(rows: [
             ContentRowModel(.vitals(detailsRowModel)),
             ContentRowModel(.release(detailsRowModel)),
-            ContentRowModel(.text(details.description))
+            ContentRowModel(.description(detailsRowModel))
         ])
         return [sections, desc]
     }

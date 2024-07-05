@@ -20,7 +20,6 @@ public struct TextRow: View {
             Spacer()
                 .frame(width: 16)
             Text(title)
-                .bold()
                 .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
             Spacer()
         }
@@ -28,14 +27,10 @@ public struct TextRow: View {
     }
 }
 
-struct TextRow_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            TextRow(title: "Title")
-                .sizeThatFitPreview(with: "Light Theme")
-            TextRow(title: "Title")
-                .sizeThatFitPreview(with: "Dark Theme")
-                .preferredColorScheme(.dark)
-        }
-    }
+#Preview("Short title", traits: .sizeThatFitsLayout) {
+    TextRow(title: "Title")
+}
+
+#Preview("Long title", traits: .sizeThatFitsLayout) {
+    TextRow(title: "This is a very long title. This is a very long title. \nThis is a very long title. ")
 }

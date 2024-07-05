@@ -1,5 +1,5 @@
 //
-//  ReleaseRow.swift
+//  DescriptionRow.swift
 //  ApexViewModule
 //
 //  Created by Olivier Rigault on 05/07/2024.
@@ -7,25 +7,18 @@
 
 import SwiftUI
 
-struct ReleaseRow: View {
+struct DescriptionRow: View {
     
     var item: DetailsRowModel
 
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text("What's New")
+                Text("About this App")
                 Spacer()
             }
             .font(.title2)
-            HStack {
-                Text(item.version)
-                Spacer()
-                Text(item.releaseDate)
-            }
-            .font(.footnote)
-            .foregroundColor(.gray)
-            Text(item.details.releaseNotes)
+            Text(item.details.description)
                 .padding([.top, .bottom], 8)
         }
     }
@@ -39,13 +32,13 @@ struct ReleaseRow: View {
                                      averageUserRating: 3.5,
                                      version: "1.2.3",
                                      minimumOsVersion: "13.0",
-                                     description: "Some description",
+                                     description: "Some bug fixes and minor improvements, but important enough to be released and provide a better user experience.",
                                      sellerName: "Seller name",
                                      fileSizeBytes: 426137600,
                                      userRatingCount: 1234,
-                                     releaseNotes: "Some bug fixes and minor improvements, but important enough to be released and provide a better user experience.",
+                                     releaseNotes: "Some release notes.",
                                      releaseDate: Date())
     }
     
-    return ReleaseRow(item: DetailsRowModel(details: Constants.details))
+    return DescriptionRow(item: DetailsRowModel(details: Constants.details))
 }

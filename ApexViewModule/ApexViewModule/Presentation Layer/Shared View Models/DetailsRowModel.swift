@@ -24,6 +24,7 @@ extension DetailsRowModel {
     var trackName: String { details.trackName }
     var version: String { "Version " + details.version }
     var artwork: URL? { details.artworkUrl }
+    var releaseDate: String { details.releaseDate.toString() }
     
 }
 

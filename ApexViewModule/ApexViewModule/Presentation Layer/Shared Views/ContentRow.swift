@@ -31,12 +31,17 @@ struct ContentRow: View {
                     .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
 
             )
+        case .description(let model):
+            return AnyView(
+                DescriptionRow(item: model)
+                    .listRowBackground(Color.clear)
+                    .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+            )
         case .release(let model):
             return AnyView(
                 ReleaseRow(item: model)
                     .listRowBackground(Color.clear)
                     .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
-
             )
         case .graph(let model):
             return AnyView(
