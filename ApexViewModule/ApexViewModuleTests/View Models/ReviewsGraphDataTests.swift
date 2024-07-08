@@ -93,6 +93,24 @@ final class ReviewsGraphDataTests: XCTestCase {
         static let reviews = tuples.map { Review(title: "", author: "", rating: $0.rating, content: "", version: "", updated: dateFormatter.date(from: $0.date)!) }
     }
     
+    func testFilterReviewsByDateWithMissingDays() {
+        
+        let graphData = ReviewsGraphDataBuilder()
+            .withEndDate(Constants.endDate)
+            .withNumberOfDays(7)
+            .withReviews(Constants.reviews)
+            .build()
+        
+        XCTAssertEqual(graphData.items.count, 8)
+        XCTAssertEqual(graphData.items[0].daysSinceEndDate, 1)
+        XCTAssertEqual(graphData.items[0].ratingType, .negative)
+        XCTAssertEqual(graphData.items[0].weight, 1)
+        XCTAssertEqual(graphData.items[6].daysSinceEndDate, 3)
+        XCTAssertEqual(graphData.items[6].ratingType, .positive)
+        XCTAssertEqual(graphData.items[6].weight, 1)
+        
+    }
+    
     func testFilterDatesWithinSeveralDays() {
         let dateFormatter = ISO8601DateFormatter()
         let dates = Constants.dateStrings.map { dateFormatter.date(from: $0) }
