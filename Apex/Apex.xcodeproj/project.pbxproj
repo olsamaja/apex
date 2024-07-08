@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A26A39C2C3BD00E00DB22F1 /* ApexAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A26A39B2C3BD00E00DB22F1 /* ApexAnalytics.framework */; };
+		6A26A39D2C3BD00E00DB22F1 /* ApexAnalytics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6A26A39B2C3BD00E00DB22F1 /* ApexAnalytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6A2E8B222BFCFB8E0032430C /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E8B212BFCFB8E0032430C /* HomeScreen.swift */; };
 		6A2E8B242BFCFBCC0032430C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E8B232BFCFBCC0032430C /* HomeViewModel.swift */; };
 		6A2E8B262BFCFEF40032430C /* HomeViewModel+Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E8B252BFCFEF40032430C /* HomeViewModel+Reduce.swift */; };
@@ -72,6 +74,7 @@
 				7D9CD79226988C47000450E0 /* ApexConfiguration.framework in Embed Frameworks */,
 				D551149E279212A60030B167 /* ApexViewModule.framework in Embed Frameworks */,
 				7D9CD79926988C50000450E0 /* ApexSearchModule.framework in Embed Frameworks */,
+				6A26A39D2C3BD00E00DB22F1 /* ApexAnalytics.framework in Embed Frameworks */,
 				D596104E2746B2C900E256F8 /* ApexSettingsModule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -80,6 +83,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6A26A39B2C3BD00E00DB22F1 /* ApexAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ApexAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A2E8B212BFCFB8E0032430C /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		6A2E8B232BFCFBCC0032430C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		6A2E8B252BFCFEF40032430C /* HomeViewModel+Reduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewModel+Reduce.swift"; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				7D9CD79126988C47000450E0 /* ApexConfiguration.framework in Frameworks */,
 				D551149D279212A60030B167 /* ApexViewModule.framework in Frameworks */,
 				7D9CD79826988C50000450E0 /* ApexSearchModule.framework in Frameworks */,
+				6A26A39C2C3BD00E00DB22F1 /* ApexAnalytics.framework in Frameworks */,
 				D596104D2746B2C900E256F8 /* ApexSettingsModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +155,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A26A39A2C3BD00E00DB22F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A26A39B2C3BD00E00DB22F1 /* ApexAnalytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6A2E8B292BFD02390032430C /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +197,7 @@
 				7D9CD7402698847A000450E0 /* ApexTests */,
 				7D9CD74B2698847A000450E0 /* ApexUITests */,
 				7D9CD72D26988477000450E0 /* Products */,
+				6A26A39A2C3BD00E00DB22F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

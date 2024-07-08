@@ -20,6 +20,9 @@
       location = "group:ApexNetwork/ApexNetwork.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:ApexAnalytics/ApexAnalytics.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ApexConfiguration/ApexConfiguration.xcodeproj">
    </FileRef>
    <FileRef
