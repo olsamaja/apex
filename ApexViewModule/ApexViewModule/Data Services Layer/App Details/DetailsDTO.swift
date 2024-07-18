@@ -73,7 +73,7 @@ public struct DetailsDTO: Decodable {
         userRatingCount = first.userRatingCount
         releaseNotes = first.releaseNotes
         
-        let releaseDateString = first.releaseDate
+        let releaseDateString = first.currentVersionReleaseDate
         let dateFormatter = ISO8601DateFormatter()
         releaseDate = dateFormatter.date(from: releaseDateString) ?? Date()
     }
@@ -91,5 +91,5 @@ public struct DetailsResultDTO: Decodable {
     let fileSizeBytes: String
     let userRatingCount: Int
     let releaseNotes: String
-    let releaseDate: String
+    let currentVersionReleaseDate: String
 }
