@@ -131,6 +131,45 @@ final class ReviewsDTOTests: XCTestCase {
                                 "label": "0"
                             }
                         }
+                    ],
+                    "link" : [
+                      {
+                        "attributes" : {
+                          "rel" : "alternate",
+                          "type" : "text/html",
+                          "href" : "https://music.apple.com/WebObjects/MZStore.woa/wa/viewGrouping?cc=gb&id=130"
+                        }
+                      },
+                      {
+                        "attributes" : {
+                          "rel" : "self",
+                          "href" : "https://mzstoreservices-int-st.itunes.apple.com/gb/rss/customerreviews/id=1052238659/mostrecent/json"
+                        }
+                      },
+                      {
+                        "attributes" : {
+                          "rel" : "first",
+                          "href" : "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=1052238659/sortby=mostrecent/xml?urlDesc=/customerreviews/id=1052238659/mostrecent/json"
+                        }
+                      },
+                      {
+                        "attributes" : {
+                          "rel" : "last",
+                          "href" : "https://itunes.apple.com/gb/rss/customerreviews/page=10/id=1052238659/sortby=mostrecent/xml?urlDesc=/customerreviews/id=1052238659/mostrecent/json"
+                        }
+                      },
+                      {
+                        "attributes" : {
+                          "rel" : "previous",
+                          "href" : "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=1052238659/sortby=mostrecent/xml?urlDesc=/customerreviews/id=1052238659/mostrecent/json"
+                        }
+                      },
+                      {
+                        "attributes" : {
+                          "rel" : "next",
+                          "href" : "https://itunes.apple.com/gb/rss/customerreviews/page=2/id=1052238659/sortby=mostrecent/xml?urlDesc=/customerreviews/id=1052238659/mostrecent/json"
+                        }
+                      }
                     ]
                 }
             }
@@ -148,6 +187,7 @@ final class ReviewsDTOTests: XCTestCase {
             { reviews in
                 XCTAssertEqual(reviews.feed.entry.count, 2)
                 XCTAssertEqual(reviews.feed.entry[1].title, "Great app")
+                XCTAssertEqual(reviews.feed.link.count, 6)
                 expectation.fulfill()
             }
         

@@ -6,6 +6,9 @@
 //
 //  Use iTunes Search API rss service
 //  - https://itunes.apple.com//gb/rss/customerreviews/id=\<appId>/mostrecent/json
+//
+//  Source:
+//  - https://developer.apple.com/documentation/appstoreconnectapi/app_store/customer_reviews/
 
 import Combine
 import ApexNetwork

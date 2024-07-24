@@ -11,8 +11,63 @@ public struct ReviewsDTO: Decodable {
     let feed: UserFeedDTO
 }
 
-struct UserFeedDTO: Decodable {
-    let entry: [UserEntryDTO]
+struct UserFeedDTO {
+    let entry: UserEntryDTOArray
+    let link: AttributesDTOArray
+}
+
+typealias UserEntryDTOArray = [UserEntryDTO]
+
+struct LinkDTO: Decodable {
+    let attributes: AttributesDTOArray
+}
+
+struct AttributesDTO {
+    let rel: String
+    let href: URL?
+}
+
+extension AttributesDTO: Decodable {
+    
+    private enum CodingKeys : String, CodingKey {
+        case attributes = "attributes"
+    }
+    
+    private enum AttributesCodingKeys : String, CodingKey {
+        case rel
+        case href
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        let attributesContainer = try container.nestedContainer(keyedBy: AttributesCodingKeys.self, forKey: .attributes)
+        rel = try attributesContainer.decode(String.self, forKey: AttributesCodingKeys.rel)
+        
+        let hrefString = try attributesContainer.decode(String.self, forKey: AttributesCodingKeys.href)
+        href = URL(string: hrefString)
+    }
+}
+
+typealias AttributesDTOArray = [AttributesDTO]
+
+extension UserFeedDTO: Decodable {
+    
+    private enum CodingKeys : String, CodingKey {
+        case entry = "entry"
+        case link = "link"
+    }
+    
+    private enum AttibutesCodingKeys : String, CodingKey {
+        case attributes
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        entry = try container.decode(UserEntryDTOArray.self, forKey: CodingKeys.entry)
+        link = try container.decode(AttributesDTOArray.self, forKey: CodingKeys.link)
+    }
 }
 
 public struct UserEntryDTO {

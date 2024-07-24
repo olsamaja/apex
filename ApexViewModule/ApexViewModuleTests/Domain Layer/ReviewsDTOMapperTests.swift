@@ -16,7 +16,7 @@ final class ReviewsDTOMapperTests: XCTestCase {
         let entry1 = UserEntryDTO(title: "title1", author: "author1", rating: "1", version: "1.2.1", content: "content1", updated: Date())
         let entry2 = UserEntryDTO(title: "title2", author: "author2", rating: "2", version: "1.2.2", content: "content2", updated: Date())
 
-        let dto = ReviewsDTO(feed: UserFeedDTO(entry: [entry1, entry2]))
+        let dto = ReviewsDTO(feed: UserFeedDTO(entry: [entry1, entry2], link: []))
 
         let reviews = ReviewsDTOMapper.map(dto)
         XCTAssertEqual(reviews.count, 2)
