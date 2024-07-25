@@ -27,3 +27,8 @@ public struct Review {
 }
 
 extension Review: Equatable {}
+
+public struct ReviewPage {
+    let reviews: [Review]
+    let nextPageUrl: URL?
+}

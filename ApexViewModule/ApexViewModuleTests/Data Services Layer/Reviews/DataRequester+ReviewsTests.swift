@@ -26,6 +26,11 @@ final class DataRequester_ReviewsTests: XCTestCase {
         cancellable?.cancel()
     }
 
+    func testGetReviewsApi() {
+        XCTAssertEqual(ReviewsApi(appId: 1234, storeCode: "gb").path(), "/gb/rss/customerreviews/id=1234/page=1/mostrecent/json")
+        XCTAssertEqual(ReviewsApi(appId: 1234, storeCode: "gb", page: 3).path(), "/gb/rss/customerreviews/id=1234/page=3/mostrecent/json")
+    }
+
     func testGetReviewsSuccessful() {
         
         let bundle = Bundle(for: type(of: self))

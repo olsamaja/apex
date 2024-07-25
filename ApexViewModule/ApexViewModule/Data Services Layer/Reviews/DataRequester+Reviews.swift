@@ -25,8 +25,15 @@ struct ReviewsApi: ApiProtocol {
     
     let appId: Int
     let storeCode: String
+    let page: Int
+    
+    init(appId: Int, storeCode: String, page: Int = 1) {
+        self.appId = appId
+        self.storeCode = storeCode
+        self.page = page
+    }
     
     func path() -> String {
-        return "/\(storeCode)/rss/customerreviews/id=\(appId)/mostrecent/json"
+        return "/\(storeCode)/rss/customerreviews/id=\(appId)/page=\(page)/mostrecent/json"
     }
 }

@@ -323,7 +323,6 @@
 			isa = PBXGroup;
 			children = (
 				D5CD22C327921219001C69EA /* ApexViewModule.h */,
-				6A45A1612C0F06CF00672407 /* App Screen */,
 				D5CD22DA2792123B001C69EA /* Presentation Layer */,
 				D5CD22E32792123B001C69EA /* Domain Layer */,
 				D5CD22DB2792123B001C69EA /* Data Services Layer */,
@@ -345,6 +344,7 @@
 		D5CD22DA2792123B001C69EA /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
+				6A45A1612C0F06CF00672407 /* App Screen */,
 				6A45A1622C0F06EA00672407 /* Details Screen */,
 				6A45A1632C0F078200672407 /* Review Screen */,
 				D5CD22E72792123B001C69EA /* Shared Views */,
