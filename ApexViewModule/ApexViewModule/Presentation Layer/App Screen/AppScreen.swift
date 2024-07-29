@@ -49,6 +49,8 @@ public struct AppScreen: View {
                 .withSymbol("xmark.octagon")
                 .withMessage(error.description)
                 .build()
+        case .loadingDetails:
+            Spinner()
         case .detailsLoaded(let details):
             Spinner()
                 .onAppear() {
@@ -57,20 +59,19 @@ public struct AppScreen: View {
                         OLLogger.info("details loaded")
                     }
                 }
-        case .loadingDetails, .loadingNextReviews:
-            Spinner()
+        case .loadingNextReviews(let sections):
+            List {
+                Content(sections: sections)
+                Spinner(.medium)
+            }
+            .listStyle(.grouped)
         case .nextReviewsLoaded(let sections):
             List {
-                ForEach(sections) { section in
-                    SectionRows(with: section)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .listSectionRowSeparator(section.category)
-                }
+                Content(sections: sections)
                 Text("Load more reviews")
                     .onAppear() {
                         Task {
-//                            viewModel.send(event: .onLoadingNextReviews(<#T##SectionRowsModel#>, <#T##SectionRowsModel#>, <#T##SectionRowsModel#>))
-                            OLLogger.info("load more reviews")
+                            OLLogger.info("TO DO viewModel.send(event: .onLoadingNextReviews()")
                         }
                     }
             }
@@ -86,11 +87,23 @@ public struct AppScreen: View {
         }
     }
     
-    private func Spinner() -> some View {
-        SpinnerBuilder()
-            .withStyle(.large)
-            .isAnimating(true)
-            .build()
+    private func Content(sections: ([SectionRowsModel])) -> some View {
+        ForEach(sections) { section in
+            SectionRows(with: section)
+                .fixedSize(horizontal: false, vertical: true)
+                .listSectionRowSeparator(section.category)
+        }
+    }
+    
+    private func Spinner(_ style: UIActivityIndicatorView.Style = .large) -> some View {
+        HStack {
+            Spacer()
+            SpinnerBuilder()
+                .withStyle(style)
+                .isAnimating(true)
+                .build()
+            Spacer()
+        }
     }
 }
 
