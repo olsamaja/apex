@@ -15,4 +15,11 @@ public extension Date {
         formatter.dateFormat = format
         return formatter.string(from: self)
     }
+    
+    func toMonthString(format: String = "MMM YYYY") -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.dateFormat = format
+        return formatter.string(from: self)
+    }
 }

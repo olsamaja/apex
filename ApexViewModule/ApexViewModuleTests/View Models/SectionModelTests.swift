@@ -45,21 +45,23 @@ final class SectionModelTests: XCTestCase {
 
     func testMakeReviewsSectionModel() throws {
 
-        let header = ContentRowModel(.text("Reviews (2)"))
-        let review1 = Review(title: "title1", author: "author2", rating: "1", content: "content1", version: "1.2.1", updated: Date())
-        let review2 = Review(title: "title2", author: "author2", rating: "2", content: "content2", version: "1.2.2", updated: Date())
-
-        let sections = SectionRowsModel.makeReviewsSectionModel(with: [ReviewRowModel(review: review1),
-                                                                   ReviewRowModel(review: review2)])
+        let dateFormatter = ISO8601DateFormatter()
+        let dateStrings = ["2023-10-30T11:35:32Z", "2023-10-28T11:35:32Z", "2023-12-30T11:35:32Z"]
         
-        XCTAssertNotNil(sections.header)
-        XCTAssertEqual(sections.header!, header)
-
-        XCTAssertNotNil(sections.rows)
+        let dates = dateStrings.map {
+            dateFormatter.date(from: $0) ?? Date()
+        }
         
-        let rows = sections.rows!
-        XCTAssertEqual(rows.count, 2)
-        XCTAssertEqual(rows[0].category, .review(ReviewRowModel(review: review1)))
-        XCTAssertEqual(rows[1].category, .review(ReviewRowModel(review: review2)))
+        let reviews = dates.map { date in
+            Review(title: "title1", author: "author2", rating: "1", content: "content1", version: "1.2.1", updated: date)
+        }
+        
+        let reviewRowModels = reviews.map { review in
+            ReviewRowModel(review: review)
+        }
+        
+        let sections = SectionRowsModel.makeReviewsSectionModelsPerMonth(with: reviewRowModels)
+        
+        XCTAssertEqual(sections.count, 2)
     }
 }

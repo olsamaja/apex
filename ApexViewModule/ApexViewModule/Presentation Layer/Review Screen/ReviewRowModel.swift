@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import ApexCore
+import Algorithms
 
 public struct ReviewRowModel: Identifiable {
     
     public let id: String
-    private let review: Review
+    public let review: Review
     
     init(review: Review) {
         self.id = UUID().uuidString
@@ -32,5 +34,15 @@ extension ReviewRowModel {
 extension ReviewRowModel: Equatable {
     public static func == (lhs: ReviewRowModel, rhs: ReviewRowModel) -> Bool {
         lhs.review == rhs.review
+    }
+}
+
+extension Array where Element == ReviewRowModel {
+    
+    func chunkedByMonth() -> [[ReviewRowModel]] {
+        let chunked = self.chunked {
+            Calendar.current.isDate($0.review.updated, equalTo: $1.review.updated, toGranularity: .month)
+        }
+        return chunked.map { Array($0) }
     }
 }

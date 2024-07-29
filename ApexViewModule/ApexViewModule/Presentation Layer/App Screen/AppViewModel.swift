@@ -74,8 +74,8 @@ public final class AppViewModel: ObservableObject {
                     let graph = SectionRowsModel.makeGraphSectionModel(with: $0)
                     let stars = SectionRowsModel.makeStarsSectionModel(with: $0)
                     let reviewRowModels = $0.map { ReviewRowModel.init(review: $0) }
-                    let reviews = SectionRowsModel.makeReviewsSectionModel(with: reviewRowModels, isTappable: true)
-                    return details + [graph] + [stars] + [reviews]
+                    let reviewsPerMonth = SectionRowsModel.makeReviewsSectionModelsPerMonth(with: reviewRowModels, isTappable: true)
+                    return details + [graph] + [stars] + reviewsPerMonth
                 }
 
             return sections

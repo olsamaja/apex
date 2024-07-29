@@ -10,6 +10,7 @@
 		6A1711472BEBCB6900E156F5 /* StoredAppsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1711462BEBCB6900E156F5 /* StoredAppsTests.swift */; };
 		6A2216CA2BEB5F8400F00948 /* Date+StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2216C92BEB5F8400F00948 /* Date+StringTests.swift */; };
 		6A9168B62BECF9380044BD95 /* Data+PrintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9168B52BECF9380044BD95 /* Data+PrintTests.swift */; };
+		6A99A5512C52B41B00513BB5 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 6A99A5502C52B41B00513BB5 /* Algorithms */; };
 		6AAA3F082BF3A3AA004F4F96 /* DataErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAA3F072BF3A3AA004F4F96 /* DataErrorTests.swift */; };
 		6ACB57AB2C105E4800AA4F9F /* Int+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB57AA2C105E4800AA4F9F /* Int+String.swift */; };
 		6ACB57AD2C105F2500AA4F9F /* Int+StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB57AC2C105F2500AA4F9F /* Int+StringTests.swift */; };
@@ -90,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A99A5512C52B41B00513BB5 /* Algorithms in Frameworks */,
 				7D9CD76526988ABB000450E0 /* Resolver-Static in Frameworks */,
 				7D9CD762269889C4000450E0 /* Logging in Frameworks */,
 			);
@@ -106,12 +108,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A99A54F2C52B2DC00513BB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7D9CD64B26988249000450E0 = {
 			isa = PBXGroup;
 			children = (
 				7D9CD65726988249000450E0 /* ApexCore */,
 				7D9CD66226988249000450E0 /* ApexCoreTests */,
 				7D9CD65626988249000450E0 /* Products */,
+				6A99A54F2C52B2DC00513BB5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,6 +241,7 @@
 			packageProductDependencies = (
 				7D9CD761269889C4000450E0 /* Logging */,
 				7D9CD76426988ABB000450E0 /* Resolver-Static */,
+				6A99A5502C52B41B00513BB5 /* Algorithms */,
 			);
 			productName = ApexCore;
 			productReference = 7D9CD65526988249000450E0 /* ApexCore.framework */;
@@ -262,7 +273,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					7D9CD65426988249000450E0 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -286,6 +297,7 @@
 			packageReferences = (
 				7D9CD760269889C4000450E0 /* XCRemoteSwiftPackageReference "swift-log" */,
 				7D9CD76326988ABB000450E0 /* XCRemoteSwiftPackageReference "Resolver" */,
+				6A99A54E2C52B2CC00513BB5 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = 7D9CD65626988249000450E0 /* Products */;
 			projectDirPath = "";
@@ -371,6 +383,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -436,6 +449,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -622,6 +636,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		6A99A54E2C52B2CC00513BB5 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 		7D9CD760269889C4000450E0 /* XCRemoteSwiftPackageReference "swift-log" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-log.git";
@@ -641,6 +663,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6A99A5502C52B41B00513BB5 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6A99A54E2C52B2CC00513BB5 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
 		7D9CD761269889C4000450E0 /* Logging */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7D9CD760269889C4000450E0 /* XCRemoteSwiftPackageReference "swift-log" */;

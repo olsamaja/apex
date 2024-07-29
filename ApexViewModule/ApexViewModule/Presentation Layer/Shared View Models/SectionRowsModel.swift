@@ -46,10 +46,16 @@ extension SectionRowsModel {
         SectionRowsModel(rows: [ContentRowModel(.stars(reviews), isTappable: isTappable)], category: .stars)
     }
 
-    static func makeReviewsSectionModel(with reviews: [ReviewRowModel], isTappable: Bool = false) -> SectionRowsModel {
-        SectionRowsModel(
-            header: ContentRowModel(.text("Reviews (\(reviews.count))")),
-            rows: reviews.map { ContentRowModel(.review($0), isTappable: isTappable) },
-            category: .reviews)
+    static func makeReviewsSectionModelsPerMonth(with reviews: [ReviewRowModel], isTappable: Bool = false) -> [SectionRowsModel] {
+        let reviewsChunksPerMonth = reviews.chunkedByMonth()
+        
+        return reviewsChunksPerMonth.map { models in
+            guard let first = models.first else { fatalError("Unable to find first review of the array of reviews. This should never happen.") }
+            let month = first.review.updated.toMonthString()
+            return SectionRowsModel(
+                header: ContentRowModel(.text(month)),
+                rows: models.map { ContentRowModel(.review($0), isTappable: isTappable) },
+                category: .reviews)
+        }
     }
 }
