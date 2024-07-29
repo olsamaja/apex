@@ -108,7 +108,8 @@ final class ReviewsGraphDataTests: XCTestCase {
         XCTAssertEqual(graphData.items[6].daysSinceEndDate, 3)
         XCTAssertEqual(graphData.items[6].ratingType, .positive)
         XCTAssertEqual(graphData.items[6].weight, 1)
-        
+        XCTAssertEqual(graphData.startDateShortString, "30 May")
+        XCTAssertEqual(graphData.endDateShortString, "6 Jun")
     }
     
     func testFilterDatesWithinSeveralDays() {
@@ -134,5 +135,32 @@ final class ReviewsGraphDataTests: XCTestCase {
         for dict in arrayWithDates {
             XCTAssertEqual(Calendar.current.numberOfDaysBetween(dict["end"] as! Date, and: dict["date"] as! Date), dict["days"] as! Int)
         }
+    }
+    
+    func testReviewsByStarData() {
+        
+        let graphData = ReviewsByStarGraphDataBuilder()
+            .withEndDate(Constants.endDate)
+            .withNumberOfDays(7)
+            .withReviews(Constants.reviews)
+            .build()
+        
+        XCTAssertEqual(graphData.items.count, 5)
+        XCTAssertEqual(graphData.items[0].rating, "5")
+        XCTAssertEqual(graphData.items[1].rating, "4")
+        XCTAssertEqual(graphData.items[2].rating, "3")
+        XCTAssertEqual(graphData.items[3].rating, "2")
+        XCTAssertEqual(graphData.items[4].rating, "1")
+    }
+    
+    func testAverageRating() {
+        
+        let graphData = ReviewsByStarGraphDataBuilder()
+            .withEndDate(Constants.endDate)
+            .withNumberOfDays(7)
+            .withReviews(Constants.reviews)
+            .build()
+        
+        XCTAssertEqual(graphData.averageRating, "2.8")
     }
 }
