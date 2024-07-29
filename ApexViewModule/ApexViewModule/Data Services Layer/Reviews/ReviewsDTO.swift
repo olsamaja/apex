@@ -82,12 +82,12 @@ public struct UserEntryDTO {
 extension UserEntryDTO: Decodable {
     
     private enum CodingKeys : String, CodingKey {
-        case title = "title"
-        case author = "author"
+        case title
+        case author
         case rating = "im:rating"
         case version = "im:version"
-        case content = "content"
-        case updated = "updated"
+        case content
+        case updated
     }
     
     private enum AuthorCodingKeys : String, CodingKey {

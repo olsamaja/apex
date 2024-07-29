@@ -25,14 +25,14 @@ struct SearchResultDTO {
 extension SearchResultDTO: Decodable {
     
     private enum CodingKeys : String, CodingKey {
-        case trackName = "trackName"
-        case trackId = "trackId"
-        case version = "version"
-        case sellerName = "sellerName"
-        case currentVersionReleaseDate = "currentVersionReleaseDate"
-        case minimumOsVersion = "minimumOsVersion"
-        case averageUserRating = "averageUserRating"
-        case userRatingCountForCurrentVersion = "userRatingCountForCurrentVersion"
+        case trackName
+        case trackId
+        case version
+        case sellerName
+        case currentVersionReleaseDate
+        case minimumOsVersion
+        case averageUserRating
+        case userRatingCountForCurrentVersion
     }
 
     public init(from decoder: Decoder) throws {
