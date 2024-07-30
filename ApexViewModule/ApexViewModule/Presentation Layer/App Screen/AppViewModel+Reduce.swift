@@ -15,16 +15,16 @@ public extension AppViewModel {
         case idle
         case loadingDetails
         case detailsLoaded(SectionRowsModel)
-        case loadingNextReviews([SectionRowsModel])
-        case nextReviewsLoaded([SectionRowsModel])
+        case loadingNextReviews(SectionRowsModel, [SectionRowsModel], [SectionRowsModel])
+        case nextReviewsLoaded(SectionRowsModel, [SectionRowsModel], [SectionRowsModel])
         case error(DataError)
     }
     
     enum Event {
         case onAppear
-        case onLoadingNextReviews([SectionRowsModel])
         case onDetailsLoaded(SectionRowsModel)
-        case onNextReviewsloaded([SectionRowsModel])
+        case onLoadingNextReviews(SectionRowsModel, [SectionRowsModel], [SectionRowsModel])
+        case onNextReviewsloaded(SectionRowsModel, [SectionRowsModel], [SectionRowsModel])
         case onFailedToLoadData(DataError)
     }
 }
@@ -86,8 +86,8 @@ extension AppViewModel {
 
     static func reduceDetailsLoaded(_ state: State, _ event: Event) -> State {
         switch event {
-        case .onLoadingNextReviews(let details):
-            return .loadingNextReviews(details)
+        case .onLoadingNextReviews(let details, let graphs, let reviews):
+            return .loadingNextReviews(details, graphs, reviews)
         default:
             return state
         }
@@ -97,8 +97,8 @@ extension AppViewModel {
         switch event {
         case .onFailedToLoadData(let error):
             return .error(error)
-        case .onNextReviewsloaded(let sections):
-            return .nextReviewsLoaded(sections)
+        case .onNextReviewsloaded(let details, let graphs, let reviews):
+            return .nextReviewsLoaded(details, graphs, reviews)
         default:
             return state
         }

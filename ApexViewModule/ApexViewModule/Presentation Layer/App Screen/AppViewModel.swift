@@ -16,7 +16,7 @@ public final class AppViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     private let action = PassthroughSubject<Event, Never>()
-
+    
     public init(appSummary: AppSummary, state: State = .idle) {
         self.appSummary = appSummary
         self.state = state
@@ -47,14 +47,14 @@ public final class AppViewModel: ObservableObject {
     }
     
     static func whenLoadingDetails(appId: Int, storeCode: String) -> Feedback<State, Event> {
-
+        
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
             guard case .loadingDetails = state else { return Empty().eraseToAnyPublisher() }
-
+            
             let details = DataManager().getDetails(appId: appId, storeCode: storeCode)
                 .map { DetailsRowModel(details: $0) }
                 .map { SectionRowsModel.makeDetailsSectionModel(with: $0, isTappable: true) }
-
+            
             return details
                 .map(Event.onDetailsLoaded)
                 .catch { Just(Event.onFailedToLoadData($0)) }
@@ -63,24 +63,40 @@ public final class AppViewModel: ObservableObject {
     }
     
     static func whenLoadingNextReviews(appId: Int, storeCode: String) -> Feedback<State, Event> {
-
+        
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
-            guard case .loadingNextReviews(let details) = state else { return Empty().eraseToAnyPublisher() }
-
+            guard case .loadingNextReviews(let detailsSectionRowModel, _, let reviewSectionRowModels) = state else { return Empty().eraseToAnyPublisher() }
+            
             let reviewsPublisher = DataManager().getReviews(appId: appId, storeCode: storeCode)
             
             let sections = reviewsPublisher
                 .map {
-                    let graph = SectionRowsModel.makeGraphSectionModel(with: $0)
-                    let stars = SectionRowsModel.makeStarsSectionModel(with: $0)
-                    let reviewRowModels = $0.map { ReviewRowModel.init(review: $0) }
+                    let reviews = reviewSectionRowModels.flattenedReviews + $0
+                    let graph = SectionRowsModel.makeGraphSectionModel(with: reviews)
+                    let stars = SectionRowsModel.makeStarsSectionModel(with: reviews)
+                    let reviewRowModels = reviews.map { ReviewRowModel.init(review: $0) }
                     let reviewsPerMonth = SectionRowsModel.makeReviewsSectionModelsPerMonth(with: reviewRowModels, isTappable: true)
-                    return details + [graph] + [stars] + reviewsPerMonth
+                    return (details: detailsSectionRowModel, graphs: [graph] + [stars], reviews: reviewsPerMonth)
                 }
-
+            
             return sections
                 .map(Event.onNextReviewsloaded)
                 .catch { Just(Event.onFailedToLoadData($0)) }
                 .eraseToAnyPublisher()
         }
-    }}
+    }
+}
+
+extension Array where Element == SectionRowsModel {
+    
+    var flattenedReviews: [Review] {
+        let reviewSectionRowModels = self.filter { $0.category == .reviews }
+        let contentRowModels = reviewSectionRowModels.compactMap { $0.rows }
+        let flattenedContentRowModels = contentRowModels.reduce([], +)
+        let reviews: [Review?] = flattenedContentRowModels.map {
+            if case let ContentRowModel.Category.review(reviewRowModel) = $0.category { reviewRowModel.review } else { nil }
+        }
+        
+        return reviews.compactMap { $0 }
+    }
+}

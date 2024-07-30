@@ -55,19 +55,19 @@ public struct AppScreen: View {
             Spinner()
                 .onAppear() {
                     Task {
-                        viewModel.send(event: .onLoadingNextReviews([details]))
+                        viewModel.send(event: .onLoadingNextReviews(details, [], []))
                         OLLogger.info("details loaded")
                     }
                 }
-        case .loadingNextReviews(let sections):
+        case .loadingNextReviews(let details, let graphs, let reviews):
             List {
-                Content(sections: sections)
+                Content(sections: [details] + graphs + reviews)
                 Spinner(.medium)
             }
             .listStyle(.grouped)
-        case .nextReviewsLoaded(let sections):
+        case .nextReviewsLoaded(let details, let graphs, let reviews):
             List {
-                Content(sections: sections)
+                Content(sections: [details] + graphs + reviews)
                 Text("Load more reviews")
                     .onAppear() {
                         Task {

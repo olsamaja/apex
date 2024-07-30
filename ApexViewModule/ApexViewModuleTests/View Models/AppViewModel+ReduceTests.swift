@@ -45,8 +45,8 @@ final class AppViewModel_ReduceTests: XCTestCase {
     
     func testEquatableStates() throws {
         XCTAssertEqual(AppViewModel.State.loadingDetails, AppViewModel.State.loadingDetails)
-        XCTAssertEqual(AppViewModel.State.loadingNextReviews([]), AppViewModel.State.loadingNextReviews([Constants.detailsSection]))
-        XCTAssertNotEqual(AppViewModel.State.loadingDetails, AppViewModel.State.loadingNextReviews([]))
+        XCTAssertEqual(AppViewModel.State.loadingNextReviews(Constants.detailsSection, [], [Constants.rows]), AppViewModel.State.loadingNextReviews(Constants.detailsSection, [], [Constants.rows]))
+        XCTAssertNotEqual(AppViewModel.State.loadingDetails, AppViewModel.State.loadingNextReviews(Constants.detailsSection, [], [Constants.rows]))
     }
     
     func testReduceIdle() throws {
@@ -77,23 +77,19 @@ final class AppViewModel_ReduceTests: XCTestCase {
         }
 
         XCTAssertEqual(AppViewModel.reduce(.detailsLoaded(Constants.detailsSection), 
-            .onLoadingNextReviews([Constants.detailsSection])),
-            .loadingNextReviews([Constants.detailsSection]))
+            .onLoadingNextReviews(Constants.detailsSection, [], [])),
+            .loadingNextReviews(Constants.detailsSection, [], []))
     }
 
     func testReduceLoadingNextReviews() throws {
-        let initialState = AppViewModel.State.loadingNextReviews([Constants.detailsSection])
+        let initialState = AppViewModel.State.loadingNextReviews(Constants.detailsSection, [], [])
         XCTAssertEqual(AppViewModel.reduce(initialState, .onAppear), initialState)
-
         XCTAssertEqual(AppViewModel.reduce(initialState, .onFailedToLoadData(DataError.invalidRequest)), .error(DataError.invalidRequest))
-
-        let sections = [Constants.detailsSection] + [Constants.rows]
-        XCTAssertEqual(AppViewModel.reduce(initialState, .onNextReviewsloaded(sections)), .nextReviewsLoaded(sections))
+        XCTAssertEqual(AppViewModel.reduce(initialState, .onNextReviewsloaded(Constants.detailsSection, [], [Constants.rows])), .nextReviewsLoaded(Constants.detailsSection, [], [Constants.rows]))
     }
 
     func testNextReviewsLoaded() throws {
-        let sections = [Constants.detailsSection] + [Constants.rows]
-        let state = AppViewModel.State.nextReviewsLoaded(sections)
+        let state = AppViewModel.State.nextReviewsLoaded(Constants.detailsSection, [], [Constants.rows])
         let events: [AppViewModel.Event] = [.onAppear,
                                             .onDetailsLoaded(Constants.detailsSection),
                                             .onFailedToLoadData(DataError.invalidRequest)]
