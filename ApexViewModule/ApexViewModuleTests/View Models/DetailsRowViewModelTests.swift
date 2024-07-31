@@ -18,11 +18,14 @@ final class DetailsRowViewModelTests: XCTestCase {
             XCTAssert(false, "Start date cannot be nil")
             return
         }
+        
+        let artworkUrl100 = URL(string: "https://www.artwork.com")
 
         let details = Details(trackId: 123,
                               trackName: "name",
                               averageUserRating: 4.678,
                               version: "1.2.3",
+                              artworkUrl100: artworkUrl100,
                               minimumOsVersion: "12.0",
                               description: "some description",
                               sellerName: "seller",
@@ -36,5 +39,7 @@ final class DetailsRowViewModelTests: XCTestCase {
         XCTAssertEqual(model.trackName, details.trackName)
         XCTAssertEqual(model.version, "Version " + details.version)
         XCTAssertEqual(model.rating, details.averageUserRating)
+        XCTAssertEqual(model.artwork, artworkUrl100)
+        XCTAssertEqual(model.releaseDate, "30/10/2023")
     }
 }

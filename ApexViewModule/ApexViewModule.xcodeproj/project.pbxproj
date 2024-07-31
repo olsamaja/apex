@@ -14,10 +14,13 @@
 		6A9BBE572C10C46C003727B5 /* ReviewsGraphData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9BBE562C10C46C003727B5 /* ReviewsGraphData.swift */; };
 		6A9BBE592C10C47B003727B5 /* ReviewsGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9BBE582C10C47B003727B5 /* ReviewsGraphView.swift */; };
 		6A9BBE5B2C110DFC003727B5 /* ReviewsGraphDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9BBE5A2C110DFC003727B5 /* ReviewsGraphDataTests.swift */; };
+		6AA9A4422C5A70F100853D8E /* DataManager+ReviewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA9A4412C5A70F100853D8E /* DataManager+ReviewsTests.swift */; };
+		6AA9A4442C5A716400853D8E /* DataManager+DetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA9A4432C5A716400853D8E /* DataManager+DetailsTests.swift */; };
 		6ACB57A92C0F624200AA4F9F /* VitalDetailsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB57A82C0F624200AA4F9F /* VitalDetailsRow.swift */; };
 		6AE1C3CD2C2ED8AB0058A7CB /* ReviewsByStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1C3CC2C2ED8AB0058A7CB /* ReviewsByStarView.swift */; };
 		6AE1C3CF2C2EE13B0058A7CB /* ReviewsByStarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1C3CE2C2EE13B0058A7CB /* ReviewsByStarData.swift */; };
 		6AFACBBE2C5942C600B0CBD0 /* DetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFACBBD2C5942C600B0CBD0 /* DetailsViewModelTests.swift */; };
+		6AFACBC02C59475B00B0CBD0 /* AppViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFACBBF2C59475B00B0CBD0 /* AppViewModelTests.swift */; };
 		7D338CC32AFCE8AA00EC0256 /* ReviewsDTOMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CC22AFCE8AA00EC0256 /* ReviewsDTOMapperTests.swift */; };
 		7D338CC62AFCFEA500EC0256 /* DetailsDTOMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CC52AFCFEA500EC0256 /* DetailsDTOMapperTests.swift */; };
 		7D338CC82AFD4CBD00EC0256 /* AppViewModel+ReduceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D338CC72AFD4CBD00EC0256 /* AppViewModel+ReduceTests.swift */; };
@@ -98,10 +101,13 @@
 		6A9BBE562C10C46C003727B5 /* ReviewsGraphData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsGraphData.swift; sourceTree = "<group>"; };
 		6A9BBE582C10C47B003727B5 /* ReviewsGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsGraphView.swift; sourceTree = "<group>"; };
 		6A9BBE5A2C110DFC003727B5 /* ReviewsGraphDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsGraphDataTests.swift; sourceTree = "<group>"; };
+		6AA9A4412C5A70F100853D8E /* DataManager+ReviewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+ReviewsTests.swift"; sourceTree = "<group>"; };
+		6AA9A4432C5A716400853D8E /* DataManager+DetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+DetailsTests.swift"; sourceTree = "<group>"; };
 		6ACB57A82C0F624200AA4F9F /* VitalDetailsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalDetailsRow.swift; sourceTree = "<group>"; };
 		6AE1C3CC2C2ED8AB0058A7CB /* ReviewsByStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsByStarView.swift; sourceTree = "<group>"; };
 		6AE1C3CE2C2EE13B0058A7CB /* ReviewsByStarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsByStarData.swift; sourceTree = "<group>"; };
 		6AFACBBD2C5942C600B0CBD0 /* DetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelTests.swift; sourceTree = "<group>"; };
+		6AFACBBF2C59475B00B0CBD0 /* AppViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModelTests.swift; sourceTree = "<group>"; };
 		7D338CC22AFCE8AA00EC0256 /* ReviewsDTOMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsDTOMapperTests.swift; sourceTree = "<group>"; };
 		7D338CC52AFCFEA500EC0256 /* DetailsDTOMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDTOMapperTests.swift; sourceTree = "<group>"; };
 		7D338CC72AFD4CBD00EC0256 /* AppViewModel+ReduceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppViewModel+ReduceTests.swift"; sourceTree = "<group>"; };
@@ -265,8 +271,10 @@
 		7D338CC42AFCE8B200EC0256 /* Domain Layer */ = {
 			isa = PBXGroup;
 			children = (
-				7D338CC22AFCE8AA00EC0256 /* ReviewsDTOMapperTests.swift */,
+				6AA9A4432C5A716400853D8E /* DataManager+DetailsTests.swift */,
 				7D338CC52AFCFEA500EC0256 /* DetailsDTOMapperTests.swift */,
+				6AA9A4412C5A70F100853D8E /* DataManager+ReviewsTests.swift */,
+				7D338CC22AFCE8AA00EC0256 /* ReviewsDTOMapperTests.swift */,
 			);
 			path = "Domain Layer";
 			sourceTree = "<group>";
@@ -274,6 +282,7 @@
 		7D338CC92AFD4CC500EC0256 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				6AFACBBF2C59475B00B0CBD0 /* AppViewModelTests.swift */,
 				7D338CC72AFD4CBD00EC0256 /* AppViewModel+ReduceTests.swift */,
 				6AFACBBD2C5942C600B0CBD0 /* DetailsViewModelTests.swift */,
 				7D338CCA2AFD833B00EC0256 /* SectionModelTests.swift */,
@@ -551,7 +560,10 @@
 				7D97CEBD2AF3A3370032EC42 /* DetailsDTOTests.swift in Sources */,
 				7D97CEC02AF3D7A60032EC42 /* ReviewsDTOTests.swift in Sources */,
 				6AFACBBE2C5942C600B0CBD0 /* DetailsViewModelTests.swift in Sources */,
+				6AA9A4442C5A716400853D8E /* DataManager+DetailsTests.swift in Sources */,
 				7D338CCB2AFD833B00EC0256 /* SectionModelTests.swift in Sources */,
+				6AA9A4422C5A70F100853D8E /* DataManager+ReviewsTests.swift in Sources */,
+				6AFACBC02C59475B00B0CBD0 /* AppViewModelTests.swift in Sources */,
 				7D338CCF2AFD8E7600EC0256 /* DetailsRowViewModelTests.swift in Sources */,
 				7D5922AC2AF66F2400EAD7A9 /* DataRequester+DetailsTests.swift in Sources */,
 				7D338CCD2AFD8DA400EC0256 /* ReviewRowViewModelTests.swift in Sources */,

@@ -1,10 +1,11 @@
 //
-//  DataRequester+ReviewsTests.swift
+//  DataManager+ReviewsTests.swift
 //  ApexViewModuleTests
 //
-//  Created by Olivier Rigault on 04/11/2023.
+//  Created by Olivier Rigault on 31/07/2024.
 //
 
+import XCTest
 import Combine
 import Resolver
 import XCTest
@@ -12,23 +13,18 @@ import XCTest
 @testable import ApexCore
 @testable import ApexViewModule
 
-final class DataRequester_ReviewsTests: XCTestCase {
+final class DataManager_ReviewsTests: XCTestCase {
     
-    var dataRequester: DataRequester!
+    var dataManager: DataManager!
     private var cancellable: AnyCancellable?
     
     override func setUp() {
         Resolver.register { URLSession.makeMockURLSession() as URLSession }
-        dataRequester = DataRequester()
+        dataManager = DataManager()
     }
     
     override func tearDown() {
         cancellable?.cancel()
-    }
-
-    func testGetReviewsApi() {
-        XCTAssertEqual(ReviewsApi(appId: 1234, storeCode: "gb").path(), "/gb/rss/customerreviews/id=1234/page=1/mostrecent/json")
-        XCTAssertEqual(ReviewsApi(appId: 1234, storeCode: "gb", page: 3).path(), "/gb/rss/customerreviews/id=1234/page=3/mostrecent/json")
     }
 
     func testGetReviewsSuccessful() {
@@ -38,10 +34,10 @@ final class DataRequester_ReviewsTests: XCTestCase {
         
         MockURLProtocol.requestHandler = MockURLProtocol.makeRequestHandler(in: bundle, with: "MockGetReviewsSuccessful")
         
-        cancellable = dataRequester.getReviews(with: 0, storeCode: "")
+        cancellable = dataManager.getReviews(appId: 0, storeCode: "")
             .sink(receiveCompletion: { _ in }) { response in
-                XCTAssertEqual(response.feed.entry.count, 50)
-                let review = response.feed.entry.first!
+                XCTAssertEqual(response.count, 50)
+                let review = response.first!
                 XCTAssertEqual(review.title, "So slow")
                 XCTAssertEqual(review.author, "fatteddy007")
                 XCTAssertEqual(review.content, "I have to keep deleting the app and reinstalling it just to see up to date transactions. Terrible slow app")
@@ -61,7 +57,7 @@ final class DataRequester_ReviewsTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Invalid json format")
         MockURLProtocol.requestHandler = MockURLProtocol.makeRequestHandler(with: "Invalid")
         
-        cancellable = dataRequester.getReviews(with: 0, storeCode: "")
+        cancellable = dataManager.getReviews(appId: 0, storeCode: "")
             .sink(receiveCompletion: { completion in
                 XCTAssertEqual(completion, .failure(DataError.parsing(description: "The data couldn’t be read because it isn’t in the correct format.")))
                 expectation.fulfill()
@@ -75,7 +71,7 @@ final class DataRequester_ReviewsTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Valid json with missing data")
         MockURLProtocol.requestHandler = MockURLProtocol.makeRequestHandler(with: "{}")
         
-        cancellable = dataRequester.getReviews(with: 0, storeCode: "")
+        cancellable = dataManager.getReviews(appId: 0, storeCode: "")
             .sink(receiveCompletion: { completion in
                 XCTAssertEqual(completion, .failure(DataError.parsing(description: "The data couldn’t be read because it is missing.")))
                   expectation.fulfill()
@@ -89,7 +85,7 @@ final class DataRequester_ReviewsTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Invalid request")
         MockURLProtocol.requestHandler = MockURLProtocol.makeInvalidRequestHandler()
         
-        cancellable = dataRequester.getReviews(with: 0, storeCode: "")
+        cancellable = dataManager.getReviews(appId: 0, storeCode: "")
             .sink(receiveCompletion: { completion in
                 XCTAssertEqual(completion, .failure(DataError.network(description: "The operation couldn’t be completed. (NSURLErrorDomain error -1.)")))
                   expectation.fulfill()
