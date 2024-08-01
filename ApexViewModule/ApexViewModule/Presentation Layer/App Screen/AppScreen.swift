@@ -68,12 +68,6 @@ public struct AppScreen: View {
         case .nextReviewsLoaded(let details, let graphs, let reviews):
             List {
                 Content(sections: [details] + graphs + reviews)
-                Text("Load more reviews")
-                    .onAppear() {
-                        Task {
-                            OLLogger.info("TO DO viewModel.send(event: .onLoadingNextReviews()")
-                        }
-                    }
             }
             .listStyle(.grouped)
             .toolbar {
