@@ -23,4 +23,12 @@ final class ReviewRowViewModelTests: XCTestCase {
         XCTAssertEqual(model.rating, review.rating)
         XCTAssertEqual(model.updated, review.updated.toString())
     }
+    
+    func testEquatableModels() throws {
+        let review = Review(title: "title1", author: "author2", rating: "1", content: "content1", version: "1.2.1", updated: Date())
+        let model1 = ReviewRowModel(review: review)
+        let model2 = ReviewRowModel(review: review)
+
+        XCTAssertEqual(model1, model2)
+    }
 }
