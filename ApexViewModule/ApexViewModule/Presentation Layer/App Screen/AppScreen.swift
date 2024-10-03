@@ -56,19 +56,19 @@ public struct AppScreen: View {
             Spinner()
                 .onAppear() {
                     Task {
-                        viewModel.send(event: .onLoadingNextReviews(details, [], []))
+                        viewModel.send(event: .onLoadingNextReviews(details, []))
                         OLLogger.info("details loaded")
                     }
                 }
-        case .loadingNextReviews(let details, let graphs, let reviews):
+        case .loadingNextReviews(let details, let reviews):
             List {
-                Content(sections: [details] + graphs + reviews)
+                Content(sections: [details] + reviews)
                 Spinner(.medium)
             }
             .listStyle(.grouped)
-        case .nextReviewsLoaded(let details, let graphs, let reviews):
+        case .nextReviewsLoaded(let details, let reviews):
             List {
-                Content(sections: [details] + graphs + reviews)
+                Content(sections: [details] + reviews)
             }
             .listStyle(.grouped)
             .toolbar {
@@ -156,5 +156,5 @@ extension View {
                                                            ContentRowModel(.review(ReviewRowModel(review: reviews[1])))])]
     let appSummary = AppSummary(trackId: 1234, trackName: "My App", sellerName: "Seller", storeCode: "Store")
 
-    AppScreen(viewModel: AppViewModel(appSummary: appSummary, state: .nextReviewsLoaded(detailsRowsModel, [], sectionRowsModel)))
+    AppScreen(viewModel: AppViewModel(appSummary: appSummary, state: .nextReviewsLoaded(detailsRowsModel, sectionRowsModel)))
 }

@@ -37,10 +37,16 @@ public struct GraphScreen: View {
             Text("loadingNextReviews(\(reviews.count))")
                 .foregroundColor(.red)
         case .nextReviewsLoaded(let graphs, _):
-            List {
-                Content(sections: graphs)
+            VStack {
+                Text("Reviews")
+                    .font(.title)
+                    .padding(.top)
+                List {
+                    Content(sections: graphs)
+                }
+                .listStyle(.grouped)
+                .scrollContentBackground(.hidden)
             }
-            .listStyle(.grouped)
         }
     }
     

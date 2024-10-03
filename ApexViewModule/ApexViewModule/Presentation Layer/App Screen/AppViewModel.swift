@@ -65,18 +65,16 @@ public final class AppViewModel: ObservableObject {
     static func whenLoadingNextReviews(appId: Int, storeCode: String) -> Feedback<State, Event> {
         
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
-            guard case .loadingNextReviews(let detailsSectionRowModel, _, let reviewSectionRowModels) = state else { return Empty().eraseToAnyPublisher() }
+            guard case .loadingNextReviews(let detailsSectionRowModel, let reviewSectionRowModels) = state else { return Empty().eraseToAnyPublisher() }
             
             let reviewsPublisher = DataManager().getReviews(appId: appId, storeCode: storeCode)
             
             let sections = reviewsPublisher
                 .map {
                     let reviews = reviewSectionRowModels.flattenedReviews + $0
-                    let graph = SectionRowsModel.makeGraphSectionModel(with: reviews)
-                    let stars = SectionRowsModel.makeStarsSectionModel(with: reviews)
                     let reviewRowModels = reviews.map { ReviewRowModel.init(review: $0) }
                     let reviewsPerMonth = SectionRowsModel.makeReviewsSectionModelsPerMonth(with: reviewRowModels, isTappable: true)
-                    return (details: detailsSectionRowModel, graphs: [graph] + [stars], reviews: reviewsPerMonth)
+                    return (details: detailsSectionRowModel, reviews: reviewsPerMonth)
                 }
             
             return sections
