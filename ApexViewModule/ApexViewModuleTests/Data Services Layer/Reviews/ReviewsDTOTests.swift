@@ -7,6 +7,7 @@
 
 import XCTest
 import Combine
+import Testing
 @testable import ApexCore
 @testable import ApexViewModule
 
@@ -204,9 +205,9 @@ final class ReviewsDTOTests: XCTestCase {
                 switch completion {
                 case .failure(let error):
                     let expectedError = ApexCore.DataError.parsing(description: "The data couldn’t be read because it isn’t in the correct format.")
-                    XCTAssertEqual(error, expectedError)
+                    #expect(error == expectedError)
                 default:
-                    XCTAssert(false, "Was expected an error, got a success instead")
+                    #expect(Bool(false), "Was expected an error, got a success instead")
                 }
                 
                 expectation.fulfill()

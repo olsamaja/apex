@@ -48,19 +48,15 @@ public struct ReviewRow: View {
     }
 }
 
-struct AppReviewRow_Previews: PreviewProvider {
+#Preview {
     
-    enum Constants {
-        static let item = ReviewRowModel(review: Review(title: "Incredible super long title for this review", author: "author", rating: "3", content: "This is a wonderful app, which never ceases to amaze me! Please keep the good work. Well done!", version: "4.5.6", updated: Date()))
-    }
+    let item = ReviewRowModel(review: Review(title: "Incredible super long title for this review", author: "author", rating: "3", content: "This is a wonderful app, which never ceases to amaze me! Please keep the good work. Well done!", version: "4.5.6", updated: Date()))
     
-    static var previews: some View {
-        List {
-            ReviewRow(item: Constants.item)
-                .sizeThatFitPreview(with: "Default")
-                .listRowSeparator(.hidden)
-            ReviewRow(item: Constants.item, isExpanded: true)
-                .sizeThatFitPreview(with: "Expanded review")
-        }
+    List {
+        ReviewRow(item: item)
+            .sizeThatFitPreview(with: "Default")
+            .listRowSeparator(.hidden)
+        ReviewRow(item: item, isExpanded: true)
+            .sizeThatFitPreview(with: "Expanded review")
     }
 }

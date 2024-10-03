@@ -133,39 +133,28 @@ extension View {
     }
 }
 
+#Preview("Loaded state") {
+    let dates = [Date(timeIntervalSince1970: 0), Date(timeIntervalSince1970: 523456789)]
+    let reviews = [Review(title: "title 1", author: "author 1", rating: "3", content: "content 1", version: "1.2.3", updated: dates[0]),
+                          Review(title: "title 2", author: "author 2", rating: "5", content: "This is a long comment for a suber app I intend to use every single day from now on!", version: "1.2.3", updated: dates[1])]
+    let details = Details(trackId: 0,
+                          trackName: "App name",
+                          averageUserRating: 3.5,
+                          version: "1.2.3",
+                          minimumOsVersion: "13.0",
+                          description: "Some description",
+                          sellerName: "Seller name",
+                          fileSizeBytes: 426137600,
+                          userRatingCount: 1234,
+                          releaseNotes: "This is a new release.",
+                          releaseDate: dates[1])
+    let detailsRowsModel = SectionRowsModel(header: ContentRowModel(.text("Second Section Header")),
+                                                   rows: [ContentRowModel(.details(DetailsRowModel(details: details)))])
+    let sectionRowsModel = [SectionRowsModel(rows: [ContentRowModel(.review(ReviewRowModel(review: reviews[0]))),
+                                                           ContentRowModel(.review(ReviewRowModel(review: reviews[1])))]),
+                                   SectionRowsModel(rows: [ContentRowModel(.review(ReviewRowModel(review: reviews[0]))),
+                                                           ContentRowModel(.review(ReviewRowModel(review: reviews[1])))])]
+    let appSummary = AppSummary(trackId: 1234, trackName: "My App", sellerName: "Seller", storeCode: "Store")
 
-//struct AppScreen_Previews: PreviewProvider {
-//    
-//    enum Constants {
-//        static let dates = [Date(timeIntervalSince1970: 0), Date(timeIntervalSince1970: 523456789)]
-//        static let reviews = [Review(title: "title 1", author: "author 1", rating: "3", content: "content 1", version: "1.2.3", updated: Constants.dates[0]),
-//                              Review(title: "title 2", author: "author 2", rating: "5", content: "This is a long comment for a suber app I intend to use every single day from now on!", version: "1.2.3", updated: Constants.dates[1])]
-//        static let details = Details(trackId: 0,
-//                                     trackName: "App name",
-//                                     averageUserRating: 3.5,
-//                                     version: "1.2.3",
-//                                     minimumOsVersion: "13.0",
-//                                     description: "Some description",
-//                                     sellerName: "Seller name",
-//                                     fileSizeBytes: 426137600,
-//                                     userRatingCount: 1234)
-//        static let detailsRowsModel = [SectionRowsModel(header: ContentRowModel(.text("Second Section Header")),
-//                                                       rows: [ContentRowModel(.details(DetailsRowModel(details: Constants.details)))])]
-//        static let sectionRowsModel = [SectionRowsModel(rows: [ContentRowModel(.review(ReviewRowModel(review: Constants.reviews[0]))),
-//                                                               ContentRowModel(.review(ReviewRowModel(review: Constants.reviews[1])))]),
-//                                       SectionRowsModel(rows: [ContentRowModel(.review(ReviewRowModel(review: Constants.reviews[0]))),
-//                                                               ContentRowModel(.review(ReviewRowModel(review: Constants.reviews[1])))])]
-//        static let appSummary = AppSummary(trackId: 1234, trackName: "My App", sellerName: "Seller", storeCode: "Store")
-//    }
-//    
-//    static var previews: some View {
-//        Group {
-//            AppScreen(viewModel: AppViewModel(appSummary: Constants.appSummary))
-//                .previewDisplayName("default")
-//            AppScreen(viewModel: AppViewModel(appSummary: Constants.appSummary, state: .error(DataError.parsing(description: "Unable to parse data"))))
-//                .previewDisplayName("error")
-//            AppScreen(viewModel: AppViewModel(appSummary: Constants.appSummary, state: .detailsLoaded(Constants.detailsRowsModel, Constants.sectionRowsModel)))
-//                .previewDisplayName("loaded")
-//        }
-//    }
-//}
+    AppScreen(viewModel: AppViewModel(appSummary: appSummary, state: .nextReviewsLoaded(detailsRowsModel, [], sectionRowsModel)))
+}
