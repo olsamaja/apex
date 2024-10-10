@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Testing
 @testable import ApexConfiguration
 
 class ConfigurationDTOMapperTests: XCTestCase {
@@ -18,10 +19,10 @@ class ConfigurationDTOMapperTests: XCTestCase {
         let dto = ConfigurationDTO(scheme: scheme, host: host)
         do {
             let configuration = try ConfigurationDTOMapper.map(dto)
-            XCTAssertEqual(configuration.scheme, Configuration.Scheme.https)
-            XCTAssertEqual(configuration.host, host)
+            #expect(configuration.scheme == Configuration.Scheme.https)
+            #expect(configuration.host == host)
         } catch {
-            XCTFail(error.localizedDescription)
+            #expect(Bool(false), "\(error.localizedDescription)")
         }
     }
 
@@ -41,9 +42,9 @@ class ConfigurationDTOMapperTests: XCTestCase {
             let _ = try ConfigurationDTOMapper.map(dto)
             XCTFail("Expected scheme property to be invalid")
         } catch ConfigurationDTOMapper.ValidationError.invalid(let property){
-            XCTAssertEqual(property, .scheme)
+            #expect(property == .scheme)
         } catch {
-            XCTFail(error.localizedDescription)
+            #expect(Bool(false), "\(error.localizedDescription)")
         }
     }
 
@@ -62,18 +63,18 @@ class ConfigurationDTOMapperTests: XCTestCase {
         do {
             let _ = try ConfigurationDTOMapper.map(dto)
         } catch {
-            XCTFail(error.localizedDescription)
+            #expect(Bool(false), "\(error.localizedDescription)")
         }
     }
 
     private func checkMissingProperty(dto: ConfigurationDTO, with validationError: ConfigurationDTOMapper.ValidationError) throws {
         do {
             let _ = try ConfigurationDTOMapper.map(dto)
-            XCTFail("Expected property to be missing")
+            #expect(Bool(false), "Expected property to be missing")
         } catch ConfigurationDTOMapper.ValidationError.empty(let property) {
-            XCTAssertEqual(validationError, ConfigurationDTOMapper.ValidationError.empty(property))
+            #expect(validationError == ConfigurationDTOMapper.ValidationError.empty(property))
         } catch {
-            XCTFail(error.localizedDescription)
+            #expect(Bool(false), "\(error.localizedDescription)")
         }
     }
 

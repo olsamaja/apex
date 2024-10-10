@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Testing
 @testable import ApexCore
 @testable import ApexViewModule
 
@@ -16,12 +17,12 @@ final class ReviewRowViewModelTests: XCTestCase {
         let review = Review(title: "title1", author: "author2", rating: "1", content: "content1", version: "1.2.1", updated: Date())
         let model = ReviewRowModel(review: review)
         
-        XCTAssertEqual(model.title, review.title)
-        XCTAssertEqual(model.author, review.author)
-        XCTAssertEqual(model.content, review.content)
-        XCTAssertEqual(model.version, "v" + review.version)
-        XCTAssertEqual(model.rating, review.rating)
-        XCTAssertEqual(model.updated, review.updated.toString())
+        #expect(model.title == review.title)
+        #expect(model.author == review.author)
+        #expect(model.content == review.content)
+        #expect(model.version == "v" + review.version)
+        #expect(model.rating == review.rating)
+        #expect(model.updated == review.updated.toString())
     }
     
     func testEquatableModels() throws {
@@ -29,6 +30,6 @@ final class ReviewRowViewModelTests: XCTestCase {
         let model1 = ReviewRowModel(review: review)
         let model2 = ReviewRowModel(review: review)
 
-        XCTAssertEqual(model1, model2)
+        #expect(model1 == model2)
     }
 }

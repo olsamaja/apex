@@ -186,9 +186,9 @@ final class ReviewsDTOTests: XCTestCase {
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { _ in })
             { reviews in
-                XCTAssertEqual(reviews.feed.entry.count, 2)
-                XCTAssertEqual(reviews.feed.entry[1].title, "Great app")
-                XCTAssertEqual(reviews.feed.link.count, 6)
+                #expect(reviews.feed.entry.count == 2)
+                #expect(reviews.feed.entry[1].title == "Great app")
+                #expect(reviews.feed.link.count == 6)
                 expectation.fulfill()
             }
         

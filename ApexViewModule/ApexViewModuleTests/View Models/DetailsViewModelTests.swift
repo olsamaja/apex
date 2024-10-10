@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Testing
 @testable import ApexCore
 @testable import ApexViewModule
 
@@ -14,7 +15,7 @@ final class DetailsViewModelTests: XCTestCase {
     func testExample() throws {
         let dateFormatter = ISO8601DateFormatter()
         guard let releaseDate = dateFormatter.date(from: "2023-10-30T11:35:32Z") else {
-            XCTAssert(false, "Start date cannot be nil")
+            #expect(Bool(false), "Start date cannot be nil")
             return
         }
         
@@ -33,11 +34,11 @@ final class DetailsViewModelTests: XCTestCase {
         let model = DetailsViewModel(details: details)
         let sections = model.sections
         
-        XCTAssertEqual(sections.count, 2)
-        XCTAssertNil(sections[0].header)
-        XCTAssertEqual(sections[0].rows!.count, 1)
+        #expect(sections.count == 2)
+        #expect(sections[0].header == nil)
+        #expect(sections[0].rows!.count == 1)
 
-        XCTAssertNil(sections[1].header)
-        XCTAssertEqual(sections[1].rows!.count, 3)
+        #expect(sections[1].header == nil)
+        #expect(sections[1].rows!.count == 3)
     }
 }

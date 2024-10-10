@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Testing
 @testable import ApexCore
 
 class UserDefaults_CustomTests: XCTestCase {
@@ -14,7 +15,7 @@ class UserDefaults_CustomTests: XCTestCase {
         let simple = CodableSimpleStruct(code: "key", name: "name")
         UserDefaults.standard.setCustomObject(simple, forKey: "MY_KEY")
         let storedValue: CodableSimpleStruct? = UserDefaults.standard.customObject(forKey: "MY_KEY")
-        XCTAssertEqual(storedValue, simple)
+        #expect(storedValue == simple)
     }
 
     
@@ -22,7 +23,7 @@ class UserDefaults_CustomTests: XCTestCase {
         let simple: CodableSimpleStruct? = nil
         UserDefaults.standard.setCustomObject(simple, forKey: "MY_KEY")
         let storedValue: CodableSimpleStruct? = UserDefaults.standard.customObject(forKey: "MY_KEY")
-        XCTAssertNil(storedValue)
+        #expect(storedValue == nil)
     }
 
 }

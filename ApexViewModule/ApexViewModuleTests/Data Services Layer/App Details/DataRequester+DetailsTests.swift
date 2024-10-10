@@ -8,6 +8,7 @@
 import Combine
 import Resolver
 import XCTest
+import Testing
 @testable import ApexNetwork
 @testable import ApexCore
 @testable import ApexViewModule
@@ -35,9 +36,9 @@ final class DataRequester_DetailsTests: XCTestCase {
         
         cancellable = dataRequester.getDetails(with: 0, storeCode: "gb")
             .sink(receiveCompletion: { _ in }) { response in
-                XCTAssertEqual(response.trackId, 1052238659)
-                XCTAssertEqual(response.trackName, "Monzo - Mobile Banking")
-                XCTAssertEqual(response.averageUserRating, 4.6324500000000004007461029686965048313140869140625)
+                #expect(response.trackId == 1052238659)
+                #expect(response.trackName == "Monzo - Mobile Banking")
+                #expect(response.averageUserRating == 4.6324500000000004007461029686965048313140869140625)
                 expectation.fulfill()
             }
 
@@ -51,7 +52,7 @@ final class DataRequester_DetailsTests: XCTestCase {
         
         cancellable = dataRequester.getDetails(with: 0, storeCode: "gb")
             .sink(receiveCompletion: { completion in
-                XCTAssertEqual(completion, .failure(DataError.parsing(description: "The data couldn’t be read because it isn’t in the correct format.")))
+                #expect(completion == .failure(DataError.parsing(description: "The data couldn’t be read because it isn’t in the correct format.")))
                 expectation.fulfill()
             }) { _ in }
         
@@ -65,7 +66,7 @@ final class DataRequester_DetailsTests: XCTestCase {
         
         cancellable = dataRequester.getDetails(with: 0, storeCode: "gb")
             .sink(receiveCompletion: { completion in
-                XCTAssertEqual(completion, .failure(DataError.parsing(description: "The data couldn’t be read because it is missing.")))
+                #expect(completion == .failure(DataError.parsing(description: "The data couldn’t be read because it is missing.")))
                   expectation.fulfill()
             }) { _ in }
 
@@ -79,7 +80,7 @@ final class DataRequester_DetailsTests: XCTestCase {
         
         cancellable = dataRequester.getDetails(with: 0, storeCode: "gb")
             .sink(receiveCompletion: { completion in
-                XCTAssertEqual(completion, .failure(DataError.network(description: "The operation couldn’t be completed. (NSURLErrorDomain error -1.)")))
+                #expect(completion == .failure(DataError.network(description: "The operation couldn’t be completed. (NSURLErrorDomain error -1.)")))
                   expectation.fulfill()
             }) { _ in }
 

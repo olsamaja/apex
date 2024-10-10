@@ -6,21 +6,22 @@
 //
 
 import XCTest
+import Testing
 @testable import ApexConfiguration
 
 class ConfigurationTests: XCTestCase {
     
     func testAllSchemes() throws {
-        XCTAssertEqual(Configuration.Scheme.allCases, [.http, .https])
+        #expect(Configuration.Scheme.allCases == [.http, .https])
     }
 
     func testValidSchemes() throws {
-        XCTAssertEqual(Configuration.Scheme(string: "http"), Configuration.Scheme.http)
-        XCTAssertEqual(Configuration.Scheme(string: "https"), Configuration.Scheme.https)
+        #expect(Configuration.Scheme(string: "http") == Configuration.Scheme.http)
+        #expect(Configuration.Scheme(string: "https") == Configuration.Scheme.https)
     }
 
     func testValidScheme() throws {
-        XCTAssertNil(Configuration.Scheme(string: "invalid"))
+        #expect(Configuration.Scheme(string: "invalid") == nil)
     }
 
 }

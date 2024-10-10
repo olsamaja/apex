@@ -9,6 +9,7 @@ import XCTest
 import Combine
 import Resolver
 import XCTest
+import Testing
 @testable import ApexNetwork
 @testable import ApexCore
 @testable import ApexViewModule
@@ -36,16 +37,16 @@ final class DataManager_ReviewsTests: XCTestCase {
         
         cancellable = dataManager.getReviews(appId: 0, storeCode: "")
             .sink(receiveCompletion: { _ in }) { response in
-                XCTAssertEqual(response.count, 50)
+                #expect(response.count == 50)
                 let review = response.first!
-                XCTAssertEqual(review.title, "So slow")
-                XCTAssertEqual(review.author, "fatteddy007")
-                XCTAssertEqual(review.content, "I have to keep deleting the app and reinstalling it just to see up to date transactions. Terrible slow app")
-                XCTAssertEqual(review.rating, "1")
-                XCTAssertEqual(review.version, "5.76.0")
+                #expect(review.title == "So slow")
+                #expect(review.author == "fatteddy007")
+                #expect(review.content == "I have to keep deleting the app and reinstalling it just to see up to date transactions. Terrible slow app")
+                #expect(review.rating == "1")
+                #expect(review.version == "5.76.0")
 
                 let dateFormatter = ISO8601DateFormatter()
-                XCTAssertEqual(review.updated, dateFormatter.date(from: "2024-06-09T12:02:57-07:00") ?? Date())
+                #expect(review.updated == dateFormatter.date(from: "2024-06-09T12:02:57-07:00") ?? Date())
                 expectation.fulfill()
             }
 
@@ -59,7 +60,7 @@ final class DataManager_ReviewsTests: XCTestCase {
         
         cancellable = dataManager.getReviews(appId: 0, storeCode: "")
             .sink(receiveCompletion: { completion in
-                XCTAssertEqual(completion, .failure(DataError.parsing(description: "The data couldn’t be read because it isn’t in the correct format.")))
+                #expect(completion == .failure(DataError.parsing(description: "The data couldn’t be read because it isn’t in the correct format.")))
                 expectation.fulfill()
             }) { _ in }
         
@@ -73,7 +74,7 @@ final class DataManager_ReviewsTests: XCTestCase {
         
         cancellable = dataManager.getReviews(appId: 0, storeCode: "")
             .sink(receiveCompletion: { completion in
-                XCTAssertEqual(completion, .failure(DataError.parsing(description: "The data couldn’t be read because it is missing.")))
+                #expect(completion == .failure(DataError.parsing(description: "The data couldn’t be read because it is missing.")))
                   expectation.fulfill()
             }) { _ in }
 
@@ -87,7 +88,7 @@ final class DataManager_ReviewsTests: XCTestCase {
         
         cancellable = dataManager.getReviews(appId: 0, storeCode: "")
             .sink(receiveCompletion: { completion in
-                XCTAssertEqual(completion, .failure(DataError.network(description: "The operation couldn’t be completed. (NSURLErrorDomain error -1.)")))
+                #expect(completion == .failure(DataError.network(description: "The operation couldn’t be completed. (NSURLErrorDomain error -1.)")))
                   expectation.fulfill()
             }) { _ in }
 

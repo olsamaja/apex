@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Testing
 @testable import ApexCore
 
 final class Date_StringTests: XCTestCase {
@@ -20,10 +21,10 @@ final class Date_StringTests: XCTestCase {
     }
     
     func testDefaultDateFormatIsValid() throws {
-        XCTAssertEqual(Constants.date.toString(), "23/05/2020")
+        #expect(Constants.date.toString() == "23/05/2020")
     }
 
     func testAnotherDateFormatIsValid() throws {
-        XCTAssertEqual(Constants.date.toString(format: "yyyy-MM-dd"), "2020-05-23")
+        #expect(Constants.date.toString(format: "yyyy-MM-dd") == "2020-05-23")
     }
 }

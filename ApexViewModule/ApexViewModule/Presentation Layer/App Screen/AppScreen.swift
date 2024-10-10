@@ -148,12 +148,13 @@ extension View {
                           userRatingCount: 1234,
                           releaseNotes: "This is a new release.",
                           releaseDate: dates[1])
-    let detailsRowsModel = SectionRowsModel(header: ContentRowModel(.text("Second Section Header")),
-                                                   rows: [ContentRowModel(.details(DetailsRowModel(details: details)))])
-    let sectionRowsModel = [SectionRowsModel(rows: [ContentRowModel(.review(ReviewRowModel(review: reviews[0]))),
+    let detailsRowsModel = SectionRowsModel(rows: [ContentRowModel(.details(DetailsRowModel(details: details)))])
+    let sectionRowsModel = [SectionRowsModel(header:ContentRowModel(.text("Aug")),
+                                             rows: [ContentRowModel(.review(ReviewRowModel(review: reviews[0]))),
                                                            ContentRowModel(.review(ReviewRowModel(review: reviews[1])))]),
-                                   SectionRowsModel(rows: [ContentRowModel(.review(ReviewRowModel(review: reviews[0]))),
-                                                           ContentRowModel(.review(ReviewRowModel(review: reviews[1])))])]
+                            SectionRowsModel(header:ContentRowModel(.text("Jan")),
+                                             rows: [ContentRowModel(.review(ReviewRowModel(review: reviews[0]))),
+                                                    ContentRowModel(.review(ReviewRowModel(review: reviews[1])))])]
     let appSummary = AppSummary(trackId: 1234, trackName: "My App", sellerName: "Seller", storeCode: "Store")
 
     AppScreen(viewModel: AppViewModel(appSummary: appSummary, state: .nextReviewsLoaded(detailsRowsModel, sectionRowsModel)))

@@ -6,12 +6,13 @@
 //
 
 import XCTest
+import Testing
 @testable import ApexCore
 
 final class String_ExtensionsTests: XCTestCase {
 
     func testToString() throws {
-        XCTAssertEqual("426137600".toInt, 426137600)
-        XCTAssertEqual("not an integer".toInt, 0)
+        #expect("426137600".toInt == 426137600)
+        #expect("not an integer".toInt == 0)
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Testing
 @testable import ApexCore
 @testable import ApexViewModule
 
@@ -44,26 +45,26 @@ final class AppViewModel_ReduceTests: XCTestCase {
     }
     
     func testEquatableStates() throws {
-        XCTAssertEqual(AppViewModel.State.loadingDetails, AppViewModel.State.loadingDetails)
-        XCTAssertEqual(AppViewModel.State.loadingNextReviews(Constants.detailsSection, [], [Constants.rows]), AppViewModel.State.loadingNextReviews(Constants.detailsSection, [], [Constants.rows]))
-        XCTAssertNotEqual(AppViewModel.State.loadingDetails, AppViewModel.State.loadingNextReviews(Constants.detailsSection, [], [Constants.rows]))
+        #expect(AppViewModel.State.loadingDetails == AppViewModel.State.loadingDetails)
+        #expect(AppViewModel.State.loadingNextReviews(Constants.detailsSection, [Constants.rows]) == AppViewModel.State.loadingNextReviews(Constants.detailsSection, [Constants.rows]))
+        #expect(AppViewModel.State.loadingDetails != AppViewModel.State.loadingNextReviews(Constants.detailsSection, [Constants.rows]))
     }
     
     func testReduceIdle() throws {
-        XCTAssertEqual(AppViewModel.reduce(.idle, .onAppear), .loadingDetails)
+        #expect(AppViewModel.reduce(.idle, .onAppear) == .loadingDetails)
         
         let events: [AppViewModel.Event] = [.onDetailsLoaded(Constants.detailsSection),
                                             .onFailedToLoadData(DataError.invalidRequest)]
         
         events.forEach { event in
-            XCTAssertEqual(AppViewModel.reduce(.idle, event), .idle)
+            #expect(AppViewModel.reduce(.idle, event) == .idle)
         }
     }
     
     func testReduceLoadingDetails() throws {
-        XCTAssertEqual(AppViewModel.reduce(.loadingDetails, .onAppear), .loadingDetails)
-        XCTAssertEqual(AppViewModel.reduce(.loadingDetails, .onDetailsLoaded(Constants.detailsSection)), .detailsLoaded(Constants.detailsSection))
-        XCTAssertEqual(AppViewModel.reduce(.loadingDetails, .onFailedToLoadData(DataError.invalidRequest)), .error(DataError.invalidRequest))
+        #expect(AppViewModel.reduce(.loadingDetails, .onAppear) == .loadingDetails)
+        #expect(AppViewModel.reduce(.loadingDetails, .onDetailsLoaded(Constants.detailsSection)) == .detailsLoaded(Constants.detailsSection))
+        #expect(AppViewModel.reduce(.loadingDetails, .onFailedToLoadData(DataError.invalidRequest)) == .error(DataError.invalidRequest))
     }
     
     func testReduceDetailsLoaded() throws {
@@ -73,29 +74,29 @@ final class AppViewModel_ReduceTests: XCTestCase {
                                             .onFailedToLoadData(DataError.invalidRequest)]
         
         events.forEach { event in
-            XCTAssertEqual(AppViewModel.reduce(state, event), state)
+            #expect(AppViewModel.reduce(state, event) == state)
         }
 
-        XCTAssertEqual(AppViewModel.reduce(.detailsLoaded(Constants.detailsSection), 
-            .onLoadingNextReviews(Constants.detailsSection, [], [])),
-            .loadingNextReviews(Constants.detailsSection, [], []))
+        #expect(AppViewModel.reduce(.detailsLoaded(Constants.detailsSection),
+            .onLoadingNextReviews(Constants.detailsSection, [])) ==
+            .loadingNextReviews(Constants.detailsSection, []))
     }
 
     func testReduceLoadingNextReviews() throws {
-        let initialState = AppViewModel.State.loadingNextReviews(Constants.detailsSection, [], [])
-        XCTAssertEqual(AppViewModel.reduce(initialState, .onAppear), initialState)
-        XCTAssertEqual(AppViewModel.reduce(initialState, .onFailedToLoadData(DataError.invalidRequest)), .error(DataError.invalidRequest))
-        XCTAssertEqual(AppViewModel.reduce(initialState, .onNextReviewsloaded(Constants.detailsSection, [], [Constants.rows])), .nextReviewsLoaded(Constants.detailsSection, [], [Constants.rows]))
+        let initialState = AppViewModel.State.loadingNextReviews(Constants.detailsSection, [])
+        #expect(AppViewModel.reduce(initialState, .onAppear) == initialState)
+        #expect(AppViewModel.reduce(initialState, .onFailedToLoadData(DataError.invalidRequest)) == .error(DataError.invalidRequest))
+        #expect(AppViewModel.reduce(initialState, .onNextReviewsloaded(Constants.detailsSection, [Constants.rows])) == .nextReviewsLoaded(Constants.detailsSection, [Constants.rows]))
     }
 
     func testNextReviewsLoaded() throws {
-        let state = AppViewModel.State.nextReviewsLoaded(Constants.detailsSection, [], [Constants.rows])
+        let state = AppViewModel.State.nextReviewsLoaded(Constants.detailsSection, [Constants.rows])
         let events: [AppViewModel.Event] = [.onAppear,
                                             .onDetailsLoaded(Constants.detailsSection),
                                             .onFailedToLoadData(DataError.invalidRequest)]
         
         events.forEach { event in
-            XCTAssertEqual(AppViewModel.reduce(state, event), state)
+            #expect(AppViewModel.reduce(state, event) == state)
         }
     }
     
@@ -106,7 +107,7 @@ final class AppViewModel_ReduceTests: XCTestCase {
                                             .onFailedToLoadData(DataError.invalidRequest)]
         
         events.forEach { event in
-            XCTAssertEqual(AppViewModel.reduce(state, event), state)
+            #expect(AppViewModel.reduce(state, event) == state)
         }
     }
 }

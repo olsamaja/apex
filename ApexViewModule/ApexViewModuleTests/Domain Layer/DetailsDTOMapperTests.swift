@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Testing
 @testable import ApexCore
 @testable import ApexViewModule
 
@@ -33,11 +34,11 @@ final class DetailsDTOMapperTests: XCTestCase {
                              releaseDate: releaseDate)
 
         let details = DetailsDTOMapper.map(dto)
-        XCTAssertEqual(details.trackId, 123)
-        XCTAssertEqual(details.trackName, "name")
-        XCTAssertEqual(details.averageUserRating, 4.678)
-        XCTAssertEqual(details.version, "1.2.3")
-        XCTAssertEqual(details.releaseNotes, "some release notes")
-        XCTAssertEqual(details.releaseDate, releaseDate)
+        #expect(details.trackId == 123)
+        #expect(details.trackName == "name")
+        #expect(details.averageUserRating == 4.678)
+        #expect(details.version == "1.2.3")
+        #expect(details.releaseNotes == "some release notes")
+        #expect(details.releaseDate == releaseDate)
     }
 }

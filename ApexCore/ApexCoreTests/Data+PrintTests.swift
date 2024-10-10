@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Testing
 @testable import ApexCore
 
 final class Data_PrintTests: XCTestCase {
@@ -20,18 +21,18 @@ final class Data_PrintTests: XCTestCase {
         }
         """
         if let prettyPrintedJSONString = data?.prettyPrintedJSONString {
-            XCTAssertEqual(prettyPrintedJSONString, NSString(string: jsonString))
+            #expect(prettyPrintedJSONString == NSString(string: jsonString))
         } else {
-            XCTAssert(false, "Unable to convert mock json to String")
+            #expect(Bool(false), "Unable to convert mock json to String")
         }
     }
 
     func testInvalidJsonData() throws {
         let data: Data? = "Not a valid json string".data(using: .utf8)
         if let _ = data?.prettyPrintedJSONString {
-            XCTAssert(false, "Invalid json string should be converted to a pretty json string")
+            #expect(Bool(false), "Invalid json string should be converted to a pretty json string")
         } else {
-            XCTAssert(true)
+            #expect(Bool(true))
         }
     }
 }

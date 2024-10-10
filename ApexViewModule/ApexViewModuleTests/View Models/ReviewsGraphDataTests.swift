@@ -8,6 +8,7 @@
 import Combine
 import Resolver
 import XCTest
+import Testing
 @testable import ApexNetwork
 @testable import ApexCore
 @testable import ApexViewModule
@@ -35,7 +36,7 @@ final class ReviewsGraphDataTests: XCTestCase {
         
         let publisher = reviewsPublisher()
             .sink(receiveCompletion: { _ in }) { reviews in
-                XCTAssertEqual(reviews.count, 50)
+                #expect(reviews.count == 50)
 
                 let dateFormatter = ISO8601DateFormatter()
                 guard let endDate = dateFormatter.date(from: "2024-06-09T12:02:57-07:00") else {
@@ -49,13 +50,13 @@ final class ReviewsGraphDataTests: XCTestCase {
                     .withReviews(reviews)
                     .build()
                 
-                XCTAssertEqual(graphData.items.count, 30)
-                XCTAssertEqual(graphData.items[0].daysSinceEndDate, 0)
-                XCTAssertEqual(graphData.items[0].ratingType, .negative)
-                XCTAssertEqual(graphData.items[0].weight, 1)
-                XCTAssertEqual(graphData.items[29].daysSinceEndDate, 6)
-                XCTAssertEqual(graphData.items[29].ratingType, .positive)
-                XCTAssertEqual(graphData.items[29].weight, 1)
+                #expect(graphData.items.count == 30)
+                #expect(graphData.items[0].daysSinceEndDate == 0)
+                #expect(graphData.items[0].ratingType == .negative)
+                #expect(graphData.items[0].weight == 1)
+                #expect(graphData.items[29].daysSinceEndDate == 6)
+                #expect(graphData.items[29].ratingType == .positive)
+                #expect(graphData.items[29].weight == 1)
 
                 expectation.fulfill()
             }
@@ -101,15 +102,15 @@ final class ReviewsGraphDataTests: XCTestCase {
             .withReviews(Constants.reviews)
             .build()
         
-        XCTAssertEqual(graphData.items.count, 8)
-        XCTAssertEqual(graphData.items[0].daysSinceEndDate, 1)
-        XCTAssertEqual(graphData.items[0].ratingType, .negative)
-        XCTAssertEqual(graphData.items[0].weight, 1)
-        XCTAssertEqual(graphData.items[6].daysSinceEndDate, 3)
-        XCTAssertEqual(graphData.items[6].ratingType, .positive)
-        XCTAssertEqual(graphData.items[6].weight, 1)
-        XCTAssertEqual(graphData.startDateShortString, "30 May")
-        XCTAssertEqual(graphData.endDateShortString, "6 Jun")
+        #expect(graphData.items.count == 8)
+        #expect(graphData.items[0].daysSinceEndDate == 1)
+        #expect(graphData.items[0].ratingType == .negative)
+        #expect(graphData.items[0].weight == 1)
+        #expect(graphData.items[6].daysSinceEndDate == 3)
+        #expect(graphData.items[6].ratingType == .positive)
+        #expect(graphData.items[6].weight == 1)
+        #expect(graphData.startDateShortString == "30 May")
+        #expect(graphData.endDateShortString == "6 Jun")
     }
     
     func testFilterDatesWithinSeveralDays() {
@@ -117,9 +118,9 @@ final class ReviewsGraphDataTests: XCTestCase {
         let dates = Constants.dateStrings.map { dateFormatter.date(from: $0) }
         
         let datesWithinSevenDaysFromNow = dates.filter { date in Calendar.current.isWithin(numberOfDays: 7, from: date!, and: dates[0]!) }
-        XCTAssertEqual(datesWithinSevenDaysFromNow.count, 30)
-        XCTAssertEqual(datesWithinSevenDaysFromNow[0], dateFormatter.date(from: Constants.dateStrings[0]))
-        XCTAssertEqual(datesWithinSevenDaysFromNow[29], dateFormatter.date(from: Constants.dateStrings[29]))
+        #expect(datesWithinSevenDaysFromNow.count == 30)
+        #expect(datesWithinSevenDaysFromNow[0] == dateFormatter.date(from: Constants.dateStrings[0]))
+        #expect(datesWithinSevenDaysFromNow[29] == dateFormatter.date(from: Constants.dateStrings[29]))
     }
     
     func testNumberOfDaysBetweenTwoDates() {
@@ -133,7 +134,7 @@ final class ReviewsGraphDataTests: XCTestCase {
         }
 
         for dict in arrayWithDates {
-            XCTAssertEqual(Calendar.current.numberOfDaysBetween(dict["end"] as! Date, and: dict["date"] as! Date), dict["days"] as! Int)
+            #expect(Calendar.current.numberOfDaysBetween(dict["end"] as! Date, and: dict["date"] as! Date) == dict["days"] as! Int)
         }
     }
     
@@ -145,12 +146,12 @@ final class ReviewsGraphDataTests: XCTestCase {
             .withReviews(Constants.reviews)
             .build()
         
-        XCTAssertEqual(graphData.items.count, 5)
-        XCTAssertEqual(graphData.items[0].rating, "5")
-        XCTAssertEqual(graphData.items[1].rating, "4")
-        XCTAssertEqual(graphData.items[2].rating, "3")
-        XCTAssertEqual(graphData.items[3].rating, "2")
-        XCTAssertEqual(graphData.items[4].rating, "1")
+        #expect(graphData.items.count == 5)
+        #expect(graphData.items[0].rating == "5")
+        #expect(graphData.items[1].rating == "4")
+        #expect(graphData.items[2].rating == "3")
+        #expect(graphData.items[3].rating == "2")
+        #expect(graphData.items[4].rating == "1")
     }
     
     func testAverageRating() {
@@ -161,6 +162,6 @@ final class ReviewsGraphDataTests: XCTestCase {
             .withReviews(Constants.reviews)
             .build()
         
-        XCTAssertEqual(graphData.averageRating, "2.8")
+        #expect(graphData.averageRating == "2.8")
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Testing
 @testable import ApexCore
 
 class OLLoggerTests: XCTestCase {
@@ -13,6 +14,6 @@ class OLLoggerTests: XCTestCase {
     func testConsole() throws {
         OLLogger.info("Test log with no bundle", with: nil)
         OLLogger.info("Test log with default bundle")
-        XCTAssertTrue(true)
+        #expect(Bool(true))
     }
 }

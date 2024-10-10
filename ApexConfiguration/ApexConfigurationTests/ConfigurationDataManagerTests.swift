@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Testing
 @testable import ApexConfiguration
 
 class ConfigurationDataManagerTests: XCTestCase {
@@ -17,10 +18,10 @@ class ConfigurationDataManagerTests: XCTestCase {
         do {
             let configuration = try ConfigurationDataManager.load(with: bundle)
             
-            XCTAssertEqual(configuration.scheme, Configuration.Scheme.https)
-            XCTAssertEqual(configuration.host, "www.thisisahost.com")
+            #expect(configuration.scheme == Configuration.Scheme.https)
+            #expect(configuration.host == "www.thisisahost.com")
         } catch {
-            XCTFail(error.localizedDescription)
+            #expect(Bool(false), "\(error.localizedDescription)")
         }
     }
     
@@ -31,9 +32,9 @@ class ConfigurationDataManagerTests: XCTestCase {
         do {
             let configuration = try ConfigurationDataManager.load(with: bundle)
             
-            XCTAssertNil(configuration)
+            #expect(configuration == nil)
         } catch (let error) {
-            XCTAssertNotNil(error)
+            #expect(error != nil)
         }
     }
 

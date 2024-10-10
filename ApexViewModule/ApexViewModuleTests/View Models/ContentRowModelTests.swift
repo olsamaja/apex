@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Testing
 @testable import ApexCore
 @testable import ApexViewModule
 
@@ -50,17 +51,17 @@ final class ContentRowModelTests: XCTestCase {
     }
     
     func testEquatableModels() throws {
-        XCTAssertEqual(ContentRowModel(.text("some text")), ContentRowModel(.text("some text")))
+        #expect(ContentRowModel(.text("some text")) == ContentRowModel(.text("some text")))
         
-        XCTAssertNotEqual(ContentRowModel(.details(Constants.detailsModel1)), ContentRowModel(.details(Constants.detailsModel2)))
-        XCTAssertEqual(ContentRowModel(.details(Constants.detailsModel1)), ContentRowModel(.details(Constants.detailsModel1)))
-        XCTAssertEqual(ContentRowModel(.description(Constants.detailsModel1)), ContentRowModel(.description(Constants.detailsModel1)))
-        XCTAssertEqual(ContentRowModel(.release(Constants.detailsModel1)), ContentRowModel(.release(Constants.detailsModel1)))
-        XCTAssertEqual(ContentRowModel(.vitals(Constants.detailsModel1)), ContentRowModel(.vitals(Constants.detailsModel1)))
-        XCTAssertNotEqual(ContentRowModel(.details(Constants.detailsModel1)), ContentRowModel(.vitals(Constants.detailsModel1)))
+        #expect(ContentRowModel(.details(Constants.detailsModel1)) != ContentRowModel(.details(Constants.detailsModel2)))
+        #expect(ContentRowModel(.details(Constants.detailsModel1)) == ContentRowModel(.details(Constants.detailsModel1)))
+        #expect(ContentRowModel(.description(Constants.detailsModel1)) == ContentRowModel(.description(Constants.detailsModel1)))
+        #expect(ContentRowModel(.release(Constants.detailsModel1)) == ContentRowModel(.release(Constants.detailsModel1)))
+        #expect(ContentRowModel(.vitals(Constants.detailsModel1)) == ContentRowModel(.vitals(Constants.detailsModel1)))
+        #expect(ContentRowModel(.details(Constants.detailsModel1)) != ContentRowModel(.vitals(Constants.detailsModel1)))
         
-        XCTAssertNotEqual(ContentRowModel(.review(ReviewRowModel(review: Constants.review1))), ContentRowModel(.review(ReviewRowModel(review: Constants.review1))))
+        #expect(ContentRowModel(.review(ReviewRowModel(review: Constants.review1))) != ContentRowModel(.review(ReviewRowModel(review: Constants.review1))))
 
-        XCTAssertEqual(ContentRowModel(.graph([Constants.review1, Constants.review1])), ContentRowModel(.graph([Constants.review1, Constants.review2])))
+        #expect(ContentRowModel(.graph([Constants.review1, Constants.review1])) == ContentRowModel(.graph([Constants.review1, Constants.review2])))
     }
 }

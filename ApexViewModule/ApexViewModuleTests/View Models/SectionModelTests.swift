@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Testing
 @testable import ApexCore
 @testable import ApexViewModule
 
@@ -15,7 +16,7 @@ final class SectionModelTests: XCTestCase {
 
         let dateFormatter = ISO8601DateFormatter()
         guard let releaseDate = dateFormatter.date(from: "2023-10-30T11:35:32Z") else {
-            XCTAssert(false, "Start date cannot be nil")
+            #expect(Bool(false), "Start date cannot be nil")
             return
         }
         
@@ -33,14 +34,14 @@ final class SectionModelTests: XCTestCase {
         
         let sections = SectionRowsModel.makeDetailsSectionModel(with: DetailsRowModel(details: details))
         
-        XCTAssertNil(sections.header)
-        XCTAssertNotNil(sections.rows)
+        #expect(sections.header == nil)
+        #expect(sections.rows != nil)
         
         let rows = sections.rows!
-        XCTAssertEqual(rows.count, 1)
+        #expect(rows.count == 1)
         
         let row = rows.first!
-        XCTAssertEqual(row.category, .details(DetailsRowModel(details: details)))
+        #expect(row.category == .details(DetailsRowModel(details: details)))
     }
 
     func testMakeReviewsSectionModel() throws {
@@ -62,6 +63,6 @@ final class SectionModelTests: XCTestCase {
         
         let sections = SectionRowsModel.makeReviewsSectionModelsPerMonth(with: reviewRowModels)
         
-        XCTAssertEqual(sections.count, 2)
+        #expect(sections.count == 2)
     }
 }

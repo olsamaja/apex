@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Testing
 @testable import ApexCore
 @testable import ApexConfiguration
 @testable import Resolver
@@ -17,9 +18,9 @@ class ConfigurationServicesInjectionTests: XCTestCase {
         Resolver.registerConfigurationServices(with: Bundle(for: type(of: self)))
         let configuration: Configuration = Resolver.resolve()
         
-        XCTAssertNotNil(configuration)
-        XCTAssertEqual(configuration.scheme, Configuration.Scheme.https)
-        XCTAssertEqual(configuration.host, "www.thisisahost.com")
+        #expect(configuration != nil)
+        #expect(configuration.scheme == Configuration.Scheme.https)
+        #expect(configuration.host == "www.thisisahost.com")
     }
     
     func testInvalidInjection() throws {
@@ -27,7 +28,7 @@ class ConfigurationServicesInjectionTests: XCTestCase {
         Resolver.registerConfigurationServices(with: Bundle())
         let configuration: Configuration? = Resolver.optional()
         
-        XCTAssertNil(configuration)
+        #expect(configuration == nil)
     }
 
 }

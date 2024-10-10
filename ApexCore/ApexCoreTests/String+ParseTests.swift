@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Testing
 import Combine
 @testable import ApexCore
 
@@ -40,9 +41,9 @@ class String_ParseTests: XCTestCase {
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { _ in })
             { person in
-                XCTAssertEqual(person.firstName, "Carl")
-                XCTAssertEqual(person.lastName, "Lewis")
-                XCTAssertEqual(person.description, "Athlete")
+                #expect(person.firstName == "Carl")
+                #expect(person.lastName == "Lewis")
+                #expect(person.description == "Athlete")
                 expectation.fulfill()
             }
         
@@ -66,7 +67,7 @@ class String_ParseTests: XCTestCase {
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { _ in })
             { person in
-                XCTAssertEqual(person.description, "Text with a  character.")
+                #expect(person.description == "Text with a  character.")
                 expectation.fulfill()
             }
         
@@ -90,9 +91,9 @@ class String_ParseTests: XCTestCase {
                 switch completion {
                 case .failure(let error):
                     let expectedError = ApexCore.DataError.parsing(description: "The data couldn’t be read because it is missing.")
-                    XCTAssertEqual(error, expectedError)
+                    #expect(error == expectedError)
                 default:
-                    XCTAssert(false, "Was expected an error, got a success instead")
+                    #expect(Bool(false), "Was expected an error, got a success instead")
                 }
                 
                 expectation.fulfill()
@@ -120,9 +121,9 @@ class String_ParseTests: XCTestCase {
                 switch completion {
                 case .failure(let error):
                     let expectedError = ApexCore.DataError.parsing(description: "The data couldn’t be read because it isn’t in the correct format.")
-                    XCTAssertEqual(error, expectedError)
+                    #expect(error == expectedError)
                 default:
-                    XCTAssert(false, "Was expected an error, got a success instead")
+                    #expect(Bool(false), "Was expected an error, got a success instead")
                 }
                 
                 expectation.fulfill()

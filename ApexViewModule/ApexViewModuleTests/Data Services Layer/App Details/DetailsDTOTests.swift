@@ -7,6 +7,7 @@
 
 import XCTest
 import Combine
+import Testing
 @testable import ApexCore
 @testable import ApexViewModule
 
@@ -193,8 +194,8 @@ final class DetailsDTOTests: XCTestCase {
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { _ in })
             { details in
-                XCTAssertEqual(details.trackName, "Monzo - Mobile Banking")
-                XCTAssertEqual(details.averageUserRating, 4.62679)
+                #expect(details.trackName == "Monzo - Mobile Banking")
+                #expect(details.averageUserRating == 4.62679)
                 expectation.fulfill()
             }
         
@@ -211,9 +212,9 @@ final class DetailsDTOTests: XCTestCase {
                 switch completion {
                 case .failure(let error):
                     let expectedError = ApexCore.DataError.parsing(description: "The data couldn’t be read because it isn’t in the correct format.")
-                    XCTAssertEqual(error, expectedError)
+                    #expect(error == expectedError)
                 default:
-                    XCTAssert(false, "Was expected an error, got a success instead")
+                    #expect(Bool(false), "Was expected an error, got a success instead")
                 }
                 
                 expectation.fulfill()

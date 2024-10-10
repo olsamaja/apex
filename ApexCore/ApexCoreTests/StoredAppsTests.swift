@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Testing
 @testable import ApexCore
 
 final class StoredAppsTests: XCTestCase {
@@ -33,12 +34,12 @@ final class StoredAppsTests: XCTestCase {
         for app in Constants.apps {
             apps.add(app)
         }
-        XCTAssertEqual(apps.apps.count, 3)
-        XCTAssertTrue(apps.contains(Constants.apps[1]))
+        #expect(apps.apps.count == 3)
+        #expect(apps.contains(Constants.apps[1]))
 
         apps.remove(Constants.apps[1])
-        XCTAssertEqual(apps.apps.count, 2)
-        XCTAssertFalse(apps.contains(Constants.apps[1]))
+        #expect(apps.apps.count == 2)
+        #expect(!apps.contains(Constants.apps[1]))
     }
 
     func testFavoriteApps() throws {
@@ -46,8 +47,8 @@ final class StoredAppsTests: XCTestCase {
         for app in Constants.apps {
             apps.add(app)
         }
-        XCTAssertEqual(apps.favorites.count, 1)
-        XCTAssertTrue(apps.favorites.contains(Constants.apps[1]))
+        #expect(apps.favorites.count == 1)
+        #expect(apps.favorites.contains(Constants.apps[1]))
     }
 
     func testToggleFavoriteApps() throws {
@@ -55,20 +56,20 @@ final class StoredAppsTests: XCTestCase {
         for app in Constants.apps {
             apps.add(app)
         }
-        XCTAssertEqual(apps.favorites.count, 1)
-        XCTAssertTrue(apps.favorites.contains(Constants.apps[1]))
+        #expect(apps.favorites.count == 1)
+        #expect(apps.favorites.contains(Constants.apps[1]))
         
         // Remove 2nd app from favorites
         apps.toggleFavorite(Constants.apps[1])
-        XCTAssertEqual(apps.favorites.count, 0)
+        #expect(apps.favorites.count == 0)
 
         // Add 1st app to favorites
         apps.toggleFavorite(Constants.apps[0])
-        XCTAssertEqual(apps.favorites.count, 1)
+        #expect(apps.favorites.count == 1)
         
         let expectedFavorite = AppSummary(trackId: 123, trackName: "track123", sellerName: "seller1", storeCode: "code1", isFavorite: true)
 
-        XCTAssertTrue(apps.favorites.contains(expectedFavorite))
+        #expect(apps.favorites.contains(expectedFavorite))
         
         apps.deleteAll()
     }
