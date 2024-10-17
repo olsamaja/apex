@@ -5,15 +5,16 @@
 //  Created by Olivier Rigault on 15/07/2021.
 //
 
-import XCTest
 import Testing
 @testable import ApexConfiguration
 
-class ConfigurationDataManagerTests: XCTestCase {
+struct ConfigurationDataManagerTests {
     
-    func testWithBundle() throws {
+    class Dummy {}
+
+    @Test func validBundle() throws {
         
-        let bundle = Bundle(for: type(of: self))
+        let bundle = Bundle(for: Dummy.self)
 
         do {
             let configuration = try ConfigurationDataManager.load(with: bundle)
@@ -25,7 +26,7 @@ class ConfigurationDataManagerTests: XCTestCase {
         }
     }
     
-    func testWithInvalidBundle() throws {
+    @Test func invalidBundle() throws {
         
         let bundle = Bundle()
 
@@ -37,5 +38,4 @@ class ConfigurationDataManagerTests: XCTestCase {
             #expect(error != nil)
         }
     }
-
 }

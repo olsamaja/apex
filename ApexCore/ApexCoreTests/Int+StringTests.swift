@@ -8,7 +8,7 @@
 import Testing
 @testable import ApexCore
 
-@Test func test_int_to_MBString() {
+@Test func test_convert_int_to_MBString() {
     #expect(123.toMBString == "123")
     #expect(1234.toMBString == "1.2 K")
     #expect(12345.toMBString == "12.1 K")

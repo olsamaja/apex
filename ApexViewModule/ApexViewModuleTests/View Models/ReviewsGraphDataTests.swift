@@ -40,7 +40,7 @@ final class ReviewsGraphDataTests: XCTestCase {
 
                 let dateFormatter = ISO8601DateFormatter()
                 guard let endDate = dateFormatter.date(from: "2024-06-09T12:02:57-07:00") else {
-                    XCTAssert(false, "Start date cannot be nil")
+                    #expect(Bool(false), "Start date cannot be nil")
                     return
                 }
 

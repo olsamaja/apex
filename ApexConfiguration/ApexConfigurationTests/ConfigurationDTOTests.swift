@@ -5,15 +5,16 @@
 //  Created by Olivier Rigault on 15/07/2021.
 //
 
-import XCTest
 import Testing
 @testable import ApexConfiguration
 
-class ConfigurationDTOTests: XCTestCase {
+struct ConfigurationDTOTests {
     
-    func testWithBundle() {
+    class Dummy {}
+    
+    @Test func validBundle() {
         
-        let bundle = Bundle(for: type(of: self))
+        let bundle = Bundle(for: Dummy.self)
         let configuration = ConfigurationDTO(with: bundle)
         
         #expect(configuration.scheme == "https")

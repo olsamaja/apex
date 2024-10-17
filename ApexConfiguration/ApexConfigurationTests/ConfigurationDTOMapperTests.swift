@@ -5,13 +5,12 @@
 //  Created by Olivier Rigault on 15/07/2021.
 //
 
-import XCTest
 import Testing
 @testable import ApexConfiguration
 
-class ConfigurationDTOMapperTests: XCTestCase {
+struct ConfigurationDTOMapperTests {
     
-    func testSuccessfulMapper() throws {
+    @Test func successfulMapper() throws {
         
         let scheme = "https"
         let host = "www.thisisahost.com"
@@ -26,7 +25,7 @@ class ConfigurationDTOMapperTests: XCTestCase {
         }
     }
 
-    func testValidScheme() throws {
+    @Test func validScheme() throws {
         
         let dto1 = ConfigurationDTO(scheme: "http", host: "host")
         try checkValidScheme(dto: dto1)
@@ -35,12 +34,12 @@ class ConfigurationDTOMapperTests: XCTestCase {
         try checkValidScheme(dto: dto2)
     }
 
-    func testInvalidScheme() throws {
+    @Test func invalidScheme() throws {
         
         let dto = ConfigurationDTO(scheme: "thisisnotascheme", host: "host")
         do {
             let _ = try ConfigurationDTOMapper.map(dto)
-            XCTFail("Expected scheme property to be invalid")
+            #expect(Bool(false), "Expected scheme property to be invalid")
         } catch ConfigurationDTOMapper.ValidationError.invalid(let property){
             #expect(property == .scheme)
         } catch {
@@ -48,7 +47,7 @@ class ConfigurationDTOMapperTests: XCTestCase {
         }
     }
 
-    func testMissingProperties() throws {
+    @Test func missingProperties() throws {
         
         let dto1 = ConfigurationDTO(scheme: nil, host: "host")
         try checkMissingProperty(dto: dto1, with: ConfigurationDTOMapper.ValidationError.empty(.scheme))

@@ -5,17 +5,18 @@
 //  Created by Olivier Rigault on 15/07/2021.
 //
 
-import XCTest
 import Testing
 @testable import ApexCore
 @testable import ApexConfiguration
 @testable import Resolver
 
-class ConfigurationServicesInjectionTests: XCTestCase {
+struct ConfigurationServicesInjectionTests {
     
-    func testSuccessfulInjection() throws {
+    class Dummy {}
+    
+    func successfulInjection() throws {
         
-        Resolver.registerConfigurationServices(with: Bundle(for: type(of: self)))
+        Resolver.registerConfigurationServices(with: Bundle(for: Dummy.self))
         let configuration: Configuration = Resolver.resolve()
         
         #expect(configuration != nil)
@@ -23,12 +24,11 @@ class ConfigurationServicesInjectionTests: XCTestCase {
         #expect(configuration.host == "www.thisisahost.com")
     }
     
-    func testInvalidInjection() throws {
+    func unsuccessfulInjection() throws {
         
         Resolver.registerConfigurationServices(with: Bundle())
         let configuration: Configuration? = Resolver.optional()
         
         #expect(configuration == nil)
     }
-
 }

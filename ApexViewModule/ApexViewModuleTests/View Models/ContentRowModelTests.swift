@@ -15,7 +15,7 @@ final class ContentRowModelTests: XCTestCase {
     private static var releaseDate: Date {
         let dateFormatter = ISO8601DateFormatter()
         guard let date = dateFormatter.date(from: "2023-10-30T11:35:32Z") else {
-            XCTAssert(false, "Start date cannot be nil")
+            #expect(Bool(false), "Start date cannot be nil")
             return Date()
         }
         return date

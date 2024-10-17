@@ -12,11 +12,11 @@ import Testing
 
 final class DetailsDTOMapperTests: XCTestCase {
 
-    func testSuccessfulMapper() throws {
+    func testSuccessfulMapper() {
 
         let dateFormatter = ISO8601DateFormatter()
         guard let releaseDate = dateFormatter.date(from: "2023-10-30T11:35:32Z") else {
-            XCTAssert(false, "Start date cannot be nil")
+            #expect(Bool(false), "Start date cannot be nil")
             return
         }
 
