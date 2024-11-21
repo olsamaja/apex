@@ -5,12 +5,11 @@
 //  Created by Olivier Rigault on 09/11/2023.
 //
 
-import XCTest
 import Testing
 @testable import ApexCore
 @testable import ApexViewModule
 
-final class ReviewsDTOMapperTests: XCTestCase {
+struct ReviewsDTOMapperTests {
 
     @Test("User entries", arguments: [
         [
@@ -18,7 +17,7 @@ final class ReviewsDTOMapperTests: XCTestCase {
             UserEntryDTO(title: "title2", author: "author2", rating: "2", version: "1.2.2", content: "content2", updated: Date())
         ]
     ])
-    func testSuccessfulMapper(userEntryDTOs: [UserEntryDTO]) throws {
+    func successfulMapper(userEntryDTOs: [UserEntryDTO]) throws {
         let dto = ReviewsDTO(feed: UserFeedDTO(entry: userEntryDTOs, link: []))
 
         let reviews = ReviewsDTOMapper.map(dto)

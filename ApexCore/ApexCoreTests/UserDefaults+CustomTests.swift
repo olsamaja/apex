@@ -10,7 +10,7 @@ import Testing
 
 struct UserDefaults_CustomTests {
 
-    @Test func testStoreValue() throws {
+    @Test func storeValue() throws {
         let simple = CodableSimpleStruct(code: "key", name: "name")
         UserDefaults.standard.setCustomObject(simple, forKey: "MY_KEY")
         let storedValue: CodableSimpleStruct? = UserDefaults.standard.customObject(forKey: "MY_KEY")
@@ -18,7 +18,7 @@ struct UserDefaults_CustomTests {
     }
 
     
-    @Test func testStoreNilValue() throws {
+    @Test func storeNilValue() throws {
         let simple: CodableSimpleStruct? = nil
         UserDefaults.standard.setCustomObject(simple, forKey: "MY_KEY")
         let storedValue: CodableSimpleStruct? = UserDefaults.standard.customObject(forKey: "MY_KEY")

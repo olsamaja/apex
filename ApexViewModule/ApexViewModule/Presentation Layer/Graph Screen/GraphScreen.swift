@@ -34,8 +34,10 @@ public struct GraphScreen: View {
                 .withMessage(error.description)
                 .build()
         case .loadingNextReviews(_, let reviews):
-            Text("loadingNextReviews(\(reviews.count))")
-                .foregroundColor(.red)
+            MessageViewBuilder()
+                .withMessage("Loading \(reviews.count) reviews...")
+                .withAlignment(.top)
+                .build()
         case .nextReviewsLoaded(let graphs, _):
             VStack {
                 Text("Reviews")
