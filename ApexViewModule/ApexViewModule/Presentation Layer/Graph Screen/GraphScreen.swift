@@ -35,7 +35,7 @@ public struct GraphScreen: View {
                 .build()
         case .loadingNextReviews(_, let reviews):
             MessageViewBuilder()
-                .withMessage("Loading \(reviews.count) reviews...")
+                .withMessage("Loading more reviews (\(reviews.count) )...")
                 .withAlignment(.top)
                 .build()
         case .nextReviewsLoaded(let graphs, _):
