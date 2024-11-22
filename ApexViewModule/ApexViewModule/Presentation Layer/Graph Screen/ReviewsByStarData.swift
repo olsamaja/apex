@@ -12,16 +12,18 @@ import ApexCore
 public struct ReviewsByStarData: Identifiable {
     
     public let id: String
+    let numberOfReviews: Int
     let items: [ReviewByStarDataItem]
     
     var averageRating: String {
-        let totalNumberOfStars = items.map { $0.numberOfStars }.reduce(0, +)
-        let totalWeight = items.map { $0.numberOfStars * $0.rating.toInt }.reduce(0, +)
-        return String(format: "%0.1f", Double(totalWeight) / Double(totalNumberOfStars))
+        let totalNumberOfReviews = items.map { $0.numberOfReviews }.reduce(0, +)
+        let totalWeight = items.map { $0.numberOfReviews * $0.rating.toInt }.reduce(0, +)
+        return String(format: "%0.1f", Double(totalWeight) / Double(totalNumberOfReviews))
     }
     
-    init(items: [ReviewByStarDataItem]) {
+    init(numberOfReviews: Int, items: [ReviewByStarDataItem]) {
         self.id = UUID().uuidString
+        self.numberOfReviews = numberOfReviews
         self.items = items
     }
 }
@@ -58,13 +60,15 @@ public class ReviewsByStarGraphDataBuilder: BuilderProtocol {
         let twoStarsReviewsCount = filteredReviews.filter { $0.rating == "2" }.count
         let oneStarsReviewsCount = filteredReviews.filter { $0.rating == "1" }.count
         
-        let graphDataItems = [ReviewByStarDataItem(rating: "5", numberOfStars: fiveStarsReviewsCount),
-                              ReviewByStarDataItem(rating: "4", numberOfStars: fourStarsReviewsCount),
-                              ReviewByStarDataItem(rating: "3", numberOfStars: threeStarsReviewsCount),
-                              ReviewByStarDataItem(rating: "2", numberOfStars: twoStarsReviewsCount),
-                              ReviewByStarDataItem(rating: "1", numberOfStars: oneStarsReviewsCount)]
-        
-        return ReviewsByStarData(items: graphDataItems)
+        let graphDataItems = [ReviewByStarDataItem(rating: "5", numberOfReviews: fiveStarsReviewsCount),
+                              ReviewByStarDataItem(rating: "4", numberOfReviews: fourStarsReviewsCount),
+                              ReviewByStarDataItem(rating: "3", numberOfReviews: threeStarsReviewsCount),
+                              ReviewByStarDataItem(rating: "2", numberOfReviews: twoStarsReviewsCount),
+                              ReviewByStarDataItem(rating: "1", numberOfReviews: oneStarsReviewsCount)]
+
+        let numberOfReviews = graphDataItems.map { $0.numberOfReviews }.reduce(0, +)
+
+        return ReviewsByStarData(numberOfReviews: numberOfReviews, items: graphDataItems)
     }
 }
 
@@ -72,11 +76,11 @@ public struct ReviewByStarDataItem: Identifiable {
     
     public let id: String
     let rating: String
-    let numberOfStars: Int
+    let numberOfReviews: Int
     
-    init(rating: String, numberOfStars: Int) {
+    init(rating: String, numberOfReviews: Int) {
         self.id = UUID().uuidString
         self.rating = rating
-        self.numberOfStars = numberOfStars
+        self.numberOfReviews = numberOfReviews
     }
 }

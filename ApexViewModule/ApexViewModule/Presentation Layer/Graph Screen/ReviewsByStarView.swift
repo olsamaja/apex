@@ -12,45 +12,50 @@ struct ReviewsByStarView: View {
 
     var model: ReviewsByStarData
 
+    @ViewBuilder
     var body: some View {
-        GroupBox {
-            VStack(spacing: 12) {
-                HStack {
-                    Text("Stars")
-                        .font(.title3)
-                    Spacer()
-                }
-                HStack {
-                    VStack {
-                        Text(model.averageRating)
-                            .font(.title2)
-                        Text("out of 5")
-                            .font(.footnote)
-                            .foregroundColor(.gray)
+        if model.numberOfReviews > 0 {
+            GroupBox {
+                VStack(spacing: 12) {
+                    HStack {
+                        Text("Stars")
+                            .font(.title3)
+                        Spacer()
                     }
-                    Chart(model.items) { item in
-                        BarMark(
-                            x: .value("Amount", item.numberOfStars),
-                            y: .value("Stars", item.rating)
-                        )
-                        .foregroundStyle(.orange)
-                        .cornerRadius(8)
-                        .annotation(position: .leading) {
-                            StarsView(item.rating, isInverted: true)
-                                .font(.system(size: 10, weight: .semibold))
+                    HStack {
+                        VStack {
+                            Text(model.averageRating)
+                                .font(.title2)
+                            Text("out of 5")
+                                .font(.footnote)
                                 .foregroundColor(.gray)
                         }
+                        Chart(model.items) { item in
+                            BarMark(
+                                x: .value("Amount", item.numberOfReviews),
+                                y: .value("Stars", item.rating)
+                            )
+                            .foregroundStyle(.orange)
+                            .cornerRadius(8)
+                            .annotation(position: .leading) {
+                                StarsView(item.rating, isInverted: true)
+                                    .font(.system(size: 10, weight: .semibold))
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                        .fixedSize(horizontal: false, vertical: true)
+                        .chartXAxis(.hidden)
+                        .chartYAxis(.hidden)
                     }
-                    .fixedSize(horizontal: false, vertical: true)
-                    .chartXAxis(.hidden)
-                    .chartYAxis(.hidden)
                 }
             }
+        } else {
+            EmptyView()
         }
     }
 }
 
-#Preview {
+#Preview("Some reviews") {
     
     enum Constants {
         static let dateFormatter = ISO8601DateFormatter()
@@ -68,5 +73,10 @@ struct ReviewsByStarView: View {
         .withEndDate(Constants.endDate)
         .withNumberOfDays(7)
         .withReviews(Constants.reviews)
+        .build())
+}
+
+#Preview("No reviews") {
+    return ReviewsByStarView(model: ReviewsByStarGraphDataBuilder()
         .build())
 }

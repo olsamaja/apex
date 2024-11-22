@@ -7,45 +7,54 @@
 
 import SwiftUI
 import Charts
+import ApexCoreUI
 
 struct ReviewsGraphView: View {
     
     var model: ReviewsGraphData
 
+    @ViewBuilder
     var body: some View {
-        GroupBox {
-            VStack(spacing: 12) {
-                HStack {
-                    Text("Posts")
-                        .font(.title3)
-                    Spacer()
-                    Text("\(model.numberOfReviews)")
-                        .font(.title3)
-                }
-                Chart(model.items) { item in
-                    BarMark(
-                        x: .value("Date", 0 - item.daysSinceEndDate),
-                        y: .value("Ratings", item.weight)
-                    )
-                    .foregroundStyle(item.ratingType.color)
-                }
-                .fixedSize(horizontal: false, vertical: true)
-                .chartXAxis(.hidden)
-                HStack {
-                    Text(model.startDateShortString)
-                        .font(.footnote)
-                        .foregroundColor(.gray)
-                    Spacer()
-                    Text(model.endDateShortString)
-                        .font(.footnote)
-                        .foregroundColor(.gray)
+        if model.numberOfReviews > 0 {
+            GroupBox {
+                VStack(spacing: 12) {
+                    HStack {
+                        Text("Posts")
+                            .font(.title3)
+                        Spacer()
+                        Text("\(model.numberOfReviews)")
+                            .font(.title3)
+                    }
+                    Chart(model.items) { item in
+                        BarMark(
+                            x: .value("Date", 0 - item.daysSinceEndDate),
+                            y: .value("Ratings", item.weight)
+                        )
+                        .foregroundStyle(item.ratingType.color)
+                    }
+                    .fixedSize(horizontal: false, vertical: true)
+                    .chartXAxis(.hidden)
+                    HStack {
+                        Text(model.startDateShortString)
+                            .font(.footnote)
+                            .foregroundColor(.gray)
+                        Spacer()
+                        Text(model.endDateShortString)
+                            .font(.footnote)
+                            .foregroundColor(.gray)
+                    }
                 }
             }
+        } else {
+            MessageViewBuilder()
+                .withMessage("No reviews")
+                .withAlignment(.top)
+                .build()
         }
     }
 }
 
-#Preview {
+#Preview("Some reviews") {
     
     enum Constants {
         static let dateFormatter = ISO8601DateFormatter()
@@ -63,5 +72,10 @@ struct ReviewsGraphView: View {
         .withEndDate(Constants.endDate)
         .withNumberOfDays(7)
         .withReviews(Constants.reviews)
+        .build())
+}
+
+#Preview("No reviews") {
+    return ReviewsGraphView(model: ReviewsGraphDataBuilder()
         .build())
 }
